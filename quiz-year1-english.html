@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 1 English Quizzes | EduResources</title>
+    <meta name="description" content="Free interactive English quizzes for Year 1 students. Practice phonics, reading, vocabulary, and grammar with our KS1 English quizzes.">
+    <meta name="keywords" content="Year 1 English quizzes, KS1 English, phonics quizzes, reading comprehension, vocabulary practice, grammar basics, free English quizzes">
+    <link rel="canonical" href="https://eduresources.co.uk/quiz-year1-english.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduresources.co.uk/quiz-year1-english.html">
+    <meta property="og:title" content="Year 1 English Quizzes | EduResources">
+    <meta property="og:description" content="Free interactive English quizzes for Year 1 students. Practice phonics, reading, vocabulary, and grammar with our KS1 English quizzes.">
+    <meta property="og:image" content="https://eduresources.co.uk/images/og-image-year1-english.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://eduresources.co.uk/quiz-year1-english.html">
+    <meta property="twitter:title" content="Year 1 English Quizzes | EduResources">
+    <meta property="twitter:description" content="Free interactive English quizzes for Year 1 students. Practice phonics, reading, vocabulary, and grammar with our KS1 English quizzes.">
+    <meta property="twitter:image" content="https://eduresources.co.uk/images/twitter-card-year1-english.jpg">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Preload Font Awesome CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Intro Section --- */
+        .intro-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .intro-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .intro-section p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* --- Topics Section --- */
+        .topics-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .topics-section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .topics-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        /* --- Topics List --- */
+        .topics-list {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .topic-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .topic-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .topic-info {
+            flex-grow: 1;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .topic-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .quiz-link {
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all var(--transition-speed) ease;
+            white-space: nowrap;
+            margin-left: var(--spacing-md);
+        }
+
+        .quiz-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             /* Ensure no icons appear in footer links */
+             display: none !important; /* Override any potential icon styles */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .nav-item.active {
+            color: var(--secondary-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .topics-section h2, .intro-section h2 {
+                font-size: 1.3rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .topic-item {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+            .topic-icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+            .topic-info {
+                margin-bottom: var(--spacing-sm);
+            }
+            .quiz-link {
+                margin-left: 0;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down -->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Year 1 English Quizzes</h1>
+                <p>Practice phonics, reading, vocabulary, and grammar</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span> / </span> <a href="quizzes.html">Quizzes</a> <span> / </span> <a href="quiz-year1.html">Year 1</a> <span> / </span> English
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="intro-section">
+                <h2>Year 1 English Topics</h2>
+                <p>Welcome to our Year 1 English quizzes! These interactive quizzes are designed to help students develop essential English skills including phonics, reading comprehension, vocabulary, and basic grammar. Each quiz provides immediate feedback to support effective learning.</p>
+                <p>Select a topic below to begin practicing:</p>
+            </section>
+
+            <section class="topics-section">
+                <h2>Choose a Topic</h2>
+                <div class="topics-list">
+                    <!-- Phonics Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Phonics</h3>
+                            <p class="topic-description">Practice letter sounds, blending, segmenting, and common phonetic patterns.</p>
+                        </div>
+                        <a href="quiz-year1-english-phonics.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Reading Comprehension Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Reading Comprehension</h3>
+                            <p class="topic-description">Develop understanding of simple texts and answer questions about stories.</p>
+                        </div>
+                        <a href="quiz-year1-english-reading.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Vocabulary Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-font"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Vocabulary</h3>
+                            <p class="topic-description">Learn new words, synonyms, antonyms, and word meanings in context.</p>
+                        </div>
+                        <a href="quiz-year1-english-vocabulary.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Grammar Basics Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Grammar Basics</h3>
+                            <p class="topic-description">Practice sentence structure, punctuation, and basic grammar rules.</p>
+                        </div>
+                        <a href="quiz-year1-english-grammar.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Handwriting Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Handwriting</h3>
+                            <p class="topic-description">Practice letter formation, spacing, and neat writing skills.</p>
+                        </div>
+                        <a href="quiz-year1-english-handwriting.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Spelling Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Spelling</h3>
+                            <p class="topic-description">Learn common words, spelling patterns, and phonetic spelling rules.</p>
+                        </div>
+                        <a href="quiz-year1-english-spelling.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Punctuation Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Punctuation</h3>
+                            <p class="topic-description">Practice using full stops, question marks, and exclamation marks correctly.</p>
+                        </div>
+                        <a href="quiz-year1-english-punctuation.html" class="quiz-link">Start Quiz</a>
+                    </div>
+
+                    <!-- Story Writing Topic -->
+                    <div class="topic-item">
+                        <div class="topic-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <div class="topic-info">
+                            <h3 class="topic-title">Story Writing</h3>
+                            <p class="topic-description">Develop creative writing skills with sentence starters and story prompts.</p>
+                        </div>
+                        <a href="quiz-year1-english-storywriting.html" class="quiz-link">Start Quiz</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div> <!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+</body>
+</html>
