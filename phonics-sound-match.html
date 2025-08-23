@@ -33,6 +33,9 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ResponsiveVoice TTS Library -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <style>
         :root {
             --primary-color: #2c3e50; /* Dark Blue */
@@ -287,8 +290,10 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            width: 200px; /* Fixed width */
-            height: 150px; /* Fixed height */
+            /* Match width to options container */
+            width: 100%;
+            max-width: 500px; /* Same as sound-options-container max-width */
+            height: 250px; /* Increased height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -756,10 +761,10 @@
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
-            /* Adjust image display for smaller screens if needed */
+            /* Adjust image display for smaller screens */
             .image-display {
-                 width: 180px;
-                 height: 135px;
+                 max-width: 300px; /* Match stacked options width */
+                 height: 200px;
             }
         }
 
@@ -775,8 +780,8 @@
                 margin: 0.2rem 0;
             }
              .image-display {
-                 width: 160px;
-                 height: 120px;
+                 max-width: 280px;
+                 height: 180px;
             }
         }
 
@@ -1031,49 +1036,14 @@
         </a>
     </nav>
 
-    <!-- Audio elements for sounds -->
-    <!-- Placeholder sounds - Replace with actual phonics sound files -->
-    <audio id="sound-sh" src="https://www.soundjay.com/phone/sounds/phone-ring-1.mp3" preload="auto"></audio>
-    <audio id="sound-ch" src="https://www.soundjay.com/phone/sounds/phone-ring-2.mp3" preload="auto"></audio>
-    <audio id="sound-th" src="https://www.soundjay.com/phone/sounds/phone-ring-3.mp3" preload="auto"></audio>
-    <audio id="sound-ai" src="https://www.soundjay.com/phone/sounds/phone-ring-4.mp3" preload="auto"></audio>
-    <audio id="sound-ee" src="https://www.soundjay.com/phone/sounds/phone-ring-5.mp3" preload="auto"></audio>
-    <audio id="sound-a" src="https://www.soundjay.com/phone/sounds/phone-ring-6.mp3" preload="auto"></audio>
-    <audio id="sound-i" src="https://www.soundjay.com/phone/sounds/phone-ring-7.mp3" preload="auto"></audio>
-    <audio id="sound-o" src="https://www.soundjay.com/phone/sounds/phone-ring-8.mp3" preload="auto"></audio>
-    <audio id="sound-oo" src="https://www.soundjay.com/phone/sounds/phone-ring-9.mp3" preload="auto"></audio>
-    <audio id="sound-ar" src="https://www.soundjay.com/phone/sounds/phone-ring-10.mp3" preload="auto"></audio>
-    <audio id="sound-or" src="https://www.soundjay.com/phone/sounds/phone-ring-11.mp3" preload="auto"></audio>
-    <audio id="sound-ur" src="https://www.soundjay.com/phone/sounds/phone-ring-12.mp3" preload="auto"></audio>
-    <audio id="sound-b" src="https://www.soundjay.com/phone/sounds/phone-ring-1.mp3" preload="auto"></audio>
-    <audio id="sound-c" src="https://www.soundjay.com/phone/sounds/phone-ring-2.mp3" preload="auto"></audio>
-    <audio id="sound-d" src="https://www.soundjay.com/phone/sounds/phone-ring-3.mp3" preload="auto"></audio>
-    <audio id="sound-e" src="https://www.soundjay.com/phone/sounds/phone-ring-4.mp3" preload="auto"></audio>
-    <audio id="sound-f" src="https://www.soundjay.com/phone/sounds/phone-ring-5.mp3" preload="auto"></audio>
-    <audio id="sound-g" src="https://www.soundjay.com/phone/sounds/phone-ring-6.mp3" preload="auto"></audio>
-    <audio id="sound-h" src="https://www.soundjay.com/phone/sounds/phone-ring-7.mp3" preload="auto"></audio>
-    <audio id="sound-l" src="https://www.soundjay.com/phone/sounds/phone-ring-8.mp3" preload="auto"></audio>
-    <audio id="sound-m" src="https://www.soundjay.com/phone/sounds/phone-ring-9.mp3" preload="auto"></audio>
-    <audio id="sound-n" src="https://www.soundjay.com/phone/sounds/phone-ring-10.mp3" preload="auto"></audio>
-    <audio id="sound-p" src="https://www.soundjay.com/phone/sounds/phone-ring-11.mp3" preload="auto"></audio>
-    <audio id="sound-r" src="https://www.soundjay.com/phone/sounds/phone-ring-12.mp3" preload="auto"></audio>
-    <audio id="sound-s" src="https://www.soundjay.com/phone/sounds/phone-ring-1.mp3" preload="auto"></audio>
-    <audio id="sound-t" src="https://www.soundjay.com/phone/sounds/phone-ring-2.mp3" preload="auto"></audio>
-    <audio id="sound-u" src="https://www.soundjay.com/phone/sounds/phone-ring-3.mp3" preload="auto"></audio>
-    <audio id="sound-w" src="https://www.soundjay.com/phone/sounds/phone-ring-4.mp3" preload="auto"></audio>
-    <audio id="sound-y" src="https://www.soundjay.com/phone/sounds/phone-ring-5.mp3" preload="auto"></audio>
-    <audio id="sound-z" src="https://www.soundjay.com/phone/sounds/phone-ring-6.mp3" preload="auto"></audio>
-    <audio id="sound-k" src="https://www.soundjay.com/phone/sounds/phone-ring-7.mp3" preload="auto"></audio>
-    <audio id="sound-v" src="https://www.soundjay.com/phone/sounds/phone-ring-8.mp3" preload="auto"></audio>
-    <audio id="sound-j" src="https://www.soundjay.com/phone/sounds/phone-ring-9.mp3" preload="auto"></audio>
-    <audio id="sound-q" src="https://www.soundjay.com/phone/sounds/phone-ring-10.mp3" preload="auto"></audio>
-    <audio id="sound-x" src="https://www.soundjay.com/phone/sounds/phone-ring-11.mp3" preload="auto"></audio>
-
-    <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3" preload="auto"></audio>
-    <audio id="incorrect-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" preload="auto"></audio>
-    <audio id="completion-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio> <!-- New completion sound -->
+    <!-- Audio elements for fixed sounds -->
+    <!-- Using Zapsplat for consistent, free sounds -->
+    <audio id="correct-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48398_zapsplat_multimedia_game_sound_positive_notification_001.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48397_zapsplat_multimedia_game_sound_negative_fail_001.mp3" preload="auto"></audio>
+    <audio id="completion-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48399_zapsplat_multimedia_game_sound_trophy_win_001.mp3" preload="auto"></audio>
     <audio id="bg-music" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-kidding-around-9.mp3" type="audio/mpeg">
+        <!-- Using a different Mixkit track -->
+        <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -1081,13 +1051,12 @@
             // Game elements
             const imageDisplay = document.getElementById('image-display');
             const currentImage = document.getElementById('current-image');
-            const nextBtn = document.getElementById('next-btn'); // Hidden, but kept for potential future use
+            const nextBtn = document.getElementById('next-btn'); // Hidden, but kept
             const restartBtn = document.getElementById('restart-btn');
             const feedback = document.getElementById('feedback');
             const soundOptionsContainer = document.getElementById('sound-options-container');
             const scoreElement = document.getElementById('score');
             const attemptsElement = document.getElementById('attempts');
-            // const streakElement = document.getElementById('streak'); // Removed
             const progressBar = document.getElementById('progress-bar');
             const loadingElement = document.getElementById('loading');
             const bgmToggle = document.getElementById('bgm-toggle');
@@ -1101,13 +1070,12 @@
             // Audio elements
             const correctSound = document.getElementById('correct-sound');
             const incorrectSound = document.getElementById('incorrect-sound');
-            const completionSound = document.getElementById('completion-sound'); // New
+            const completionSound = document.getElementById('completion-sound');
             const bgMusic = document.getElementById('bg-music');
 
             // Game state
             let score = 0;
             let attempts = 0;
-            // let streak = 0; // Removed
             let currentQuestion = 0;
             let questions = [];
             let answered = false;
@@ -1122,7 +1090,7 @@
                     "soundOptions": ["/sh/", "/ch/", "/th/", "/s/"],
                     "correctSound": "/sh/",
                     "soundId": "sound-sh",
-                    "bgColorClass": "var(--img-bg-ship)" // Added for dynamic background
+                    "bgColorClass": "var(--img-bg-ship)"
                 },
                 {
                     "image": "https://i.postimg.cc/T2m0vLZh/Chair.png",
@@ -1279,12 +1247,25 @@
                 // Add more questions as needed
             ];
 
+            // --- Helper Functions ---
+
+            // Function to shuffle an array (Fisher-Yates Shuffle)
+            function shuffleArray(array) {
+                // Work on a copy to avoid modifying the original
+                let shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
             // Initialize game
             function initGame() {
-                questions = [...sampleQuestions]; // Create a copy to avoid modifying original
+                // Create a copy of questions and potentially shuffle their order too if needed
+                questions = [...sampleQuestions];
                 score = 0;
                 attempts = 0;
-                // streak = 0; // Removed
                 currentQuestion = 0;
                 answered = false;
 
@@ -1299,7 +1280,7 @@
                 // Hide loading and show game elements after a delay
                 setTimeout(() => {
                     loadingElement.style.display = 'none';
-                    imageDisplay.style.display = 'flex'; // Changed to flex for centering
+                    imageDisplay.style.display = 'flex';
                     soundOptionsContainer.style.display = 'grid';
 
                     updateStats();
@@ -1333,19 +1314,22 @@
                 const allButtons = soundOptionsContainer.querySelectorAll('.sound-option-btn');
                 allButtons.forEach(btn => {
                     btn.disabled = false;
-                    btn.classList.remove('correct', 'incorrect'); // Clear previous states
+                    btn.classList.remove('correct', 'incorrect');
                 });
 
                 // Clear previous options
                 soundOptionsContainer.innerHTML = '';
 
-                // Create new sound options buttons
-                currentQuestionData.soundOptions.forEach((soundOption, index) => {
+                // Shuffle the sound options for this question
+                const shuffledOptions = shuffleArray(currentQuestionData.soundOptions);
+
+                // Create new sound options buttons from the shuffled array
+                shuffledOptions.forEach((soundOption, index) => {
                     const optionBtn = document.createElement('button');
                     optionBtn.className = 'sound-option-btn';
                     optionBtn.dataset.sound = soundOption;
                     optionBtn.textContent = soundOption;
-                    optionBtn.disabled = false; // Ensure enabled
+                    optionBtn.disabled = false;
 
                     optionBtn.addEventListener('click', handleSoundOptionClick);
 
@@ -1355,7 +1339,7 @@
 
             // Handle sound option selection
             function handleSoundOptionClick(event) {
-                if (answered) return; // Prevent multiple clicks
+                if (answered) return;
 
                 const button = event.currentTarget;
                 const selectedSound = button.dataset.sound;
@@ -1371,20 +1355,22 @@
 
                 if (isCorrect) {
                     score++;
-                    // streak++; // Removed
                     feedback.textContent = 'Correct! Well done!';
                     feedback.className = 'feedback correct';
                     button.classList.add('correct');
 
-                    // Play the initial sound of the correct item (always)
-                    const soundElement = document.getElementById(currentQuestionData.soundId);
-                    if (soundElement) {
-                        soundElement.currentTime = 0;
-                        soundElement.play().catch(e => {
-                            console.log("Initial sound play prevented: ", e);
-                        });
+                    // Use ResponsiveVoice TTS for the correct sound
+                    // Speak the sound spelling clearly
+                    if (typeof responsiveVoice !== 'undefined') {
+                        responsiveVoice.speak(currentQuestionData.correctSound, "UK English Female", {rate: 0.8, pitch: 1});
                     } else {
-                        console.error("Sound element not found for ID:", currentQuestionData.soundId);
+                        console.error("ResponsiveVoice library not loaded.");
+                        // Fallback: Play the sound element if it exists (old method)
+                        const soundElement = document.getElementById(currentQuestionData.soundId);
+                        if (soundElement) {
+                            soundElement.currentTime = 0;
+                            soundElement.play().catch(e => console.log("Fallback sound play prevented: ", e));
+                        }
                     }
 
                     // Play the success tone (affected by FX toggle)
@@ -1398,7 +1384,6 @@
                     setTimeout(() => button.classList.remove('celebrate'), 500);
 
                 } else {
-                    // streak = 0; // Removed
                     feedback.textContent = `Oops! The correct initial sound is ${currentQuestionData.correctSound}.`;
                     feedback.className = 'feedback incorrect';
                     button.classList.add('incorrect');
@@ -1410,6 +1395,7 @@
                     }
 
                     // Highlight correct answer button
+                    // Need to find the button with the correct sound text
                     const correctButton = document.querySelector(`.sound-option-btn[data-sound="${currentQuestionData.correctSound}"]`);
                     if (correctButton) {
                         correctButton.classList.add('correct');
@@ -1440,8 +1426,8 @@
                  // Hide game elements
                  imageDisplay.style.display = 'none';
                  soundOptionsContainer.style.display = 'none';
-                 feedback.style.display = 'none'; // Hide feedback
-                 // nextBtn.style.display = 'none'; // Already hidden
+                 feedback.style.display = 'none';
+                 // nextBtn.style.display = 'none';
 
                  // Show results screen
                  resultsScreen.style.display = 'block';
@@ -1469,14 +1455,14 @@
 
             // Restart game from results screen
             restartResultsBtn.addEventListener('click', function() {
-                 feedback.style.display = 'flex'; // Show feedback again
-                 initGame(); // Reset and restart
+                 feedback.style.display = 'flex';
+                 initGame();
             });
 
             // Restart game from main button (if needed)
             restartBtn.addEventListener('click', function () {
-                 feedback.style.display = 'flex'; // Show feedback again
-                 initGame(); // Reset and restart
+                 feedback.style.display = 'flex';
+                 initGame();
             });
 
             // Toggle background music
@@ -1495,7 +1481,7 @@
 
             // Toggle sound effects (only affects feedback sounds now)
             fxToggle.addEventListener('click', function () {
-                fxAffectsFeedback = !fxAffectsFeedback; // Toggle the flag
+                fxAffectsFeedback = !fxAffectsFeedback;
                 if (fxAffectsFeedback) {
                     fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
                     fxToggle.classList.add('active');
@@ -1509,7 +1495,6 @@
             function updateStats() {
                 scoreElement.textContent = score;
                 attemptsElement.textContent = attempts;
-                // streakElement.textContent = streak; // Removed
             }
 
             // Update progress bar
