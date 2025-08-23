@@ -209,12 +209,12 @@
             margin-bottom: var(--spacing-xs);
         }
 
-        /* --- Subjects Section --- */
-        .subjects-section {
+        /* --- Tabs Section --- */
+        .tabs-section {
             margin-bottom: var(--spacing-xl);
         }
 
-        .subjects-section h2 {
+        .tabs-section h2 {
             font-size: 1.5rem;
             color: var(--primary-color);
             margin-bottom: var(--spacing-sm);
@@ -222,7 +222,7 @@
             padding-bottom: var(--spacing-xs);
         }
 
-        .subjects-section h2:after {
+        .tabs-section h2:after {
             content: '';
             position: absolute;
             left: 0;
@@ -232,29 +232,74 @@
             background-color: var(--secondary-color);
         }
 
-        /* --- Subjects List --- */
-        .subjects-list {
+        /* --- Tab Navigation --- */
+        .tab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            transition: all var(--transition-speed);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--secondary-color);
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--primary-color);
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        /* --- Tab Content --- */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Subject Header --- */
+        .subject-header {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-color);
-            overflow: hidden;
-        }
-
-        .subject-item {
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
             display: flex;
             align-items: center;
-            padding: var(--spacing-md);
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color var(--transition-speed);
-        }
-
-        .subject-item:last-child {
-            border-bottom: none;
-        }
-
-        .subject-item:hover {
-            background-color: #f8f9fa;
         }
 
         .subject-icon {
@@ -271,23 +316,76 @@
             flex-shrink: 0;
         }
 
-        .subject-info {
+        .subject-info h3 {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .subject-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* --- Topics List (as individual rows) --- */
+        .topics-list {
+            list-style: none;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .topic-item {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .topic-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .topic-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            color: var(--secondary-color);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .topic-info {
             flex-grow: 1;
         }
 
-        .subject-title {
+        .topic-title {
             font-weight: 600;
             font-size: 1.1rem;
             color: var(--primary-color);
             margin-bottom: 0.2rem;
         }
 
-        .subject-description {
+        .topic-description {
             font-size: 0.9rem;
             color: var(--text-light);
         }
 
-        .quiz-link {
+        .topic-link {
             background-color: var(--secondary-color);
             color: white;
             text-decoration: none;
@@ -300,10 +398,45 @@
             margin-left: var(--spacing-md);
         }
 
-        .quiz-link:hover {
+        .topic-link:hover {
             background-color: #2980b9;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--secondary-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
         }
 
         /* --- Footer --- */
@@ -411,7 +544,7 @@
             .hero p {
                 font-size: 0.95rem;
             }
-            .subjects-section h2, .intro-section h2 {
+            .tabs-section h2, .intro-section h2 {
                 font-size: 1.3rem;
             }
             .header-container {
@@ -434,19 +567,23 @@
             .donate-top-btn i {
                 font-size: 0.9rem;
             }
-            .subject-item {
+            .tab-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+            .topic-item {
                 flex-direction: column;
                 text-align: center;
                 padding: var(--spacing-md) var(--spacing-sm);
             }
-            .subject-icon {
+            .topic-icon {
                 margin-right: 0;
                 margin-bottom: var(--spacing-sm);
             }
-            .subject-info {
+            .topic-info {
                 margin-bottom: var(--spacing-sm);
             }
-            .quiz-link {
+            .topic-link {
                 margin-left: 0;
             }
             .footer-content {
@@ -479,7 +616,7 @@
         <section class="hero">
             <div class="container">
                 <h1>Year 1 Quizzes</h1>
-                <p>Interactive quizzes covering all Year 1 subjects</p>
+                <p>Complete UK curriculum coverage for Year 1 students</p>
             </div>
         </section>
 
@@ -491,110 +628,888 @@
 
         <div class="container">
             <section class="intro-section">
-                <h2>Year 1 Subjects</h2>
-                <p>Welcome to our collection of Year 1 quizzes! These interactive quizzes are designed to help students practice and reinforce their learning in all core subjects. Each quiz provides immediate feedback to support effective learning.</p>
-                <p>Select a subject below to begin practicing:</p>
+                <h2>Year 1 Subjects and Topics</h2>
+                <p>Welcome to our comprehensive collection of Year 1 quizzes covering the complete UK national curriculum! These interactive quizzes are designed to help students practice and reinforce their learning in all core subjects. Each quiz provides immediate feedback to support effective learning.</p>
+                <p>Select a subject below to explore topics and start practicing:</p>
             </section>
 
-            <section class="subjects-section">
-                <h2>Choose a Subject</h2>
-                <div class="subjects-list">
-                    <!-- English Subject -->
-                    <div class="subject-item">
+            <section class="tabs-section">
+                <h2>Year 1 Subjects</h2>
+                
+                <!-- Tab Navigation -->
+                <div class="tab-nav">
+                    <button class="tab-btn active" data-tab="english">English</button>
+                    <button class="tab-btn" data-tab="maths">Maths</button>
+                    <button class="tab-btn" data-tab="science">Science</button>
+                    <button class="tab-btn" data-tab="geography">Geography</button>
+                    <button class="tab-btn" data-tab="history">History</button>
+                    <button class="tab-btn" data-tab="art">Art</button>
+                    <button class="tab-btn" data-tab="music">Music</button>
+                    <button class="tab-btn" data-tab="pe">PE</button>
+                    <button class="tab-btn" data-tab="computing">Computing</button>
+                    <button class="tab-btn" data-tab="pshe">PSHE</button>
+                    <button class="tab-btn" data-tab="languages">Languages</button>
+                </div>
+                
+                <!-- Tab Content -->
+                <!-- English Tab -->
+                <div id="english" class="tab-content active">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-book"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">English</h3>
-                            <p class="subject-description">Reading comprehension, phonics, vocabulary, and grammar basics.</p>
+                            <h3>English</h3>
+                            <p>Reading, writing, speaking and listening, and vocabulary development.</p>
                         </div>
-                        <a href="quiz-year1-english.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- Maths Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Phonics and Sounds</h4>
+                                <p class="topic-description">Practice letter sounds, blending, and segmenting words (Phase 2-5)</p>
+                            </div>
+                            <a href="quiz-year1-english-phonics.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Word Reading</h4>
+                                <p class="topic-description">High frequency words (tricky words) and decodable words</p>
+                            </div>
+                            <a href="quiz-year1-english-word-reading.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-book-reader"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Reading Comprehension</h4>
+                                <p class="topic-description">Understanding simple texts and answering questions</p>
+                            </div>
+                            <a href="quiz-year1-english-reading.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-spell-check"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Vocabulary Development</h4>
+                                <p class="topic-description">Learning new words and their meanings in context</p>
+                            </div>
+                            <a href="quiz-year1-english-vocabulary.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Sentence Construction</h4>
+                                <p class="topic-description">Forming simple sentences with correct punctuation</p>
+                            </div>
+                            <a href="quiz-year1-english-sentences.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Handwriting</h4>
+                                <p class="topic-description">Letter formation and handwriting practice</p>
+                            </div>
+                            <a href="quiz-year1-english-handwriting.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Speaking and Listening</h4>
+                                <p class="topic-description">Expressing ideas clearly and listening to others</p>
+                            </div>
+                            <a href="quiz-year1-english-speaking.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Maths Tab -->
+                <div id="maths" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-calculator"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">Maths</h3>
-                            <p class="subject-description">Number recognition, counting, addition, subtraction, and shapes.</p>
+                            <h3>Maths</h3>
+                            <p>Number, calculation, geometry, measurement, and statistics.</p>
                         </div>
-                        <a href="quiz-year1-maths.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- Science Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-sort-numeric-up"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Number Recognition (1-20)</h4>
+                                <p class="topic-description">Identify, read, and write numbers to 20</p>
+                            </div>
+                            <a href="quiz-year1-maths-numbers-20.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-sort-numeric-up"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Number Recognition (1-100)</h4>
+                                <p class="topic-description">Count, read, and write numbers to 100</p>
+                            </div>
+                            <a href="quiz-year1-maths-numbers-100.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Addition</h4>
+                                <p class="topic-description">Add one-digit and two-digit numbers (up to 20)</p>
+                            </div>
+                            <a href="quiz-year1-maths-addition.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Subtraction</h4>
+                                <p class="topic-description">Subtract one-digit and two-digit numbers (up to 20)</p>
+                            </div>
+                            <a href="quiz-year1-maths-subtraction.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-divide"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Multiplication and Division</h4>
+                                <p class="topic-description">Solve one-step problems involving multiplication and division</p>
+                            </div>
+                            <a href="quiz-year1-maths-multiplication.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-shapes"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Geometry - 2D Shapes</h4>
+                                <p class="topic-description">Recognize and name common 2D shapes</p>
+                            </div>
+                            <a href="quiz-year1-maths-2d-shapes.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Geometry - 3D Shapes</h4>
+                                <p class="topic-description">Recognize and name common 3D shapes</p>
+                            </div>
+                            <a href="quiz-year1-maths-3d-shapes.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-ruler"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Measurement - Length/Height</h4>
+                                <p class="topic-description">Compare, describe, and solve practical problems</p>
+                            </div>
+                            <a href="quiz-year1-maths-measurement-length.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Measurement - Mass/Weight</h4>
+                                <p class="topic-description">Compare, describe, and solve practical problems</p>
+                            </div>
+                            <a href="quiz-year1-maths-measurement-weight.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Measurement - Capacity/Volume</h4>
+                                <p class="topic-description">Compare, describe, and solve practical problems</p>
+                            </div>
+                            <a href="quiz-year1-maths-measurement-capacity.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Time</h4>
+                                <p class="topic-description">Tell the time to the hour and half past the hour</p>
+                            </div>
+                            <a href="quiz-year1-maths-time.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-pound-sign"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Money</h4>
+                                <p class="topic-description">Recognize and know the value of different coins and notes</p>
+                            </div>
+                            <a href="quiz-year1-maths-money.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Statistics</h4>
+                                <p class="topic-description">Interpret and construct simple pictograms, tally charts, block diagrams</p>
+                            </div>
+                            <a href="quiz-year1-maths-statistics.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Science Tab -->
+                <div id="science" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-flask"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">Science</h3>
-                            <p class="subject-description">Basic scientific concepts, living things, materials, and seasons.</p>
+                            <h3>Science</h3>
+                            <p>Working scientifically, biology, chemistry, and physics concepts.</p>
                         </div>
-                        <a href="quiz-year1-science.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- Geography Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Plants</h4>
+                                <p class="topic-description">Identify and describe the basic structure of common plants</p>
+                            </div>
+                            <a href="quiz-year1-science-plants.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-paw"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Animals Including Humans</h4>
+                                <p class="topic-description">Identify and name common animals and their basic needs</p>
+                            </div>
+                            <a href="quiz-year1-science-animals.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Seasonal Changes</h4>
+                                <p class="topic-description">Observe changes across the four seasons</p>
+                            </div>
+                            <a href="quiz-year1-science-seasons.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Everyday Materials</h4>
+                                <p class="topic-description">Distinguish between objects and materials, and their properties</p>
+                            </div>
+                            <a href="quiz-year1-science-materials.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Observing Changes</h4>
+                                <p class="topic-description">Explore and talk about changes in materials</p>
+                            </div>
+                            <a href="quiz-year1-science-changes.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Working Scientifically</h4>
+                                <p class="topic-description">Ask simple questions and recognize differences</p>
+                            </div>
+                            <a href="quiz-year1-science-working.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Geography Tab -->
+                <div id="geography" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-globe-americas"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">Geography</h3>
-                            <p class="subject-description">Places, weather, seasons, and basic map skills.</p>
+                            <h3>Geography</h3>
+                            <p>Locational knowledge, place knowledge, and human and physical geography.</p>
                         </div>
-                        <a href="quiz-year1-geography.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- History Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Locational Knowledge</h4>
+                                <p class="topic-description">Name and locate the world's seven continents and five oceans</p>
+                            </div>
+                            <a href="quiz-year1-geography-locational.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Place Knowledge</h4>
+                                <p class="topic-description">Name and locate the four countries and capital cities of the UK</p>
+                            </div>
+                            <a href="quiz-year1-geography-place.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Human and Physical Geography</h4>
+                                <p class="topic-description">Identify seasonal and daily weather patterns in the UK</p>
+                            </div>
+                            <a href="quiz-year1-geography-human-physical.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Geographical Skills</h4>
+                                <p class="topic-description">Use world maps, atlases, globes and aerial photographs</p>
+                            </div>
+                            <a href="quiz-year1-geography-skills.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- History Tab -->
+                <div id="history" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-landmark"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">History</h3>
-                            <p class="subject-description">Family history, significant events, and historical figures.</p>
+                            <h3>History</h3>
+                            <p>Changes within living memory, significant events, and historical figures.</p>
                         </div>
-                        <a href="quiz-year1-history.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- Art Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Changes Within Living Memory</h4>
+                                <p class="topic-description">Where appropriate, these should be used to reveal aspects of change in national life</p>
+                            </div>
+                            <a href="quiz-year1-history-changes.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Significant Events</h4>
+                                <p class="topic-description">Beyond living memory that are significant nationally or globally</p>
+                            </div>
+                            <a href="quiz-year1-history-events.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Significant Individuals</h4>
+                                <p class="topic-description">Who have changed the world or national history</p>
+                            </div>
+                            <a href="quiz-year1-history-individuals.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Art Tab -->
+                <div id="art" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-palette"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">Art</h3>
-                            <p class="subject-description">Colors, shapes, drawing techniques, and famous artists.</p>
+                            <h3>Art</h3>
+                            <p>Creating art, craft, and design techniques.</p>
                         </div>
-                        <a href="quiz-year1-art.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- Music Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Drawing</h4>
+                                <p class="topic-description">Develop confidence and practical skills in drawing</p>
+                            </div>
+                            <a href="quiz-year1-art-drawing.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Painting</h4>
+                                <p class="topic-description">Explore and use different materials and techniques</p>
+                            </div>
+                            <a href="quiz-year1-art-painting.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Collage</h4>
+                                <p class="topic-description">Create collages using different materials and textures</p>
+                            </div>
+                            <a href="quiz-year1-art-collage.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-male"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Sculpture</h4>
+                                <p class="topic-description">Create 3D forms using various materials</p>
+                            </div>
+                            <a href="quiz-year1-art-sculpture.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Printmaking</h4>
+                                <p class="topic-description">Explore simple printmaking techniques</p>
+                            </div>
+                            <a href="quiz-year1-art-printmaking.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Art Appreciation</h4>
+                                <p class="topic-description">Develop knowledge about great artists, craft makers and designers</p>
+                            </div>
+                            <a href="quiz-year1-art-appreciation.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Music Tab -->
+                <div id="music" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-music"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">Music</h3>
-                            <p class="subject-description">Rhythm, instruments, and basic musical concepts.</p>
+                            <h3>Music</h3>
+                            <p>Perform, listen, and review music.</p>
                         </div>
-                        <a href="quiz-year1-music.html" class="quiz-link">Start Quiz</a>
                     </div>
-
-                    <!-- PE Subject -->
-                    <div class="subject-item">
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-microphone"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Singing</h4>
+                                <p class="topic-description">Use their voices expressively and creatively</p>
+                            </div>
+                            <a href="quiz-year1-music-singing.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-guitar"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Playing Instruments</h4>
+                                <p class="topic-description">Play tuned and untuned percussion instruments</p>
+                            </div>
+                            <a href="quiz-year1-music-instruments.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Listening and Appraising</h4>
+                                <p class="topic-description">Listen with attention to detail and recall sounds</p>
+                            </div>
+                            <a href="quiz-year1-music-listening.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Composition</h4>
+                                <p class="topic-description">Create and combine sounds using voices and instruments</p>
+                            </div>
+                            <a href="quiz-year1-music-composition.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- PE Tab -->
+                <div id="pe" class="tab-content">
+                    <div class="subject-header">
                         <div class="subject-icon">
                             <i class="fas fa-running"></i>
                         </div>
                         <div class="subject-info">
-                            <h3 class="subject-title">Physical Education</h3>
-                            <p class="subject-description">Movement, coordination, and basic sports skills.</p>
+                            <h3>Physical Education</h3>
+                            <p>Gymnastics, dance, games, athletics, and outdoor adventurous activity.</p>
                         </div>
-                        <a href="quiz-year1-pe.html" class="quiz-link">Start Quiz</a>
                     </div>
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Athletics</h4>
+                                <p class="topic-description">Run, jump, throw and catch in different ways</p>
+                            </div>
+                            <a href="quiz-year1-pe-athletics.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-person-running"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Gymnastics</h4>
+                                <p class="topic-description">Explore basic movements including balances, rolls and jumps</p>
+                            </div>
+                            <a href="quiz-year1-pe-gymnastics.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Dance</h4>
+                                <p class="topic-description">Use basic actions, movements and dance patterns</p>
+                            </div>
+                            <a href="quiz-year1-pe-dance.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Games</h4>
+                                <p class="topic-description">Develop simple tactics for attacking and defending</p>
+                            </div>
+                            <a href="quiz-year1-pe-games.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-swimmer"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Swimming and Water Safety</h4>
+                                <p class="topic-description">Swim competently, confidently and safely</p>
+                            </div>
+                            <a href="quiz-year1-pe-swimming.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
                 </div>
+                
+                <!-- Computing Tab -->
+                <div id="computing" class="tab-content">
+                    <div class="subject-header">
+                        <div class="subject-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="subject-info">
+                            <h3>Computing</h3>
+                            <p>Programming, digital literacy, and information technology.</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Programming</h4>
+                                <p class="topic-description">Create and debug simple programs</p>
+                            </div>
+                            <a href="quiz-year1-computing-programming.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Digital Literacy</h4>
+                                <p class="topic-description">Use technology safely and respectfully</p>
+                            </div>
+                            <a href="quiz-year1-computing-literacy.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Information Technology</h4>
+                                <p class="topic-description">Use technology to create, organise, store and retrieve digital content</p>
+                            </div>
+                            <a href="quiz-year1-computing-it.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- PSHE Tab -->
+                <div id="pshe" class="tab-content">
+                    <div class="subject-header">
+                        <div class="subject-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="subject-info">
+                            <h3>PSHE (Personal, Social, Health Education)</h3>
+                            <p>Health education, relationships, and living in the wider world.</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Health Education</h4>
+                                <p class="topic-description">Develop understanding of basic hygiene and healthy habits</p>
+                            </div>
+                            <a href="quiz-year1-pshe-health.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Relationships</h4>
+                                <p class="topic-description">Develop confidence and feel valued as individuals</p>
+                            </div>
+                            <a href="quiz-year1-pshe-relationships.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Living in the Wider World</h4>
+                                <p class="topic-description">Develop awareness of similarities and differences in people and communities</p>
+                            </div>
+                            <a href="quiz-year1-pshe-world.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Languages Tab -->
+                <div id="languages" class="tab-content">
+                    <div class="subject-header">
+                        <div class="subject-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="subject-info">
+                            <h3>Languages</h3>
+                            <p>Listening, speaking, reading, and writing skills in a foreign language.</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="topics-list">
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Listening and Understanding</h4>
+                                <p class="topic-description">Understand simple spoken language</p>
+                            </div>
+                            <a href="quiz-year1-languages-listening.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Speaking</h4>
+                                <p class="topic-description">Communicate through speaking with growing confidence</p>
+                            </div>
+                            <a href="quiz-year1-languages-speaking.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Reading</h4>
+                                <p class="topic-description">Read and show understanding of words and phrases</p>
+                            </div>
+                            <a href="quiz-year1-languages-reading.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Writing</h4>
+                                <p class="topic-description">Copy and write familiar words and short phrases</p>
+                            </div>
+                            <a href="quiz-year1-languages-writing.html" class="topic-link">Start Quiz</a>
+                        </li>
+                        
+                        <li class="topic-item">
+                            <div class="topic-icon">
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div class="topic-info">
+                                <h4 class="topic-title">Cultural Awareness</h4>
+                                <p class="topic-description">Develop awareness of the culture of the target language</p>
+                            </div>
+                            <a href="quiz-year1-languages-culture.html" class="topic-link">Start Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Complete Year 1 Educational Quizzes for the UK Curriculum</h2>
+                
+                <p>Our Year 1 quizzes cover the complete UK national curriculum, providing comprehensive practice for all subjects and topics. These interactive quizzes are specially designed to support your child's learning journey and help them develop essential skills across all areas of study.</p>
+                
+                <h3>Why Choose Our Year 1 Quizzes?</h3>
+                <ul>
+                    <li><strong>Curriculum-Aligned:</strong> All quizzes match the Year 1 national curriculum standards for England</li>
+                    <li><strong>Interactive Learning:</strong> Engaging format that makes learning fun and effective</li>
+                    <li><strong>Immediate Feedback:</strong> Instant results help identify areas for improvement</li>
+                    <li><strong>Progress Tracking:</strong> Monitor your child's development over time</li>
+                    <li><strong>Completely Free:</strong> Access to all Year 1 educational resources at no cost</li>
+                </ul>
+                
+                <h3>Complete Subject Coverage for Year 1</h3>
+                <p>Our comprehensive Year 1 quizzes cover all essential subjects and topics as outlined in the UK national curriculum:</p>
+                
+                <h3>English Language Arts</h3>
+                <p>Year 1 English focuses on developing foundational literacy skills through phonics, reading comprehension, vocabulary building, sentence construction, and handwriting. Our quizzes help reinforce these skills with interactive exercises that make learning enjoyable. Children will practice reading high-frequency words, decoding phonetically regular words, and understanding texts through comprehension questions.</p>
+                
+                <h3>Mathematics</h3>
+                <p>Year 1 maths introduces children to numbers up to 100, basic addition and subtraction (up to 20), multiplication and division concepts, shape recognition (2D and 3D), measurement (length, mass, capacity, time, and money), and simple data handling (pictograms, tally charts, and block diagrams). Our quizzes provide targeted practice to strengthen these mathematical foundations.</p>
+                
+                <h3>Science</h3>
+                <p>Year 1 science covers working scientifically, plants, animals including humans, everyday materials, and seasonal changes. Through our quizzes, children can explore these concepts in an engaging way, developing their observation skills and understanding of the natural world around them.</p>
+                
+                <h3>Geography and History</h3>
+                <p>Geography topics include locational knowledge (continents and oceans), place knowledge (UK countries and capitals), human and physical geography (weather patterns), and geographical skills (using maps). History focuses on changes within living memory, significant events beyond living memory, and significant individuals who have changed the world. Our quizzes help children understand their place in the world and develop a sense of chronology.</p>
+                
+                <h3>Creative Subjects</h3>
+                <p>Art quizzes cover drawing, painting, collage, sculpture, printmaking, and art appreciation. Music quizzes include singing, playing instruments, listening and appraising, and composition. Physical Education quizzes focus on athletics, gymnastics, dance, games, and swimming. Computing quizzes develop programming, digital literacy, and IT skills. PSHE quizzes cover health education, relationships, and living in the wider world. Languages quizzes develop listening, speaking, reading, and writing skills in a foreign language.</p>
+                
+                <h3>How to Use These Quizzes Effectively</h3>
+                <ol>
+                    <li><strong>Regular Practice:</strong> Encourage short, daily quiz sessions for consistent learning</li>
+                    <li><strong>Focus on Weak Areas:</strong> Use quiz results to identify topics needing more attention</li>
+                    <li><strong>Make it Fun:</strong> Turn quiz time into a game to keep children engaged</li>
+                    <li><strong>Track Progress:</strong> Monitor improvement over time to build confidence</li>
+                    <li><strong>Combine with Reading:</strong> Pair quizzes with related reading materials for deeper understanding</li>
+                </ol>
+                
+                <p>Our Year 1 quizzes are an excellent resource for parents, teachers, and students looking to reinforce learning in a fun and interactive way. Start exploring today to help your child build a strong educational foundation!</p>
             </section>
         </div>
     </div> <!-- End of main-content -->
@@ -674,5 +1589,28 @@
             <span>FAQ</span>
         </a>
     </nav>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Year 1 Phonics Quizzes | EduResources</title>
-    <meta name="description" content="Free interactive phonics quizzes for Year 1 students. Practice letter sounds, blending, and phonetic patterns with audio pronunciation.">
-    <meta name="keywords" content="Year 1 phonics, KS1 phonics, phonics quizzes, letter sounds, blending practice, phonetic patterns, free phonics games">
+    <title>Year 1 Phonics Activities | EduResources</title>
+    <meta name="description" content="Fun and interactive phonics activities for Year 1 students. Practice letter sounds, blending, segmenting, and sight words with engaging games.">
+    <meta name="keywords" content="Year 1 phonics, phonics games, letter sounds, blending, segmenting, sight words, phonics activities">
     <link rel="canonical" href="https://eduresources.co.uk/quiz-year1-english-phonics.html">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://eduresources.co.uk/quiz-year1-english-phonics.html">
-    <meta property="og:title" content="Year 1 Phonics Quizzes | EduResources">
-    <meta property="og:description" content="Free interactive phonics quizzes for Year 1 students. Practice letter sounds, blending, and phonetic patterns with audio pronunciation.">
-    <meta property="og:image" content="https://eduresources.co.uk/images/og-image-year1-phonics.jpg">
+    <meta property="og:title" content="Year 1 Phonics Activities | EduResources">
+    <meta property="og:description" content="Fun and interactive phonics activities for Year 1 students. Practice letter sounds, blending, segmenting, and sight words with engaging games.">
+    <meta property="og:image" content="https://eduresources.co.uk/images/phonics-og.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://eduresources.co.uk/quiz-year1-english-phonics.html">
-    <meta property="twitter:title" content="Year 1 Phonics Quizzes | EduResources">
-    <meta property="twitter:description" content="Free interactive phonics quizzes for Year 1 students. Practice letter sounds, blending, and phonetic patterns with audio pronunciation.">
-    <meta property="twitter:image" content="https://eduresources.co.uk/images/twitter-card-year1-phonics.jpg">
+    <meta property="twitter:title" content="Year 1 Phonics Activities | EduResources">
+    <meta property="twitter:description" content="Fun and interactive phonics activities for Year 1 students. Practice letter sounds, blending, segmenting, and sight words with engaging games.">
+    <meta property="twitter:image" content="https://eduresources.co.uk/images/phonics-twitter.jpg">
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +38,8 @@
             --primary-color: #2c3e50; /* Dark Blue */
             --secondary-color: #3498db; /* Bright Blue */
             --accent-color: #e74c3c; /* Red */
+            --phonics-color: #27ae60; /* Green for phonics */
+            --phonics-light: #2ecc71; /* Lighter green */
             --bg-color: #f5f7fa; /* Very light background */
             --card-bg: #ffffff; /* White card background */
             --border-color: #e0e6ed; /* Light border */
@@ -53,7 +55,6 @@
             --max-width: 1100px;
             --whatsapp-green: #25D366;
             --quiz-green: #27ae60; /* Green for quiz success/progress */
-            --phonics-purple: #9b59b6; /* Purple for phonics */
         }
 
         * {
@@ -150,7 +151,7 @@
 
         /* --- Hero/Banner Section --- */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--phonics-purple));
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
             color: white;
             text-align: center;
             padding: var(--spacing-lg) var(--spacing-sm);
@@ -210,46 +211,7 @@
             margin-bottom: var(--spacing-xs);
         }
 
-        /* --- Features Section --- */
-        .features-section {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .feature-icon {
-            color: var(--phonics-purple);
-            font-size: 1.5rem;
-            margin-right: var(--spacing-sm);
-            margin-top: 0.2rem;
-        }
-
-        .feature-text h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            color: var(--primary-color);
-        }
-
-        .feature-text p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* --- Phonics Practice Section --- */
+        /* --- Phonics Skills Section --- */
         .phonics-section {
             margin-bottom: var(--spacing-xl);
         }
@@ -269,99 +231,275 @@
             bottom: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--phonics-purple);
+            background-color: var(--phonics-color);
         }
 
-        /* --- Phonics Grid --- */
-        .phonics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: var(--spacing-md);
+        /* --- Skill Header --- */
+        .skill-header {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
         }
 
-        .phonics-card {
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-md);
+            color: white;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .skill-info h3 {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* --- Activities List --- */
+        .activities-list {
+            list-style: none;
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-color);
             overflow: hidden;
-            transition: all var(--transition-speed) ease;
-            text-align: center;
+            margin-bottom: var(--spacing-lg);
         }
 
-        .phonics-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .phonics-header {
+        .activity-item {
+            display: flex;
+            align-items: center;
             padding: var(--spacing-md);
-            background-color: #f8f0fa;
             border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition-speed);
         }
 
-        .phonics-title {
-            font-weight: 700;
-            font-size: 2.5rem;
-            color: var(--phonics-purple);
-            margin: 0;
+        .activity-item:last-child {
+            border-bottom: none;
         }
 
-        .phonics-content {
-            padding: var(--spacing-md);
+        .activity-item:hover {
+            background-color: #f8f9fa;
         }
 
-        .phonics-description {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: var(--spacing-sm);
-            min-height: 60px;
-        }
-
-        .pronunciation-btn {
-            background-color: var(--phonics-purple);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            padding: 0.6rem 1rem;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all var(--transition-speed) ease;
-            width: 100%;
-            margin-bottom: var(--spacing-sm);
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            margin-right: var(--spacing-md);
+            color: var(--phonics-color);
+            font-size: 1rem;
+            flex-shrink: 0;
         }
 
-        .pronunciation-btn:hover {
-            background-color: #8e44ad;
-            transform: translateY(-2px);
+        .activity-info {
+            flex-grow: 1;
         }
 
-        .quiz-link {
-            display: inline-block;
-            background-color: var(--secondary-color);
+        .activity-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .activity-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .activity-link {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
             color: white;
             text-decoration: none;
-            padding: 0.6rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: var(--border-radius);
             font-weight: 500;
             font-size: 0.9rem;
             transition: all var(--transition-speed) ease;
+            white-space: nowrap;
+            margin-left: var(--spacing-md);
+        }
+
+        .activity-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+        }
+
+        /* --- Interactive Demo Section --- */
+        .demo-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .demo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .demo-card {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-card h3 {
+            color: var(--phonics-color);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .demo-image {
+            height: 120px;
+            background-color: #e0f7e9;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-sm);
+            color: var(--phonics-color);
+            font-size: 3rem;
+        }
+
+        .demo-description {
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .demo-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .demo-option {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .demo-option:hover {
+            background-color: var(--phonics-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .demo-btn {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: var(--spacing-md);
+            transition: all var(--transition-speed) ease;
             width: 100%;
         }
 
-        .quiz-link:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
         }
 
-        /* --- Audio Player --- */
-        .audio-player {
-            display: none;
+        .feedback {
+            margin-top: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .correct {
+            background-color: rgba(39, 174, 96, 0.1);
+            color: var(--phonics-color);
+            border: 1px solid var(--phonics-color);
+        }
+
+        .incorrect {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--phonics-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
         }
 
         /* --- Footer --- */
@@ -454,7 +592,7 @@
         }
 
         .nav-item.active {
-            color: var(--secondary-color);
+            color: var(--phonics-color);
         }
 
         .nav-item:hover {
@@ -492,8 +630,20 @@
             .donate-top-btn i {
                 font-size: 0.9rem;
             }
-            .phonics-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            .activity-item {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+            .activity-icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-sm);
+            }
+            .activity-info {
+                margin-bottom: var(--spacing-sm);
+            }
+            .activity-link {
+                margin-left: 0;
             }
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
@@ -501,13 +651,7 @@
         }
 
         @media (max-width: 480px) {
-            .phonics-grid {
-                grid-template-columns: 1fr;
-            }
             .footer-content {
-                grid-template-columns: 1fr;
-            }
-            .features-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -530,153 +674,537 @@
 
         <section class="hero">
             <div class="container">
-                <h1>Year 1 Phonics Quizzes</h1>
-                <p>Practice letter sounds, blending, and phonetic patterns with audio pronunciation</p>
+                <h1>Year 1 Phonics Activities</h1>
+                <p>Fun, interactive games to master phonics skills</p>
             </div>
         </section>
 
         <div class="container">
             <nav class="breadcrumb">
-                <a href="index.html">Home</a> <span> / </span> 
-                <a href="quizzes.html">Quizzes</a> <span> / </span> 
-                <a href="quiz-year1.html">Year 1</a> <span> / </span>
-                <a href="quiz-year1-english.html">English</a> <span> / </span> Phonics
+                <a href="index.html">Home</a> <span> / </span> <a href="quizzes.html">Quizzes</a> <span> / </span> <a href="quiz-year1.html">Year 1</a> <span> / </span> Phonics
             </nav>
         </div>
 
         <div class="container">
             <section class="intro-section">
-                <h2>Year 1 Phonics Practice</h2>
-                <p>Welcome to our interactive phonics quizzes! These activities are designed to help Year 1 students master essential phonics skills including letter sounds, blending, segmenting, and common phonetic patterns. Each quiz includes audio pronunciation to support learning.</p>
-                <p>Click the speaker icon to hear the correct pronunciation before taking each quiz.</p>
-            </section>
-
-            <section class="features-section">
-                <h2>Phonics Learning Features</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-volume-up"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Audio Pronunciation</h3>
-                            <p>Hear correct letter sounds and word pronunciations with our integrated audio player.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-headphones"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Interactive Practice</h3>
-                            <p>Engage with sounds through games and quizzes that reinforce learning.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Repetition</h3>
-                            <p>Listen multiple times to master difficult sounds and patterns.</p>
-                        </div>
-                    </div>
-                </div>
+                <h2>Master Year 1 Phonics Skills</h2>
+                <p>Welcome to our collection of fun and interactive phonics activities designed specifically for Year 1 students! These games help children practice essential phonics skills including letter-sound recognition, blending, segmenting, and tricky words.</p>
+                <p>All activities are aligned with the UK National Curriculum for Year 1 and provide immediate feedback to support effective learning.</p>
             </section>
 
             <section class="phonics-section">
-                <h2>Phonics Practice Areas</h2>
-                <div class="phonics-grid">
-                    <!-- Single Letter Sounds -->
-                    <div class="phonics-card">
-                        <div class="phonics-header">
-                            <h3 class="phonics-title">a-e-i-o-u</h3>
-                        </div>
-                        <div class="phonics-content">
-                            <p class="phonics-description">Practice short vowel sounds and common consonants</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('vowels')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-vowels.html" class="quiz-link">Start Quiz</a>
-                        </div>
+                <h2>Phonics Skills & Activities</h2>
+                
+                <!-- Letter-Sound Recognition -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-font"></i>
                     </div>
-
-                    <!-- Consonant Blends -->
-                    <div class="phonics-card">
-                        <div class="phonics-header">
-                            <h3 class="phonics-title">bl-st-sp</h3>
-                        </div>
-                        <div class="phonics-content">
-                            <p class="phonics-description">Learn initial consonant blends like bl-, st-, sp-</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('blends')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-blends.html" class="quiz-link">Start Quiz</a>
-                        </div>
+                    <div class="skill-info">
+                        <h3>Letter-Sound Recognition</h3>
+                        <p>Students match letters to the correct sound</p>
                     </div>
-
-                    <!-- CVC Words -->
-                    <div class="phonics-card">
-                        <div class="phonics-header">
-                            <h3 class="phonics-title">cat</h3>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-spell-check"></i>
                         </div>
-                        <div class="phonics-content">
-                            <p class="phonics-description">Practice reading simple CVC (consonant-vowel-consonant) words</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('cvc')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-cvc.html" class="quiz-link">Start Quiz</a>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Sound Match Game</h4>
+                            <p class="activity-description">Show a sound ("sh") → student clicks the correct picture (ship, shoe)</p>
                         </div>
+                        <a href="phonics-sound-match.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Audio Match</h4>
+                            <p class="activity-description">Play a sound ("m") → student chooses the right letter</p>
+                        </div>
+                        <a href="phonics-audio-match.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-arrows-alt-h"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Drag & Drop</h4>
+                            <p class="activity-description">Drag letters into boxes to spell "cat" after hearing the word</p>
+                        </div>
+                        <a href="phonics-drag-drop.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Blending (Reading CVC words) -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-arrows-alt-h"></i>
                     </div>
-
-                    <!-- Digraphs -->
-                    <div class="phonics-card">
-                        <div class="phonics-header">
-                            <h3 class="phonics-title">sh-ch-th</h3>
-                        </div>
-                        <div class="phonics-content">
-                            <p class="phonics-description">Master common digraphs that make one sound</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('digraphs')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-digraphs.html" class="quiz-link">Start Quiz</a>
-                        </div>
+                    <div class="skill-info">
+                        <h3>Blending (Reading CVC words)</h3>
+                        <p>Join sounds to read words</p>
                     </div>
-
-                    <!-- Long Vowels -->
-                    <div class="phonics-card">
-                        <div class="phonics-header">
-                            <h3 class="phonics-title">ai-ee-igh</h3>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-sliders-h"></i>
                         </div>
-                        <div class="phonics-content">
-                            <p class="phonics-description">Practice long vowel sounds and common spellings</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('long-vowels')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-longvowels.html" class="quiz-link">Start Quiz</a>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Sound Slider</h4>
+                            <p class="activity-description">Letters appear one by one (c–a–t) → student guesses the word</p>
                         </div>
+                        <a href="phonics-sound-slider.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Which Word?</h4>
+                            <p class="activity-description">Play audio "dog" → show 3 options (dog, dig, dag) → student picks correct</p>
+                        </div>
+                        <a href="phonics-which-word.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Alien Words Game</h4>
+                            <p class="activity-description">Show nonsense words (mip, zot, shog) → student decides if it's real or alien</p>
+                        </div>
+                        <a href="phonics-alien-words.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Segmenting (Spelling words) -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-cut"></i>
                     </div>
-
-                    <!-- Tricky Words -->
-                    <div class="phonics-card">
-                        <div class="phonics-header">
-                            <h3 class="phonics-title">the</h3>
+                    <div class="skill-info">
+                        <h3>Segmenting (Spelling words)</h3>
+                        <p>Break down spoken words into sounds</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-microphone"></i>
                         </div>
-                        <div class="phonics-content">
-                            <p class="phonics-description">Learn high-frequency words that don't follow phonics rules</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('tricky')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-trickywords.html" class="quiz-link">Start Quiz</a>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Listen & Spell</h4>
+                            <p class="activity-description">Audio says "ship" → student drags "sh – i – p" tiles</p>
                         </div>
+                        <a href="phonics-listen-spell.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Fill in Missing Letter</h4>
+                            <p class="activity-description">s _ n (sun)</p>
+                        </div>
+                        <a href="phonics-fill-letter.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-sort"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Build the Word</h4>
+                            <p class="activity-description">Provide jumbled letters → student arranges to form word</p>
+                        </div>
+                        <a href="phonics-build-word.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Consonant Digraphs & Blends -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Consonant Digraphs & Blends</h3>
+                        <p>Recognise 2 letters = 1 sound</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Picture Match</h4>
+                            <p class="activity-description">Show 4 pictures → student picks ones with "ch" sound (chair, chip)</p>
+                        </div>
+                        <a href="phonics-picture-match.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Spot the Sound</h4>
+                            <p class="activity-description">Word list given → student highlights ones with "th"</p>
+                        </div>
+                        <a href="phonics-spot-sound.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Sound Hunt</h4>
+                            <p class="activity-description">Sentence given: "The ship is big." → student clicks the word with "sh"</p>
+                        </div>
+                        <a href="phonics-sound-hunt.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Vowel Digraphs & Trigraphs -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Vowel Digraphs & Trigraphs</h3>
+                        <p>Learn long vowel patterns</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Choose the Right Spelling</h4>
+                            <p class="activity-description">Rain vs. Rane → pick correct</p>
+                        </div>
+                        <a href="phonics-choose-spelling.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Sentence Fill-in</h4>
+                            <p class="activity-description">"I see a tr__." Options: (ee, ea, ie)</p>
+                        </div>
+                        <a href="phonics-sentence-fill.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Phonics Song Quizzes</h4>
+                            <p class="activity-description">Play a rhyme → student fills missing vowel sound</p>
+                        </div>
+                        <a href="phonics-song-quiz.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Split Digraphs (Magic e) -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Split Digraphs (Magic e)</h3>
+                        <p>Spot silent e pattern</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Change the Word</h4>
+                            <p class="activity-description">cap → cape (add "e" to see new word)</p>
+                        </div>
+                        <a href="phonics-change-word.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Word Puzzle</h4>
+                            <p class="activity-description">Match pairs: pin → pine, hop → hope</p>
+                        </div>
+                        <a href="phonics-word-puzzle.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Interactive Story</h4>
+                            <p class="activity-description">Animated story where adding "e" changes meaning</p>
+                        </div>
+                        <a href="phonics-interactive-story.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Alternative Pronunciations -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Alternative Pronunciations</h3>
+                        <p>Same spelling, different sounds</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Choose the Correct Sound</h4>
+                            <p class="activity-description">Word: "cow" → student picks /ow/ not /oa/</p>
+                        </div>
+                        <a href="phonics-choose-sound.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-sort-amount-down"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Sort the Words</h4>
+                            <p class="activity-description">ea words: sea, head → sort into correct groups</p>
+                        </div>
+                        <a href="phonics-sort-words.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Tricky Words (Sight Words) -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Tricky Words (Sight Words)</h3>
+                        <p>Recognise words that don't follow rules</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Flashcard Flip</h4>
+                            <p class="activity-description">Show word → student reads → flip for picture/sentence</p>
+                        </div>
+                        <a href="phonics-flashcard-flip.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Memory Match Game</h4>
+                            <p class="activity-description">Cards with tricky words → student matches pairs</p>
+                        </div>
+                        <a href="phonics-memory-match.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-pen"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Sentence Builder</h4>
+                            <p class="activity-description">"The ___ is red." Options: (dog, come, one)</p>
+                        </div>
+                        <a href="phonics-sentence-builder.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Two-Syllable Words & Longer Reading -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-divide"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Two-Syllable Words & Longer Reading</h3>
+                        <p>Read beyond CVC words</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-frog"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Jumping Frog Game</h4>
+                            <p class="activity-description">Break word into syllables (pic-nic) → frog jumps as student clicks</p>
+                        </div>
+                        <a href="phonics-jumping-frog.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Storytime Quiz</h4>
+                            <p class="activity-description">Short decodable passage → comprehension Qs</p>
+                        </div>
+                        <a href="phonics-storytime-quiz.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+                
+                <!-- Phonics Screening Check Practice -->
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="skill-info">
+                        <h3>Phonics Screening Check Practice</h3>
+                        <p>Prepare for the official test</p>
+                    </div>
+                </div>
+                
+                <ul class="activities-list">
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Real or Alien Word Game</h4>
+                            <p class="activity-description">Show words (blit, rain, snarp, boat) → student clicks "real" or "alien"</p>
+                        </div>
+                        <a href="phonics-real-alien.html" class="activity-link">Start Game</a>
+                    </li>
+                    
+                    <li class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="activity-info">
+                            <h4 class="activity-title">Timed Quiz Challenge</h4>
+                            <p class="activity-description">40 words → student tries to read them before timer ends</p>
+                        </div>
+                        <a href="phonics-timed-quiz.html" class="activity-link">Start Game</a>
+                    </li>
+                </ul>
+            </section>
+            
+            <!-- Interactive Demo Section -->
+            <section class="demo-section">
+                <h2>Try Our Phonics Activities</h2>
+                
+                <div class="demo-container">
+                    <div class="demo-card">
+                        <div class="demo-image">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3>Sound Match Game</h3>
+                        <p class="demo-description">Listen to the sound and choose the matching picture:</p>
+                        <div class="demo-options">
+                            <div class="demo-option" data-answer="correct">Ship</div>
+                            <div class="demo-option" data-answer="incorrect">Shoe</div>
+                            <div class="demo-option" data-answer="incorrect">Fish</div>
+                        </div>
+                        <button class="demo-btn">Play Sound</button>
+                        <div class="feedback" id="feedback1"></div>
+                    </div>
+                    
+                    <div class="demo-card">
+                        <div class="demo-image">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <h3>Blending Practice</h3>
+                        <p class="demo-description">Listen to the sounds and guess the word:</p>
+                        <div style="font-size: 2rem; margin: 1rem 0; text-align: center;">c - a - t</div>
+                        <div class="demo-options">
+                            <div class="demo-option" data-answer="correct">Cat</div>
+                            <div class="demo-option" data-answer="incorrect">Cut</div>
+                            <div class="demo-option" data-answer="incorrect">Bat</div>
+                        </div>
+                        <button class="demo-btn">Check Answer</button>
+                        <div class="feedback" id="feedback2"></div>
                     </div>
                 </div>
             </section>
+            
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Fun Phonics Activities for Year 1 Students</h2>
+                
+                <p>Our Year 1 phonics activities are designed to make learning to read an enjoyable experience for young children. These interactive games align with the UK National Curriculum and focus on developing essential phonics skills that form the foundation of reading and spelling.</p>
+                
+                <h3>Why Phonics Matters in Year 1</h3>
+                <p>Phonics is a method of teaching reading that focuses on the relationship between sounds and their spellings. In Year 1, children build upon the phonics knowledge they gained in Reception and begin to apply these skills more confidently to decode unfamiliar words.</p>
+                
+                <h3>Key Phonics Skills for Year 1</h3>
+                <ul>
+                    <li><strong>Letter-Sound Correspondence:</strong> Recognizing the sounds that individual letters and letter groups make</li>
+                    <li><strong>Blending:</strong> Combining individual sounds to read words (e.g., /c/ /a/ /t/ = cat)</li>
+                    <li><strong>Segmenting:</strong> Breaking words down into individual sounds for spelling</li>
+                    <li><strong>Tricky Words:</strong> Recognizing common words that don't follow regular phonics patterns</li>
+                    <li><strong>Digraphs and Blends:</strong> Understanding when two letters make one sound (e.g., sh, th, ch)</li>
+                </ul>
+                
+                <h3>How Our Phonics Activities Help</h3>
+                <p>Our interactive phonics games provide:</p>
+                <ul>
+                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their answers are correct</li>
+                    <li><strong>Engaging Formats:</strong> Games, puzzles, and interactive challenges keep children motivated</li>
+                    <li><strong>Progressive Difficulty:</strong> Activities start simple and become more challenging</li>
+                    <li><strong>Curriculum-Aligned:</strong> All activities match Year 1 phonics expectations</li>
+                    <li><strong>Multi-Sensory Learning:</strong> Visual, auditory, and kinesthetic elements support different learning styles</li>
+                </ul>
+                
+                <h3>Preparing for the Phonics Screening Check</h3>
+                <p>In Year 1, children take the Phonics Screening Check which assesses their ability to decode both real and pseudo (nonsense) words. Our screening practice activities help children become familiar with the format and build confidence in their phonics skills.</p>
+                
+                <h3>Tips for Parents and Teachers</h3>
+                <ol>
+                    <li><strong>Keep Sessions Short:</strong> 10-15 minutes of focused phonics practice is more effective than longer sessions</li>
+                    <li><strong>Make it Fun:</strong> Use games and rewards to maintain engagement</li>
+                    <li><strong>Practice Regularly:</strong> Consistent daily practice yields better results than infrequent longer sessions</li>
+                    <li><strong>Celebrate Progress:</strong> Acknowledge improvements to build confidence</li>
+                    <li><strong>Combine with Reading:</strong> Apply phonics skills in context through shared reading</li>
+                </ol>
+                
+                <p>Our phonics activities are designed to create a positive learning experience that builds both skills and confidence in young readers. With regular practice using these engaging tools, Year 1 students will develop a strong foundation for lifelong literacy.</p>
+            </section>
         </div>
     </div> <!-- End of main-content -->
-
-    <!-- Hidden Audio Player -->
-    <audio id="audio-player" class="audio-player"></audio>
 
     <footer>
         <div class="container">
@@ -755,56 +1283,78 @@
     </nav>
 
     <script>
-        // Audio pronunciation function
-        function playPronunciation(type) {
-            const audioPlayer = document.getElementById('audio-player');
+        // Demo functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Demo buttons
+            const demoButtons = document.querySelectorAll('.demo-btn');
+            demoButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.demo-card');
+                    const options = card.querySelectorAll('.demo-option');
+                    const feedback = card.querySelector('.feedback');
+                    
+                    // Reset all options
+                    options.forEach(option => {
+                        option.style.backgroundColor = '';
+                        option.style.color = '';
+                        option.style.transform = '';
+                    });
+                    
+                    // For the first demo (Sound Match), simulate playing sound
+                    if (index === 0) {
+                        feedback.textContent = 'Playing sound: /sh/';
+                        feedback.className = 'feedback';
+                        feedback.classList.add('correct');
+                        return;
+                    }
+                    
+                    // For the second demo (Blending Practice), check answer
+                    let selectedOption = null;
+                    options.forEach(option => {
+                        if (option.style.backgroundColor === 'rgb(39, 174, 96)') {
+                            selectedOption = option;
+                        }
+                    });
+                    
+                    if (!selectedOption) {
+                        feedback.textContent = 'Please select an option first';
+                        feedback.className = 'feedback';
+                        feedback.classList.add('incorrect');
+                        return;
+                    }
+                    
+                    if (selectedOption.dataset.answer === 'correct') {
+                        feedback.textContent = 'Correct! Well done!';
+                        feedback.className = 'feedback';
+                        feedback.classList.add('correct');
+                    } else {
+                        feedback.textContent = 'Try again! The correct answer is Cat.';
+                        feedback.className = 'feedback';
+                        feedback.classList.add('incorrect');
+                    }
+                });
+            });
             
-            // In a real implementation, you would set the source to actual audio files
-            // For demonstration, we'll use the Web Speech API
-            if ('speechSynthesis' in window) {
-                let text = "";
-                switch(type) {
-                    case 'vowels':
-                        text = "a, e, i, o, u";
-                        break;
-                    case 'blends':
-                        text = "bl, st, sp";
-                        break;
-                    case 'cvc':
-                        text = "cat, dog, sun";
-                        break;
-                    case 'digraphs':
-                        text = "sh, ch, th";
-                        break;
-                    case 'long-vowels':
-                        text = "ai, ee, igh";
-                        break;
-                    case 'tricky':
-                        text = "the, was, said";
-                        break;
-                    default:
-                        text = "Listen to the pronunciation";
-                }
-                
-                const speech = new SpeechSynthesisUtterance(text);
-                speech.rate = 0.8;
-                speech.pitch = 1;
-                window.speechSynthesis.speak(speech);
-                
-                // Visual feedback
-                const button = event.target;
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-volume-up"></i> Playing...';
-                button.disabled = true;
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                }, 2000);
-            } else {
-                alert("Text-to-speech is not supported in your browser. Please try Chrome or Firefox.");
-            }
-        }
+            // Option selection
+            const demoOptions = document.querySelectorAll('.demo-option');
+            demoOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Reset all options in this card
+                    const card = this.closest('.demo-card');
+                    const options = card.querySelectorAll('.demo-option');
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '';
+                        opt.style.color = '';
+                        opt.style.transform = '';
+                    });
+                    
+                    // Highlight selected option
+                    this.style.backgroundColor = '#27ae60';
+                    this.style.color = 'white';
+                    this.style.transform = 'scale(1.05)';
+                });
+            });
+        });
     </script>
 </body>
 </html>

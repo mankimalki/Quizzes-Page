@@ -3,46 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vowel Sounds Quiz - Year 1 Phonics | EduResources</title>
-    <meta name="description" content="Interactive vowel sounds quiz for Year 1 students. Practice short a, e, i, o, u sounds with audio pronunciation and fun activities.">
-    <meta name="keywords" content="Year 1 vowel sounds, phonics vowels, short vowels quiz, a e i o u sounds, KS1 phonics, interactive phonics">
-    <link rel="canonical" href="https://eduresources.co.uk/quiz-year1-english-phonics-vowels.html">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://eduresources.co.uk/quiz-year1-english-phonics-vowels.html">
-    <meta property="og:title" content="Vowel Sounds Quiz - Year 1 Phonics | EduResources">
-    <meta property="og:description" content="Interactive vowel sounds quiz for Year 1 students. Practice short a, e, i, o, u sounds with audio pronunciation and fun activities.">
-    <meta property="og:image" content="https://eduresources.co.uk/images/og-image-year1-vowels.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://eduresources.co.uk/quiz-year1-english-phonics-vowels.html">
-    <meta property="twitter:title" content="Vowel Sounds Quiz - Year 1 Phonics | EduResources">
-    <meta property="twitter:description" content="Interactive vowel sounds quiz for Year 1 students. Practice short a, e, i, o, u sounds with audio pronunciation and fun activities.">
-    <meta property="twitter:image" content="https://eduresources.co.uk/images/twitter-card-year1-vowels.jpg">
-
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Load Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Preload Font Awesome CSS -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-
+    <title>Vowel & Consonant Quiz | EduResources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2c3e50; /* Dark Blue */
-            --secondary-color: #3498db; /* Bright Blue */
-            --accent-color: #e74c3c; /* Red */
-            --bg-color: #f5f7fa; /* Very light background */
-            --card-bg: #ffffff; /* White card background */
-            --border-color: #e0e6ed; /* Light border */
-            --text-color: #212529; /* Main text color */
-            --text-light: #6c757d; /* Lighter text */
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --border-color: #e0e6ed;
+            --text-color: #212529;
+            --text-light: #6c757d;
             --transition-speed: 0.3s;
             --border-radius: 6px;
             --spacing-xs: 0.4rem;
@@ -51,16 +23,16 @@
             --spacing-lg: 1.6rem;
             --spacing-xl: 2.2rem;
             --max-width: 1100px;
-            --whatsapp-green: #25D366;
-            --quiz-green: #27ae60; /* Green for quiz success/progress */
-            --phonics-purple: #9b59b6; /* Purple for phonics */
-            --vowel-red: #e74c3c; /* Red for vowels */
+            --quiz-green: #27ae60;
+            --vowel-red: #e74c3c;
+            --consonant-blue: #3498db;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         html, body {
@@ -68,18 +40,16 @@
         }
 
         body {
-            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
             background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- Main Content Area --- */
         .main-content {
             flex: 1 0 auto;
-            padding-bottom: 70px; /* Space for bottom nav */
+            padding-bottom: 70px;
         }
 
         .container {
@@ -89,7 +59,7 @@
             padding: 0 var(--spacing-sm);
         }
 
-        /* --- Header --- */
+        /* Header */
         header {
             background-color: var(--card-bg);
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
@@ -121,7 +91,6 @@
             flex-shrink: 0;
         }
 
-        /* --- New Donation Button --- */
         .donate-top-btn {
             background-color: var(--accent-color);
             color: white;
@@ -145,13 +114,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .donate-top-btn i {
-            font-size: 1rem;
-        }
-
-        /* --- Hero/Banner Section --- */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--vowel-red));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-align: center;
             padding: var(--spacing-lg) var(--spacing-sm);
@@ -172,7 +137,7 @@
             margin: 0 auto;
         }
 
-        /* --- Breadcrumb Navigation --- */
+        /* Breadcrumb */
         .breadcrumb {
             margin-bottom: var(--spacing-md);
             font-size: 0.85rem;
@@ -191,228 +156,321 @@
             color: var(--text-light);
         }
 
-        /* --- Intro Section --- */
-        .intro-section {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            font-size: 0.95rem;
-        }
-
-        .intro-section h2 {
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-xs);
-            font-size: 1.3rem;
-        }
-
-        .intro-section p {
-            margin-bottom: var(--spacing-xs);
-        }
-
-        /* --- Learning Objectives --- */
-        .objectives-section {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .objectives-section h2 {
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-sm);
-            font-size: 1.3rem;
-        }
-
-        .objectives-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-sm);
-        }
-
-        .objective-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .objective-icon {
-            color: var(--vowel-red);
-            font-size: 1.2rem;
-            margin-right: var(--spacing-sm);
-            margin-top: 0.2rem;
-        }
-
-        .objective-text {
-            font-size: 0.95rem;
-        }
-
-        /* --- Vowel Sounds Section --- */
-        .vowels-section {
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .vowels-section h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-sm);
-            position: relative;
-            padding-bottom: var(--spacing-xs);
-        }
-
-        .vowels-section h2:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--vowel-red);
-        }
-
-        /* --- Vowel Grid --- */
-        .vowels-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: var(--spacing-md);
-        }
-
-        .vowel-card {
+        /* Game Container */
+        .game-container {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-color);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
             overflow: hidden;
-            transition: all var(--transition-speed) ease;
+        }
+
+        .game-header {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .game-header h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.5rem;
+        }
+
+        .game-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Game Area */
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        /* Stats */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stat-box {
             text-align: center;
         }
 
-        .vowel-card:hover {
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Progress */
+        .progress-container {
+            width: 100%;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            height: 12px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        /* Question */
+        .question-container {
+            background-color: #e3f2fd;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .letter-display {
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: white;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--secondary-color);
+        }
+
+        /* Options */
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .option {
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--border-color);
+        }
+
+        .option:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .vowel-header {
-            padding: var(--spacing-md);
-            background-color: #fdf2f2;
-            border-bottom: 1px solid var(--border-color);
+        .option.vowel {
+            border-color: var(--vowel-red);
         }
 
-        .vowel-title {
-            font-weight: 700;
-            font-size: 3rem;
+        .option.consonant {
+            border-color: var(--consonant-blue);
+        }
+
+        .option.selected {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        .option.correct {
+            background-color: #d4edda;
+            border-color: var(--quiz-green);
+        }
+
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: var(--accent-color);
+        }
+
+        .option i {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .option.vowel i {
             color: var(--vowel-red);
-            margin: 0;
-            text-transform: uppercase;
         }
 
-        .vowel-sound {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-top: 0.3rem;
+        .option.consonant i {
+            color: var(--consonant-blue);
         }
 
-        .vowel-content {
-            padding: var(--spacing-md);
+        .option-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-xs);
         }
 
-        .vowel-description {
+        .option-description {
             font-size: 0.9rem;
             color: var(--text-light);
-            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Feedback */
+        .feedback {
             min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
         }
 
-        .pronunciation-btn {
-            background-color: var(--vowel-red);
-            color: white;
-            border: none;
-            border-radius: var(--border-radius);
-            padding: 0.6rem 1rem;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all var(--transition-speed) ease;
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            justify-content: center;
             width: 100%;
-            margin-bottom: var(--spacing-sm);
+            max-width: 500px;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            border: none;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
+            font-size: 1rem;
         }
 
-        .pronunciation-btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-2px);
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
-        .quiz-link {
-            display: inline-block;
+        .btn-sound {
             background-color: var(--secondary-color);
             color: white;
-            text-decoration: none;
-            padding: 0.6rem 1rem;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all var(--transition-speed) ease;
-            width: 100%;
         }
 
-        .quiz-link:hover {
+        .btn-sound:hover:not(:disabled) {
             background-color: #2980b9;
             transform: translateY(-2px);
         }
 
-        /* --- Practice Section --- */
-        .practice-section {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        .btn-next {
+            background-color: var(--quiz-green);
+            color: white;
         }
 
-        .practice-section h2 {
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-sm);
-            font-size: 1.3rem;
+        .btn-next:hover:not(:disabled) {
+            background-color: #219653;
+            transform: translateY(-2px);
         }
 
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--spacing-sm);
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 1000;
         }
 
-        .example-item {
-            background-color: #f8f9fa;
-            border-radius: var(--border-radius);
-            padding: var(--spacing-sm);
-            text-align: center;
-            border: 1px solid var(--border-color);
+        /* Character */
+        .character {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            font-size: 4rem;
+            z-index: 10;
+            animation: float 3s ease-in-out infinite;
+            color: var(--secondary-color);
         }
 
-        .example-word {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.3rem;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
-        .example-sound {
-            font-size: 0.9rem;
-            color: var(--text-light);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .options-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .option {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
         }
 
-        /* --- Audio Player --- */
-        .audio-player {
-            display: none;
-        }
-
-        /* --- Footer --- */
+        /* Footer */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -458,8 +516,7 @@
         }
 
         .footer-column a i {
-             /* Ensure no icons appear in footer links */
-             display: none !important; /* Override any potential icon styles */
+            display: none !important;
         }
 
         .copyright {
@@ -470,7 +527,7 @@
             opacity: 0.85;
         }
 
-        /* --- Bottom Navigation --- */
+        /* Bottom Navigation */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -508,61 +565,10 @@
         .nav-item:hover {
             color: var(--primary-color);
         }
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            .hero p {
-                font-size: 0.95rem;
-            }
-            .vowels-section h2, .intro-section h2 {
-                font-size: 1.3rem;
-            }
-            .header-container {
-                 padding: var(--spacing-sm) var(--spacing-sm);
-                 flex-wrap: wrap;
-            }
-            .logo {
-                font-size: 1.25rem;
-                flex-shrink: 0;
-                margin-right: auto;
-            }
-            .logo i {
-                font-size: 1.4rem;
-                margin-right: var(--spacing-xs);
-            }
-            .donate-top-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-            }
-            .donate-top-btn i {
-                font-size: 0.9rem;
-            }
-            .vowels-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            }
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .vowels-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            .objectives-list {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Main content area to push footer down -->
+    <!-- Main content area -->
     <div class="main-content">
         <header>
             <div class="container header-container">
@@ -578,8 +584,8 @@
 
         <section class="hero">
             <div class="container">
-                <h1>Year 1 Vowel Sounds Quiz</h1>
-                <p>Practice short a, e, i, o, u sounds with audio pronunciation</p>
+                <h1>Vowel & Consonant Adventure</h1>
+                <p>Help the friendly monster learn letters! Is it a vowel or consonant?</p>
             </div>
         </section>
 
@@ -589,158 +595,73 @@
                 <a href="quizzes.html">Quizzes</a> <span> / </span> 
                 <a href="quiz-year1.html">Year 1</a> <span> / </span>
                 <a href="quiz-year1-english.html">English</a> <span> / </span>
-                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span> Vowels
+                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span> Vowels & Consonants
             </nav>
         </div>
 
         <div class="container">
-            <section class="intro-section">
-                <h2>Short Vowel Sounds Practice</h2>
-                <p>Welcome to our interactive vowel sounds quiz! This activity will help you practice the five short vowel sounds in English: a, e, i, o, u. Each vowel has its own unique sound that you'll hear in many words.</p>
-                <p>Click the speaker icon to hear the correct pronunciation before taking each quiz.</p>
-            </section>
-
-            <section class="objectives-section">
-                <h2>Learning Objectives</h2>
-                <div class="objectives-list">
-                    <div class="objective-item">
-                        <div class="objective-icon">
-                            <i class="fas fa-bullseye"></i>
+            <div class="game-container">
+                <div class="game-header">
+                    <h2>Letter Sound Explorer</h2>
+                    <p>Click on the correct category for each letter. Listen to the sound if you need help!</p>
+                </div>
+                
+                <div class="game-area">
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <div class="stat-value" id="score">0</div>
+                            <div class="stat-label">Score</div>
                         </div>
-                        <div class="objective-text">
-                            Recognize and produce the short vowel sounds: a, e, i, o, u
+                        <div class="stat-box">
+                            <div class="stat-value" id="question-count">1/10</div>
+                            <div class="stat-label">Questions</div>
                         </div>
                     </div>
-                    <div class="objective-item">
-                        <div class="objective-icon">
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <div class="question-text">What type of letter is this?</div>
+                        <div class="letter-display" id="letter">A</div>
+                    </div>
+                    
+                    <div class="feedback" id="feedback"></div>
+                    
+                    <div class="options-container">
+                        <div class="option vowel" id="vowel-option">
+                            <i class="fas fa-heart"></i>
+                            <div class="option-title">Vowel</div>
+                            <div class="option-description">A, E, I, O, U</div>
+                        </div>
+                        <div class="option consonant" id="consonant-option">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="option-title">Consonant</div>
+                            <div class="option-description">All other letters</div>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button class="btn btn-sound" id="sound-btn">
                             <i class="fas fa-volume-up"></i>
-                        </div>
-                        <div class="objective-text">
-                            Distinguish between different vowel sounds when listening
-                        </div>
-                    </div>
-                    <div class="objective-item">
-                        <div class="objective-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <div class="objective-text">
-                            Identify vowel sounds in simple CVC (consonant-vowel-consonant) words
-                        </div>
+                            <span>Hear Sound</span>
+                        </button>
+                        <button class="btn btn-next" id="next-btn" disabled>
+                            <span>Next Letter</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
-            </section>
-
-            <section class="vowels-section">
-                <h2>Short Vowel Sounds</h2>
-                <div class="vowels-grid">
-                    <!-- Short A -->
-                    <div class="vowel-card">
-                        <div class="vowel-header">
-                            <h3 class="vowel-title">a</h3>
-                            <div class="vowel-sound">/æ/ as in cat</div>
-                        </div>
-                        <div class="vowel-content">
-                            <p class="vowel-description">The short a sound as in apple, bat, and hat</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('a')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-vowels-a.html" class="quiz-link">Practice /æ/ Sound</a>
-                        </div>
-                    </div>
-
-                    <!-- Short E -->
-                    <div class="vowel-card">
-                        <div class="vowel-header">
-                            <h3 class="vowel-title">e</h3>
-                            <div class="vowel-sound">/e/ as in bed</div>
-                        </div>
-                        <div class="vowel-content">
-                            <p class="vowel-description">The short e sound as in elephant, bed, and pen</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('e')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-vowels-e.html" class="quiz-link">Practice /e/ Sound</a>
-                        </div>
-                    </div>
-
-                    <!-- Short I -->
-                    <div class="vowel-card">
-                        <div class="vowel-header">
-                            <h3 class="vowel-title">i</h3>
-                            <div class="vowel-sound">/ɪ/ as in sit</div>
-                        </div>
-                        <div class="vowel-content">
-                            <p class="vowel-description">The short i sound as in igloo, sit, and pig</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('i')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-vowels-i.html" class="quiz-link">Practice /ɪ/ Sound</a>
-                        </div>
-                    </div>
-
-                    <!-- Short O -->
-                    <div class="vowel-card">
-                        <div class="vowel-header">
-                            <h3 class="vowel-title">o</h3>
-                            <div class="vowel-sound">/ɒ/ as in hot</div>
-                        </div>
-                        <div class="vowel-content">
-                            <p class="vowel-description">The short o sound as in octopus, hot, and dog</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('o')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-vowels-o.html" class="quiz-link">Practice /ɒ/ Sound</a>
-                        </div>
-                    </div>
-
-                    <!-- Short U -->
-                    <div class="vowel-card">
-                        <div class="vowel-header">
-                            <h3 class="vowel-title">u</h3>
-                            <div class="vowel-sound">/ʌ/ as in sun</div>
-                        </div>
-                        <div class="vowel-content">
-                            <p class="vowel-description">The short u sound as in umbrella, sun, and cup</p>
-                            <button class="pronunciation-btn" onclick="playPronunciation('u')">
-                                <i class="fas fa-volume-up"></i> Listen
-                            </button>
-                            <a href="quiz-year1-phonics-vowels-u.html" class="quiz-link">Practice /ʌ/ Sound</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="practice-section">
-                <h2>Practice Examples</h2>
-                <div class="examples-grid">
-                    <div class="example-item">
-                        <div class="example-word">cat</div>
-                        <div class="example-sound">/k/ <strong>/æ/</strong> /t/</div>
-                    </div>
-                    <div class="example-item">
-                        <div class="example-word">bed</div>
-                        <div class="example-sound">/b/ <strong>/e/</strong> /d/</div>
-                    </div>
-                    <div class="example-item">
-                        <div class="example-word">sit</div>
-                        <div class="example-sound">/s/ <strong>/ɪ/</strong> /t/</div>
-                    </div>
-                    <div class="example-item">
-                        <div class="example-word">hot</div>
-                        <div class="example-sound">/h/ <strong>/ɒ/</strong> /t/</div>
-                    </div>
-                    <div class="example-item">
-                        <div class="example-word">sun</div>
-                        <div class="example-sound">/s/ <strong>/ʌ/</strong> /n/</div>
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
-    </div> <!-- End of main-content -->
+        
+        <div class="character">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
 
-    <!-- Hidden Audio Player -->
-    <audio id="audio-player" class="audio-player"></audio>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -772,7 +693,7 @@
                         <li><a href="faq.html">FAQ</a></li>
                     </ul>
                 </div>
-                 <div class="footer-column">
+                <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
@@ -782,7 +703,7 @@
                         <li><a href="donate.html">Donate</a></li>
                     </ul>
                 </div>
-                 <div class="footer-column">
+                <div class="footer-column">
                     <h4>Connect</h4>
                     <ul>
                         <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
@@ -818,60 +739,261 @@
     </nav>
 
     <script>
-        // Audio pronunciation function
-        function playPronunciation(vowel) {
-            const audioPlayer = document.getElementById('audio-player');
+        // Game data
+        const letters = [
+            { char: 'A', type: 'vowel' },
+            { char: 'B', type: 'consonant' },
+            { char: 'C', type: 'consonant' },
+            { char: 'D', type: 'consonant' },
+            { char: 'E', type: 'vowel' },
+            { char: 'F', type: 'consonant' },
+            { char: 'G', type: 'consonant' },
+            { char: 'H', type: 'consonant' },
+            { char: 'I', type: 'vowel' },
+            { char: 'J', type: 'consonant' },
+            { char: 'K', type: 'consonant' },
+            { char: 'L', type: 'consonant' },
+            { char: 'M', type: 'consonant' },
+            { char: 'N', type: 'consonant' },
+            { char: 'O', type: 'vowel' },
+            { char: 'P', type: 'consonant' },
+            { char: 'Q', type: 'consonant' },
+            { char: 'R', type: 'consonant' },
+            { char: 'S', type: 'consonant' },
+            { char: 'T', type: 'consonant' },
+            { char: 'U', type: 'vowel' },
+            { char: 'V', type: 'consonant' },
+            { char: 'W', type: 'consonant' },
+            { char: 'X', type: 'consonant' },
+            { char: 'Y', type: 'consonant' },
+            { char: 'Z', type: 'consonant' }
+        ];
+        
+        // Game state
+        let currentQuestion = 0;
+        let score = 0;
+        let selectedLetters = [];
+        let gameActive = true;
+        let selectedOption = null;
+        
+        // DOM elements
+        const letterDisplay = document.getElementById('letter');
+        const vowelOption = document.getElementById('vowel-option');
+        const consonantOption = document.getElementById('consonant-option');
+        const feedback = document.getElementById('feedback');
+        const scoreDisplay = document.getElementById('score');
+        const questionCount = document.getElementById('question-count');
+        const progressBar = document.getElementById('progress-bar');
+        const soundBtn = document.getElementById('sound-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        // Initialize game
+        function initGame() {
+            // Select 10 random letters for the quiz
+            selectedLetters = [];
+            const shuffled = [...letters].sort(() => 0.5 - Math.random());
+            selectedLetters = shuffled.slice(0, 10);
             
-            // In a real implementation, you would set the source to actual audio files
-            // For demonstration, we'll use the Web Speech API
-            if ('speechSynthesis' in window) {
-                let text = "";
-                let description = "";
+            currentQuestion = 0;
+            score = 0;
+            updateScore();
+            showQuestion();
+        }
+        
+        // Show current question
+        function showQuestion() {
+            if (currentQuestion >= selectedLetters.length) {
+                endGame();
+                return;
+            }
+            
+            const letter = selectedLetters[currentQuestion];
+            letterDisplay.textContent = letter.char;
+            feedback.textContent = '';
+            feedback.className = 'feedback';
+            
+            // Update progress
+            questionCount.textContent = `${currentQuestion + 1}/${selectedLetters.length}`;
+            progressBar.style.width = `${((currentQuestion) / selectedLetters.length) * 100}%`;
+            
+            // Reset button states
+            vowelOption.classList.remove('selected', 'correct', 'incorrect');
+            consonantOption.classList.remove('selected', 'correct', 'incorrect');
+            vowelOption.style.opacity = '1';
+            consonantOption.style.opacity = '1';
+            
+            // Reset selected option
+            selectedOption = null;
+            
+            // Enable options
+            vowelOption.onclick = () => selectOption('vowel');
+            consonantOption.onclick = () => selectOption('consonant');
+            
+            // Disable next button
+            nextBtn.disabled = true;
+        }
+        
+        // Select option
+        function selectOption(selectedType) {
+            if (!gameActive) return;
+            
+            // Remove previous selection
+            vowelOption.classList.remove('selected');
+            consonantOption.classList.remove('selected');
+            
+            // Add selection to clicked option
+            if (selectedType === 'vowel') {
+                vowelOption.classList.add('selected');
+            } else {
+                consonantOption.classList.add('selected');
+            }
+            
+            selectedOption = selectedType;
+            
+            // Enable next button
+            nextBtn.disabled = false;
+        }
+        
+        // Check answer
+        function checkAnswer() {
+            if (!gameActive || !selectedOption) return;
+            
+            gameActive = false;
+            const correctType = selectedLetters[currentQuestion].type;
+            const isCorrect = selectedOption === correctType;
+            
+            // Disable options
+            vowelOption.onclick = null;
+            consonantOption.onclick = null;
+            
+            // Show result
+            if (isCorrect) {
+                feedback.textContent = 'Correct! Great job!';
+                feedback.className = 'feedback correct';
+                score++;
+                updateScore();
+                createConfetti();
                 
-                switch(vowel) {
-                    case 'a':
-                        text = "æ";
-                        description = "short a as in cat";
-                        break;
-                    case 'e':
-                        text = "e";
-                        description = "short e as in bed";
-                        break;
-                    case 'i':
-                        text = "ɪ";
-                        description = "short i as in sit";
-                        break;
-                    case 'o':
-                        text = "ɒ";
-                        description = "short o as in hot";
-                        break;
-                    case 'u':
-                        text = "ʌ";
-                        description = "short u as in sun";
-                        break;
-                    default:
-                        text = vowel;
+                // Highlight correct answer
+                if (correctType === 'vowel') {
+                    vowelOption.classList.add('correct');
+                } else {
+                    consonantOption.classList.add('correct');
+                }
+            } else {
+                feedback.textContent = `Oops! It's a ${correctType.charAt(0).toUpperCase() + correctType.slice(1)}!`;
+                feedback.className = 'feedback incorrect';
+                
+                // Highlight selected (incorrect) and correct answers
+                if (selectedOption === 'vowel') {
+                    vowelOption.classList.add('incorrect');
+                } else {
+                    consonantOption.classList.add('incorrect');
                 }
                 
-                const speech = new SpeechSynthesisUtterance(text);
-                speech.rate = 0.8;
-                speech.pitch = 1;
-                window.speechSynthesis.speak(speech);
-                
-                // Visual feedback
-                const button = event.target;
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-volume-up"></i> Playing...';
-                button.disabled = true;
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                }, 1500);
-            } else {
-                alert("Text-to-speech is not supported in your browser. Please try Chrome or Firefox.");
+                if (correctType === 'vowel') {
+                    vowelOption.classList.add('correct');
+                } else {
+                    consonantOption.classList.add('correct');
+                }
             }
         }
+        
+        // Play letter sound
+        function playLetterSound() {
+            if ('speechSynthesis' in window) {
+                const letter = selectedLetters[currentQuestion].char;
+                const utterance = new SpeechSynthesisUtterance(letter);
+                utterance.rate = 0.8;
+                utterance.pitch = 1.2;
+                window.speechSynthesis.speak(utterance);
+                
+                // Visual feedback
+                soundBtn.innerHTML = '<i class="fas fa-volume-up"></i> Playing...';
+                setTimeout(() => {
+                    soundBtn.innerHTML = '<i class="fas fa-volume-up"></i> Hear Sound';
+                }, 1000);
+            } else {
+                alert("Text-to-speech is not supported in your browser.");
+            }
+        }
+        
+        // Move to next question
+        function nextQuestion() {
+            if (gameActive && selectedOption) {
+                checkAnswer();
+                setTimeout(() => {
+                    currentQuestion++;
+                    gameActive = true;
+                    showQuestion();
+                }, 1500);
+            } else if (!gameActive) {
+                currentQuestion++;
+                gameActive = true;
+                showQuestion();
+            }
+        }
+        
+        // Update score display
+        function updateScore() {
+            scoreDisplay.textContent = score;
+        }
+        
+        // End game
+        function endGame() {
+            letterDisplay.textContent = '🏆';
+            feedback.textContent = `Quiz Complete! You scored ${score} out of ${selectedLetters.length}!`;
+            feedback.className = 'feedback correct';
+            questionCount.textContent = 'Complete!';
+            progressBar.style.width = '100%';
+            
+            // Hide options
+            document.querySelector('.options-container').style.display = 'none';
+            
+            // Update next button to restart
+            nextBtn.innerHTML = '<i class="fas fa-redo"></i> Play Again';
+            nextBtn.onclick = () => {
+                document.querySelector('.options-container').style.display = 'flex';
+                initGame();
+            };
+            nextBtn.disabled = false;
+        }
+        
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6'];
+            const container = document.body;
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                container.appendChild(confetti);
+                
+                // Animate confetti
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                });
+                
+                // Remove confetti after animation
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Event listeners
+        soundBtn.addEventListener('click', playLetterSound);
+        nextBtn.addEventListener('click', nextQuestion);
+        
+        // Start the game
+        initGame();
     </script>
 </body>
 </html>

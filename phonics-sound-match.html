@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Match Game | Year 1 Phonics</title>
+    <meta name="description" content="Fun phonics game for Year 1 students. Match sounds to pictures to practice letter sounds.">
+    <meta name="keywords" content="phonics, sound match, letter sounds, Year 1, phonics game, education">
+    <link rel="canonical" href="https://eduresources.co.uk/phonics-sound-match.html">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --phonics-color: #27ae60; /* Green for phonics */
+            --phonics-light: #2ecc71; /* Lighter green */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Game Section --- */
+        .game-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .game-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--phonics-color);
+        }
+
+        /* --- Instructions --- */
+        .instructions {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--phonics-color);
+        }
+
+        .instructions h3 {
+            color: var(--phonics-color);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Game Area --- */
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .sound-display {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+            position: relative;
+            animation: pulse 2s infinite;
+            font-family: 'Open Sans', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .sound-display:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        @media (max-width: 600px) {
+            .options-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .option-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all var(--transition-speed);
+            cursor: pointer;
+            border: 3px solid transparent;
+            text-align: center;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .option-card.correct {
+            border-color: var(--quiz-green);
+            background: rgba(39, 174, 96, 0.1);
+        }
+
+        .option-card.incorrect {
+            border-color: var(--accent-color);
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        .option-image {
+            height: 150px;
+            background-color: #e0f7e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--phonics-color);
+        }
+
+        .option-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .option-label {
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .feedback {
+            text-align: center;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .feedback.correct {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+            border: 1px solid var(--quiz-green);
+        }
+
+        .feedback.incorrect {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #e9ecef;
+            border-radius: 50px;
+            height: 20px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--phonics-light), var(--phonics-color));
+            border-radius: 50px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--phonics-color);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Loading State --- */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--phonics-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--phonics-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             /* Ensure no icons appear in footer links */
+             display: none !important; /* Override any potential icon styles */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--phonics-color);
+        }
+
+        .nav-item.active i {
+            color: var(--phonics-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item:hover i {
+            color: var(--primary-color);
+        }
+
+        /* --- Sound Controls --- */
+        .sound-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .sound-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .sound-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-btn.active {
+            background: var(--phonics-light);
+            color: white;
+            border-color: var(--phonics-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .sound-display {
+                padding: 1rem 2rem;
+                font-size: 2rem;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .option-image {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .stat-box {
+                margin: 0.2rem 0;
+            }
+        }
+
+        /* Animation for correct answers */
+        @keyframes celebrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .celebrate {
+            animation: celebrate 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down -->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Sound Match Game</h1>
+                <p>Match sounds to pictures to practice letter sounds</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span> / </span> 
+                <a href="quizzes.html">Quizzes</a> <span> / </span> 
+                <a href="quiz-year1.html">Year 1</a> <span> / </span> 
+                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span> 
+                Sound Match
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="game-section">
+                <h2>Sound Match Game</h2>
+                
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                    <p>This game helps you practice matching letter sounds to pictures. Follow these steps:</p>
+                    <ul>
+                        <li>Click the sound display to hear the sound</li>
+                        <li>Look at the pictures and choose the one that matches the sound</li>
+                        <li>Click on your answer to check if it's correct</li>
+                        <li>Press "Next" to try another sound</li>
+                    </ul>
+                    <div class="sound-controls">
+                        <button class="sound-btn" id="bgm-toggle">
+                            <i class="fas fa-volume-up"></i> Background Music: On
+                        </button>
+                        <button class="sound-btn" id="fx-toggle">
+                            <i class="fas fa-bell"></i> Sound Effects: On
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="attempts">0</div>
+                        <div class="stat-label">Attempts</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="streak">0</div>
+                        <div class="stat-label">Streak</div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                
+                <div class="game-area">
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Loading game...</p>
+                    </div>
+                    
+                    <div class="sound-display" id="sound-display" style="display: none;">
+                        /sh/
+                    </div>
+                    
+                    <div class="options-container" id="options-container" style="display: none;">
+                        <!-- Options will be loaded here -->
+                    </div>
+                    
+                    <div class="feedback" id="feedback">
+                        Loading game...
+                    </div>
+                    
+                    <div class="controls">
+                        <button class="btn btn-primary" id="next-btn" style="display: none;">
+                            <i class="fas fa-arrow-right"></i> Next Sound
+                        </button>
+                        <button class="btn btn-secondary" id="restart-btn">
+                            <i class="fas fa-redo"></i> Restart Game
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Phonics Sound Matching for Year 1 Students</h2>
+                
+                <p>The Sound Match Game is an interactive phonics activity designed specifically for Year 1 students to practice recognizing and matching letter sounds with corresponding pictures. This game helps children develop essential phonemic awareness skills that form the foundation of reading and spelling.</p>
+                
+                <h3>Why Sound Matching is Important</h3>
+                <p>Sound matching activities are crucial for developing phonemic awareness - the ability to hear, identify, and manipulate individual sounds (phonemes) in spoken words. In Year 1, children continue to build upon the phonics knowledge they acquired in Reception, focusing on:</p>
+                <ul>
+                    <li>Recognizing the sounds that individual letters make</li>
+                    <li>Matching sounds to pictures for better retention</li>
+                    <li>Developing auditory discrimination skills</li>
+                    <li>Building confidence in phonics knowledge</li>
+                </ul>
+                
+                <h3>How This Game Supports Learning</h3>
+                <p>Our Sound Match Game provides:</p>
+                <ul>
+                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their answers are correct</li>
+                    <li><strong>Engaging Visuals:</strong> High-quality images help reinforce learning</li>
+                    <li><strong>Progressive Difficulty:</strong> Challenges increase as children improve</li>
+                    <li><strong>Performance Tracking:</strong> Stats help monitor progress and improvement</li>
+                    <li><strong>Curriculum-Aligned:</strong> Activities match Year 1 phonics expectations</li>
+                </ul>
+                
+                <h3>Tips for Parents and Teachers</h3>
+                <ol>
+                    <li><strong>Encourage Repetition:</strong> Have children repeat the sound after hearing it</li>
+                    <li><strong>Discuss Pictures:</strong> Talk about the images to reinforce vocabulary</li>
+                    <li><strong>Celebrate Success:</strong> Acknowledge correct answers to build confidence</li>
+                    <li><strong>Practice Regularly:</strong> Short, frequent sessions are more effective</li>
+                    <li><strong>Combine with Reading:</strong> Apply phonics skills in context through reading</li>
+                </ol>
+                
+                <p>This phonics game is part of our comprehensive Year 1 phonics program designed to make learning enjoyable and effective. With regular practice using these engaging tools, children will develop a strong foundation for lifelong literacy.</p>
+            </section>
+        </div>
+    </div> <!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+
+    <!-- Audio elements for sounds -->
+    <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" preload="auto"></audio>
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-kidding-around-9.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Game elements
+            const soundDisplay = document.getElementById('sound-display');
+            const nextBtn = document.getElementById('next-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const feedback = document.getElementById('feedback');
+            const optionsContainer = document.getElementById('options-container');
+            const scoreElement = document.getElementById('score');
+            const attemptsElement = document.getElementById('attempts');
+            const streakElement = document.getElementById('streak');
+            const progressBar = document.getElementById('progress-bar');
+            const loadingElement = document.getElementById('loading');
+            const bgmToggle = document.getElementById('bgm-toggle');
+            const fxToggle = document.getElementById('fx-toggle');
+            
+            // Audio elements
+            const correctSound = document.getElementById('correct-sound');
+            const incorrectSound = document.getElementById('incorrect-sound');
+            const bgMusic = document.getElementById('bg-music');
+            
+            // Game state
+            let score = 0;
+            let attempts = 0;
+            let streak = 0;
+            let currentSound = 0;
+            let sounds = [];
+            let answered = false;
+            let bgmEnabled = true;
+            let fxEnabled = true;
+            
+            // Sample JSON data with hosted images
+            const sampleSounds = [
+                {
+                    "sound": "/sh/",
+                    "options": [
+                        {"name": "Ship", "image": "https://i.postimg.cc/XYv9qpDf/Ship.png"},
+                        {"name": "Shoe", "image": "https://i.postimg.cc/Gp8YP6R9/Shoe.png"},
+                        {"name": "Fish", "image": "https://i.postimg.cc/WhKZLwG2/Fish.png"},
+                        {"name": "Sheep", "image": "https://i.postimg.cc/NjPmHBWW/sheep.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/ch/",
+                    "options": [
+                        {"name": "Chair", "image": "https://i.postimg.cc/T2m0vLZh/Chair.png"},
+                        {"name": "Cake", "image": "https://i.postimg.cc/jDpyN428/Cake.png"},
+                        {"name": "Chicken", "image": "https://i.postimg.cc/MTfDTvHP/Car.png"},
+                        {"name": "Cheese", "image": "https://i.postimg.cc/SKvdkWSY/Cat.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/th/",
+                    "options": [
+                        {"name": "Thumb", "image": "https://i.postimg.cc/YS5Fd82R/Thumb.png"},
+                        {"name": "Three", "image": "https://i.postimg.cc/y853NnRK/Tree.png"},
+                        {"name": "Mouth", "image": "https://i.postimg.cc/LsL58SRk/Tiger.png"},
+                        {"name": "Feather", "image": "https://i.postimg.cc/h4bm09k8/Train.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/ai/",
+                    "options": [
+                        {"name": "Rain", "image": "https://i.postimg.cc/9frP8rdm/Rain.png"},
+                        {"name": "Train", "image": "https://i.postimg.cc/h4bm09k8/Train.png"},
+                        {"name": "Snail", "image": "https://i.postimg.cc/TPFVZf0r/Rat.png"},
+                        {"name": "Paint", "image": "https://i.postimg.cc/MK5yzytZ/Red.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/ee/",
+                    "options": [
+                        {"name": "Feet", "image": "https://i.postimg.cc/zXrjzDr7/Feet.png"},
+                        {"name": "Sheep", "image": "https://i.postimg.cc/NjPmHBWW/sheep.png"},
+                        {"name": "Tree", "image": "https://i.postimg.cc/y853NnRK/Tree.png"},
+                        {"name": "Bee", "image": "https://i.postimg.cc/FsNytPyn/Run.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/a/",
+                    "options": [
+                        {"name": "Cat", "image": "https://i.postimg.cc/SKvdkWSY/Cat.png"},
+                        {"name": "Fat", "image": "https://i.postimg.cc/Hc2MqG2K/Fat.png"},
+                        {"name": "Rat", "image": "https://i.postimg.cc/TPFVZf0r/Rat.png"},
+                        {"name": "Bat", "image": "https://i.postimg.cc/ydRmKtp2/Fox.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/i/",
+                    "options": [
+                        {"name": "Fish", "image": "https://i.postimg.cc/WhKZLwG2/Fish.png"},
+                        {"name": "Ship", "image": "https://i.postimg.cc/XYv9qpDf/Ship.png"},
+                        {"name": "Pig", "image": "https://i.postimg.cc/T1Xr30Z1/Fun.png"},
+                        {"name": "Lid", "image": "https://i.postimg.cc/MTfDTvHP/Car.png"}
+                    ],
+                    "correct": 0
+                },
+                {
+                    "sound": "/o/",
+                    "options": [
+                        {"name": "Fox", "image": "https://i.postimg.cc/ydRmKtp2/Fox.png"},
+                        {"name": "Dog", "image": "https://i.postimg.cc/T1Xr30Z1/Fun.png"},
+                        {"name": "Frog", "image": "https://i.postimg.cc/Hc2MqG2K/Fat.png"},
+                        {"name": "Box", "image": "https://i.postimg.cc/jDpyN428/Cake.png"}
+                    ],
+                    "correct": 0
+                }
+            ];
+            
+            // Initialize game
+            function initGame() {
+                sounds = sampleSounds;
+                
+                // Hide loading and show game elements
+                setTimeout(() => {
+                    loadingElement.style.display = 'none';
+                    soundDisplay.style.display = 'block';
+                    optionsContainer.style.display = 'grid';
+                    nextBtn.style.display = 'flex';
+                    
+                    updateStats();
+                    loadSound();
+                    updateProgress();
+                    
+                    // Start background music if enabled
+                    if (bgmEnabled) {
+                        bgMusic.play().catch(e => console.log("Autoplay prevented: ", e));
+                    }
+                }, 1000);
+            }
+            
+            // Load current sound
+            function loadSound() {
+                soundDisplay.textContent = sounds[currentSound].sound;
+                feedback.textContent = 'Click the sound to hear it!';
+                feedback.className = 'feedback';
+                answered = false;
+                
+                // Clear previous options
+                optionsContainer.innerHTML = '';
+                
+                // Create new options
+                sounds[currentSound].options.forEach((option, index) => {
+                    const optionCard = document.createElement('div');
+                    optionCard.className = 'option-card';
+                    optionCard.dataset.index = index;
+                    
+                    const optionImage = document.createElement('div');
+                    optionImage.className = 'option-image';
+                    
+                    // Create image element
+                    const img = document.createElement('img');
+                    img.src = option.image;
+                    img.alt = option.name;
+                    // Add error handling for missing images
+                    img.onerror = function() {
+                        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBmN2U5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMyN2FlNjAiPkltYWdlPC90ZXh0Pjx0ZXh0IHg9IjUwJSIgeT0iNjUlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMjdhZTYwIj5ub3QgZm91bmQ8L3RleHQ+PC9zdmc+';
+                        this.alt = 'Image not found: ' + option.name;
+                    };
+                    optionImage.appendChild(img);
+                    
+                    const optionLabel = document.createElement('div');
+                    optionLabel.className = 'option-label';
+                    optionLabel.textContent = option.name;
+                    
+                    optionCard.appendChild(optionImage);
+                    optionCard.appendChild(optionLabel);
+                    
+                    // Add click event
+                    optionCard.addEventListener('click', handleOptionClick);
+                    
+                    optionsContainer.appendChild(optionCard);
+                });
+            }
+            
+            // Handle option selection
+            function handleOptionClick(event) {
+                if (answered) return;
+                
+                const card = event.currentTarget;
+                const selectedIndex = parseInt(card.dataset.index);
+                const isCorrect = selectedIndex === sounds[currentSound].correct;
+                
+                attempts++;
+                answered = true;
+                
+                if (isCorrect) {
+                    score++;
+                    streak++;
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback correct';
+                    card.classList.add('correct');
+                    
+                    // Play correct sound if enabled
+                    if (fxEnabled) {
+                        correctSound.currentTime = 0;
+                        correctSound.play().catch(e => console.log("Sound play prevented: ", e));
+                    }
+                    
+                    // Celebration animation
+                    card.classList.add('celebrate');
+                    setTimeout(() => card.classList.remove('celebrate'), 500);
+                } else {
+                    streak = 0;
+                    feedback.textContent = 'Oops! Try again.';
+                    feedback.className = 'feedback incorrect';
+                    card.classList.add('incorrect');
+                    
+                    // Play incorrect sound if enabled
+                    if (fxEnabled) {
+                        incorrectSound.currentTime = 0;
+                        incorrectSound.play().catch(e => console.log("Sound play prevented: ", e));
+                    }
+                    
+                    // Highlight correct answer
+                    const correctCard = document.querySelector(`.option-card[data-index="${sounds[currentSound].correct}"]`);
+                    if (correctCard) {
+                        correctCard.classList.add('correct');
+                    }
+                }
+                
+                updateStats();
+            }
+            
+            // Next sound
+            nextBtn.addEventListener('click', function() {
+                currentSound = (currentSound + 1) % sounds.length;
+                loadSound();
+                updateProgress();
+            });
+            
+            // Restart game
+            restartBtn.addEventListener('click', function() {
+                score = 0;
+                attempts = 0;
+                streak = 0;
+                currentSound = 0;
+                updateStats();
+                loadSound();
+                updateProgress();
+                feedback.textContent = 'Game restarted!';
+                feedback.className = 'feedback';
+            });
+            
+            // Toggle background music
+            bgmToggle.addEventListener('click', function() {
+                bgmEnabled = !bgmEnabled;
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Play prevented: ", e));
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: On';
+                    bgmToggle.classList.add('active');
+                } else {
+                    bgMusic.pause();
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-mute"></i> Background Music: Off';
+                    bgmToggle.classList.remove('active');
+                }
+            });
+            
+            // Toggle sound effects
+            fxToggle.addEventListener('click', function() {
+                fxEnabled = !fxEnabled;
+                if (fxEnabled) {
+                    fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
+                    fxToggle.classList.add('active');
+                } else {
+                    fxToggle.innerHTML = '<i class="fas fa-bell-slash"></i> Sound Effects: Off';
+                    fxToggle.classList.remove('active');
+                }
+            });
+            
+            // Play sound when clicking the sound display
+            soundDisplay.addEventListener('click', function() {
+                // In a real implementation, this would play an actual sound
+                // For demo purposes, we'll just show the feedback
+                feedback.textContent = `Playing sound: ${sounds[currentSound].sound}`;
+                feedback.className = 'feedback';
+                
+                // Add a simple visual effect
+                soundDisplay.style.animation = 'none';
+                setTimeout(() => {
+                    soundDisplay.style.animation = 'pulse 2s infinite';
+                }, 10);
+            });
+            
+            // Update stats
+            function updateStats() {
+                scoreElement.textContent = score;
+                attemptsElement.textContent = attempts;
+                streakElement.textContent = streak;
+            }
+            
+            // Update progress bar
+            function updateProgress() {
+                const progress = ((currentSound + 1) / sounds.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Initialize the game
+            initGame();
+        });
+    </script>
+</body>
+</html>
