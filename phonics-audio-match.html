@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 1 Phonics Game: Match Sounds to Letters | EduResources</title>
+    <meta name="description" content="Interactive Year 1 phonics game. Listen to letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...) and match them to the correct letter. Practice phonics for reading.">
+    <meta name="keywords" content="year 1 phonics, phonics game, match sound to letter, letter sounds, digraphs, sh ch th, ai ee oo, phonics practice, reading games, educational game, kids learning">
+    <meta name="author" content="EduResources">
+    <link rel="canonical" href="https://eduresources.co.uk/phonics-sound-letter-match.html">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Year 1 Phonics Game: Match Sounds to Letters | EduResources">
+    <meta property="og:description" content="Interactive Year 1 phonics game. Listen to letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...) and match them to the correct letter. Practice phonics for reading.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduresources.co.uk/phonics-sound-letter-match.html">
+    <meta property="og:image" content="https://placehold.co/600x400/27ae60/FFFFFF?text=Listen+%26+Match"> <!-- Placeholder image -->
+    <meta property="og:site_name" content="EduResources">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Year 1 Phonics Game: Match Sounds to Letters | EduResources">
+    <meta name="twitter:description" content="Interactive Year 1 phonics game. Listen to letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...) and match them to the correct letter. Practice phonics for reading.">
+    <meta name="twitter:image" content="https://placehold.co/600x400/27ae60/FFFFFF?text=Listen+%26+Match">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ResponsiveVoice TTS Library -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --phonics-color: #27ae60; /* Green for phonics */
+            --phonics-light: #2ecc71; /* Lighter green */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Game Section --- */
+        .game-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .game-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--phonics-color);
+        }
+
+        /* --- Instructions --- */
+        .instructions {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--phonics-color);
+        }
+
+        .instructions h3 {
+            color: var(--phonics-color);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Game Area --- */
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        /* --- Sound Display Area --- */
+        .sound-display-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .sound-icon {
+            font-size: 4rem;
+            color: var(--phonics-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .sound-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        /* --- Options Container for Letters --- */
+        .letter-options-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns for letters */
+            gap: var(--spacing-sm);
+            width: 100%;
+            max-width: 500px;
+            margin-top: var(--spacing-md);
+        }
+
+        .letter-option-btn {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1.2rem;
+            font-size: 1.8rem; /* Larger font for letters */
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            aspect-ratio: 1; /* Make buttons square */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+        }
+
+         .letter-option-btn:disabled {
+             pointer-events: none;
+             opacity: 0.7;
+         }
+
+        .letter-option-btn:hover {
+            background-color: #f8f9fa;
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .letter-option-btn.correct {
+            background-color: rgba(39, 174, 96, 0.15);
+            border-color: var(--quiz-green);
+            color: var(--quiz-green);
+        }
+
+        .letter-option-btn.incorrect {
+            background-color: rgba(231, 76, 60, 0.15);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .controls {
+            display: none; /* Hidden as progression is automatic and no restart button in main area */
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .feedback {
+            text-align: center;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .feedback.correct {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+            border: 1px solid var(--quiz-green);
+        }
+
+        .feedback.incorrect {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .progress-container {
+            width: 100%;
+            background: #e9ecef;
+            border-radius: 50px;
+            height: 20px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--phonics-light), var(--phonics-color));
+            border-radius: 50px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--phonics-color);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Loading State --- */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--phonics-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Results Screen --- */
+        .results-screen {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: var(--spacing-lg) auto;
+            display: none;
+        }
+
+        .results-screen h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-stats {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-message {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn-restart-results {
+             margin-top: var(--spacing-md);
+             padding: 0.8rem 1.5rem;
+             background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+             color: white;
+             border: none;
+             border-radius: var(--border-radius);
+             font-weight: 600;
+             cursor: pointer;
+             transition: all var(--transition-speed);
+             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-restart-results:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--phonics-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             display: none !important;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--phonics-color);
+        }
+
+        .nav-item.active i {
+            color: var(--phonics-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item:hover i {
+            color: var(--primary-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .letter-options-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+                max-width: 350px;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .stat-box {
+                margin: 0.2rem 0;
+            }
+            .letter-options-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+                max-width: 280px;
+            }
+            .letter-option-btn {
+                padding: 1rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation for correct answers */
+        @keyframes celebrate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .celebrate {
+            animation: celebrate 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down -->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Year 1 Phonics: Sound to Letter Match</h1>
+                <p>Interactive game to practice matching letter sounds to letters and digraphs</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span> / </span>
+                <a href="quizzes.html">Quizzes</a> <span> / </span>
+                <a href="quiz-year1.html">Year 1</a> <span> / </span>
+                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span>
+                Sound Letter Match
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="game-section">
+                <h2>Sound to Letter Match Game</h2>
+
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                    <p>This game helps Year 1 students practice matching letter sounds to the correct letters or digraphs. Follow these steps:</p>
+                    <ul>
+                        <li>Listen carefully to the sound played automatically</li>
+                        <li>Click on the letter or digraph that makes that sound</li>
+                        <li>The game moves to the next sound automatically!</li>
+                        <li>There is no background music or extra sound effects in this game.</li>
+                    </ul>
+                    <!-- Sound controls removed as per request -->
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="attempts">0</div>
+                        <div class="stat-label">Attempts</div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="game-area">
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Loading phonics game...</p>
+                    </div>
+
+                    <div class="sound-display-area" id="sound-display-area" style="display: none;">
+                        <i class="fas fa-volume-up sound-icon"></i>
+                        <div class="sound-text">Listen to the sound...</div>
+                    </div>
+
+                    <div class="letter-options-container" id="letter-options-container" style="display: none;">
+                        <!-- Letter options will be loaded here -->
+                    </div>
+
+                    <div class="feedback" id="feedback">
+                        Loading game...
+                    </div>
+
+                    <div class="controls">
+                        <!-- Controls hidden as progression is automatic -->
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="results-screen" id="results-screen">
+                    <h2>Quiz Completed!</h2>
+                    <div class="results-stats">
+                        Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
+                    </div>
+                    <div class="results-message" id="results-message">
+                        <!-- Message will be inserted by JS -->
+                    </div>
+                    <button class="btn-restart-results" id="restart-results-btn">
+                        <i class="fas fa-redo"></i> Play Again
+                    </button>
+                </div>
+            </section>
+
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Reinforce Year 1 Phonics: Sound to Letter Matching Activity</h2>
+
+                <p>Our <strong>Year 1 Phonics Sound to Letter Match Game</strong> is a focused tool for children aged 5-6, designed to strengthen the crucial link between auditory phonics sounds and their written representations. This activity challenges young learners to identify the correct letter or digraph based solely on the sound they hear, enhancing their decoding skills essential for reading fluency.</p>
+
+                <h3>The Importance of Sound-to-Letter Recognition in Year 1</h3>
+                <p>In Year 1, solidifying the connection between sounds (phonemes) and letters/graphemes (the letters that represent them) is vital. This game specifically targets:</p>
+                <ul>
+                    <li><strong>Phoneme-Grapheme Correspondence:</strong> Reinforcing which letters or letter combinations produce specific sounds (e.g., /b/ for 'b', /sh/ for 'sh').</li>
+                    <li><strong>Auditory Discrimination:</strong> Improving the ability to distinguish between similar sounds (e.g., /b/ vs. /d/, /ai/ vs. /ee/).</li>
+                    <li><strong>Rapid Automaticity:</strong> Building speed and accuracy in recognizing sounds and their corresponding letters, leading to effortless reading.</li>
+                    <li><strong>Confidence Building:</strong> Providing a structured way to practice and gain confidence in phonics knowledge.</li>
+                </ul>
+                <p>By focusing purely on the auditory input without visual cues (other than the letters themselves), this game strengthens the foundational skill of translating spoken sounds into written symbols.</p>
+
+                <h3>How This Sound Matching Game Aids Learning</h3>
+                <p>This game streamlines the learning process with key features:</p>
+                <ul>
+                    <li><strong>Direct Sound Focus:</strong> Eliminates distractions by playing the target phonics sound clearly and automatically.</li>
+                    <li><strong>Immediate Visual Feedback:</strong> Shows whether the chosen letter is correct, reinforcing learning instantly.</li>
+                    <li><strong>Automatic Progression:</strong> Keeps the pace brisk and engaging, maintaining focus.</li>
+                    <li><strong>Comprehensive Coverage:</strong> Includes a range of single letter sounds (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z) and common digraphs (sh, ch, th, ai, ee, oo, ar, or, ur).</li>
+                    <li><strong>Skill Reinforcement:</strong> Serves as an excellent follow-up or alternative to picture-sound matching, focusing purely on the sound-letter relationship.</li>
+                </ul>
+
+                <h3>Key Phonics Sounds and Letters Practiced</h3>
+                <p>This activity reinforces recognition for a wide variety of phonics elements:</p>
+                <ul>
+                    <li><strong>Single Letter Sounds:</strong> a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z (representing their most common sounds).</li>
+                    <li><strong>Consonant Digraphs:</strong> sh, ch, th, ph.</li>
+                    <li><strong>Vowel Digraphs/Trigraphs:</strong> ai, ee, igh, oa, oo, ar, or, ur, ow.</li>
+                </ul>
+
+                <h3>Tips for Parents and Teachers Using This Activity</h3>
+                <ol>
+                    <li><strong>Minimize Distractions:</strong> Ensure the child is in a quiet environment to hear the sounds clearly.</li>
+                    <li><strong>Encourage Verbalization:</strong> If a child selects incorrectly, gently guide them to say the sound again and think about which letter makes it.</li>
+                    <li><strong>Review Mistakes:</strong> After the game, briefly revisit any sounds the child found challenging.</li>
+                    <li><strong>Combine Activities:</strong> Use this sound-to-letter game alongside the picture-to-sound game for well-rounded phonics practice.</li>
+                    <li><strong>Make it Fun:</strong> Celebrate successes and encourage persistence. The automatic nature makes it feel fast-paced and game-like.</li>
+                </ol>
+
+                <p>This sound-to-letter matching activity is a valuable part of our Year 1 English resources, helping children internalize the sounds of letters and letter groups. Consistent practice with this focused tool will significantly boost phonics automaticity, a critical component for becoming a confident and fluent reader.</p>
+            </section>
+        </div>
+    </div> <!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Game elements
+            const soundDisplayArea = document.getElementById('sound-display-area');
+            const letterOptionsContainer = document.getElementById('letter-options-container');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+            const attemptsElement = document.getElementById('attempts');
+            const progressBar = document.getElementById('progress-bar');
+            const loadingElement = document.getElementById('loading');
+            const resultsScreen = document.getElementById('results-screen');
+            const finalScoreElement = document.getElementById('final-score');
+            const totalQuestionsElement = document.getElementById('total-questions');
+            const resultsMessage = document.getElementById('results-message');
+            const restartResultsBtn = document.getElementById('restart-results-btn');
+
+            // Game state
+            let score = 0;
+            let attempts = 0;
+            let currentQuestion = 0;
+            let questions = [];
+            let answered = false;
+            let soundPlayed = false; // Flag to ensure sound plays only once per question
+
+            // Sample data: Sounds with multiple letter options
+            const sampleQuestions = [
+                { sound: "/a/", options: ["a", "e", "i", "o"], correct: "a" },
+                { sound: "/b/", options: ["b", "d", "p", "q"], correct: "b" },
+                { sound: "/k/", options: ["c", "k", "ck", "ch"], correct: "k" }, // Focusing on /k/ sound
+                { sound: "/d/", options: ["d", "b", "p", "t"], correct: "d" },
+                { sound: "/e/", options: ["e", "a", "i", "o"], correct: "e" },
+                { sound: "/f/", options: ["f", "ph", "gh", "v"], correct: "f" },
+                { sound: "/g/", options: ["g", "j", "ge", "dge"], correct: "g" },
+                { sound: "/h/", options: ["h", "ch", "wh", "sh"], correct: "h" },
+                { sound: "/i/", options: ["i", "e", "y", "ie"], correct: "i" },
+                { sound: "/j/", options: ["j", "g", "ge", "dj"], correct: "j" },
+                { sound: "/l/", options: ["l", "ll", "le", "el"], correct: "l" },
+                { sound: "/m/", options: ["m", "mm", "mb", "lm"], correct: "m" },
+                { sound: "/n/", options: ["n", "nn", "kn", "gn"], correct: "n" },
+                { sound: "/o/", options: ["o", "a", "u", "oo"], correct: "o" },
+                { sound: "/p/", options: ["p", "b", "pp", "ph"], correct: "p" },
+                { sound: "/r/", options: ["r", "rr", "wr", "rh"], correct: "r" },
+                { sound: "/s/", options: ["s", "ss", "c", "sc"], correct: "s" },
+                { sound: "/t/", options: ["t", "tt", "th", "ed"], correct: "t" },
+                { sound: "/u/", options: ["u", "o", "ou", "ew"], correct: "u" },
+                { sound: "/v/", options: ["v", "f", "ph", "ve"], correct: "v" },
+                { sound: "/w/", options: ["w", "wh", "u", "o"], correct: "w" },
+                { sound: "/ks/", options: ["x", "ks", "cks", "cs"], correct: "x" },
+                { sound: "/y/", options: ["y", "i", "igh", "ie"], correct: "y" },
+                { sound: "/z/", options: ["z", "zz", "s", "ze"], correct: "z" },
+                // Digraphs
+                { sound: "/sh/", options: ["sh", "ch", "s", "ci"], correct: "sh" },
+                { sound: "/ch/", options: ["ch", "tch", "sh", "c"], correct: "ch" },
+                { sound: "/th/", options: ["th", "ph", "ch", "t"], correct: "th" }, // Voiceless 'th'
+                { sound: "/ai/", options: ["ai", "ay", "a_e", "ei"], correct: "ai" },
+                { sound: "/ee/", options: ["ee", "ea", "e", "ie"], correct: "ee" },
+                { sound: "/oo/", options: ["oo", "u", "ou", "ue"], correct: "oo" }, // Short 'oo'
+                { sound: "/ar/", options: ["ar", "are", "ear", "er"], correct: "ar" },
+                { sound: "/or/", options: ["or", "ore", "oar", "our"], correct: "or" },
+                { sound: "/ur/", options: ["ur", "er", "ir", "or"], correct: "ur" }
+            ];
+
+            // --- Helper Functions ---
+
+            // Function to shuffle an array (Fisher-Yates Shuffle)
+            function shuffleArray(array) {
+                let shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            // Initialize game
+            function initGame() {
+                questions = shuffleArray(sampleQuestions); // Shuffle the entire question set
+                score = 0;
+                attempts = 0;
+                currentQuestion = 0;
+                answered = false;
+                soundPlayed = false;
+
+                resultsScreen.style.display = 'none';
+                loadingElement.style.display = 'block';
+                soundDisplayArea.style.display = 'none';
+                letterOptionsContainer.style.display = 'none';
+                feedback.textContent = 'Loading game...';
+                feedback.className = 'feedback';
+
+                setTimeout(() => {
+                    loadingElement.style.display = 'none';
+                    soundDisplayArea.style.display = 'flex';
+                    letterOptionsContainer.style.display = 'grid';
+
+                    updateStats();
+                    loadQuestion();
+                    updateProgress();
+                }, 1000);
+            }
+
+            // Load current question (play sound and show letter options)
+            function loadQuestion() {
+                if (currentQuestion >= questions.length) {
+                    showResults();
+                    return;
+                }
+
+                const currentQuestionData = questions[currentQuestion];
+                // Update display text
+                soundDisplayArea.querySelector('.sound-text').textContent = "Playing sound...";
+                feedback.textContent = 'Listen carefully!';
+                feedback.className = 'feedback';
+                answered = false;
+                soundPlayed = false; // Reset flag for new question
+
+                // Re-enable buttons
+                const allButtons = letterOptionsContainer.querySelectorAll('.letter-option-btn');
+                allButtons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('correct', 'incorrect');
+                });
+
+                // Clear previous options
+                letterOptionsContainer.innerHTML = '';
+
+                // Shuffle the letter options for this question
+                const shuffledOptions = shuffleArray(currentQuestionData.options);
+
+                // Create new letter options buttons from the shuffled array
+                shuffledOptions.forEach((letterOption, index) => {
+                    const optionBtn = document.createElement('button');
+                    optionBtn.className = 'letter-option-btn';
+                    optionBtn.dataset.letter = letterOption;
+                    optionBtn.textContent = letterOption;
+                    optionBtn.disabled = false;
+
+                    optionBtn.addEventListener('click', handleLetterOptionClick);
+
+                    letterOptionsContainer.appendChild(optionBtn);
+                });
+
+                // Play the sound automatically after a brief moment to let options appear
+                setTimeout(() => {
+                    playCurrentSound();
+                }, 500);
+            }
+
+            // Play the sound for the current question using TTS
+            function playCurrentSound() {
+                if (soundPlayed || currentQuestion >= questions.length) return; // Prevent re-playing or playing after game ends
+
+                const currentQuestionData = questions[currentQuestion];
+                const soundToPlay = currentQuestionData.sound;
+
+                if (typeof responsiveVoice !== 'undefined') {
+                    // Speak the sound spelling clearly
+                    responsiveVoice.speak(soundToPlay, "UK English Female", {
+                        rate: 0.85, // Slightly slower
+                        pitch: 1,
+                        onstart: () => {
+                            soundDisplayArea.querySelector('.sound-text').textContent = `Playing: ${soundToPlay}`;
+                        },
+                        onend: () => {
+                            // Optional: Update UI when sound finishes if needed
+                            // soundDisplayArea.querySelector('.sound-text').textContent = "Sound finished. Choose the letter!";
+                        }
+                    });
+                    soundPlayed = true; // Mark sound as played
+                } else {
+                    console.error("ResponsiveVoice library not loaded.");
+                    feedback.textContent = "Error: Text-to-speech not available.";
+                    feedback.className = 'feedback incorrect';
+                    soundPlayed = true; // Prevent repeated errors
+                }
+            }
+
+            // Handle letter option selection
+            function handleLetterOptionClick(event) {
+                if (answered || !soundPlayed) return; // Prevent answering before sound plays or after answering
+
+                const button = event.currentTarget;
+                const selectedLetter = button.dataset.letter;
+                const currentQuestionData = questions[currentQuestion];
+                const isCorrect = selectedLetter === currentQuestionData.correct;
+
+                attempts++;
+                answered = true;
+
+                // Disable all buttons immediately after an answer
+                const allButtons = letterOptionsContainer.querySelectorAll('.letter-option-btn');
+                allButtons.forEach(btn => btn.disabled = true);
+
+                if (isCorrect) {
+                    score++;
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback correct';
+                    button.classList.add('correct');
+                    button.classList.add('celebrate');
+                    setTimeout(() => button.classList.remove('celebrate'), 500);
+
+                } else {
+                    feedback.textContent = `Oops! The correct letter is '${currentQuestionData.correct}'.`;
+                    feedback.className = 'feedback incorrect';
+                    button.classList.add('incorrect');
+
+                    // Highlight correct answer button
+                    const correctButton = document.querySelector(`.letter-option-btn[data-letter="${currentQuestionData.correct}"]`);
+                    if (correctButton) {
+                        correctButton.classList.add('correct');
+                    }
+                }
+
+                updateStats();
+
+                // Automatically move to the next question after a delay
+                setTimeout(() => {
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        showResults();
+                    }
+                }, 1500); // 1.5 second delay
+            }
+
+            // Show results screen
+            function showResults() {
+                soundDisplayArea.style.display = 'none';
+                letterOptionsContainer.style.display = 'none';
+                feedback.style.display = 'none';
+
+                resultsScreen.style.display = 'block';
+                finalScoreElement.textContent = score;
+                totalQuestionsElement.textContent = questions.length;
+
+                let message = "";
+                const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+                if (percentage >= 80) {
+                    message = "Fantastic listening skills! You're mastering phonics!";
+                } else if (percentage >= 60) {
+                    message = "Great job! Keep practicing to get even better at recognizing sounds!";
+                } else if (percentage >= 40) {
+                    message = "Good effort! A bit more practice will help you become a sound superstar.";
+                } else {
+                    message = "Nice try! Review the sounds and try again. You're learning!";
+                }
+                resultsMessage.textContent = message;
+
+                progressBar.style.width = `100%`;
+            }
+
+            // Restart game from results screen
+            restartResultsBtn.addEventListener('click', function() {
+                feedback.style.display = 'flex';
+                initGame();
+            });
+
+            // Update stats
+            function updateStats() {
+                scoreElement.textContent = score;
+                attemptsElement.textContent = attempts;
+            }
+
+            // Update progress bar
+            function updateProgress() {
+                if (questions.length > 0) {
+                    const progress = ((currentQuestion + 1) / questions.length) * 100;
+                    progressBar.style.width = `${progress}%`;
+                } else {
+                    progressBar.style.width = '0%';
+                }
+            }
+
+            // Initialize the game on page load
+            initGame();
+        });
+    </script>
+</body>
+</html>
