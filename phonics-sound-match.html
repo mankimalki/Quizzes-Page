@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Match Game | Year 1 Phonics</title>
-    <meta name="description" content="Fun phonics game for Year 1 students. Match sounds to pictures to practice letter sounds.">
-    <meta name="keywords" content="phonics, sound match, letter sounds, Year 1, phonics game, education">
-    <link rel="canonical" href="https://eduresources.co.uk/phonics-sound-match.html">
-    
+    <!-- Primary SEO Meta Tags -->
+    <title>Year 1 Phonics Game: Match Pictures to Sounds | EduResources</title>
+    <meta name="description" content="Interactive Year 1 phonics game. Match pictures to initial letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...). Practice phonics for reading.">
+    <meta name="keywords" content="year 1 phonics, phonics game, match picture to sound, initial sounds, letter sounds, digraphs, sh ch th, ai ee oo, phonics practice, reading games, educational game, kids learning">
+    <meta name="author" content="EduResources">
+    <link rel="canonical" href="https://eduresources.co.uk/phonics-picture-sound-match.html">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Year 1 Phonics Game: Match Pictures to Sounds | EduResources">
+    <meta property="og:description" content="Interactive Year 1 phonics game. Match pictures to initial letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...). Practice phonics for reading.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduresources.co.uk/phonics-picture-sound-match.html">
+    <meta property="og:image" content="https://i.postimg.cc/XYv9qpDf/Ship.png"> <!-- Use a representative image -->
+    <meta property="og:site_name" content="EduResources">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Year 1 Phonics Game: Match Pictures to Sounds | EduResources">
+    <meta name="twitter:description" content="Interactive Year 1 phonics game. Match pictures to initial letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...). Practice phonics for reading.">
+    <meta name="twitter:image" content="https://i.postimg.cc/XYv9qpDf/Ship.png">
+
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Load Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
     <style>
         :root {
             --primary-color: #2c3e50; /* Dark Blue */
@@ -40,6 +55,32 @@
             --max-width: 1100px;
             --whatsapp-green: #25D366;
             --quiz-green: #27ae60; /* Green for quiz success/progress */
+            /* Image container background colors derived from image URLs */
+            --img-bg-ship: #3498db;
+            --img-bg-chair: #e74c3c;
+            --img-bg-thumb: #27ae60;
+            --img-bg-rain: #f39c12;
+            --img-bg-feet: #9b59b6;
+            --img-bg-cat: #1abc9c;
+            --img-bg-fish: #d35400;
+            --img-bg-fox: #34495e;
+            --img-bg-shoe: #16a085;
+            --img-bg-sheep: #8e44ad;
+            --img-bg-cake: #2c3e50;
+            --img-bg-car: #f1c40f;
+            --img-bg-fat: #e67e22;
+            --img-bg-fun: #1abc9c;
+            --img-bg-rat: #3498db;
+            --img-bg-red: #e74c3c;
+            --img-bg-run: #9b59b6;
+            --img-bg-tiger: #27ae60;
+            --img-bg-train: #f39c12;
+            --img-bg-tree: #16a085;
+            --img-bg-ball: #34495e; /* Placeholder */
+            --img-bg-dog: #2c3e50; /* Placeholder */
+            --img-bg-egg: #f1c40f; /* Placeholder */
+            --img-bg-hat: #e67e22; /* Placeholder */
+            --img-bg-igloo: #1abc9c; /* Placeholder */
         }
 
         * {
@@ -241,93 +282,76 @@
             gap: var(--spacing-lg);
         }
 
-        .sound-display {
-            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
-            color: white;
-            padding: 1.5rem 3rem;
-            border-radius: 50px;
-            font-size: 2.5rem;
-            font-weight: 700;
-            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
-            position: relative;
-            animation: pulse 2s infinite;
-            font-family: 'Open Sans', sans-serif;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .sound-display:active {
-            transform: scale(0.98);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .options-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-md);
-            width: 100%;
-            max-width: 600px;
-        }
-
-        @media (max-width: 600px) {
-            .options-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .option-card {
-            background: var(--card-bg);
+        /* --- New Image Display --- */
+        .image-display {
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: all var(--transition-speed);
-            cursor: pointer;
-            border: 3px solid transparent;
-            text-align: center;
-        }
-
-        .option-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .option-card.correct {
-            border-color: var(--quiz-green);
-            background: rgba(39, 174, 96, 0.1);
-        }
-
-        .option-card.incorrect {
-            border-color: var(--accent-color);
-            background: rgba(231, 76, 60, 0.1);
-        }
-
-        .option-image {
-            height: 150px;
-            background-color: #e0f7e9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 200px; /* Fixed width */
+            height: 150px; /* Fixed height */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: var(--phonics-color);
+            /* Default background, will be overridden by JS */
+            background-color: var(--img-bg-ship);
         }
 
-        .option-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            padding: 10px;
+        .image-display img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain; /* Ensures full image is visible */
+            object-position: center; /* Centers the image */
         }
 
-        .option-label {
+        /* --- Options Container for Sounds --- */
+        .sound-options-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for sounds */
+            gap: var(--spacing-sm);
+            width: 100%;
+            max-width: 500px; /* Adjust max width */
+            margin-top: var(--spacing-md);
+        }
+
+        .sound-option-btn {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
             padding: 1rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            font-size: 1.1rem;
             color: var(--primary-color);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            /* Disable pointer events after answer to prevent multiple clicks */
+            pointer-events: auto;
+        }
+
+         .sound-option-btn:disabled {
+             pointer-events: none; /* Disable clicks */
+             opacity: 0.7; /* Visually indicate disabled state */
+         }
+
+
+        .sound-option-btn:hover {
+            background-color: #f8f9fa;
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .sound-option-btn.correct {
+            background-color: rgba(39, 174, 96, 0.15);
+            border-color: var(--quiz-green);
+            color: var(--quiz-green);
+        }
+
+        .sound-option-btn.incorrect {
+            background-color: rgba(231, 76, 60, 0.15);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
         .controls {
@@ -336,6 +360,8 @@
             margin-top: 1rem;
             flex-wrap: wrap;
             justify-content: center;
+            /* Hide the Next button as progression is automatic */
+            display: none;
         }
 
         .btn {
@@ -420,7 +446,7 @@
 
         .stats {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around; /* Adjusted */
             width: 100%;
             max-width: 600px;
             margin: 1rem 0;
@@ -467,6 +493,51 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        /* --- Results Screen --- */
+        .results-screen {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: var(--spacing-lg) auto;
+            display: none; /* Hidden by default */
+        }
+
+        .results-screen h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-stats {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-message {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn-restart-results {
+             margin-top: var(--spacing-md);
+             padding: 0.8rem 1.5rem;
+             background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+             color: white;
+             border: none;
+             border-radius: var(--border-radius);
+             font-weight: 600;
+             cursor: pointer;
+             transition: all var(--transition-speed);
+             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-restart-results:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
         }
 
         /* --- SEO Content Section --- */
@@ -669,9 +740,9 @@
             .donate-top-btn i {
                 font-size: 0.9rem;
             }
-            .sound-display {
-                padding: 1rem 2rem;
-                font-size: 2rem;
+            .sound-options-container {
+                grid-template-columns: 1fr; /* Stack sounds on smaller screens */
+                max-width: 300px;
             }
             .controls {
                 flex-direction: column;
@@ -685,8 +756,10 @@
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .option-image {
-                height: 120px;
+            /* Adjust image display for smaller screens if needed */
+            .image-display {
+                 width: 180px;
+                 height: 135px;
             }
         }
 
@@ -701,12 +774,16 @@
             .stat-box {
                 margin: 0.2rem 0;
             }
+             .image-display {
+                 width: 160px;
+                 height: 120px;
+            }
         }
 
         /* Animation for correct answers */
         @keyframes celebrate {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
 
@@ -732,44 +809,44 @@
 
         <section class="hero">
             <div class="container">
-                <h1>Sound Match Game</h1>
-                <p>Match sounds to pictures to practice letter sounds</p>
+                <h1>Year 1 Phonics: Picture to Sound Match</h1>
+                <p>Interactive game to practice matching pictures with initial letter sounds and digraphs</p>
             </div>
         </section>
 
         <div class="container">
             <nav class="breadcrumb">
-                <a href="index.html">Home</a> <span> / </span> 
-                <a href="quizzes.html">Quizzes</a> <span> / </span> 
-                <a href="quiz-year1.html">Year 1</a> <span> / </span> 
-                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span> 
-                Sound Match
+                <a href="index.html">Home</a> <span> / </span>
+                <a href="quizzes.html">Quizzes</a> <span> / </span>
+                <a href="quiz-year1.html">Year 1</a> <span> / </span>
+                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span>
+                Picture Sound Match
             </nav>
         </div>
 
         <div class="container">
             <section class="game-section">
-                <h2>Sound Match Game</h2>
-                
+                <h2>Picture to Sound Match Game</h2>
+
                 <div class="instructions">
                     <h3><i class="fas fa-info-circle"></i> How to Play</h3>
-                    <p>This game helps you practice matching letter sounds to pictures. Follow these steps:</p>
+                    <p>This game helps Year 1 students practice matching pictures to the correct initial letter sounds. Follow these steps:</p>
                     <ul>
-                        <li>Click the sound display to hear the sound</li>
-                        <li>Look at the pictures and choose the one that matches the sound</li>
-                        <li>Click on your answer to check if it's correct</li>
-                        <li>Press "Next" to try another sound</li>
+                        <li>Look at the picture shown</li>
+                        <li>Click on the sound (spelling) that matches the beginning of the picture's name</li>
+                        <li>You will get feedback if your answer is correct</li>
+                        <li>The game moves to the next picture automatically!</li>
                     </ul>
                     <div class="sound-controls">
-                        <button class="sound-btn" id="bgm-toggle">
+                        <button class="sound-btn active" id="bgm-toggle">
                             <i class="fas fa-volume-up"></i> Background Music: On
                         </button>
-                        <button class="sound-btn" id="fx-toggle">
+                        <button class="sound-btn active" id="fx-toggle">
                             <i class="fas fa-bell"></i> Sound Effects: On
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="stats">
                     <div class="stat-box">
                         <div class="stat-value" id="score">0</div>
@@ -779,80 +856,101 @@
                         <div class="stat-value" id="attempts">0</div>
                         <div class="stat-label">Attempts</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-value" id="streak">0</div>
-                        <div class="stat-label">Streak</div>
-                    </div>
+                    <!-- Streak stat removed -->
                 </div>
-                
+
                 <div class="progress-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
-                
+
                 <div class="game-area">
                     <div class="loading" id="loading">
                         <div class="spinner"></div>
-                        <p>Loading game...</p>
+                        <p>Loading phonics game...</p>
                     </div>
-                    
-                    <div class="sound-display" id="sound-display" style="display: none;">
-                        /sh/
+
+                    <div class="image-display" id="image-display" style="display: none;">
+                        <img id="current-image" src="" alt="Current Item">
                     </div>
-                    
-                    <div class="options-container" id="options-container" style="display: none;">
-                        <!-- Options will be loaded here -->
+
+                    <div class="sound-options-container" id="sound-options-container" style="display: none;">
+                        <!-- Sound options will be loaded here -->
                     </div>
-                    
+
                     <div class="feedback" id="feedback">
                         Loading game...
                     </div>
-                    
+
                     <div class="controls">
-                        <button class="btn btn-primary" id="next-btn" style="display: none;">
-                            <i class="fas fa-arrow-right"></i> Next Sound
+                        <button class="btn btn-primary" id="next-btn">
+                            <i class="fas fa-arrow-right"></i> Next Picture
                         </button>
                         <button class="btn btn-secondary" id="restart-btn">
                             <i class="fas fa-redo"></i> Restart Game
                         </button>
                     </div>
                 </div>
+
+                <!-- Results Screen -->
+                <div class="results-screen" id="results-screen">
+                    <h2>Quiz Completed!</h2>
+                    <div class="results-stats">
+                        Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
+                    </div>
+                    <div class="results-message" id="results-message">
+                        <!-- Message will be inserted by JS -->
+                    </div>
+                    <button class="btn-restart-results" id="restart-results-btn">
+                        <i class="fas fa-redo"></i> Play Again
+                    </button>
+                </div>
             </section>
-            
+
             <!-- SEO Content Section -->
             <section class="seo-content">
-                <h2>Phonics Sound Matching for Year 1 Students</h2>
-                
-                <p>The Sound Match Game is an interactive phonics activity designed specifically for Year 1 students to practice recognizing and matching letter sounds with corresponding pictures. This game helps children develop essential phonemic awareness skills that form the foundation of reading and spelling.</p>
-                
-                <h3>Why Sound Matching is Important</h3>
-                <p>Sound matching activities are crucial for developing phonemic awareness - the ability to hear, identify, and manipulate individual sounds (phonemes) in spoken words. In Year 1, children continue to build upon the phonics knowledge they acquired in Reception, focusing on:</p>
+                <h2>Master Year 1 Phonics: Interactive Picture to Sound Matching Game</h2>
+
+                <p>Our <strong>Year 1 Phonics Picture to Sound Match Game</strong> is an essential educational tool designed for children aged 5-6. This interactive activity helps young learners solidify their understanding of initial letter sounds and common digraphs by visually connecting objects with their corresponding phonetic spellings. It's a fun and effective way to practice the foundational phonics skills taught in Year 1.</p>
+
+                <h3>Why Matching Pictures to Sounds is Crucial for Year 1 Learners</h3>
+                <p>Developing phonemic awareness is a cornerstone of early literacy. In Year 1, children build upon their Reception knowledge by learning to:</p>
                 <ul>
-                    <li>Recognizing the sounds that individual letters make</li>
-                    <li>Matching sounds to pictures for better retention</li>
-                    <li>Developing auditory discrimination skills</li>
-                    <li>Building confidence in phonics knowledge</li>
+                    <li>Identify and produce the correct sounds for individual letters (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z).</li>
+                    <li>Recognize and use common consonant digraphs (sh, ch, th, ph) and vowel digraphs (ai, ee, igh, oa, oo).</li>
+                    <li>Blend sounds to read simple words (CVC - Consonant-Vowel-Consonant words like cat, dog, sun).</li>
+                    <li>Segment spoken words into individual phonemes to spell them.</li>
                 </ul>
-                
-                <h3>How This Game Supports Learning</h3>
-                <p>Our Sound Match Game provides:</p>
+                <p>This picture-to-sound matching game directly reinforces these skills by making the connection between visual cues (pictures) and auditory cues (sounds) explicit and engaging.</p>
+
+                <h3>How Our Phonics Game Enhances Learning</h3>
+                <p>This carefully crafted game supports Year 1 phonics education by providing:</p>
                 <ul>
-                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their answers are correct</li>
-                    <li><strong>Engaging Visuals:</strong> High-quality images help reinforce learning</li>
-                    <li><strong>Progressive Difficulty:</strong> Challenges increase as children improve</li>
-                    <li><strong>Performance Tracking:</strong> Stats help monitor progress and improvement</li>
-                    <li><strong>Curriculum-Aligned:</strong> Activities match Year 1 phonics expectations</li>
+                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their sound selection is correct, allowing for rapid reinforcement or correction.</li>
+                    <li><strong>Visual Reinforcement:</strong> High-quality, relevant images help solidify the connection between the written/spoken word and its meaning.</li>
+                    <li><strong>Variety of Sounds:</strong> Our game includes a wide range of initial sounds, from simple vowels (a, i, o, u) and consonants (b, c, d, f, g, h, l, m, n, p, r, s, t) to more complex digraphs (sh, ch, th, ai, ee, oo, ar, or, ur), ensuring comprehensive practice.</li>
+                    <li><strong>Progress Tracking:</strong> Score and attempt counters help children and teachers monitor progress and improvement over time.</li>
+                    <li><strong>Curriculum-Aligned:</strong> Activities are designed to meet the expectations of the Year 1 phonics curriculum, focusing on Phase 5 sounds typically introduced during this year.</li>
                 </ul>
-                
-                <h3>Tips for Parents and Teachers</h3>
+
+                <h3>Key Phonics Sounds Practiced in This Game</h3>
+                <p>This game covers a broad spectrum of sounds crucial for Year 1 phonics success:</p>
+                <ul>
+                    <li><strong>Single Letter Sounds:</strong> a (/a/ as in apple), b (/b/ as in ball), c (/k/ as in cat), d (/d/ as in dog), e (/e/ as in egg), f (/f/ as in fish), g (/g/ as in goat), h (/h/ as in hat), i (/i/ as in igloo), j (/j/ as in jug), k (/k/ as in kite), l (/l/ as in lion), m (/m/ as in man), n (/n/ as in net), o (/o/ as in octopus), p (/p/ as in pig), q (/kw/ as in queen), r (/r/ as in rat), s (/s/ as in sun), t (/t/ as in top), u (/u/ as in umbrella), v (/v/ as in van), w (/w/ as in wet), x (/ks/ as in box), y (/y/ as in yellow), z (/z/ as in zebra).</li>
+                    <li><strong>Consonant Digraphs:</strong> sh (/sh/ as in ship), ch (/ch/ as in chair), th (/th/ as in thumb or this - initial voiced/voiceless), ph (/f/ as in dolphin).</li>
+                    <li><strong>Vowel Digraphs/Trigraphs:</strong> ai (/ai/ as in rain), ee (/ee/ as in feet), igh (/ie/ as in light), oa (/oa/ as in boat), oo (/oo/ as in book or moon - short/long), ar (/ar/ as in car), or (/or/ as in corn), ur (/er/ as in nurse), ow (/ow/ as in cow or snow).</li>
+                </ul>
+
+                <h3>Effective Tips for Parents and Teachers Using This Phonics Game</h3>
                 <ol>
-                    <li><strong>Encourage Repetition:</strong> Have children repeat the sound after hearing it</li>
-                    <li><strong>Discuss Pictures:</strong> Talk about the images to reinforce vocabulary</li>
-                    <li><strong>Celebrate Success:</strong> Acknowledge correct answers to build confidence</li>
-                    <li><strong>Practice Regularly:</strong> Short, frequent sessions are more effective</li>
-                    <li><strong>Combine with Reading:</strong> Apply phonics skills in context through reading</li>
+                    <li><strong>Encourage Verbalization:</strong> Have children say the name of the picture and then the initial sound aloud before selecting an answer.</li>
+                    <li><strong>Discuss the Picture:</strong> Briefly talk about the image to ensure understanding of the vocabulary, which aids in recall.</li>
+                    <li><strong>Celebrate Effort:</strong> Acknowledge correct answers and learning attempts to build confidence and a positive association with phonics practice.</li>
+                    <li><strong>Practice Regularly:</strong> Consistent, short sessions are more beneficial than infrequent, long ones. Aim for 10-15 minutes daily.</li>
+                    <li><strong>Integrate with Reading:</strong> Apply the phonics sounds learned in this game when reading decodable books or simple texts together.</li>
+                    <li><strong>Review Mistakes:</strong> If a child consistently struggles with a particular sound, provide extra practice or review the sound using different methods (songs, flashcards).</li>
                 </ol>
-                
-                <p>This phonics game is part of our comprehensive Year 1 phonics program designed to make learning enjoyable and effective. With regular practice using these engaging tools, children will develop a strong foundation for lifelong literacy.</p>
+
+                <p>This phonics matching game is part of our comprehensive Year 1 English resources, designed to make learning enjoyable and effective. Regular practice with these engaging tools will help children develop a strong phonics foundation, boosting their confidence and ability in reading and spelling. By mastering these initial sounds and digraphs, Year 1 students take a significant step towards becoming fluent readers.</p>
             </section>
         </div>
     </div> <!-- End of main-content -->
@@ -934,264 +1032,455 @@
     </nav>
 
     <!-- Audio elements for sounds -->
+    <!-- Placeholder sounds - Replace with actual phonics sound files -->
+    <audio id="sound-sh" src="https://www.soundjay.com/phone/sounds/phone-ring-1.mp3" preload="auto"></audio>
+    <audio id="sound-ch" src="https://www.soundjay.com/phone/sounds/phone-ring-2.mp3" preload="auto"></audio>
+    <audio id="sound-th" src="https://www.soundjay.com/phone/sounds/phone-ring-3.mp3" preload="auto"></audio>
+    <audio id="sound-ai" src="https://www.soundjay.com/phone/sounds/phone-ring-4.mp3" preload="auto"></audio>
+    <audio id="sound-ee" src="https://www.soundjay.com/phone/sounds/phone-ring-5.mp3" preload="auto"></audio>
+    <audio id="sound-a" src="https://www.soundjay.com/phone/sounds/phone-ring-6.mp3" preload="auto"></audio>
+    <audio id="sound-i" src="https://www.soundjay.com/phone/sounds/phone-ring-7.mp3" preload="auto"></audio>
+    <audio id="sound-o" src="https://www.soundjay.com/phone/sounds/phone-ring-8.mp3" preload="auto"></audio>
+    <audio id="sound-oo" src="https://www.soundjay.com/phone/sounds/phone-ring-9.mp3" preload="auto"></audio>
+    <audio id="sound-ar" src="https://www.soundjay.com/phone/sounds/phone-ring-10.mp3" preload="auto"></audio>
+    <audio id="sound-or" src="https://www.soundjay.com/phone/sounds/phone-ring-11.mp3" preload="auto"></audio>
+    <audio id="sound-ur" src="https://www.soundjay.com/phone/sounds/phone-ring-12.mp3" preload="auto"></audio>
+    <audio id="sound-b" src="https://www.soundjay.com/phone/sounds/phone-ring-1.mp3" preload="auto"></audio>
+    <audio id="sound-c" src="https://www.soundjay.com/phone/sounds/phone-ring-2.mp3" preload="auto"></audio>
+    <audio id="sound-d" src="https://www.soundjay.com/phone/sounds/phone-ring-3.mp3" preload="auto"></audio>
+    <audio id="sound-e" src="https://www.soundjay.com/phone/sounds/phone-ring-4.mp3" preload="auto"></audio>
+    <audio id="sound-f" src="https://www.soundjay.com/phone/sounds/phone-ring-5.mp3" preload="auto"></audio>
+    <audio id="sound-g" src="https://www.soundjay.com/phone/sounds/phone-ring-6.mp3" preload="auto"></audio>
+    <audio id="sound-h" src="https://www.soundjay.com/phone/sounds/phone-ring-7.mp3" preload="auto"></audio>
+    <audio id="sound-l" src="https://www.soundjay.com/phone/sounds/phone-ring-8.mp3" preload="auto"></audio>
+    <audio id="sound-m" src="https://www.soundjay.com/phone/sounds/phone-ring-9.mp3" preload="auto"></audio>
+    <audio id="sound-n" src="https://www.soundjay.com/phone/sounds/phone-ring-10.mp3" preload="auto"></audio>
+    <audio id="sound-p" src="https://www.soundjay.com/phone/sounds/phone-ring-11.mp3" preload="auto"></audio>
+    <audio id="sound-r" src="https://www.soundjay.com/phone/sounds/phone-ring-12.mp3" preload="auto"></audio>
+    <audio id="sound-s" src="https://www.soundjay.com/phone/sounds/phone-ring-1.mp3" preload="auto"></audio>
+    <audio id="sound-t" src="https://www.soundjay.com/phone/sounds/phone-ring-2.mp3" preload="auto"></audio>
+    <audio id="sound-u" src="https://www.soundjay.com/phone/sounds/phone-ring-3.mp3" preload="auto"></audio>
+    <audio id="sound-w" src="https://www.soundjay.com/phone/sounds/phone-ring-4.mp3" preload="auto"></audio>
+    <audio id="sound-y" src="https://www.soundjay.com/phone/sounds/phone-ring-5.mp3" preload="auto"></audio>
+    <audio id="sound-z" src="https://www.soundjay.com/phone/sounds/phone-ring-6.mp3" preload="auto"></audio>
+    <audio id="sound-k" src="https://www.soundjay.com/phone/sounds/phone-ring-7.mp3" preload="auto"></audio>
+    <audio id="sound-v" src="https://www.soundjay.com/phone/sounds/phone-ring-8.mp3" preload="auto"></audio>
+    <audio id="sound-j" src="https://www.soundjay.com/phone/sounds/phone-ring-9.mp3" preload="auto"></audio>
+    <audio id="sound-q" src="https://www.soundjay.com/phone/sounds/phone-ring-10.mp3" preload="auto"></audio>
+    <audio id="sound-x" src="https://www.soundjay.com/phone/sounds/phone-ring-11.mp3" preload="auto"></audio>
+
     <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-correct-answer-tone-2870.mp3" preload="auto"></audio>
     <audio id="incorrect-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" preload="auto"></audio>
+    <audio id="completion-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio> <!-- New completion sound -->
     <audio id="bg-music" loop preload="auto">
         <source src="https://assets.mixkit.co/music/preview/mixkit-kidding-around-9.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Game elements
-            const soundDisplay = document.getElementById('sound-display');
-            const nextBtn = document.getElementById('next-btn');
+            const imageDisplay = document.getElementById('image-display');
+            const currentImage = document.getElementById('current-image');
+            const nextBtn = document.getElementById('next-btn'); // Hidden, but kept for potential future use
             const restartBtn = document.getElementById('restart-btn');
             const feedback = document.getElementById('feedback');
-            const optionsContainer = document.getElementById('options-container');
+            const soundOptionsContainer = document.getElementById('sound-options-container');
             const scoreElement = document.getElementById('score');
             const attemptsElement = document.getElementById('attempts');
-            const streakElement = document.getElementById('streak');
+            // const streakElement = document.getElementById('streak'); // Removed
             const progressBar = document.getElementById('progress-bar');
             const loadingElement = document.getElementById('loading');
             const bgmToggle = document.getElementById('bgm-toggle');
             const fxToggle = document.getElementById('fx-toggle');
-            
+            const resultsScreen = document.getElementById('results-screen');
+            const finalScoreElement = document.getElementById('final-score');
+            const totalQuestionsElement = document.getElementById('total-questions');
+            const resultsMessage = document.getElementById('results-message');
+            const restartResultsBtn = document.getElementById('restart-results-btn');
+
             // Audio elements
             const correctSound = document.getElementById('correct-sound');
             const incorrectSound = document.getElementById('incorrect-sound');
+            const completionSound = document.getElementById('completion-sound'); // New
             const bgMusic = document.getElementById('bg-music');
-            
+
             // Game state
             let score = 0;
             let attempts = 0;
-            let streak = 0;
-            let currentSound = 0;
-            let sounds = [];
+            // let streak = 0; // Removed
+            let currentQuestion = 0;
+            let questions = [];
             let answered = false;
             let bgmEnabled = true;
-            let fxEnabled = true;
-            
-            // Sample JSON data with hosted images
-            const sampleSounds = [
+            let fxAffectsFeedback = true; // Renamed for clarity
+
+            // Sample data: Images with multiple sound options
+            const sampleQuestions = [
                 {
-                    "sound": "/sh/",
-                    "options": [
-                        {"name": "Ship", "image": "https://i.postimg.cc/XYv9qpDf/Ship.png"},
-                        {"name": "Shoe", "image": "https://i.postimg.cc/Gp8YP6R9/Shoe.png"},
-                        {"name": "Fish", "image": "https://i.postimg.cc/WhKZLwG2/Fish.png"},
-                        {"name": "Sheep", "image": "https://i.postimg.cc/NjPmHBWW/sheep.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/XYv9qpDf/Ship.png",
+                    "itemName": "Ship",
+                    "soundOptions": ["/sh/", "/ch/", "/th/", "/s/"],
+                    "correctSound": "/sh/",
+                    "soundId": "sound-sh",
+                    "bgColorClass": "var(--img-bg-ship)" // Added for dynamic background
                 },
                 {
-                    "sound": "/ch/",
-                    "options": [
-                        {"name": "Chair", "image": "https://i.postimg.cc/T2m0vLZh/Chair.png"},
-                        {"name": "Cake", "image": "https://i.postimg.cc/jDpyN428/Cake.png"},
-                        {"name": "Chicken", "image": "https://i.postimg.cc/MTfDTvHP/Car.png"},
-                        {"name": "Cheese", "image": "https://i.postimg.cc/SKvdkWSY/Cat.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/T2m0vLZh/Chair.png",
+                    "itemName": "Chair",
+                    "soundOptions": ["/sh/", "/ch/", "/t/", "/k/"],
+                    "correctSound": "/ch/",
+                    "soundId": "sound-ch",
+                    "bgColorClass": "var(--img-bg-chair)"
                 },
                 {
-                    "sound": "/th/",
-                    "options": [
-                        {"name": "Thumb", "image": "https://i.postimg.cc/YS5Fd82R/Thumb.png"},
-                        {"name": "Three", "image": "https://i.postimg.cc/y853NnRK/Tree.png"},
-                        {"name": "Mouth", "image": "https://i.postimg.cc/LsL58SRk/Tiger.png"},
-                        {"name": "Feather", "image": "https://i.postimg.cc/h4bm09k8/Train.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/YS5Fd82R/Thumb.png",
+                    "itemName": "Thumb",
+                    "soundOptions": ["/th/", "/f/", "/v/", "/d/"],
+                    "correctSound": "/th/",
+                    "soundId": "sound-th",
+                    "bgColorClass": "var(--img-bg-thumb)"
                 },
                 {
-                    "sound": "/ai/",
-                    "options": [
-                        {"name": "Rain", "image": "https://i.postimg.cc/9frP8rdm/Rain.png"},
-                        {"name": "Train", "image": "https://i.postimg.cc/h4bm09k8/Train.png"},
-                        {"name": "Snail", "image": "https://i.postimg.cc/TPFVZf0r/Rat.png"},
-                        {"name": "Paint", "image": "https://i.postimg.cc/MK5yzytZ/Red.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/9frP8rdm/Rain.png",
+                    "itemName": "Rain",
+                    "soundOptions": ["/r/", "/ai/", "/ee/", "/ar/"],
+                    "correctSound": "/r/",
+                    "soundId": "sound-r",
+                    "bgColorClass": "var(--img-bg-rain)"
                 },
                 {
-                    "sound": "/ee/",
-                    "options": [
-                        {"name": "Feet", "image": "https://i.postimg.cc/zXrjzDr7/Feet.png"},
-                        {"name": "Sheep", "image": "https://i.postimg.cc/NjPmHBWW/sheep.png"},
-                        {"name": "Tree", "image": "https://i.postimg.cc/y853NnRK/Tree.png"},
-                        {"name": "Bee", "image": "https://i.postimg.cc/FsNytPyn/Run.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/zXrjzDr7/Feet.png",
+                    "itemName": "Feet",
+                    "soundOptions": ["/f/", "/ee/", "/ea/", "/ie/"],
+                    "correctSound": "/f/",
+                    "soundId": "sound-f",
+                    "bgColorClass": "var(--img-bg-feet)"
                 },
                 {
-                    "sound": "/a/",
-                    "options": [
-                        {"name": "Cat", "image": "https://i.postimg.cc/SKvdkWSY/Cat.png"},
-                        {"name": "Fat", "image": "https://i.postimg.cc/Hc2MqG2K/Fat.png"},
-                        {"name": "Rat", "image": "https://i.postimg.cc/TPFVZf0r/Rat.png"},
-                        {"name": "Bat", "image": "https://i.postimg.cc/ydRmKtp2/Fox.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/SKvdkWSY/Cat.png",
+                    "itemName": "Cat",
+                    "soundOptions": ["/k/", "/c/", "/a/", "/t/"],
+                    "correctSound": "/k/",
+                    "soundId": "sound-k",
+                    "bgColorClass": "var(--img-bg-cat)"
                 },
                 {
-                    "sound": "/i/",
-                    "options": [
-                        {"name": "Fish", "image": "https://i.postimg.cc/WhKZLwG2/Fish.png"},
-                        {"name": "Ship", "image": "https://i.postimg.cc/XYv9qpDf/Ship.png"},
-                        {"name": "Pig", "image": "https://i.postimg.cc/T1Xr30Z1/Fun.png"},
-                        {"name": "Lid", "image": "https://i.postimg.cc/MTfDTvHP/Car.png"}
-                    ],
-                    "correct": 0
+                    "image": "https://i.postimg.cc/rwyN4hzt/Fish.png",
+                    "itemName": "Fish",
+                    "soundOptions": ["/f/", "/sh/", "/ch/", "/ph/"],
+                    "correctSound": "/f/",
+                    "soundId": "sound-f",
+                    "bgColorClass": "var(--img-bg-fish)"
                 },
                 {
-                    "sound": "/o/",
-                    "options": [
-                        {"name": "Fox", "image": "https://i.postimg.cc/ydRmKtp2/Fox.png"},
-                        {"name": "Dog", "image": "https://i.postimg.cc/T1Xr30Z1/Fun.png"},
-                        {"name": "Frog", "image": "https://i.postimg.cc/Hc2MqG2K/Fat.png"},
-                        {"name": "Box", "image": "https://i.postimg.cc/jDpyN428/Cake.png"}
-                    ],
-                    "correct": 0
-                }
+                    "image": "https://i.postimg.cc/ydRmKtp2/Fox.png",
+                    "itemName": "Fox",
+                    "soundOptions": ["/f/", "/x/", "/ks/", "/o/"],
+                    "correctSound": "/f/",
+                    "soundId": "sound-f",
+                    "bgColorClass": "var(--img-bg-fox)"
+                },
+                {
+                    "image": "https://i.postimg.cc/Gp8YP6R9/Shoe.png",
+                    "itemName": "Shoe",
+                    "soundOptions": ["/sh/", "/s/", "/ch/", "/j/"],
+                    "correctSound": "/sh/",
+                    "soundId": "sound-sh",
+                    "bgColorClass": "var(--img-bg-shoe)"
+                },
+                {
+                    "image": "https://i.postimg.cc/NjPmHBWW/sheep.png",
+                    "itemName": "Sheep",
+                    "soundOptions": ["/sh/", "/s/", "/ch/", "/ee/"],
+                    "correctSound": "/sh/",
+                    "soundId": "sound-sh",
+                    "bgColorClass": "var(--img-bg-sheep)"
+                },
+                {
+                    "image": "https://i.postimg.cc/jj5cp8br/Cake.png",
+                    "itemName": "Cake",
+                    "soundOptions": ["/k/", "/c/", "/a/", "/e/"],
+                    "correctSound": "/k/",
+                    "soundId": "sound-k",
+                    "bgColorClass": "var(--img-bg-cake)"
+                },
+                {
+                    "image": "https://i.postimg.cc/MTfDTvHP/Car.png",
+                    "itemName": "Car",
+                    "soundOptions": ["/k/", "/c/", "/ar/", "/a/"],
+                    "correctSound": "/k/",
+                    "soundId": "sound-k",
+                    "bgColorClass": "var(--img-bg-car)"
+                },
+                {
+                    "image": "https://i.postimg.cc/cCqc808s/Fat.png",
+                    "itemName": "Fat",
+                    "soundOptions": ["/f/", "/a/", "/t/", "/ph/"],
+                    "correctSound": "/f/",
+                    "soundId": "sound-f",
+                    "bgColorClass": "var(--img-bg-fat)"
+                },
+                {
+                    "image": "https://i.postimg.cc/T1Xr30Z1/Fun.png",
+                    "itemName": "Fun",
+                    "soundOptions": ["/f/", "/u/", "/n/", "/ph/"],
+                    "correctSound": "/f/",
+                    "soundId": "sound-f",
+                    "bgColorClass": "var(--img-bg-fun)"
+                },
+                {
+                    "image": "https://i.postimg.cc/TPFVZf0r/Rat.png",
+                    "itemName": "Rat",
+                    "soundOptions": ["/r/", "/a/", "/t/", "/ea/"],
+                    "correctSound": "/r/",
+                    "soundId": "sound-r",
+                    "bgColorClass": "var(--img-bg-rat)"
+                },
+                {
+                    "image": "https://i.postimg.cc/MK5yzytZ/Red.png",
+                    "itemName": "Red",
+                    "soundOptions": ["/r/", "/e/", "/d/", "/ea/"],
+                    "correctSound": "/r/",
+                    "soundId": "sound-r",
+                    "bgColorClass": "var(--img-bg-red)"
+                },
+                {
+                    "image": "https://i.postimg.cc/FsNytPyn/Run.png",
+                    "itemName": "Run",
+                    "soundOptions": ["/r/", "/u/", "/n/", "/un/"],
+                    "correctSound": "/r/",
+                    "soundId": "sound-r",
+                    "bgColorClass": "var(--img-bg-run)"
+                },
+                {
+                    "image": "https://i.postimg.cc/LsL58SRk/Tiger.png",
+                    "itemName": "Tiger",
+                    "soundOptions": ["/t/", "/i/", "/g/", "/er/"],
+                    "correctSound": "/t/",
+                    "soundId": "sound-t",
+                    "bgColorClass": "var(--img-bg-tiger)"
+                },
+                {
+                    "image": "https://i.postimg.cc/h4bm09k8/Train.png",
+                    "itemName": "Train",
+                    "soundOptions": ["/t/", "/r/", "/ai/", "/ea/"],
+                    "correctSound": "/t/",
+                    "soundId": "sound-t",
+                    "bgColorClass": "var(--img-bg-train)"
+                },
+                {
+                    "image": "https://i.postimg.cc/y853NnRK/Tree.png",
+                    "itemName": "Tree",
+                    "soundOptions": ["/t/", "/r/", "/ee/", "/ea/"],
+                    "correctSound": "/t/",
+                    "soundId": "sound-t",
+                    "bgColorClass": "var(--img-bg-tree)"
+                },
+                // Add more questions as needed
             ];
-            
+
             // Initialize game
             function initGame() {
-                sounds = sampleSounds;
-                
-                // Hide loading and show game elements
+                questions = [...sampleQuestions]; // Create a copy to avoid modifying original
+                score = 0;
+                attempts = 0;
+                // streak = 0; // Removed
+                currentQuestion = 0;
+                answered = false;
+
+                // Hide results screen and show game elements
+                resultsScreen.style.display = 'none';
+                loadingElement.style.display = 'block';
+                imageDisplay.style.display = 'none';
+                soundOptionsContainer.style.display = 'none';
+                feedback.textContent = 'Loading game...';
+                feedback.className = 'feedback';
+
+                // Hide loading and show game elements after a delay
                 setTimeout(() => {
                     loadingElement.style.display = 'none';
-                    soundDisplay.style.display = 'block';
-                    optionsContainer.style.display = 'grid';
-                    nextBtn.style.display = 'flex';
-                    
+                    imageDisplay.style.display = 'flex'; // Changed to flex for centering
+                    soundOptionsContainer.style.display = 'grid';
+
                     updateStats();
-                    loadSound();
+                    loadQuestion();
                     updateProgress();
-                    
+
                     // Start background music if enabled
                     if (bgmEnabled) {
                         bgMusic.play().catch(e => console.log("Autoplay prevented: ", e));
                     }
                 }, 1000);
             }
-            
-            // Load current sound
-            function loadSound() {
-                soundDisplay.textContent = sounds[currentSound].sound;
-                feedback.textContent = 'Click the sound to hear it!';
+
+            // Load current question (image and sound options)
+            function loadQuestion() {
+                 if (currentQuestion >= questions.length) {
+                     showResults();
+                     return;
+                 }
+
+                const currentQuestionData = questions[currentQuestion];
+                currentImage.src = currentQuestionData.image;
+                currentImage.alt = currentQuestionData.itemName;
+                // Set dynamic background color
+                imageDisplay.style.backgroundColor = currentQuestionData.bgColorClass;
+                feedback.textContent = `What is the initial sound in "${currentQuestionData.itemName}"?`;
                 feedback.className = 'feedback';
                 answered = false;
-                
+
+                // Re-enable buttons
+                const allButtons = soundOptionsContainer.querySelectorAll('.sound-option-btn');
+                allButtons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('correct', 'incorrect'); // Clear previous states
+                });
+
                 // Clear previous options
-                optionsContainer.innerHTML = '';
-                
-                // Create new options
-                sounds[currentSound].options.forEach((option, index) => {
-                    const optionCard = document.createElement('div');
-                    optionCard.className = 'option-card';
-                    optionCard.dataset.index = index;
-                    
-                    const optionImage = document.createElement('div');
-                    optionImage.className = 'option-image';
-                    
-                    // Create image element
-                    const img = document.createElement('img');
-                    img.src = option.image;
-                    img.alt = option.name;
-                    // Add error handling for missing images
-                    img.onerror = function() {
-                        this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZTBmN2U5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMyN2FlNjAiPkltYWdlPC90ZXh0Pjx0ZXh0IHg9IjUwJSIgeT0iNjUlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMjdhZTYwIj5ub3QgZm91bmQ8L3RleHQ+PC9zdmc+';
-                        this.alt = 'Image not found: ' + option.name;
-                    };
-                    optionImage.appendChild(img);
-                    
-                    const optionLabel = document.createElement('div');
-                    optionLabel.className = 'option-label';
-                    optionLabel.textContent = option.name;
-                    
-                    optionCard.appendChild(optionImage);
-                    optionCard.appendChild(optionLabel);
-                    
-                    // Add click event
-                    optionCard.addEventListener('click', handleOptionClick);
-                    
-                    optionsContainer.appendChild(optionCard);
+                soundOptionsContainer.innerHTML = '';
+
+                // Create new sound options buttons
+                currentQuestionData.soundOptions.forEach((soundOption, index) => {
+                    const optionBtn = document.createElement('button');
+                    optionBtn.className = 'sound-option-btn';
+                    optionBtn.dataset.sound = soundOption;
+                    optionBtn.textContent = soundOption;
+                    optionBtn.disabled = false; // Ensure enabled
+
+                    optionBtn.addEventListener('click', handleSoundOptionClick);
+
+                    soundOptionsContainer.appendChild(optionBtn);
                 });
             }
-            
-            // Handle option selection
-            function handleOptionClick(event) {
-                if (answered) return;
-                
-                const card = event.currentTarget;
-                const selectedIndex = parseInt(card.dataset.index);
-                const isCorrect = selectedIndex === sounds[currentSound].correct;
-                
+
+            // Handle sound option selection
+            function handleSoundOptionClick(event) {
+                if (answered) return; // Prevent multiple clicks
+
+                const button = event.currentTarget;
+                const selectedSound = button.dataset.sound;
+                const currentQuestionData = questions[currentQuestion];
+                const isCorrect = selectedSound === currentQuestionData.correctSound;
+
                 attempts++;
                 answered = true;
-                
+
+                // Disable all buttons immediately after an answer
+                const allButtons = soundOptionsContainer.querySelectorAll('.sound-option-btn');
+                allButtons.forEach(btn => btn.disabled = true);
+
                 if (isCorrect) {
                     score++;
-                    streak++;
+                    // streak++; // Removed
                     feedback.textContent = 'Correct! Well done!';
                     feedback.className = 'feedback correct';
-                    card.classList.add('correct');
-                    
-                    // Play correct sound if enabled
-                    if (fxEnabled) {
+                    button.classList.add('correct');
+
+                    // Play the initial sound of the correct item (always)
+                    const soundElement = document.getElementById(currentQuestionData.soundId);
+                    if (soundElement) {
+                        soundElement.currentTime = 0;
+                        soundElement.play().catch(e => {
+                            console.log("Initial sound play prevented: ", e);
+                        });
+                    } else {
+                        console.error("Sound element not found for ID:", currentQuestionData.soundId);
+                    }
+
+                    // Play the success tone (affected by FX toggle)
+                    if (fxAffectsFeedback) {
                         correctSound.currentTime = 0;
-                        correctSound.play().catch(e => console.log("Sound play prevented: ", e));
+                        correctSound.play().catch(e => console.log("Success sound play prevented: ", e));
                     }
-                    
+
                     // Celebration animation
-                    card.classList.add('celebrate');
-                    setTimeout(() => card.classList.remove('celebrate'), 500);
+                    button.classList.add('celebrate');
+                    setTimeout(() => button.classList.remove('celebrate'), 500);
+
                 } else {
-                    streak = 0;
-                    feedback.textContent = 'Oops! Try again.';
+                    // streak = 0; // Removed
+                    feedback.textContent = `Oops! The correct initial sound is ${currentQuestionData.correctSound}.`;
                     feedback.className = 'feedback incorrect';
-                    card.classList.add('incorrect');
-                    
-                    // Play incorrect sound if enabled
-                    if (fxEnabled) {
+                    button.classList.add('incorrect');
+
+                    // Play the incorrect tone (affected by FX toggle)
+                    if (fxAffectsFeedback) {
                         incorrectSound.currentTime = 0;
-                        incorrectSound.play().catch(e => console.log("Sound play prevented: ", e));
+                        incorrectSound.play().catch(e => console.log("Incorrect sound play prevented: ", e));
                     }
-                    
-                    // Highlight correct answer
-                    const correctCard = document.querySelector(`.option-card[data-index="${sounds[currentSound].correct}"]`);
-                    if (correctCard) {
-                        correctCard.classList.add('correct');
+
+                    // Highlight correct answer button
+                    const correctButton = document.querySelector(`.sound-option-btn[data-sound="${currentQuestionData.correctSound}"]`);
+                    if (correctButton) {
+                        correctButton.classList.add('correct');
                     }
                 }
-                
+
                 updateStats();
+
+                // Automatically move to the next question after a delay
+                setTimeout(() => {
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        // Quiz is finished
+                        // Play completion sound (always when quiz finishes)
+                         completionSound.currentTime = 0;
+                         completionSound.play().catch(e => console.log("Completion sound play prevented: ", e));
+
+                         showResults();
+                    }
+                }, 1500); // 1.5 second delay
             }
-            
-            // Next sound
-            nextBtn.addEventListener('click', function() {
-                currentSound = (currentSound + 1) % sounds.length;
-                loadSound();
-                updateProgress();
+
+            // Show results screen
+            function showResults() {
+                 // Hide game elements
+                 imageDisplay.style.display = 'none';
+                 soundOptionsContainer.style.display = 'none';
+                 feedback.style.display = 'none'; // Hide feedback
+                 // nextBtn.style.display = 'none'; // Already hidden
+
+                 // Show results screen
+                 resultsScreen.style.display = 'block';
+                 finalScoreElement.textContent = score;
+                 totalQuestionsElement.textContent = questions.length;
+
+                 // Determine message based on score
+                 let message = "";
+                 const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+                 if (percentage >= 80) {
+                     message = "Excellent! You're a phonics superstar!";
+                 } else if (percentage >= 60) {
+                     message = "Great job! Keep practicing to get even better!";
+                 } else if (percentage >= 40) {
+                     message = "Good effort! A bit more practice will help you master these sounds.";
+                 } else {
+                     message = "Nice try! Review the sounds and try again. You've got this!";
+                 }
+                 resultsMessage.textContent = message;
+
+                 // Update progress bar to 100%
+                 progressBar.style.width = `100%`;
+            }
+
+
+            // Restart game from results screen
+            restartResultsBtn.addEventListener('click', function() {
+                 feedback.style.display = 'flex'; // Show feedback again
+                 initGame(); // Reset and restart
             });
-            
-            // Restart game
-            restartBtn.addEventListener('click', function() {
-                score = 0;
-                attempts = 0;
-                streak = 0;
-                currentSound = 0;
-                updateStats();
-                loadSound();
-                updateProgress();
-                feedback.textContent = 'Game restarted!';
-                feedback.className = 'feedback';
+
+            // Restart game from main button (if needed)
+            restartBtn.addEventListener('click', function () {
+                 feedback.style.display = 'flex'; // Show feedback again
+                 initGame(); // Reset and restart
             });
-            
+
             // Toggle background music
-            bgmToggle.addEventListener('click', function() {
+            bgmToggle.addEventListener('click', function () {
                 bgmEnabled = !bgmEnabled;
                 if (bgmEnabled) {
                     bgMusic.play().catch(e => console.log("Play prevented: ", e));
@@ -1203,11 +1492,11 @@
                     bgmToggle.classList.remove('active');
                 }
             });
-            
-            // Toggle sound effects
-            fxToggle.addEventListener('click', function() {
-                fxEnabled = !fxEnabled;
-                if (fxEnabled) {
+
+            // Toggle sound effects (only affects feedback sounds now)
+            fxToggle.addEventListener('click', function () {
+                fxAffectsFeedback = !fxAffectsFeedback; // Toggle the flag
+                if (fxAffectsFeedback) {
                     fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
                     fxToggle.classList.add('active');
                 } else {
@@ -1215,35 +1504,25 @@
                     fxToggle.classList.remove('active');
                 }
             });
-            
-            // Play sound when clicking the sound display
-            soundDisplay.addEventListener('click', function() {
-                // In a real implementation, this would play an actual sound
-                // For demo purposes, we'll just show the feedback
-                feedback.textContent = `Playing sound: ${sounds[currentSound].sound}`;
-                feedback.className = 'feedback';
-                
-                // Add a simple visual effect
-                soundDisplay.style.animation = 'none';
-                setTimeout(() => {
-                    soundDisplay.style.animation = 'pulse 2s infinite';
-                }, 10);
-            });
-            
-            // Update stats
+
+            // Update stats (excluding streak)
             function updateStats() {
                 scoreElement.textContent = score;
                 attemptsElement.textContent = attempts;
-                streakElement.textContent = streak;
+                // streakElement.textContent = streak; // Removed
             }
-            
+
             // Update progress bar
             function updateProgress() {
-                const progress = ((currentSound + 1) / sounds.length) * 100;
-                progressBar.style.width = `${progress}%`;
+                if (questions.length > 0) {
+                     const progress = ((currentQuestion + 1) / questions.length) * 100;
+                     progressBar.style.width = `${progress}%`;
+                } else {
+                     progressBar.style.width = '0%';
+                }
             }
-            
-            // Initialize the game
+
+            // Initialize the game on page load
             initGame();
         });
     </script>
