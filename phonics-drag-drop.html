@@ -34,9 +34,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- ResponsiveVoice TTS Library -->
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_ACTUAL_KEY_HERE"></script>
-
     <style>
         :root {
             --primary-color: #2c3e50; /* Dark Blue */
@@ -1011,6 +1008,10 @@
         <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- ResponsiveVoice TTS Library -->
+    <!-- IMPORTANT: Place this script tag AFTER the audio elements and BEFORE your custom script -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_ACTUAL_KEY_HERE"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Game elements
@@ -1241,12 +1242,28 @@
                 return shuffled;
             }
 
-            // Speak word using ResponsiveVoice
+            // Speak word using ResponsiveVoice - Ensures initialization
             function speakWord(word) {
-                if (typeof responsiveVoice !== 'undefined') {
-                    responsiveVoice.speak(word, "UK English Female", {rate: 0.8, pitch: 1});
+                // Check if ResponsiveVoice is loaded and ready
+                if (typeof responsiveVoice !== 'undefined' && responsiveVoice.speak) {
+                    // Use UK English Female voice with clear settings
+                    responsiveVoice.speak(word, "UK English Female", {
+                        rate: 0.8,       // Slightly slower for clarity
+                        pitch: 1,
+                        volume: 1,       // Full volume
+                        onstart: function() {
+                            console.log("Started speaking:", word);
+                            // Optional: Add visual feedback that speech is playing
+                        },
+                        onend: function() {
+                            console.log("Finished speaking:", word);
+                            // Optional: Remove visual feedback
+                        }
+                    });
                 } else {
-                    console.error("ResponsiveVoice library not loaded.");
+                    console.error("ResponsiveVoice library not loaded or not ready.");
+                    // Fallback alert if TTS fails completely
+                    // alert("TTS not available. The word is: " + word); // Uncomment for testing
                 }
             }
 
@@ -1270,7 +1287,7 @@
 
                 // Start background music if enabled
                 if (bgmEnabled) {
-                    bgMusic.play().catch(e => console.log("Autoplay prevented: ", e));
+                    bgMusic.play().catch(e => console.log("Autoplay prevented for background music: ", e));
                 }
             }
 
@@ -1283,7 +1300,8 @@
 
                 currentQuestion = questions[currentQuestionIndex];
                 
-                // Speak the word automatically
+                // Speak the word automatically when the question loads
+                // Note: This might be blocked by autoplay policies until user interacts
                 speakWord(currentQuestion.word);
                 
                 feedback.textContent = `Listen carefully and drag the correct word`;
@@ -1475,9 +1493,9 @@
             dropTarget.addEventListener('dragover', handleDragOver);
             dropTarget.addEventListener('drop', handleDrop);
 
-            // Speaker card click to repeat word
+            // Speaker card click to repeat word - This is the primary user interaction to trigger TTS
             speakerCard.addEventListener('click', function() {
-                if (currentQuestion) {
+                if (currentQuestion && currentQuestion.word) {
                     speakWord(currentQuestion.word);
                 }
             });
@@ -1567,6 +1585,7 @@
             }
 
             // Initialize the game on page load
+            // Note: Initial speakWord call in loadQuestion might be blocked
             initGame();
         });
     </script>
