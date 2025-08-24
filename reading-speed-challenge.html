@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Read Challenge | Year 1 Word Reading | EduResources</title>
+    <meta name="description" content="Speed reading challenge for Year 1 students with voice recognition. Practice reading high frequency words as they flash on screen in this timed activity.">
+    <meta name="keywords" content="speed reading, word reading, high frequency words, Year 1 reading, reading fluency, reading challenge, voice recognition">
+    <link rel="canonical" href="https://eduresources.co.uk/reading-speed-challenge.html">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Preload Font Awesome CSS -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --reading-color: #9b59b6; /* Purple for reading */
+            --reading-light: #8e44ad; /* Lighter purple */
+            --success-color: #2ecc71; /* Green for success */
+            --warning-color: #f39c12; /* Orange for warning */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--reading-color), var(--reading-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Game Container --- */
+        .game-container {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .game-instructions {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .game-display {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--spacing-md) 0;
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            border: 2px dashed var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .word-display {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--reading-color);
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-controls {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .score-display {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--reading-color), var(--reading-light));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f8f9fa;
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .btn-warning {
+            background-color: var(--warning-color);
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .results-container {
+            display: none;
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .results-container h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .final-score {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--reading-color);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .encouragement {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .word-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: var(--spacing-md);
+        }
+
+        .word-badge {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .word-badge.correct {
+            border-color: var(--success-color);
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+
+        .word-badge.incorrect {
+            border-color: var(--accent-color);
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+
+        /* --- Difficulty Selector --- */
+        .difficulty-selector {
+            margin: var(--spacing-md) 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            justify-content: center;
+        }
+
+        .difficulty-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            background-color: white;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .difficulty-btn.active {
+            background-color: var(--reading-color);
+            color: white;
+            border-color: var(--reading-color);
+        }
+
+        /* --- Microphone Indicator --- */
+        .mic-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: var(--spacing-sm) 0;
+            color: var(--text-light);
+        }
+
+        .mic-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+        }
+
+        .mic-icon.listening {
+            animation: pulse 1s infinite;
+            color: var(--success-color);
+        }
+
+        /* --- Feedback Messages --- */
+        .feedback-message {
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            margin: var(--spacing-sm) 0;
+            font-weight: 500;
+            display: none;
+        }
+
+        .feedback-correct {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+
+        .feedback-incorrect {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             display: none !important;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .nav-item.active {
+            color: var(--reading-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Browser Compatibility Warning --- */
+        .browser-warning {
+            display: none;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            border: 1px solid #ffeaa7;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .word-display {
+                font-size: 2.5rem;
+            }
+            .timer-display {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            .difficulty-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .pulse {
+            animation: pulse 0.5s ease;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down -->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Speed Read Challenge</h1>
+                <p>How many words can you read correctly in 60 seconds?</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span> / </span> <a href="quizzes.html">Quizzes</a> <span> / </span> <a href="quiz-year1.html">Year 1</a> <span> / </span> <a href="quiz-year1-english-reading.html">Word Reading</a> <span> / </span> Speed Read Challenge
+            </nav>
+        </div>
+
+        <div class="container">
+            <!-- Browser compatibility warning -->
+            <div class="browser-warning" id="browserWarning">
+                <i class="fas fa-exclamation-triangle"></i>
+                Voice recognition may not be supported in your browser. For best results, use Chrome or Edge.
+            </div>
+
+            <div class="game-container">
+                <div class="game-instructions">
+                    <p>Read the words aloud as they appear on screen. You have 60 seconds to read as many as you can!</p>
+                    <p>Make sure to allow microphone access when prompted.</p>
+                </div>
+
+                <div class="difficulty-selector">
+                    <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+
+                <div class="game-display">
+                    <div class="word-display" id="wordDisplay">Ready?</div>
+                </div>
+
+                <div class="mic-indicator">
+                    <div class="mic-icon" id="micIcon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <span id="micStatus">Microphone: Waiting to start</span>
+                </div>
+
+                <div class="feedback-message" id="feedbackCorrect">
+                    <i class="fas fa-check-circle"></i> Correct! Well done!
+                </div>
+                
+                <div class="feedback-message" id="feedbackIncorrect">
+                    <i class="fas fa-times-circle"></i> Try again! Say the word clearly.
+                </div>
+
+                <div class="timer-display" id="timer">60</div>
+                <div class="score-display">Correct words: <span id="score">0</span>/<span id="total">0</span></div>
+
+                <div class="game-controls">
+                    <button id="startBtn" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start Challenge
+                    </button>
+                    <button id="skipBtn" class="btn btn-secondary" disabled>
+                        <i class="fas fa-forward"></i> Skip Word
+                    </button>
+                </div>
+
+                <div class="results-container" id="resultsContainer">
+                    <h3>Challenge Complete!</h3>
+                    <div class="final-score">You read <span id="finalScore">0</span> words correctly!</div>
+                    <div class="accuracy">Accuracy: <span id="accuracy">0%</span></div>
+                    <p class="encouragement" id="encouragement">Great effort! Keep practicing to improve your speed.</p>
+                    
+                    <button id="restartBtn" class="btn btn-success">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+
+                    <div class="word-list" id="wordList">
+                        <!-- Words will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check browser compatibility
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                document.getElementById('browserWarning').style.display = 'block';
+            }
+
+            // Word lists for different difficulty levels
+            const wordLists = {
+                easy: [
+                    'the', 'and', 'a', 'to', 'said', 'in', 'he', 'I', 'of', 'it', 
+                    'was', 'you', 'they', 'on', 'she', 'is', 'for', 'at', 'his', 'but', 
+                    'that', 'with', 'all', 'we', 'can', 'are', 'up', 'had', 'my', 'her', 
+                    'what', 'there', 'out', 'this', 'have', 'went', 'be', 'like', 'some', 'so', 
+                    'not', 'then', 'were', 'go', 'little', 'as', 'no', 'mum', 'one', 'them'
+                ],
+                medium: [
+                    'do', 'me', 'down', 'dad', 'big', 'when', 'it’s', 'see', 'looked', 'very', 
+                    'look', 'don’t', 'come', 'will', 'into', 'back', 'from', 'children', 'him', 'Mr', 
+                    'get', 'just', 'now', 'came', 'oh', 'about', 'got', 'their', 'people', 'your', 
+                    'put', 'could', 'house', 'old', 'too', 'by', 'day', 'made', 'time', 'I’m', 
+                    'if', 'help', 'Mrs', 'called', 'here', 'off', 'asked', 'saw', 'make', 'an'
+                ],
+                hard: [
+                    'water', 'away', 'good', 'over', 'where', 'who', 'again', 'thought', 'through', 'work', 
+                    'mouse', 'many', 'before', 'know', 'right', 'found', 'because', 'different', 'any', 'home', 
+                    'around', 'small', 'end', 'take', 'three', 'must', 'things', 'still', 'another', 'well', 
+                    'more', 'first', 'would', 'every', 'these', 'climbed', 'after', 'window', 'been', 'can’t', 
+                    'did', 'next', 'how', 'much', 'took', 'our', 'two', 'find', 'more', 'want'
+                ]
+            };
+
+            // DOM elements
+            const wordDisplay = document.getElementById('wordDisplay');
+            const timerDisplay = document.getElementById('timer');
+            const scoreDisplay = document.getElementById('score');
+            const totalDisplay = document.getElementById('total');
+            const finalScoreDisplay = document.getElementById('finalScore');
+            const accuracyDisplay = document.getElementById('accuracy');
+            const startBtn = document.getElementById('startBtn');
+            const skipBtn = document.getElementById('skipBtn');
+            const restartBtn = document.getElementById('restartBtn');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const wordListContainer = document.getElementById('wordList');
+            const encouragementText = document.getElementById('encouragement');
+            const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+            const micIcon = document.getElementById('micIcon');
+            const micStatus = document.getElementById('micStatus');
+            const feedbackCorrect = document.getElementById('feedbackCorrect');
+            const feedbackIncorrect = document.getElementById('feedbackIncorrect');
+            const browserWarning = document.getElementById('browserWarning');
+
+            // Speech recognition setup
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            let recognition = null;
+            
+            if (SpeechRecognition) {
+                recognition = new SpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'en-GB';
+                
+                recognition.onstart = function() {
+                    micIcon.classList.add('listening');
+                    micStatus.textContent = 'Microphone: Listening...';
+                };
+                
+                recognition.onend = function() {
+                    micIcon.classList.remove('listening');
+                    micStatus.textContent = 'Microphone: Processing...';
+                };
+                
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript.toLowerCase().trim();
+                    checkWordMatch(transcript);
+                };
+                
+                recognition.onerror = function(event) {
+                    micIcon.classList.remove('listening');
+                    micStatus.textContent = 'Microphone: Error - ' + event.error;
+                    setTimeout(() => {
+                        micStatus.textContent = 'Microphone: Ready';
+                    }, 2000);
+                };
+            }
+
+            // Game state
+            let currentWordIndex = 0;
+            let correctScore = 0;
+            let totalWords = 0;
+            let timeLeft = 60;
+            let timer;
+            let currentDifficulty = 'easy';
+            let displayedWords = [];
+            let recognitionActive = false;
+
+            // Set up difficulty buttons
+            difficultyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    difficultyBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentDifficulty = this.dataset.difficulty;
+                });
+            });
+
+            // Start the game
+            startBtn.addEventListener('click', startGame);
+
+            // Skip word button
+            skipBtn.addEventListener('click', skipWord);
+
+            // Restart button
+            restartBtn.addEventListener('click', function() {
+                resultsContainer.style.display = 'none';
+                startGame();
+            });
+
+            function startGame() {
+                // Check if speech recognition is available
+                if (!recognition) {
+                    browserWarning.style.display = 'block';
+                    return;
+                } else {
+                    browserWarning.style.display = 'none';
+                }
+                
+                // Reset game state
+                currentWordIndex = 0;
+                correctScore = 0;
+                totalWords = 0;
+                timeLeft = 60;
+                displayedWords = [];
+                
+                // Update UI
+                scoreDisplay.textContent = '0';
+                totalDisplay.textContent = '0';
+                timerDisplay.textContent = timeLeft;
+                startBtn.disabled = true;
+                skipBtn.disabled = false;
+                resultsContainer.style.display = 'none';
+                feedbackCorrect.style.display = 'none';
+                feedbackIncorrect.style.display = 'none';
+                
+                // Show first word
+                showNextWord();
+                
+                // Start timer
+                timer = setInterval(updateTimer, 1000);
+            }
+
+            function showNextWord() {
+                if (currentWordIndex >= wordLists[currentDifficulty].length) {
+                    // If we've shown all words, reshuffle and continue
+                    shuffleArray(wordLists[currentDifficulty]);
+                    currentWordIndex = 0;
+                }
+                
+                const word = wordLists[currentDifficulty][currentWordIndex];
+                wordDisplay.textContent = word;
+                wordDisplay.classList.add('pulse');
+                
+                // Remove pulse animation after it completes
+                setTimeout(() => {
+                    wordDisplay.classList.remove('pulse');
+                }, 500);
+                
+                // Start listening for the word
+                startListening();
+                
+                currentWordIndex++;
+                totalWords++;
+                totalDisplay.textContent = totalWords;
+            }
+
+            function startListening() {
+                if (recognition) {
+                    try {
+                        recognition.start();
+                        recognitionActive = true;
+                    } catch (error) {
+                        console.error('Speech recognition error:', error);
+                        micStatus.textContent = 'Microphone: Error starting';
+                    }
+                }
+            }
+
+            function checkWordMatch(spokenWord) {
+                const currentWord = wordDisplay.textContent.toLowerCase();
+                let isCorrect = false;
+                
+                // Check for exact match or close match (for words with apostrophes, etc.)
+                if (spokenWord === currentWord) {
+                    isCorrect = true;
+                } else if (currentWord.includes("’") && spokenWord === currentWord.replace("’", "'")) {
+                    isCorrect = true;
+                } else if (currentWord.includes("'") && spokenWord === currentWord.replace("'", "’")) {
+                    isCorrect = true;
+                }
+                
+                // Add to displayed words list
+                displayedWords.push({
+                    word: currentWord,
+                    spoken: spokenWord,
+                    correct: isCorrect
+                });
+                
+                if (isCorrect) {
+                    // Correct word
+                    correctScore++;
+                    scoreDisplay.textContent = correctScore;
+                    
+                    // Show feedback
+                    feedbackCorrect.style.display = 'block';
+                    feedbackIncorrect.style.display = 'none';
+                    
+                    // Move to next word after a short delay
+                    setTimeout(showNextWord, 1500);
+                } else {
+                    // Incorrect word
+                    feedbackCorrect.style.display = 'none';
+                    feedbackIncorrect.style.display = 'block';
+                    
+                    // Keep showing the same word
+                    setTimeout(startListening, 1500);
+                }
+            }
+
+            function skipWord() {
+                // Add to displayed words as incorrect
+                displayedWords.push({
+                    word: wordDisplay.textContent,
+                    spoken: '(skipped)',
+                    correct: false
+                });
+                
+                // Hide any feedback
+                feedbackCorrect.style.display = 'none';
+                feedbackIncorrect.style.display = 'none';
+                
+                // Move to next word
+                showNextWord();
+            }
+
+            function updateTimer() {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }
+
+            function endGame() {
+                clearInterval(timer);
+                
+                if (recognition && recognitionActive) {
+                    recognition.stop();
+                }
+                
+                skipBtn.disabled = true;
+                startBtn.disabled = false;
+                
+                // Calculate accuracy
+                const accuracy = totalWords > 0 ? Math.round((correctScore / totalWords) * 100) : 0;
+                
+                // Show results
+                finalScoreDisplay.textContent = correctScore;
+                accuracyDisplay.textContent = `${accuracy}%`;
+                resultsContainer.style.display = 'block';
+                
+                // Set encouragement message based on score
+                if (correctScore >= 30) {
+                    encouragementText.textContent = "Amazing! You're a reading superstar!";
+                } else if (correctScore >= 20) {
+                    encouragementText.textContent = "Great job! You're becoming a fluent reader!";
+                } else if (correctScore >= 10) {
+                    encouragementText.textContent = "Good effort! Keep practicing to get even better!";
+                } else {
+                    encouragementText.textContent = "Nice try! Practice makes perfect!";
+                }
+                
+                // Display the words that were shown
+                wordListContainer.innerHTML = '';
+                displayedWords.forEach(word => {
+                    const wordBadge = document.createElement('span');
+                    wordBadge.className = `word-badge ${word.correct ? 'correct' : 'incorrect'}`;
+                    
+                    const wordText = document.createElement('span');
+                    wordText.textContent = word.word;
+                    
+                    const icon = document.createElement('i');
+                    icon.className = word.correct ? 'fas fa-check' : 'fas fa-times';
+                    
+                    wordBadge.appendChild(icon);
+                    wordBadge.appendChild(wordText);
+                    
+                    if (!word.correct) {
+                        const spoken = document.createElement('span');
+                        spoken.textContent = `You said: ${word.spoken}`;
+                        spoken.style.fontSize = '0.8em';
+                        spoken.style.color = 'var(--text-light)';
+                        wordBadge.appendChild(spoken);
+                    }
+                    
+                    wordListContainer.appendChild(wordBadge);
+                });
+            }
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            // Pre-shuffle the word lists
+            shuffleArray(wordLists.easy);
+            shuffleArray(wordLists.medium);
+            shuffleArray(wordLists.hard);
+        });
+    </script>
+</body>
+</html>
