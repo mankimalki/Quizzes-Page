@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Read Challenge | Year 1 Word Reading | EduResources</title>
-    <meta name="description" content="Speed reading challenge for Year 1 students with voice recognition. Practice reading high frequency words as they flash on screen in this timed activity.">
+    <meta name="description" content="Speed reading challenge for Year 1 students with improved voice recognition. Practice reading high frequency words as they flash on screen in this timed activity.">
     <meta name="keywords" content="speed reading, word reading, high frequency words, Year 1 reading, reading fluency, reading challenge, voice recognition">
     <link rel="canonical" href="https://eduresources.co.uk/reading-speed-challenge.html">
     
@@ -213,7 +213,17 @@
             font-weight: bold;
             color: var(--reading-color);
             text-align: center;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .word-correct {
+            color: var(--success-color);
+            transform: scale(1.1);
+        }
+
+        .word-incorrect {
+            color: var(--accent-color);
+            animation: shake 0.5s ease;
         }
 
         .game-controls {
@@ -425,6 +435,14 @@
             border: 1px solid var(--accent-color);
         }
 
+        /* --- Pronunciation Help --- */
+        .pronunciation-help {
+            margin-top: var(--spacing-sm);
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: none;
+        }
+
         /* --- Footer --- */
         footer {
             background-color: var(--primary-color);
@@ -595,6 +613,12 @@
             to { opacity: 1; }
         }
 
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
         .pulse {
             animation: pulse 0.5s ease;
         }
@@ -642,7 +666,7 @@
             <div class="game-container">
                 <div class="game-instructions">
                     <p>Read the words aloud as they appear on screen. You have 60 seconds to read as many as you can!</p>
-                    <p>Make sure to allow microphone access when prompted.</p>
+                    <p>Make sure to allow microphone access when prompted. Speak clearly and at a normal pace.</p>
                 </div>
 
                 <div class="difficulty-selector">
@@ -670,6 +694,10 @@
                     <i class="fas fa-times-circle"></i> Try again! Say the word clearly.
                 </div>
 
+                <div class="pronunciation-help" id="pronunciationHelp">
+                    <i class="fas fa-info-circle"></i> Tip: Try saying "<span id="currentWordPronunciation"></span>"
+                </div>
+
                 <div class="timer-display" id="timer">60</div>
                 <div class="score-display">Correct words: <span id="score">0</span>/<span id="total">0</span></div>
 
@@ -679,6 +707,9 @@
                     </button>
                     <button id="skipBtn" class="btn btn-secondary" disabled>
                         <i class="fas fa-forward"></i> Skip Word
+                    </button>
+                    <button id="manualCheckBtn" class="btn btn-warning" disabled>
+                        <i class="fas fa-hand-paper"></i> I Said It Correctly
                     </button>
                 </div>
 
@@ -783,28 +814,73 @@
                 document.getElementById('browserWarning').style.display = 'block';
             }
 
-            // Word lists for different difficulty levels
+            // Word lists for different difficulty levels with pronunciation guides
             const wordLists = {
                 easy: [
-                    'the', 'and', 'a', 'to', 'said', 'in', 'he', 'I', 'of', 'it', 
-                    'was', 'you', 'they', 'on', 'she', 'is', 'for', 'at', 'his', 'but', 
-                    'that', 'with', 'all', 'we', 'can', 'are', 'up', 'had', 'my', 'her', 
-                    'what', 'there', 'out', 'this', 'have', 'went', 'be', 'like', 'some', 'so', 
-                    'not', 'then', 'were', 'go', 'little', 'as', 'no', 'mum', 'one', 'them'
+                    {word: 'the', pronunciation: 'thuh'},
+                    {word: 'and', pronunciation: 'and'},
+                    {word: 'a', pronunciation: 'ay'},
+                    {word: 'to', pronunciation: 'too'},
+                    {word: 'said', pronunciation: 'sed'},
+                    {word: 'in', pronunciation: 'in'},
+                    {word: 'he', pronunciation: 'hee'},
+                    {word: 'I', pronunciation: 'eye'},
+                    {word: 'of', pronunciation: 'ov'},
+                    {word: 'it', pronunciation: 'it'},
+                    {word: 'was', pronunciation: 'woz'},
+                    {word: 'you', pronunciation: 'yoo'},
+                    {word: 'they', pronunciation: 'thay'},
+                    {word: 'on', pronunciation: 'on'},
+                    {word: 'she', pronunciation: 'shee'},
+                    {word: 'is', pronunciation: 'iz'},
+                    {word: 'for', pronunciation: 'for'},
+                    {word: 'at', pronunciation: 'at'},
+                    {word: 'his', pronunciation: 'hiz'},
+                    {word: 'but', pronunciation: 'but'}
                 ],
                 medium: [
-                    'do', 'me', 'down', 'dad', 'big', 'when', 'it’s', 'see', 'looked', 'very', 
-                    'look', 'don’t', 'come', 'will', 'into', 'back', 'from', 'children', 'him', 'Mr', 
-                    'get', 'just', 'now', 'came', 'oh', 'about', 'got', 'their', 'people', 'your', 
-                    'put', 'could', 'house', 'old', 'too', 'by', 'day', 'made', 'time', 'I’m', 
-                    'if', 'help', 'Mrs', 'called', 'here', 'off', 'asked', 'saw', 'make', 'an'
+                    {word: 'do', pronunciation: 'doo'},
+                    {word: 'me', pronunciation: 'mee'},
+                    {word: 'down', pronunciation: 'down'},
+                    {word: 'dad', pronunciation: 'dad'},
+                    {word: 'big', pronunciation: 'big'},
+                    {word: 'when', pronunciation: 'wen'},
+                    {word: 'it’s', pronunciation: 'its'},
+                    {word: 'see', pronunciation: 'see'},
+                    {word: 'looked', pronunciation: 'lookt'},
+                    {word: 'very', pronunciation: 'ver-ee'},
+                    {word: 'look', pronunciation: 'look'},
+                    {word: 'don’t', pronunciation: 'dohnt'},
+                    {word: 'come', pronunciation: 'kum'},
+                    {word: 'will', pronunciation: 'will'},
+                    {word: 'into', pronunciation: 'in-too'},
+                    {word: 'back', pronunciation: 'bak'},
+                    {word: 'from', pronunciation: 'from'},
+                    {word: 'children', pronunciation: 'chil-dren'},
+                    {word: 'him', pronunciation: 'him'},
+                    {word: 'Mr', pronunciation: 'mis-ter'}
                 ],
                 hard: [
-                    'water', 'away', 'good', 'over', 'where', 'who', 'again', 'thought', 'through', 'work', 
-                    'mouse', 'many', 'before', 'know', 'right', 'found', 'because', 'different', 'any', 'home', 
-                    'around', 'small', 'end', 'take', 'three', 'must', 'things', 'still', 'another', 'well', 
-                    'more', 'first', 'would', 'every', 'these', 'climbed', 'after', 'window', 'been', 'can’t', 
-                    'did', 'next', 'how', 'much', 'took', 'our', 'two', 'find', 'more', 'want'
+                    {word: 'water', pronunciation: 'waw-ter'},
+                    {word: 'away', pronunciation: 'a-way'},
+                    {word: 'good', pronunciation: 'good'},
+                    {word: 'over', pronunciation: 'oh-ver'},
+                    {word: 'where', pronunciation: 'whair'},
+                    {word: 'who', pronunciation: 'hoo'},
+                    {word: 'again', pronunciation: 'a-gen'},
+                    {word: 'thought', pronunciation: 'thawt'},
+                    {word: 'through', pronunciation: 'throo'},
+                    {word: 'work', pronunciation: 'werk'},
+                    {word: 'mouse', pronunciation: 'mows'},
+                    {word: 'many', pronunciation: 'men-ee'},
+                    {word: 'before', pronunciation: 'bee-for'},
+                    {word: 'know', pronunciation: 'noh'},
+                    {word: 'right', pronunciation: 'rite'},
+                    {word: 'found', pronunciation: 'found'},
+                    {word: 'because', pronunciation: 'bee-kuz'},
+                    {word: 'different', pronunciation: 'dif-rent'},
+                    {word: 'any', pronunciation: 'en-ee'},
+                    {word: 'home', pronunciation: 'hohm'}
                 ]
             };
 
@@ -817,6 +893,7 @@
             const accuracyDisplay = document.getElementById('accuracy');
             const startBtn = document.getElementById('startBtn');
             const skipBtn = document.getElementById('skipBtn');
+            const manualCheckBtn = document.getElementById('manualCheckBtn');
             const restartBtn = document.getElementById('restartBtn');
             const resultsContainer = document.getElementById('resultsContainer');
             const wordListContainer = document.getElementById('wordList');
@@ -826,6 +903,8 @@
             const micStatus = document.getElementById('micStatus');
             const feedbackCorrect = document.getElementById('feedbackCorrect');
             const feedbackIncorrect = document.getElementById('feedbackIncorrect');
+            const pronunciationHelp = document.getElementById('pronunciationHelp');
+            const currentWordPronunciation = document.getElementById('currentWordPronunciation');
             const browserWarning = document.getElementById('browserWarning');
 
             // Speech recognition setup
@@ -855,10 +934,16 @@
                 
                 recognition.onerror = function(event) {
                     micIcon.classList.remove('listening');
-                    micStatus.textContent = 'Microphone: Error - ' + event.error;
-                    setTimeout(() => {
-                        micStatus.textContent = 'Microphone: Ready';
-                    }, 2000);
+                    if (event.error === 'no-speech') {
+                        micStatus.textContent = 'Microphone: No speech detected';
+                        // Automatically restart listening if no speech was detected
+                        setTimeout(startListening, 1000);
+                    } else {
+                        micStatus.textContent = 'Microphone: Error - ' + event.error;
+                        setTimeout(() => {
+                            micStatus.textContent = 'Microphone: Ready';
+                        }, 2000);
+                    }
                 };
             }
 
@@ -871,6 +956,7 @@
             let currentDifficulty = 'easy';
             let displayedWords = [];
             let recognitionActive = false;
+            let currentWordObj = null;
 
             // Set up difficulty buttons
             difficultyBtns.forEach(btn => {
@@ -886,6 +972,9 @@
 
             // Skip word button
             skipBtn.addEventListener('click', skipWord);
+
+            // Manual check button
+            manualCheckBtn.addEventListener('click', manualCorrect);
 
             // Restart button
             restartBtn.addEventListener('click', function() {
@@ -915,9 +1004,11 @@
                 timerDisplay.textContent = timeLeft;
                 startBtn.disabled = true;
                 skipBtn.disabled = false;
+                manualCheckBtn.disabled = false;
                 resultsContainer.style.display = 'none';
                 feedbackCorrect.style.display = 'none';
                 feedbackIncorrect.style.display = 'none';
+                pronunciationHelp.style.display = 'none';
                 
                 // Show first word
                 showNextWord();
@@ -933,9 +1024,14 @@
                     currentWordIndex = 0;
                 }
                 
-                const word = wordLists[currentDifficulty][currentWordIndex];
-                wordDisplay.textContent = word;
+                currentWordObj = wordLists[currentDifficulty][currentWordIndex];
+                wordDisplay.textContent = currentWordObj.word;
+                wordDisplay.classList.remove('word-correct', 'word-incorrect');
                 wordDisplay.classList.add('pulse');
+                
+                // Update pronunciation help
+                currentWordPronunciation.textContent = currentWordObj.pronunciation;
+                pronunciationHelp.style.display = 'block';
                 
                 // Remove pulse animation after it completes
                 setTimeout(() => {
@@ -958,21 +1054,48 @@
                     } catch (error) {
                         console.error('Speech recognition error:', error);
                         micStatus.textContent = 'Microphone: Error starting';
+                        // Try again after a short delay
+                        setTimeout(startListening, 500);
                     }
                 }
             }
 
             function checkWordMatch(spokenWord) {
-                const currentWord = wordDisplay.textContent.toLowerCase();
+                const currentWord = currentWordObj.word.toLowerCase();
                 let isCorrect = false;
                 
-                // Check for exact match or close match (for words with apostrophes, etc.)
+                // More flexible matching to account for speech recognition variations
                 if (spokenWord === currentWord) {
                     isCorrect = true;
-                } else if (currentWord.includes("’") && spokenWord === currentWord.replace("’", "'")) {
+                } 
+                // Check for common misrecognitions
+                else if (
+                    (currentWord === 'the' && (spokenWord === 'a' || spokenWord === 'uh')) ||
+                    (currentWord === 'a' && spokenWord === 'the') ||
+                    (currentWord === 'and' && spokenWord === 'end') ||
+                    (currentWord === 'to' && spokenWord === 'two') ||
+                    (currentWord === 'for' && spokenWord === 'four') ||
+                    (currentWord === 'his' && spokenWord === 'is') ||
+                    (currentWord === 'her' && spokenWord === 'are') ||
+                    (currentWord === 'they' && spokenWord === 'the') ||
+                    (currentWord === 'said' && spokenWord === 'sed') ||
+                    (currentWord === 'was' && spokenWord === 'is') ||
+                    (currentWord === 'you' && spokenWord === 'u') ||
+                    (currentWord === 'are' && spokenWord === 'r') ||
+                    (currentWord.includes("’") && spokenWord === currentWord.replace("’", "'")) ||
+                    (currentWord.includes("'") && spokenWord === currentWord.replace("'", "’"))
+                ) {
                     isCorrect = true;
-                } else if (currentWord.includes("'") && spokenWord === currentWord.replace("'", "’")) {
+                }
+                // Check for partial matches (for longer words)
+                else if (currentWord.length > 3 && spokenWord.includes(currentWord)) {
                     isCorrect = true;
+                }
+                // Check if the recognized word sounds similar (using first 3 characters)
+                else if (currentWord.length > 2 && spokenWord.length > 2) {
+                    if (currentWord.substring(0, 3) === spokenWord.substring(0, 3)) {
+                        isCorrect = true;
+                    }
                 }
                 
                 // Add to displayed words list
@@ -983,30 +1106,69 @@
                 });
                 
                 if (isCorrect) {
-                    // Correct word
-                    correctScore++;
-                    scoreDisplay.textContent = correctScore;
-                    
-                    // Show feedback
-                    feedbackCorrect.style.display = 'block';
-                    feedbackIncorrect.style.display = 'none';
-                    
-                    // Move to next word after a short delay
-                    setTimeout(showNextWord, 1500);
+                    handleCorrectAnswer();
                 } else {
-                    // Incorrect word
-                    feedbackCorrect.style.display = 'none';
-                    feedbackIncorrect.style.display = 'block';
-                    
-                    // Keep showing the same word
-                    setTimeout(startListening, 1500);
+                    handleIncorrectAnswer(spokenWord);
                 }
+            }
+
+            function handleCorrectAnswer() {
+                // Correct word
+                correctScore++;
+                scoreDisplay.textContent = correctScore;
+                
+                // Visual feedback
+                wordDisplay.classList.add('word-correct');
+                
+                // Show feedback
+                feedbackCorrect.style.display = 'block';
+                feedbackIncorrect.style.display = 'none';
+                pronunciationHelp.style.display = 'none';
+                
+                // Move to next word after a short delay
+                setTimeout(showNextWord, 1500);
+            }
+
+            function handleIncorrectAnswer(spokenWord) {
+                // Visual feedback
+                wordDisplay.classList.add('word-incorrect');
+                
+                // Show feedback
+                feedbackCorrect.style.display = 'none';
+                feedbackIncorrect.style.display = 'block';
+                
+                // Keep showing the same word but try listening again
+                setTimeout(startListening, 1500);
+            }
+
+            function manualCorrect() {
+                // Mark the current word as correct manually
+                displayedWords.push({
+                    word: currentWordObj.word,
+                    spoken: '(manual override)',
+                    correct: true
+                });
+                
+                correctScore++;
+                scoreDisplay.textContent = correctScore;
+                
+                // Visual feedback
+                wordDisplay.classList.remove('word-incorrect');
+                wordDisplay.classList.add('word-correct');
+                
+                // Show feedback
+                feedbackCorrect.style.display = 'block';
+                feedbackIncorrect.style.display = 'none';
+                pronunciationHelp.style.display = 'none';
+                
+                // Move to next word after a short delay
+                setTimeout(showNextWord, 1500);
             }
 
             function skipWord() {
                 // Add to displayed words as incorrect
                 displayedWords.push({
-                    word: wordDisplay.textContent,
+                    word: currentWordObj.word,
                     spoken: '(skipped)',
                     correct: false
                 });
@@ -1014,6 +1176,7 @@
                 // Hide any feedback
                 feedbackCorrect.style.display = 'none';
                 feedbackIncorrect.style.display = 'none';
+                pronunciationHelp.style.display = 'none';
                 
                 // Move to next word
                 showNextWord();
@@ -1036,6 +1199,7 @@
                 }
                 
                 skipBtn.disabled = true;
+                manualCheckBtn.disabled = true;
                 startBtn.disabled = false;
                 
                 // Calculate accuracy
@@ -1047,11 +1211,11 @@
                 resultsContainer.style.display = 'block';
                 
                 // Set encouragement message based on score
-                if (correctScore >= 30) {
+                if (correctScore >= 15) {
                     encouragementText.textContent = "Amazing! You're a reading superstar!";
-                } else if (correctScore >= 20) {
-                    encouragementText.textContent = "Great job! You're becoming a fluent reader!";
                 } else if (correctScore >= 10) {
+                    encouragementText.textContent = "Great job! You're becoming a fluent reader!";
+                } else if (correctScore >= 5) {
                     encouragementText.textContent = "Good effort! Keep practicing to get even better!";
                 } else {
                     encouragementText.textContent = "Nice try! Practice makes perfect!";
@@ -1072,15 +1236,15 @@
                     wordBadge.appendChild(icon);
                     wordBadge.appendChild(wordText);
                     
-                    if (!word.correct) {
+                    if (!word.correct && word.spoken !== '(skipped)') {
                         const spoken = document.createElement('span');
-                        spoken.textContent = `You said: ${word.spoken}`;
+                        spoken.textContent = `Heard: ${word.spoken}`;
                         spoken.style.fontSize = '0.8em';
                         spoken.style.color = 'var(--text-light)';
                         wordBadge.appendChild(spoken);
                     }
                     
-                    wordListContainer.appendChild(wordBadge);
+                    wordListContainer.appendChild(wordWordBadge);
                 });
             }
 
