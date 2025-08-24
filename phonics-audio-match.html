@@ -14,7 +14,7 @@
     <meta property="og:description" content="Interactive Year 1 phonics game. Listen to letter sounds (a, i, o, u, b, c...) and digraphs (sh, ch, th, ai...) and match them to the correct letter. Practice phonics for reading.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://eduresources.co.uk/phonics-sound-letter-match.html">
-    <meta property="og:image" content="https://placehold.co/600x400/27ae60/FFFFFF?text=Listen+%26+Match"> <!-- Placeholder image -->
+    <meta property="og:image" content="https://placehold.co/600x400/27ae60/FFFFFF?text=Listen+%26+Match">
     <meta property="og:site_name" content="EduResources">
 
     <!-- Twitter Meta Tags -->
@@ -37,16 +37,16 @@
     <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
     <style>
         :root {
-            --primary-color: #2c3e50; /* Dark Blue */
-            --secondary-color: #3498db; /* Bright Blue */
-            --accent-color: #e74c3c; /* Red */
-            --phonics-color: #27ae60; /* Green for phonics */
-            --phonics-light: #2ecc71; /* Lighter green */
-            --bg-color: #f5f7fa; /* Very light background */
-            --card-bg: #ffffff; /* White card background */
-            --border-color: #e0e6ed; /* Light border */
-            --text-color: #212529; /* Main text color */
-            --text-light: #6c757d; /* Lighter text */
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --phonics-color: #27ae60;
+            --phonics-light: #2ecc71;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --border-color: #e0e6ed;
+            --text-color: #212529;
+            --text-light: #6c757d;
             --transition-speed: 0.3s;
             --border-radius: 6px;
             --spacing-xs: 0.4rem;
@@ -56,7 +56,7 @@
             --spacing-xl: 2.2rem;
             --max-width: 1100px;
             --whatsapp-green: #25D366;
-            --quiz-green: #27ae60; /* Green for quiz success/progress */
+            --quiz-green: #27ae60;
         }
 
         * {
@@ -91,7 +91,8 @@
             padding: 0 var(--spacing-sm);
         }
 
-        /* --- Header --- */
+        /* --- Header, Footer, Nav styles remain exactly the same --- */
+         /* --- Header --- */
         header {
             background-color: var(--card-bg);
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
@@ -272,12 +273,23 @@
             width: 100%;
             max-width: 500px;
             text-align: center;
+            cursor: pointer; /* Indicate it's clickable */
+        }
+
+        .sound-display-area:hover {
+             background-color: #f8f9fa; /* Subtle hover effect */
         }
 
         .sound-icon {
             font-size: 4rem;
             color: var(--phonics-color);
-            animation: pulse 2s infinite;
+            /* Pulse animation only when sound is playing or ready to play */
+            /* animation: pulse 2s infinite; */
+        }
+
+         /* Add a class for active pulsing */
+        .sound-icon.pulse {
+             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -290,12 +302,16 @@
             font-size: 1.2rem;
             font-weight: 500;
             color: var(--text-light);
+            /* Hide the actual sound text */
+            /* visibility: hidden; */
+            /* Or make it generic */
+            font-style: italic;
         }
 
         /* --- Options Container for Letters --- */
         .letter-options-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns for letters */
+            grid-template-columns: repeat(4, 1fr);
             gap: var(--spacing-sm);
             width: 100%;
             max-width: 500px;
@@ -307,14 +323,14 @@
             border: 2px solid var(--border-color);
             border-radius: var(--border-radius);
             padding: 1.2rem;
-            font-size: 1.8rem; /* Larger font for letters */
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
             cursor: pointer;
             transition: all var(--transition-speed);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             text-align: center;
-            aspect-ratio: 1; /* Make buttons square */
+            aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -345,7 +361,7 @@
         }
 
         .controls {
-            display: none; /* Hidden as progression is automatic and no restart button in main area */
+            display: none;
         }
 
         .btn {
@@ -693,7 +709,7 @@
                 font-size: 0.9rem;
             }
             .letter-options-container {
-                grid-template-columns: repeat(3, 1fr); /* 3 columns on smaller screens */
+                grid-template-columns: repeat(3, 1fr);
                 max-width: 350px;
             }
             .controls {
@@ -722,7 +738,7 @@
                 margin: 0.2rem 0;
             }
             .letter-options-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+                grid-template-columns: repeat(2, 1fr);
                 max-width: 280px;
             }
             .letter-option-btn {
@@ -783,12 +799,12 @@
                     <h3><i class="fas fa-info-circle"></i> How to Play</h3>
                     <p>This game helps Year 1 students practice matching letter sounds to the correct letters or digraphs. Follow these steps:</p>
                     <ul>
-                        <li>Listen carefully to the sound played automatically</li>
+                        <li>Click the speaker icon to hear the sound</li>
+                        <li>Click the speaker icon again if you need to hear the sound again</li>
                         <li>Click on the letter or digraph that makes that sound</li>
                         <li>The game moves to the next sound automatically!</li>
                         <li>There is no background music or extra sound effects in this game.</li>
                     </ul>
-                    <!-- Sound controls removed as per request -->
                 </div>
 
                 <div class="stats">
@@ -813,8 +829,8 @@
                     </div>
 
                     <div class="sound-display-area" id="sound-display-area" style="display: none;">
-                        <i class="fas fa-volume-up sound-icon"></i>
-                        <div class="sound-text">Listen to the sound...</div>
+                        <i class="fas fa-volume-up sound-icon" id="speaker-icon"></i>
+                        <div class="sound-text">Click to hear the sound</div>
                     </div>
 
                     <div class="letter-options-container" id="letter-options-container" style="display: none;">
@@ -826,7 +842,6 @@
                     </div>
 
                     <div class="controls">
-                        <!-- Controls hidden as progression is automatic -->
                     </div>
                 </div>
 
@@ -837,7 +852,6 @@
                         Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
                     </div>
                     <div class="results-message" id="results-message">
-                        <!-- Message will be inserted by JS -->
                     </div>
                     <button class="btn-restart-results" id="restart-results-btn">
                         <i class="fas fa-redo"></i> Play Again
@@ -845,7 +859,7 @@
                 </div>
             </section>
 
-            <!-- SEO Content Section -->
+            <!-- SEO Content Section (same as before) -->
             <section class="seo-content">
                 <h2>Reinforce Year 1 Phonics: Sound to Letter Matching Activity</h2>
 
@@ -973,6 +987,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Game elements
             const soundDisplayArea = document.getElementById('sound-display-area');
+            const speakerIcon = document.getElementById('speaker-icon');
             const letterOptionsContainer = document.getElementById('letter-options-container');
             const feedback = document.getElementById('feedback');
             const scoreElement = document.getElementById('score');
@@ -991,49 +1006,49 @@
             let currentQuestion = 0;
             let questions = [];
             let answered = false;
-            let soundPlayed = false; // Flag to ensure sound plays only once per question
+            let soundPlayed = false;
+            let isPlaying = false; // Flag to prevent overlapping plays
 
-            // Sample data: Sounds with multiple letter options
+            // Sample Questions: Include a 'pronunciationHint' for TTS
             const sampleQuestions = [
-                { sound: "/a/", options: ["a", "e", "i", "o"], correct: "a" },
-                { sound: "/b/", options: ["b", "d", "p", "q"], correct: "b" },
-                { sound: "/k/", options: ["c", "k", "ck", "ch"], correct: "k" }, // Focusing on /k/ sound
-                { sound: "/d/", options: ["d", "b", "p", "t"], correct: "d" },
-                { sound: "/e/", options: ["e", "a", "i", "o"], correct: "e" },
-                { sound: "/f/", options: ["f", "ph", "gh", "v"], correct: "f" },
-                { sound: "/g/", options: ["g", "j", "ge", "dge"], correct: "g" },
-                { sound: "/h/", options: ["h", "ch", "wh", "sh"], correct: "h" },
-                { sound: "/i/", options: ["i", "e", "y", "ie"], correct: "i" },
-                { sound: "/j/", options: ["j", "g", "ge", "dj"], correct: "j" },
-                { sound: "/l/", options: ["l", "ll", "le", "el"], correct: "l" },
-                { sound: "/m/", options: ["m", "mm", "mb", "lm"], correct: "m" },
-                { sound: "/n/", options: ["n", "nn", "kn", "gn"], correct: "n" },
-                { sound: "/o/", options: ["o", "a", "u", "oo"], correct: "o" },
-                { sound: "/p/", options: ["p", "b", "pp", "ph"], correct: "p" },
-                { sound: "/r/", options: ["r", "rr", "wr", "rh"], correct: "r" },
-                { sound: "/s/", options: ["s", "ss", "c", "sc"], correct: "s" },
-                { sound: "/t/", options: ["t", "tt", "th", "ed"], correct: "t" },
-                { sound: "/u/", options: ["u", "o", "ou", "ew"], correct: "u" },
-                { sound: "/v/", options: ["v", "f", "ph", "ve"], correct: "v" },
-                { sound: "/w/", options: ["w", "wh", "u", "o"], correct: "w" },
-                { sound: "/ks/", options: ["x", "ks", "cks", "cs"], correct: "x" },
-                { sound: "/y/", options: ["y", "i", "igh", "ie"], correct: "y" },
-                { sound: "/z/", options: ["z", "zz", "s", "ze"], correct: "z" },
-                // Digraphs
-                { sound: "/sh/", options: ["sh", "ch", "s", "ci"], correct: "sh" },
-                { sound: "/ch/", options: ["ch", "tch", "sh", "c"], correct: "ch" },
-                { sound: "/th/", options: ["th", "ph", "ch", "t"], correct: "th" }, // Voiceless 'th'
-                { sound: "/ai/", options: ["ai", "ay", "a_e", "ei"], correct: "ai" },
-                { sound: "/ee/", options: ["ee", "ea", "e", "ie"], correct: "ee" },
-                { sound: "/oo/", options: ["oo", "u", "ou", "ue"], correct: "oo" }, // Short 'oo'
-                { sound: "/ar/", options: ["ar", "are", "ear", "er"], correct: "ar" },
-                { sound: "/or/", options: ["or", "ore", "oar", "our"], correct: "or" },
-                { sound: "/ur/", options: ["ur", "er", "ir", "or"], correct: "ur" }
+                { sound: "/a/", pronunciationHint: "apple", options: ["a", "e", "i", "o"], correct: "a" },
+                { sound: "/b/", pronunciationHint: "bat", options: ["b", "d", "p", "q"], correct: "b" },
+                { sound: "/k/", pronunciationHint: "cat", options: ["c", "k", "ck", "ch"], correct: "k" },
+                { sound: "/d/", pronunciationHint: "dog", options: ["d", "b", "p", "t"], correct: "d" },
+                { sound: "/e/", pronunciationHint: "egg", options: ["e", "a", "i", "o"], correct: "e" },
+                { sound: "/f/", pronunciationHint: "fish", options: ["f", "ph", "gh", "v"], correct: "f" },
+                { sound: "/g/", pronunciationHint: "goat", options: ["g", "j", "ge", "dge"], correct: "g" },
+                { sound: "/h/", pronunciationHint: "hat", options: ["h", "ch", "wh", "sh"], correct: "h" },
+                { sound: "/i/", pronunciationHint: "igloo", options: ["i", "e", "y", "ie"], correct: "i" },
+                { sound: "/j/", pronunciationHint: "jug", options: ["j", "g", "ge", "dj"], correct: "j" },
+                { sound: "/l/", pronunciationHint: "lion", options: ["l", "ll", "le", "el"], correct: "l" },
+                { sound: "/m/", pronunciationHint: "man", options: ["m", "mm", "mb", "lm"], correct: "m" },
+                { sound: "/n/", pronunciationHint: "net", options: ["n", "nn", "kn", "gn"], correct: "n" },
+                { sound: "/o/", pronunciationHint: "octopus", options: ["o", "a", "u", "oo"], correct: "o" },
+                { sound: "/p/", pronunciationHint: "pig", options: ["p", "b", "pp", "ph"], correct: "p" },
+                { sound: "/r/", pronunciationHint: "rat", options: ["r", "rr", "wr", "rh"], correct: "r" },
+                { sound: "/s/", pronunciationHint: "sun", options: ["s", "ss", "c", "sc"], correct: "s" },
+                { sound: "/t/", pronunciationHint: "top", options: ["t", "tt", "th", "ed"], correct: "t" },
+                { sound: "/u/", pronunciationHint: "umbrella", options: ["u", "o", "ou", "ew"], correct: "u" },
+                { sound: "/v/", pronunciationHint: "van", options: ["v", "f", "ph", "ve"], correct: "v" },
+                { sound: "/w/", pronunciationHint: "wet", options: ["w", "wh", "u", "o"], correct: "w" },
+                { sound: "/ks/", pronunciationHint: "box", options: ["x", "ks", "cks", "cs"], correct: "x" },
+                { sound: "/y/", pronunciationHint: "yellow", options: ["y", "i", "igh", "ie"], correct: "y" },
+                { sound: "/z/", pronunciationHint: "zebra", options: ["z", "zz", "s", "ze"], correct: "z" },
+                // Digraphs - Use a word starting with the digraph
+                { sound: "/sh/", pronunciationHint: "ship", options: ["sh", "ch", "s", "ci"], correct: "sh" },
+                { sound: "/ch/", pronunciationHint: "chair", options: ["ch", "tch", "sh", "c"], correct: "ch" },
+                { sound: "/th/", pronunciationHint: "think", options: ["th", "ph", "ch", "t"], correct: "th" }, // Using 'think' for voiceless 'th'
+                { sound: "/ai/", pronunciationHint: "rain", options: ["ai", "ay", "a_e", "ei"], correct: "ai" },
+                { sound: "/ee/", pronunciationHint: "feet", options: ["ee", "ea", "e", "ie"], correct: "ee" },
+                { sound: "/oo/", pronunciationHint: "book", options: ["oo", "u", "ou", "ue"], correct: "oo" }, // Short 'oo'
+                { sound: "/ar/", pronunciationHint: "car", options: ["ar", "are", "ear", "er"], correct: "ar" },
+                { sound: "/or/", pronunciationHint: "corn", options: ["or", "ore", "oar", "our"], correct: "or" },
+                { sound: "/ur/", pronunciationHint: "nurse", options: ["ur", "er", "ir", "or"], correct: "ur" }
             ];
 
             // --- Helper Functions ---
 
-            // Function to shuffle an array (Fisher-Yates Shuffle)
             function shuffleArray(array) {
                 let shuffled = [...array];
                 for (let i = shuffled.length - 1; i > 0; i--) {
@@ -1045,18 +1060,19 @@
 
             // Initialize game
             function initGame() {
-                questions = shuffleArray(sampleQuestions); // Shuffle the entire question set
+                questions = shuffleArray(sampleQuestions);
                 score = 0;
                 attempts = 0;
                 currentQuestion = 0;
                 answered = false;
                 soundPlayed = false;
+                isPlaying = false;
 
                 resultsScreen.style.display = 'none';
                 loadingElement.style.display = 'block';
                 soundDisplayArea.style.display = 'none';
                 letterOptionsContainer.style.display = 'none';
-                feedback.textContent = 'Loading game...';
+                feedback.textContent = 'Get ready!';
                 feedback.className = 'feedback';
 
                 setTimeout(() => {
@@ -1070,7 +1086,7 @@
                 }, 1000);
             }
 
-            // Load current question (play sound and show letter options)
+            // Load current question
             function loadQuestion() {
                 if (currentQuestion >= questions.length) {
                     showResults();
@@ -1078,12 +1094,14 @@
                 }
 
                 const currentQuestionData = questions[currentQuestion];
-                // Update display text
-                soundDisplayArea.querySelector('.sound-text').textContent = "Playing sound...";
-                feedback.textContent = 'Listen carefully!';
+                // Update display text to be generic
+                soundDisplayArea.querySelector('.sound-text').textContent = "Click to hear the sound";
+                speakerIcon.classList.remove('pulse'); // Stop pulsing
+                feedback.textContent = 'Click the speaker to start!';
                 feedback.className = 'feedback';
                 answered = false;
-                soundPlayed = false; // Reset flag for new question
+                soundPlayed = false;
+                isPlaying = false; // Reset playing state for new question
 
                 // Re-enable buttons
                 const allButtons = letterOptionsContainer.querySelectorAll('.letter-option-btn');
@@ -1092,13 +1110,10 @@
                     btn.classList.remove('correct', 'incorrect');
                 });
 
-                // Clear previous options
                 letterOptionsContainer.innerHTML = '';
 
-                // Shuffle the letter options for this question
                 const shuffledOptions = shuffleArray(currentQuestionData.options);
 
-                // Create new letter options buttons from the shuffled array
                 shuffledOptions.forEach((letterOption, index) => {
                     const optionBtn = document.createElement('button');
                     optionBtn.className = 'letter-option-btn';
@@ -1111,44 +1126,60 @@
                     letterOptionsContainer.appendChild(optionBtn);
                 });
 
-                // Play the sound automatically after a brief moment to let options appear
-                setTimeout(() => {
-                    playCurrentSound();
-                }, 500);
+                // Make the sound display area clickable to play/replay sound
+                soundDisplayArea.onclick = function() {
+                    if (!isPlaying) { // Only play if not already playing
+                         playCurrentSound();
+                    } else {
+                        // Optional: Provide feedback that sound is playing
+                        // feedback.textContent = "Sound is playing...";
+                    }
+                };
             }
 
             // Play the sound for the current question using TTS
             function playCurrentSound() {
-                if (soundPlayed || currentQuestion >= questions.length) return; // Prevent re-playing or playing after game ends
+                // Check if game has ended or answer already given
+                if (currentQuestion >= questions.length || answered) return;
 
                 const currentQuestionData = questions[currentQuestion];
-                const soundToPlay = currentQuestionData.sound;
 
-                if (typeof responsiveVoice !== 'undefined') {
-                    // Speak the sound spelling clearly
-                    responsiveVoice.speak(soundToPlay, "UK English Female", {
-                        rate: 0.85, // Slightly slower
+                // Use the pronunciationHint for TTS
+                const wordToSpeak = currentQuestionData.pronunciationHint;
+
+                if (typeof responsiveVoice !== 'undefined' && wordToSpeak) {
+                    isPlaying = true; // Set flag before playing
+                    speakerIcon.classList.add('pulse'); // Start pulsing animation
+                    feedback.textContent = 'Listening...'; // Optional feedback
+
+                    responsiveVoice.speak(wordToSpeak, "UK English Female", {
+                        rate: 0.85,
                         pitch: 1,
                         onstart: () => {
-                            soundDisplayArea.querySelector('.sound-text').textContent = `Playing: ${soundToPlay}`;
+                            // Optional: UI update on start if needed
                         },
                         onend: () => {
-                            // Optional: Update UI when sound finishes if needed
-                            // soundDisplayArea.querySelector('.sound-text').textContent = "Sound finished. Choose the letter!";
+                            speakerIcon.classList.remove('pulse'); // Stop pulsing
+                            isPlaying = false; // Reset flag when finished
+                            soundPlayed = true; // Mark that the sound has been played at least once
+                            if (!answered) { // Only update feedback if question hasn't been answered yet
+                                feedback.textContent = 'Click the letter!';
+                            }
                         }
                     });
-                    soundPlayed = true; // Mark sound as played
                 } else {
-                    console.error("ResponsiveVoice library not loaded.");
-                    feedback.textContent = "Error: Text-to-speech not available.";
+                    console.error("ResponsiveVoice library not loaded or no word to speak.");
+                    feedback.textContent = "Error: Could not play sound.";
                     feedback.className = 'feedback incorrect';
-                    soundPlayed = true; // Prevent repeated errors
+                    isPlaying = false;
+                    soundPlayed = true; // Prevent retries on error for this question
                 }
             }
 
             // Handle letter option selection
             function handleLetterOptionClick(event) {
-                if (answered || !soundPlayed) return; // Prevent answering before sound plays or after answering
+                // Prevent answering if sound hasn't been played yet
+                if (!soundPlayed || answered) return;
 
                 const button = event.currentTarget;
                 const selectedLetter = button.dataset.letter;
@@ -1157,8 +1188,9 @@
 
                 attempts++;
                 answered = true;
+                isPlaying = false; // Stop any potential replay attempts after answering
+                speakerIcon.classList.remove('pulse'); // Ensure icon stops pulsing
 
-                // Disable all buttons immediately after an answer
                 const allButtons = letterOptionsContainer.querySelectorAll('.letter-option-btn');
                 allButtons.forEach(btn => btn.disabled = true);
 
@@ -1175,7 +1207,6 @@
                     feedback.className = 'feedback incorrect';
                     button.classList.add('incorrect');
 
-                    // Highlight correct answer button
                     const correctButton = document.querySelector(`.letter-option-btn[data-letter="${currentQuestionData.correct}"]`);
                     if (correctButton) {
                         correctButton.classList.add('correct');
@@ -1184,7 +1215,6 @@
 
                 updateStats();
 
-                // Automatically move to the next question after a delay
                 setTimeout(() => {
                     currentQuestion++;
                     if (currentQuestion < questions.length) {
@@ -1193,7 +1223,7 @@
                     } else {
                         showResults();
                     }
-                }, 1500); // 1.5 second delay
+                }, 1500);
             }
 
             // Show results screen
