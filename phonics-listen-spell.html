@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen & Spell Game | EduResources</title>
+    <meta name="description" content="Interactive phonics game for Year 1 students. Listen to a word and spell it by dragging letter tiles. Practice phonics recognition and spelling skills.">
+    <meta name="keywords" content="phonics game, listen and spell, spelling practice, year 1, elementary education, phonics recognition, literacy game, drag and drop">
+    <meta name="author" content="EduResources">
+    <link rel="canonical" href="https://eduresources.co.uk/listen-spell-game.html">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Listen & Spell Game | EduResources">
+    <meta property="og:description" content="Interactive phonics game for Year 1 students. Listen to a word and spell it by dragging letter tiles. Practice phonics recognition and spelling skills.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduresources.co.uk/listen-spell-game.html">
+    <meta property="og:image" content="https://i.postimg.cc/Jn1hY0Qx/Listen-Spell-Preview.png">
+    <meta property="og:site_name" content="EduResources">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Listen & Spell Game | EduResources">
+    <meta name="twitter:description" content="Interactive phonics game for Year 1 students. Listen to a word and spell it by dragging letter tiles. Practice phonics recognition and spelling skills.">
+    <meta name="twitter:image" content="https://i.postimg.cc/Jn1hY0Qx/Listen-Spell-Preview.png">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --phonics-color: #27ae60; /* Green for phonics */
+            --phonics-light: #2ecc71; /* Lighter green */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Game Section --- */
+        .game-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .game-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--phonics-color);
+        }
+
+        /* --- Instructions --- */
+        .instructions {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--phonics-color);
+        }
+
+        .instructions h3 {
+            color: var(--phonics-color);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Game Area --- */
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        /* --- Audio Player --- */
+        .audio-player {
+            background: var(--phonics-color);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.2s;
+            margin: var(--spacing-md) auto;
+        }
+
+        .audio-player:hover {
+            background: var(--phonics-light);
+            transform: scale(1.05);
+        }
+
+        .audio-player i {
+            color: white;
+            font-size: 3rem;
+        }
+
+        .audio-player.playing {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Word Display --- */
+        .word-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: var(--spacing-md) 0;
+            min-height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* --- Spelling Area --- */
+        .spelling-area {
+            width: 100%;
+            max-width: 600px;
+            margin: var(--spacing-md) 0;
+        }
+
+        .spelling-container {
+            min-height: 80px;
+            background-color: rgba(39, 174, 96, 0.05);
+            border: 2px dashed var(--phonics-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spelling-tile {
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .spelling-tile.filled {
+            background-color: rgba(39, 174, 96, 0.15);
+            border-color: var(--quiz-green);
+        }
+
+        /* --- Letter Tiles --- */
+        .letter-tiles-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin-top: var(--spacing-md);
+        }
+
+        .letter-tile {
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: grab;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .letter-tile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+        }
+
+        .letter-tile.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+        }
+
+        .letter-tile.used {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: scale(0.9);
+        }
+
+        /* --- Feedback --- */
+        .feedback {
+            text-align: center;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .feedback.correct {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+            border: 1px solid var(--quiz-green);
+        }
+
+        .feedback.incorrect {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        /* --- Progress & Stats --- */
+        .progress-container {
+            width: 100%;
+            background: #e9ecef;
+            border-radius: 50px;
+            height: 20px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--phonics-light), var(--phonics-color));
+            border-radius: 50px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--phonics-color);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Controls --- */
+        .game-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-controls {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-sm) 0;
+            gap: 1rem;
+        }
+
+        .sound-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .sound-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-btn.active {
+            background: var(--phonics-light);
+            color: white;
+            border-color: var(--phonics-color);
+        }
+
+        /* --- Results Screen --- */
+        .results-screen {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: var(--spacing-lg) auto;
+            display: none; /* Hidden by default */
+        }
+
+        .results-screen h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-stats {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-message {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn-restart-results {
+             margin-top: var(--spacing-md);
+             padding: 0.8rem 1.5rem;
+             background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+             color: white;
+             border: none;
+             border-radius: var(--border-radius);
+             font-weight: 600;
+             cursor: pointer;
+             transition: all var(--transition-speed);
+             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-restart-results:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--phonics-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             /* Ensure no icons appear in footer links */
+             display: none !important; /* Override any potential icon styles */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--phonics-color);
+        }
+
+        .nav-item.active i {
+            color: var(--phonics-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item:hover i {
+            color: var(--primary-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .audio-player {
+                width: 80px;
+                height: 80px;
+            }
+            .audio-player i {
+                font-size: 2.5rem;
+            }
+            .word-display {
+                font-size: 2.5rem;
+            }
+            .letter-tile, .spelling-tile {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .stat-box {
+                margin: 0.2rem 0;
+            }
+            .word-display {
+                font-size: 2rem;
+            }
+            .letter-tile, .spelling-tile {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down -->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Year 1 Phonics: Listen & Spell Game</h1>
+                <p>Interactive game to practice spelling words by dragging letter tiles</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span> / </span>
+                <a href="quizzes.html">Quizzes</a> <span> / </span>
+                <a href="quiz-year1.html">Year 1</a> <span> / </span>
+                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span>
+                Listen & Spell
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="game-section">
+                <h2>Listen & Spell Word Building Game</h2>
+
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                    <p>This game helps Year 1 students practice spelling words by listening to audio prompts. Follow these steps:</p>
+                    <ul>
+                        <li>Click the green speaker icon to hear a word</li>
+                        <li>Drag the correct letter tiles to spell the word</li>
+                        <li>Place the letters in the correct order in the spelling area</li>
+                        <li>Get instant feedback and move to the next word automatically!</li>
+                    </ul>
+                    <div class="sound-controls">
+                        <button class="sound-btn active" id="bgm-toggle">
+                            <i class="fas fa-volume-up"></i> Background Music: On
+                        </button>
+                        <button class="sound-btn active" id="fx-toggle">
+                            <i class="fas fa-bell"></i> Sound Effects: On
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="attempts">0</div>
+                        <div class="stat-label">Attempts</div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="game-area">
+                    <div class="audio-player" id="audio-player" title="Click to hear the word">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+
+                    <div class="word-display" id="word-display">
+                        Get ready!
+                    </div>
+
+                    <div class="spelling-area">
+                        <div class="spelling-container" id="spelling-container">
+                            <!-- Spelling tiles will be generated here -->
+                        </div>
+                    </div>
+
+                    <div class="letter-tiles-container" id="letter-tiles-container">
+                        <!-- Letter tiles will be generated here -->
+                    </div>
+
+                    <div class="feedback" id="feedback">
+                        Click the speaker to hear the word and spell it!
+                    </div>
+
+                    <div class="game-controls">
+                        <button class="btn btn-secondary" id="skip-btn">
+                            <i class="fas fa-step-forward"></i> Skip Word
+                        </button>
+                        <button class="btn btn-secondary" id="restart-btn">
+                            <i class="fas fa-redo"></i> Restart Game
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="results-screen" id="results-screen">
+                    <h2>Listen & Spell Challenge Completed!</h2>
+                    <div class="results-stats">
+                        Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
+                    </div>
+                    <div class="results-message" id="results-message">
+                        <!-- Message will be inserted by JS -->
+                    </div>
+                    <button class="btn-restart-results" id="restart-results-btn">
+                        <i class="fas fa-redo"></i> Play Again
+                    </button>
+                </div>
+            </section>
+
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Master Year 1 Phonics: Interactive Listen & Spell Game</h2>
+
+                <p>Our <strong>Year 1 Phonics Listen & Spell Game</strong> is an essential educational tool designed for children aged 5-6. This interactive activity helps young learners develop crucial phonics and spelling skills by listening to words and constructing them with letter tiles. It's a fun and effective way to practice the foundational phonics recognition and spelling skills taught in Year 1.</p>
+
+                <h3>Why Spelling Through Listening is Crucial for Year 1 Learners</h3>
+                <p>Developing phonemic awareness and spelling skills is a cornerstone of early literacy. In Year 1, children build upon their Reception knowledge by learning to:</p>
+                <ul>
+                    <li>Recognize and produce the correct sounds for individual letters (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y).</li>
+                    <li>Identify and use common consonant digraphs (sh, ch, th, ph) and vowel digraphs (ai, ee, igh, oa, oo).</li>
+                    <li>Blend sounds to read simple words (CVC - Consonant-Vowel-Consonant words like cat, dog, sun).</li>
+                    <li>Segment spoken words into individual phonemes to spell them accurately.</li>
+                </ul>
+                <p>This listen and spell game directly reinforces these skills by making the connection between auditory cues (spoken word) and written symbols (letters) explicit and engaging.</p>
+
+                <h3>How Our Listen & Spell Game Enhances Learning</h3>
+                <p>This carefully crafted game supports Year 1 phonics education by providing:</p>
+                <ul>
+                    <li><strong>Active Listening Practice:</strong> Children must focus on the spoken word to identify each sound accurately.</li>
+                    <li><strong>Sequencing Skills:</strong> Dragging letters in the correct order reinforces sequential processing abilities.</li>
+                    <li><strong>Kinaesthetic Learning:</strong> Physically manipulating letter tiles helps reinforce learning through touch and movement.</li>
+                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their spelling is correct, allowing for rapid reinforcement or correction.</li>
+                    <li><strong>Variety of Vocabulary:</strong> Our game includes a wide range of CVC words, ensuring comprehensive practice.</li>
+                    <li><strong>Progress Tracking:</strong> Score and attempt counters help children and teachers monitor progress and improvement over time.</li>
+                    <li><strong>Curriculum-Aligned:</strong> Activities are designed to meet the expectations of the Year 1 phonics curriculum, focusing on Phase 5 sounds typically introduced during this year.</li>
+                </ul>
+
+                <h3>Key Phonics Sounds Practiced in This Game</h3>
+                <p>This game covers a broad spectrum of sounds crucial for Year 1 phonics success:</p>
+                <ul>
+                    <li><strong>Single Letter Sounds:</strong> a (/a/ as in apple), b (/b/ as in ball), c (/k/ as in cat), d (/d/ as in dog), e (/e/ as in egg), f (/f/ as in fish), g (/g/ as in goat), h (/h/ as in hat), i (/i/ as in igloo), j (/j/ as in jug), k (/k/ as in kite), l (/l/ as in lion), m (/m/ as in man), n (/n/ as in net), o (/o/ as in octopus), p (/p/ as in pig), q (/kw/ as in queen), r (/r/ as in rat), s (/s/ as in sun), t (/t/ as in top), u (/u/ as in umbrella), v (/v/ as in van), w (/w/ as in wet), x (/ks/ as in box), y (/y/ as in yellow).</li>
+                    <li><strong>Consonant Digraphs:</strong> sh (/sh/ as in ship), ch (/ch/ as in chair), th (/th/ as in thumb or this - initial voiced/voiceless), ph (/f/ as in dolphin).</li>
+                    <li><strong>Vowel Digraphs/Trigraphs:</strong> ai (/ai/ as in rain), ee (/ee/ as in feet), igh (/ie/ as in light), oa (/oa/ as in boat), oo (/oo/ as in book or moon - short/long), ar (/ar/ as in car), or (/or/ as in corn), ur (/er/ as in nurse), ow (/ow/ as in cow or snow).</li>
+                </ul>
+
+                <h3>Effective Tips for Parents and Teachers Using This Phonics Game</h3>
+                <ol>
+                    <li><strong>Encourage Sound Segmentation:</strong> Have children say the word slowly, stretching out each sound (e.g., /s/.../h/.../i/.../p/) before attempting to spell it.</li>
+                    <li><strong>Practice Blending Aloud:</strong> After placing the letters, have them blend the sounds together to read the word they've spelled.</li>
+                    <li><strong>Celebrate Effort:</strong> Acknowledge correct answers and learning attempts to build confidence and a positive association with phonics practice.</li>
+                    <li><strong>Practice Regularly:</strong> Consistent, short sessions are more beneficial than infrequent, long ones. Aim for 10-15 minutes daily.</li>
+                    <li><strong>Integrate with Reading:</strong> Apply the phonics sounds learned in this game when reading decodable books or simple texts together.</li>
+                    <li><strong>Review Mistakes:</strong> If a child consistently struggles with a particular word or sound, provide extra practice or review the sound using different methods (songs, flashcards).</li>
+                </ol>
+
+                <p>This phonics listen and spell game is part of our comprehensive Year 1 English resources, designed to make learning enjoyable and effective. Regular practice with these engaging tools will help children develop a strong phonics foundation, boosting their confidence and ability in reading and spelling. By mastering these spelling and segmentation skills, Year 1 students take a significant step towards becoming fluent writers.</p>
+            </section>
+        </div>
+    </div> <!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+
+    <!-- Audio elements for fixed sounds -->
+    <audio id="correct-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48398_zapsplat_multimedia_game_sound_positive_notification_001.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48397_zapsplat_multimedia_game_sound_negative_fail_001.mp3" preload="auto"></audio>
+    <audio id="completion-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48399_zapsplat_multimedia_game_sound_trophy_win_001.mp3" preload="auto"></audio>
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ResponsiveVoice TTS Library -->
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_ACTUAL_KEY_HERE"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Game elements
+            const audioPlayer = document.getElementById('audio-player');
+            const wordDisplay = document.getElementById('word-display');
+            const spellingContainer = document.getElementById('spelling-container');
+            const letterTilesContainer = document.getElementById('letter-tiles-container');
+            const skipBtn = document.getElementById('skip-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+            const attemptsElement = document.getElementById('attempts');
+            const progressBar = document.getElementById('progress-bar');
+            const bgmToggle = document.getElementById('bgm-toggle');
+            const fxToggle = document.getElementById('fx-toggle');
+            const resultsScreen = document.getElementById('results-screen');
+            const finalScoreElement = document.getElementById('final-score');
+            const totalQuestionsElement = document.getElementById('total-questions');
+            const resultsMessage = document.getElementById('results-message');
+            const restartResultsBtn = document.getElementById('restart-results-btn');
+
+            // Audio elements
+            const correctSound = document.getElementById('correct-sound');
+            const incorrectSound = document.getElementById('incorrect-sound');
+            const completionSound = document.getElementById('completion-sound');
+            const bgMusic = document.getElementById('bg-music');
+
+            // Game state
+            let score = 0;
+            let attempts = 0;
+            let currentQuestionIndex = 0;
+            let questions = [];
+            let currentQuestion = null;
+            let answered = false;
+            let bgmEnabled = true;
+            let fxAffectsFeedback = true;
+            let draggedTile = null;
+
+            // Sample Words with spellings
+            const sampleQuestions = [
+                { word: "ship", spelling: ["s", "h", "i", "p"] },
+                { word: "cat", spelling: ["c", "a", "t"] },
+                { word: "dog", spelling: ["d", "o", "g"] },
+                { word: "sun", spelling: ["s", "u", "n"] },
+                { word: "hat", spelling: ["h", "a", "t"] },
+                { word: "pig", spelling: ["p", "i", "g"] },
+                { word: "red", spelling: ["r", "e", "d"] },
+                { word: "box", spelling: ["b", "o", "x"] },
+                { word: "fish", spelling: ["f", "i", "s", "h"] },
+                { word: "cake", spelling: ["c", "a", "k", "e"] },
+                { word: "tree", spelling: ["t", "r", "e", "e"] },
+                { word: "feet", spelling: ["f", "e", "e", "t"] },
+                { word: "rain", spelling: ["r", "a", "i", "n"] },
+                { word: "ball", spelling: ["b", "a", "l", "l"] },
+                { word: "moon", spelling: ["m", "o", "o", "n"] },
+                { word: "jump", spelling: ["j", "u", "m", "p"] },
+                { word: "hand", spelling: ["h", "a", "n", "d"] },
+                { word: "nest", spelling: ["n", "e", "s", "t"] },
+                { word: "girl", spelling: ["g", "i", "r", "l"] },
+                { word: "duck", spelling: ["d", "u", "c", "k"] }
+            ];
+
+            // --- Helper Functions ---
+
+            // Function to shuffle an array (Fisher-Yates Shuffle)
+            function shuffleArray(array) {
+                let shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            // Speak word using ResponsiveVoice
+            function speakWord(word) {
+                if ('speechSynthesis' in window) {
+                    // Cancel any ongoing speech
+                    speechSynthesis.cancel();
+                    
+                    const utterThis = new SpeechSynthesisUtterance(word);
+                    utterThis.lang = 'en-GB'; // Set language to British English
+                    utterThis.rate = 0.8; // Slightly slower
+                    utterThis.pitch = 1;
+                    utterThis.volume = 1;
+                    
+                    speechSynthesis.speak(utterThis);
+                } else {
+                    console.error("Speech Synthesis not supported");
+                    feedback.textContent = "Text-to-Speech not supported in your browser.";
+                    feedback.className = "feedback incorrect";
+                }
+            }
+
+            // Initialize game
+            function initGame() {
+                // Shuffle questions
+                questions = shuffleArray([...sampleQuestions]);
+                score = 0;
+                attempts = 0;
+                currentQuestionIndex = 0;
+                answered = false;
+
+                // Hide results screen and show game elements
+                resultsScreen.style.display = 'none';
+                feedback.textContent = 'Click the speaker to hear the word and spell it!';
+                feedback.className = 'feedback';
+
+                updateStats();
+                loadQuestion();
+                updateProgress();
+
+                // Start background music if enabled
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Autoplay prevented: ", e));
+                }
+            }
+
+            // Load current question
+            function loadQuestion() {
+                if (currentQuestionIndex >= questions.length) {
+                    showResults();
+                    return;
+                }
+
+                currentQuestion = questions[currentQuestionIndex];
+                
+                wordDisplay.textContent = '?'.repeat(currentQuestion.word.length);
+                feedback.textContent = `Click the speaker to hear the word and spell it!`;
+                feedback.className = 'feedback';
+                answered = false;
+
+                // Clear previous tiles
+                spellingContainer.innerHTML = '';
+                letterTilesContainer.innerHTML = '';
+
+                // Create empty spelling tiles
+                currentQuestion.spelling.forEach((_, index) => {
+                    const tile = document.createElement('div');
+                    tile.className = 'spelling-tile';
+                    tile.dataset.index = index;
+                    spellingContainer.appendChild(tile);
+                });
+
+                // Create letter tiles (with some distractors)
+                const lettersNeeded = [...currentQuestion.spelling];
+                // Add some distractor letters
+                const distractors = ['b', 'c', 'f', 'g', 'j', 'k', 'l', 'm', 'q', 'v', 'w', 'x', 'y', 'z'];
+                for (let i = 0; i < 3; i++) {
+                    const randomIndex = Math.floor(Math.random() * distractors.length);
+                    lettersNeeded.push(distractors[randomIndex]);
+                }
+                
+                // Shuffle the letters
+                const shuffledLetters = shuffleArray(lettersNeeded);
+                
+                // Create letter tiles
+                shuffledLetters.forEach(letter => {
+                    const tile = document.createElement('div');
+                    tile.className = 'letter-tile';
+                    tile.textContent = letter;
+                    tile.draggable = true;
+                    
+                    // Add drag events
+                    tile.addEventListener('dragstart', handleDragStart);
+                    tile.addEventListener('dragend', handleDragEnd);
+                    
+                    letterTilesContainer.appendChild(tile);
+                });
+
+                // Add visual feedback to audio player
+                audioPlayer.classList.remove('playing');
+            }
+
+            // Drag and Drop Handlers
+            function handleDragStart(e) {
+                draggedTile = e.target;
+                e.dataTransfer.setData('text/plain', e.target.textContent);
+                e.target.classList.add('dragging');
+                spellingContainer.classList.add('active');
+            }
+
+            function handleDragEnd(e) {
+                e.target.classList.remove('dragging');
+                spellingContainer.classList.remove('active');
+                draggedTile = null;
+            }
+
+            function handleDragOver(e) {
+                e.preventDefault(); // Necessary to allow drop
+            }
+
+            function handleDrop(e) {
+                e.preventDefault();
+                spellingContainer.classList.remove('active');
+                
+                if (answered) return; // Prevent multiple drops
+                
+                const letter = e.dataTransfer.getData('text/plain');
+                const targetTile = e.target.closest('.spelling-tile');
+                
+                if (targetTile && !targetTile.classList.contains('filled')) {
+                    // Place the letter in the spelling tile
+                    targetTile.textContent = letter;
+                    targetTile.classList.add('filled');
+                    
+                    // Mark the source tile as used
+                    const sourceTile = [...letterTilesContainer.children].find(tile => 
+                        tile.textContent === letter && !tile.classList.contains('used'));
+                    if (sourceTile) {
+                        sourceTile.classList.add('used');
+                        sourceTile.draggable = false;
+                    }
+                    
+                    // Check if all tiles are filled
+                    const filledTiles = spellingContainer.querySelectorAll('.spelling-tile.filled');
+                    if (filledTiles.length === currentQuestion.spelling.length) {
+                        checkSpelling();
+                    }
+                }
+            }
+
+            // Check if the spelling is correct
+            function checkSpelling() {
+                if (answered) return;
+                
+                attempts++;
+                answered = true;
+                
+                const spelledWord = Array.from(spellingContainer.children)
+                    .map(tile => tile.textContent)
+                    .join('');
+                const isCorrect = spelledWord === currentQuestion.word;
+                
+                // Disable all letter tiles
+                const allLetterTiles = letterTilesContainer.querySelectorAll('.letter-tile');
+                allLetterTiles.forEach(tile => {
+                    tile.draggable = false;
+                    tile.style.pointerEvents = 'none';
+                });
+                
+                if (isCorrect) {
+                    score++;
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback correct';
+                    wordDisplay.textContent = currentQuestion.word.toUpperCase();
+                    
+                    // Highlight correct tiles
+                    spellingContainer.querySelectorAll('.spelling-tile').forEach((tile, index) => {
+                        tile.classList.add('correct');
+                    });
+                    
+                    if (fxAffectsFeedback) {
+                        correctSound.currentTime = 0;
+                        correctSound.play().catch(e => console.log("Success sound play prevented: ", e));
+                    }
+                } else {
+                    feedback.textContent = `Oops! The correct spelling is "${currentQuestion.word}".`;
+                    feedback.className = 'feedback incorrect';
+                    wordDisplay.textContent = currentQuestion.word.toUpperCase();
+                    
+                    // Highlight incorrect tiles
+                    spellingContainer.querySelectorAll('.spelling-tile').forEach((tile, index) => {
+                        if (tile.textContent !== currentQuestion.spelling[index]) {
+                            tile.classList.add('incorrect');
+                        } else {
+                            tile.classList.add('correct');
+                        }
+                    });
+                    
+                    if (fxAffectsFeedback) {
+                        incorrectSound.currentTime = 0;
+                        incorrectSound.play().catch(e => console.log("Incorrect sound play prevented: ", e));
+                    }
+                }
+
+                updateStats();
+
+                // Automatically move to the next question after a delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        // Quiz is finished
+                        completionSound.currentTime = 0;
+                        completionSound.play().catch(e => console.log("Completion sound play prevented: ", e));
+                        showResults();
+                    }
+                }, 2000); // 2 second delay
+            }
+
+            // Set up drop target event listeners
+            spellingContainer.addEventListener('dragover', handleDragOver);
+            spellingContainer.addEventListener('drop', handleDrop);
+
+            // Event Listeners
+            audioPlayer.addEventListener('click', function() {
+                if (currentQuestion && !answered) {
+                    speakWord(currentQuestion.word);
+                    // Add visual feedback
+                    this.classList.add('playing');
+                    setTimeout(() => {
+                        this.classList.remove('playing');
+                    }, 1000);
+                }
+            });
+
+            skipBtn.addEventListener('click', function() {
+                if (answered) return;
+                
+                feedback.textContent = `The word was "${currentQuestion.word}".`;
+                feedback.className = 'feedback';
+                wordDisplay.textContent = currentQuestion.word.toUpperCase();
+                answered = true;
+                
+                // Disable all letter tiles
+                const allLetterTiles = letterTilesContainer.querySelectorAll('.letter-tile');
+                allLetterTiles.forEach(tile => {
+                    tile.draggable = false;
+                    tile.style.pointerEvents = 'none';
+                });
+                
+                // Show correct spelling
+                const spellingTiles = spellingContainer.querySelectorAll('.spelling-tile');
+                spellingTiles.forEach((tile, index) => {
+                    tile.textContent = currentQuestion.spelling[index];
+                    tile.classList.add('correct');
+                });
+                
+                // Move to next question after delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        showResults();
+                    }
+                }, 1500);
+            });
+
+            restartBtn.addEventListener('click', function() {
+                initGame();
+            });
+
+            // Show results screen
+            function showResults() {
+                // Hide game elements
+                audioPlayer.style.display = 'none';
+                wordDisplay.style.display = 'none';
+                document.querySelector('.spelling-area').style.display = 'none';
+                letterTilesContainer.style.display = 'none';
+                feedback.style.display = 'none';
+                document.querySelector('.game-controls').style.display = 'none';
+
+                // Show results screen
+                resultsScreen.style.display = 'block';
+                finalScoreElement.textContent = score;
+                totalQuestionsElement.textContent = questions.length;
+
+                // Determine message based on score
+                let message = "";
+                const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+                if (percentage >= 80) {
+                    message = "Excellent! You're a spelling superstar!";
+                } else if (percentage >= 60) {
+                    message = "Great job! Keep practicing to get even better!";
+                } else if (percentage >= 40) {
+                    message = "Good effort! A bit more practice will help you master these words.";
+                } else {
+                    message = "Nice try! Review the words and try again. You've got this!";
+                }
+                resultsMessage.textContent = message;
+
+                // Update progress bar to 100%
+                progressBar.style.width = `100%`;
+            }
+
+            // Restart game from results screen
+            restartResultsBtn.addEventListener('click', function() {
+                // Show game elements again
+                audioPlayer.style.display = 'flex';
+                wordDisplay.style.display = 'block';
+                document.querySelector('.spelling-area').style.display = 'block';
+                letterTilesContainer.style.display = 'flex';
+                feedback.style.display = 'flex';
+                document.querySelector('.game-controls').style.display = 'flex';
+                
+                initGame();
+            });
+
+            // Toggle background music
+            bgmToggle.addEventListener('click', function () {
+                bgmEnabled = !bgmEnabled;
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Play prevented: ", e));
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: On';
+                    bgmToggle.classList.add('active');
+                } else {
+                    bgMusic.pause();
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-mute"></i> Background Music: Off';
+                    bgmToggle.classList.remove('active');
+                }
+            });
+
+            // Toggle sound effects
+            fxToggle.addEventListener('click', function () {
+                fxAffectsFeedback = !fxAffectsFeedback;
+                if (fxAffectsFeedback) {
+                    fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
+                    fxToggle.classList.add('active');
+                } else {
+                    fxToggle.innerHTML = '<i class="fas fa-bell-slash"></i> Sound Effects: Off';
+                    fxToggle.classList.remove('active');
+                }
+            });
+
+            // Update stats
+            function updateStats() {
+                scoreElement.textContent = score;
+                attemptsElement.textContent = attempts;
+            }
+
+            // Update progress bar
+            function updateProgress() {
+                if (questions.length > 0) {
+                     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+                     progressBar.style.width = `${progress}%`;
+                } else {
+                     progressBar.style.width = '0%';
+                }
+            }
+
+            // Initialize the game on page load
+            initGame();
+        });
+    </script>
+</body>
+</html>

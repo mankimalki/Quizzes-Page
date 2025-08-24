@@ -6,7 +6,6 @@
     <title>Speed Read Challenge | Year 1 Word Reading | EduResources</title>
     <meta name="description" content="Speed reading challenge for Year 1 students with improved voice recognition. Practice reading high frequency words as they flash on screen in this timed activity.">
     <meta name="keywords" content="speed reading, word reading, high frequency words, Year 1 reading, reading fluency, reading challenge, voice recognition">
-    <link rel="canonical" href="https://eduresources.co.uk/reading-speed-challenge.html">
     
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,18 +20,18 @@
 
     <style>
         :root {
-            --primary-color: #2c3e50; /* Dark Blue */
-            --secondary-color: #3498db; /* Bright Blue */
-            --accent-color: #e74c3c; /* Red */
-            --reading-color: #9b59b6; /* Purple for reading */
-            --reading-light: #8e44ad; /* Lighter purple */
-            --success-color: #2ecc71; /* Green for success */
-            --warning-color: #f39c12; /* Orange for warning */
-            --bg-color: #f5f7fa; /* Very light background */
-            --card-bg: #ffffff; /* White card background */
-            --border-color: #e0e6ed; /* Light border */
-            --text-color: #212529; /* Main text color */
-            --text-light: #6c757d; /* Lighter text */
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --reading-color: #9b59b6;
+            --reading-light: #8e44ad;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --border-color: #e0e6ed;
+            --text-color: #212529;
+            --text-light: #6c757d;
             --transition-speed: 0.3s;
             --border-radius: 6px;
             --spacing-xs: 0.4rem;
@@ -41,8 +40,6 @@
             --spacing-lg: 1.6rem;
             --spacing-xl: 2.2rem;
             --max-width: 1100px;
-            --whatsapp-green: #25D366;
-            --quiz-green: #27ae60; /* Green for quiz success/progress */
         }
 
         * {
@@ -53,10 +50,7 @@
 
         html, body {
             height: 100%;
-        }
-
-        body {
-            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', 'Open Sans', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
@@ -64,10 +58,9 @@
             flex-direction: column;
         }
 
-        /* --- Main Content Area --- */
         .main-content {
             flex: 1 0 auto;
-            padding-bottom: 70px; /* Space for bottom nav */
+            padding-bottom: 70px;
         }
 
         .container {
@@ -77,7 +70,6 @@
             padding: 0 var(--spacing-sm);
         }
 
-        /* --- Header --- */
         header {
             background-color: var(--card-bg);
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
@@ -109,7 +101,6 @@
             flex-shrink: 0;
         }
 
-        /* --- New Donation Button --- */
         .donate-top-btn {
             background-color: var(--accent-color);
             color: white;
@@ -133,11 +124,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .donate-top-btn i {
-            font-size: 1rem;
-        }
-
-        /* --- Hero/Banner Section --- */
         .hero {
             background: linear-gradient(135deg, var(--reading-color), var(--reading-light));
             color: white;
@@ -160,7 +146,6 @@
             margin: 0 auto;
         }
 
-        /* --- Breadcrumb Navigation --- */
         .breadcrumb {
             margin-bottom: var(--spacing-md);
             font-size: 0.85rem;
@@ -179,7 +164,6 @@
             color: var(--text-light);
         }
 
-        /* --- Game Container --- */
         .game-container {
             background-color: var(--card-bg);
             border-radius: var(--border-radius);
@@ -226,13 +210,6 @@
             animation: shake 0.5s ease;
         }
 
-        .game-controls {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
-        }
-
         .timer-display {
             font-size: 2.5rem;
             font-weight: bold;
@@ -258,6 +235,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            margin: 0.5rem;
         }
 
         .btn-primary {
@@ -365,7 +343,6 @@
             background-color: rgba(231, 76, 60, 0.1);
         }
 
-        /* --- Difficulty Selector --- */
         .difficulty-selector {
             margin: var(--spacing-md) 0;
             display: flex;
@@ -390,7 +367,6 @@
             border-color: var(--reading-color);
         }
 
-        /* --- Microphone Indicator --- */
         .mic-indicator {
             display: flex;
             align-items: center;
@@ -414,7 +390,6 @@
             color: var(--success-color);
         }
 
-        /* --- Feedback Messages --- */
         .feedback-message {
             padding: var(--spacing-sm);
             border-radius: var(--border-radius);
@@ -435,7 +410,6 @@
             border: 1px solid var(--accent-color);
         }
 
-        /* --- Pronunciation Help --- */
         .pronunciation-help {
             margin-top: var(--spacing-sm);
             font-size: 0.9rem;
@@ -443,7 +417,17 @@
             display: none;
         }
 
-        /* --- Footer --- */
+        .browser-warning {
+            display: none;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius);
+            border: 1px solid #ffeaa7;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -488,10 +472,6 @@
             text-decoration: underline;
         }
 
-        .footer-column a i {
-             display: none !important;
-        }
-
         .copyright {
             text-align: center;
             padding-top: var(--spacing-md);
@@ -500,7 +480,6 @@
             opacity: 0.85;
         }
 
-        /* --- Bottom Navigation --- */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -539,69 +518,6 @@
             color: var(--primary-color);
         }
 
-        /* --- Browser Compatibility Warning --- */
-        .browser-warning {
-            display: none;
-            background-color: #fff3cd;
-            color: #856404;
-            padding: var(--spacing-sm);
-            border-radius: var(--border-radius);
-            border: 1px solid #ffeaa7;
-            margin-bottom: var(--spacing-md);
-            text-align: center;
-        }
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            .hero p {
-                font-size: 0.95rem;
-            }
-            .header-container {
-                 padding: var(--spacing-sm) var(--spacing-sm);
-                 flex-wrap: wrap;
-            }
-            .logo {
-                font-size: 1.25rem;
-                flex-shrink: 0;
-                margin-right: auto;
-            }
-            .logo i {
-                font-size: 1.4rem;
-                margin-right: var(--spacing-xs);
-            }
-            .donate-top-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
-            }
-            .donate-top-btn i {
-                font-size: 0.9rem;
-            }
-            .word-display {
-                font-size: 2.5rem;
-            }
-            .timer-display {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            .btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-            .difficulty-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Animations */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -626,10 +542,55 @@
         .fade-in {
             animation: fadeIn 0.5s ease;
         }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .word-display {
+                font-size: 2.5rem;
+            }
+            .timer-display {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            .difficulty-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Main content area to push footer down -->
     <div class="main-content">
         <header>
             <div class="container header-container">
@@ -657,10 +618,9 @@
         </div>
 
         <div class="container">
-            <!-- Browser compatibility warning -->
             <div class="browser-warning" id="browserWarning">
                 <i class="fas fa-exclamation-triangle"></i>
-                Voice recognition may not be supported in your browser. For best results, use Chrome or Edge.
+                Voice recognition works best in Chrome and Edge. For other browsers, use the manual check buttons.
             </div>
 
             <div class="game-container">
@@ -729,7 +689,7 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End of main-content -->
+    </div>
 
     <footer>
         <div class="container">
@@ -787,7 +747,6 @@
         </div>
     </footer>
 
-    <!-- Bottom Navigation -->
     <nav class="bottom-nav">
         <a href="index.html" class="nav-item">
             <i class="fas fa-home"></i>
@@ -817,70 +776,40 @@
             // Word lists for different difficulty levels with pronunciation guides
             const wordLists = {
                 easy: [
-                    {word: 'the', pronunciation: 'thuh'},
-                    {word: 'and', pronunciation: 'and'},
-                    {word: 'a', pronunciation: 'ay'},
-                    {word: 'to', pronunciation: 'too'},
-                    {word: 'said', pronunciation: 'sed'},
-                    {word: 'in', pronunciation: 'in'},
-                    {word: 'he', pronunciation: 'hee'},
-                    {word: 'I', pronunciation: 'eye'},
-                    {word: 'of', pronunciation: 'ov'},
-                    {word: 'it', pronunciation: 'it'},
-                    {word: 'was', pronunciation: 'woz'},
-                    {word: 'you', pronunciation: 'yoo'},
-                    {word: 'they', pronunciation: 'thay'},
-                    {word: 'on', pronunciation: 'on'},
-                    {word: 'she', pronunciation: 'shee'},
-                    {word: 'is', pronunciation: 'iz'},
-                    {word: 'for', pronunciation: 'for'},
-                    {word: 'at', pronunciation: 'at'},
-                    {word: 'his', pronunciation: 'hiz'},
-                    {word: 'but', pronunciation: 'but'}
+                    {word: 'the', pronunciation: 'thuh', alternatives: ['the', 'a', 'uh']},
+                    {word: 'and', pronunciation: 'and', alternatives: ['and', 'end', 'anned']},
+                    {word: 'a', pronunciation: 'ay', alternatives: ['a', 'ay', 'uh']},
+                    {word: 'to', pronunciation: 'too', alternatives: ['to', 'too', 'two']},
+                    {word: 'said', pronunciation: 'sed', alternatives: ['said', 'sed']},
+                    {word: 'in', pronunciation: 'in', alternatives: ['in', 'inn']},
+                    {word: 'he', pronunciation: 'hee', alternatives: ['he', 'hee']},
+                    {word: 'I', pronunciation: 'eye', alternatives: ['I', 'eye']},
+                    {word: 'of', pronunciation: 'ov', alternatives: ['of', 'ov']},
+                    {word: 'it', pronunciation: 'it', alternatives: ['it', 'itt']}
                 ],
                 medium: [
-                    {word: 'do', pronunciation: 'doo'},
-                    {word: 'me', pronunciation: 'mee'},
-                    {word: 'down', pronunciation: 'down'},
-                    {word: 'dad', pronunciation: 'dad'},
-                    {word: 'big', pronunciation: 'big'},
-                    {word: 'when', pronunciation: 'wen'},
-                    {word: 'it’s', pronunciation: 'its'},
-                    {word: 'see', pronunciation: 'see'},
-                    {word: 'looked', pronunciation: 'lookt'},
-                    {word: 'very', pronunciation: 'ver-ee'},
-                    {word: 'look', pronunciation: 'look'},
-                    {word: 'don’t', pronunciation: 'dohnt'},
-                    {word: 'come', pronunciation: 'kum'},
-                    {word: 'will', pronunciation: 'will'},
-                    {word: 'into', pronunciation: 'in-too'},
-                    {word: 'back', pronunciation: 'bak'},
-                    {word: 'from', pronunciation: 'from'},
-                    {word: 'children', pronunciation: 'chil-dren'},
-                    {word: 'him', pronunciation: 'him'},
-                    {word: 'Mr', pronunciation: 'mis-ter'}
+                    {word: 'do', pronunciation: 'doo', alternatives: ['do', 'doo']},
+                    {word: 'me', pronunciation: 'mee', alternatives: ['me', 'mee']},
+                    {word: 'down', pronunciation: 'down', alternatives: ['down', 'dawn']},
+                    {word: 'dad', pronunciation: 'dad', alternatives: ['dad', 'dadd']},
+                    {word: 'big', pronunciation: 'big', alternatives: ['big', 'bigg']},
+                    {word: 'when', pronunciation: 'wen', alternatives: ['when', 'wen']},
+                    {word: 'it’s', pronunciation: 'its', alternatives: ["it's", 'its']},
+                    {word: 'see', pronunciation: 'see', alternatives: ['see', 'sea']},
+                    {word: 'looked', pronunciation: 'lookt', alternatives: ['looked', 'lookt']},
+                    {word: 'very', pronunciation: 'ver-ee', alternatives: ['very', 'veree']}
                 ],
                 hard: [
-                    {word: 'water', pronunciation: 'waw-ter'},
-                    {word: 'away', pronunciation: 'a-way'},
-                    {word: 'good', pronunciation: 'good'},
-                    {word: 'over', pronunciation: 'oh-ver'},
-                    {word: 'where', pronunciation: 'whair'},
-                    {word: 'who', pronunciation: 'hoo'},
-                    {word: 'again', pronunciation: 'a-gen'},
-                    {word: 'thought', pronunciation: 'thawt'},
-                    {word: 'through', pronunciation: 'throo'},
-                    {word: 'work', pronunciation: 'werk'},
-                    {word: 'mouse', pronunciation: 'mows'},
-                    {word: 'many', pronunciation: 'men-ee'},
-                    {word: 'before', pronunciation: 'bee-for'},
-                    {word: 'know', pronunciation: 'noh'},
-                    {word: 'right', pronunciation: 'rite'},
-                    {word: 'found', pronunciation: 'found'},
-                    {word: 'because', pronunciation: 'bee-kuz'},
-                    {word: 'different', pronunciation: 'dif-rent'},
-                    {word: 'any', pronunciation: 'en-ee'},
-                    {word: 'home', pronunciation: 'hohm'}
+                    {word: 'water', pronunciation: 'waw-ter', alternatives: ['water', 'wawter']},
+                    {word: 'away', pronunciation: 'a-way', alternatives: ['away', 'a way']},
+                    {word: 'good', pronunciation: 'good', alternatives: ['good', 'gud']},
+                    {word: 'over', pronunciation: 'oh-ver', alternatives: ['over', 'ohver']},
+                    {word: 'where', pronunciation: 'whair', alternatives: ['where', 'whair']},
+                    {word: 'who', pronunciation: 'hoo', alternatives: ['who', 'hoo']},
+                    {word: 'again', pronunciation: 'a-gen', alternatives: ['again', 'agen']},
+                    {word: 'thought', pronunciation: 'thawt', alternatives: ['thought', 'thawt']},
+                    {word: 'through', pronunciation: 'throo', alternatives: ['through', 'throo']},
+                    {word: 'work', pronunciation: 'werk', alternatives: ['work', 'werk']}
                 ]
             };
 
@@ -936,7 +865,6 @@
                     micIcon.classList.remove('listening');
                     if (event.error === 'no-speech') {
                         micStatus.textContent = 'Microphone: No speech detected';
-                        // Automatically restart listening if no speech was detected
                         setTimeout(startListening, 1000);
                     } else {
                         micStatus.textContent = 'Microphone: Error - ' + event.error;
@@ -986,7 +914,6 @@
                 // Check if speech recognition is available
                 if (!recognition) {
                     browserWarning.style.display = 'block';
-                    return;
                 } else {
                     browserWarning.style.display = 'none';
                 }
@@ -1019,7 +946,6 @@
 
             function showNextWord() {
                 if (currentWordIndex >= wordLists[currentDifficulty].length) {
-                    // If we've shown all words, reshuffle and continue
                     shuffleArray(wordLists[currentDifficulty]);
                     currentWordIndex = 0;
                 }
@@ -1054,7 +980,6 @@
                     } catch (error) {
                         console.error('Speech recognition error:', error);
                         micStatus.textContent = 'Microphone: Error starting';
-                        // Try again after a short delay
                         setTimeout(startListening, 500);
                     }
                 }
@@ -1064,37 +989,44 @@
                 const currentWord = currentWordObj.word.toLowerCase();
                 let isCorrect = false;
                 
-                // More flexible matching to account for speech recognition variations
-                if (spokenWord === currentWord) {
-                    isCorrect = true;
-                } 
-                // Check for common misrecognitions
-                else if (
-                    (currentWord === 'the' && (spokenWord === 'a' || spokenWord === 'uh')) ||
-                    (currentWord === 'a' && spokenWord === 'the') ||
-                    (currentWord === 'and' && spokenWord === 'end') ||
-                    (currentWord === 'to' && spokenWord === 'two') ||
-                    (currentWord === 'for' && spokenWord === 'four') ||
-                    (currentWord === 'his' && spokenWord === 'is') ||
-                    (currentWord === 'her' && spokenWord === 'are') ||
-                    (currentWord === 'they' && spokenWord === 'the') ||
-                    (currentWord === 'said' && spokenWord === 'sed') ||
-                    (currentWord === 'was' && spokenWord === 'is') ||
-                    (currentWord === 'you' && spokenWord === 'u') ||
-                    (currentWord === 'are' && spokenWord === 'r') ||
-                    (currentWord.includes("’") && spokenWord === currentWord.replace("’", "'")) ||
-                    (currentWord.includes("'") && spokenWord === currentWord.replace("'", "’"))
-                ) {
-                    isCorrect = true;
-                }
-                // Check for partial matches (for longer words)
-                else if (currentWord.length > 3 && spokenWord.includes(currentWord)) {
-                    isCorrect = true;
-                }
-                // Check if the recognized word sounds similar (using first 3 characters)
-                else if (currentWord.length > 2 && spokenWord.length > 2) {
-                    if (currentWord.substring(0, 3) === spokenWord.substring(0, 3)) {
+                // Check against all acceptable alternatives
+                for (const alternative of currentWordObj.alternatives) {
+                    if (spokenWord === alternative) {
                         isCorrect = true;
+                        break;
+                    }
+                }
+                
+                // Additional flexible matching
+                if (!isCorrect) {
+                    // Check for common misrecognitions
+                    if (
+                        (currentWord === 'the' && (spokenWord === 'a' || spokenWord === 'uh')) ||
+                        (currentWord === 'a' && spokenWord === 'the') ||
+                        (currentWord === 'and' && spokenWord === 'end') ||
+                        (currentWord === 'to' && spokenWord === 'two') ||
+                        (currentWord === 'for' && spokenWord === 'four') ||
+                        (currentWord === 'his' && spokenWord === 'is') ||
+                        (currentWord === 'her' && spokenWord === 'are') ||
+                        (currentWord === 'they' && spokenWord === 'the') ||
+                        (currentWord === 'said' && spokenWord === 'sed') ||
+                        (currentWord === 'was' && spokenWord === 'is') ||
+                        (currentWord === 'you' && spokenWord === 'u') ||
+                        (currentWord === 'are' && spokenWord === 'r') ||
+                        (currentWord.includes("’") && spokenWord === currentWord.replace("’", "'")) ||
+                        (currentWord.includes("'") && spokenWord === currentWord.replace("'", "’"))
+                    ) {
+                        isCorrect = true;
+                    }
+                    // Check for partial matches (for longer words)
+                    else if (currentWord.length > 3 && spokenWord.includes(currentWord)) {
+                        isCorrect = true;
+                    }
+                    // Check if the recognized word sounds similar (using first 3 characters)
+                    else if (currentWord.length > 2 && spokenWord.length > 2) {
+                        if (currentWord.substring(0, 3) === spokenWord.substring(0, 3)) {
+                            isCorrect = true;
+                        }
                     }
                 }
                 
@@ -1244,7 +1176,7 @@
                         wordBadge.appendChild(spoken);
                     }
                     
-                    wordListContainer.appendChild(wordWordBadge);
+                    wordListContainer.appendChild(wordBadge);
                 });
             }
 

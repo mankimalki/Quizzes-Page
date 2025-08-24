@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Words Game | EduResources</title>
+    <meta name="description" content="Is it a real word or an alien word? Test your phonics knowledge with this fun, interactive game! Perfect for Year 1 students.">
+    <meta name="keywords" content="phonics game, alien words, real or fake, year 1, elementary education, literacy game, reading skills, phonics practice">
+    <meta name="author" content="EduResources">
+    <link rel="canonical" href="https://eduresources.co.uk/alien-words-game.html">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Alien Words Game | EduResources">
+    <meta property="og:description" content="Is it a real word or an alien word? Test your phonics knowledge with this fun, interactive game! Perfect for Year 1 students.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduresources.co.uk/alien-words-game.html">
+    <meta property="og:image" content="https://i.postimg.cc/Jn1hY0Qx/Alien-Words-Preview.png">
+    <meta property="og:site_name" content="EduResources">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alien Words Game | EduResources">
+    <meta name="twitter:description" content="Is it a real word or an alien word? Test your phonics knowledge with this fun, interactive game! Perfect for Year 1 students.">
+    <meta name="twitter:image" content="https://i.postimg.cc/Jn1hY0Qx/Alien-Words-Preview.png">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --phonics-color: #27ae60; /* Green for phonics */
+            --phonics-light: #2ecc71; /* Lighter green */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Game Section --- */
+        .game-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .game-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--phonics-color);
+        }
+
+        /* --- Instructions --- */
+        .instructions {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--phonics-color);
+        }
+
+        .instructions h3 {
+            color: var(--phonics-color);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Game Area --- */
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        /* --- Interactive Word Display --- */
+        .word-display-container {
+            text-align: center;
+            margin: var(--spacing-md) 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .word-display-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .word-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(39, 174, 96, 0.05);
+            border: 2px dashed var(--phonics-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin: var(--spacing-sm) 0;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- Interactive Buttons --- */
+        .interactive-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin: var(--spacing-md) 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .interactive-btn {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            min-width: 150px;
+            flex: 1;
+        }
+
+        .interactive-btn:hover {
+            background-color: #f8f9fa;
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .interactive-btn i {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .interactive-btn.real-word {
+            border-color: var(--phonics-color);
+        }
+
+        .interactive-btn.real-word:hover {
+            background-color: rgba(39, 174, 96, 0.1);
+        }
+
+        .interactive-btn.alien-word {
+            border-color: var(--accent-color);
+        }
+
+        .interactive-btn.alien-word:hover {
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+
+        .interactive-btn.correct {
+            background-color: rgba(39, 174, 96, 0.15);
+            border-color: var(--quiz-green);
+            color: var(--quiz-green);
+            transform: scale(1.05);
+            box-shadow: 0 0 0 3px var(--quiz-green);
+        }
+
+        .interactive-btn.incorrect {
+            background-color: rgba(231, 76, 60, 0.15);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            transform: scale(0.95);
+            box-shadow: 0 0 0 3px var(--accent-color);
+        }
+
+        /* --- Animated Feedback --- */
+        .feedback {
+            text-align: center;
+            padding: 1.2rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid transparent;
+            transition: all var(--transition-speed);
+        }
+
+        .feedback.correct {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+            border-color: var(--quiz-green);
+        }
+
+        .feedback.incorrect {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* --- Progress & Stats --- */
+        .progress-container {
+            width: 100%;
+            background: #e9ecef;
+            border-radius: 50px;
+            height: 20px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--phonics-light), var(--phonics-color));
+            border-radius: 50px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--phonics-color);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Controls --- */
+        .game-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-controls {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-sm) 0;
+            gap: 1rem;
+        }
+
+        .sound-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .sound-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-btn.active {
+            background: var(--phonics-light);
+            color: white;
+            border-color: var(--phonics-color);
+        }
+
+        /* --- Results Screen --- */
+        .results-screen {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: var(--spacing-lg) auto;
+            display: none; /* Hidden by default */
+        }
+
+        .results-screen h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-stats {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-message {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn-restart-results {
+             margin-top: var(--spacing-md);
+             padding: 0.8rem 1.5rem;
+             background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+             color: white;
+             border: none;
+             border-radius: var(--border-radius);
+             font-weight: 600;
+             cursor: pointer;
+             transition: all var(--transition-speed);
+             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-restart-results:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--phonics-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             /* Ensure no icons appear in footer links */
+             display: none !important; /* Override any potential icon styles */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--phonics-color);
+        }
+
+        .nav-item.active i {
+            color: var(--phonics-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item:hover i {
+            color: var(--primary-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .interactive-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .interactive-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .game-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .stat-box {
+                margin: 0.2rem 0;
+            }
+            .word-display {
+                font-size: 2.5rem;
+                min-height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down -->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i>
+                    EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Year 1 Phonics: Alien Words Game</h1>
+                <p>Is it a real word or a made-up alien word? Test your phonics skills!</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> <span> / </span>
+                <a href="quizzes.html">Quizzes</a> <span> / </span>
+                <a href="quiz-year1.html">Year 1</a> <span> / </span>
+                <a href="quiz-year1-english-phonics.html">Phonics</a> <span> / </span>
+                Alien Words
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="game-section">
+                <h2>Real or Alien Word Detective</h2>
+
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                    <p>This game helps Year 1 students practice distinguishing between real words and nonsense ("alien") words. Follow these steps:</p>
+                    <ul>
+                        <li>A word will appear on the screen</li>
+                        <li>Decide if it's a REAL word you know or an ALIEN (nonsense) word</li>
+                        <li>Click the button that matches your choice</li>
+                        <li>Get instant feedback and move to the next word automatically!</li>
+                        <li>Practice recognizing valid letter combinations in English</li>
+                    </ul>
+                    <div class="sound-controls">
+                        <button class="sound-btn active" id="bgm-toggle">
+                            <i class="fas fa-volume-up"></i> Background Music: On
+                        </button>
+                        <button class="sound-btn active" id="fx-toggle">
+                            <i class="fas fa-bell"></i> Sound Effects: On
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="attempts">0</div>
+                        <div class="stat-label">Attempts</div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="game-area">
+                    <div class="word-display-container">
+                        <div class="word-display-label">Is this word REAL or ALIEN?</div>
+                        <div class="word-display" id="word-display">
+                            Get Ready!
+                        </div>
+                    </div>
+
+                    <div class="interactive-buttons">
+                        <button class="interactive-btn real-word" id="real-word-btn">
+                            <i class="fas fa-check-circle"></i>
+                            REAL WORD
+                        </button>
+                        <button class="interactive-btn alien-word" id="alien-word-btn">
+                            <i class="fas fa-robot"></i>
+                            ALIEN WORD
+                        </button>
+                    </div>
+
+                    <div class="feedback" id="feedback">
+                        Watch the word and make your choice!
+                    </div>
+
+                    <div class="game-controls">
+                        <button class="btn btn-secondary" id="skip-btn">
+                            <i class="fas fa-step-forward"></i> Skip Word
+                        </button>
+                        <button class="btn btn-secondary" id="restart-btn">
+                            <i class="fas fa-redo"></i> Restart Game
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="results-screen" id="results-screen">
+                    <h2>Alien Words Challenge Completed!</h2>
+                    <div class="results-stats">
+                        Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
+                    </div>
+                    <div class="results-message" id="results-message">
+                        <!-- Message will be inserted by JS -->
+                    </div>
+                    <button class="btn-restart-results" id="restart-results-btn">
+                        <i class="fas fa-redo"></i> Play Again
+                    </button>
+                </div>
+            </section>
+
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Master Year 1 Phonics: Interactive Alien Words Game</h2>
+
+                <p>Our <strong>Year 1 Phonics Alien Words Game</strong> is an essential educational tool designed for children aged 5-6. This interactive activity helps young learners solidify their understanding of phonics by distinguishing between real English words and nonsense ("alien") words. It's a fun and effective way to practice the foundational phonics discrimination skills taught in Year 1.</p>
+
+                <h3>Why Identifying Real vs. Alien Words is Crucial for Year 1 Learners</h3>
+                <p>Developing phonemic awareness and the ability to distinguish between real and nonsense words is a cornerstone of early literacy. In Year 1, children build upon their Reception knowledge by learning to:</p>
+                <ul>
+                    <li>Apply letter-sound correspondences to read simple words accurately.</li>
+                    <li>Recognize and use common consonant digraphs (sh, ch, th, ph) and vowel digraphs (ai, ee, igh, oa, oo).</li>
+                    <li>Understand which letter combinations are permissible in English and which are not.</li>
+                    <li>Improve decoding skills and reading fluency by recognizing valid word structures.</li>
+                </ul>
+                <p>This "Alien Words" game directly reinforces these skills by making the connection between phonics knowledge and word validity explicit and engaging.</p>
+
+                <h3>How Our Alien Words Game Enhances Learning</h3>
+                <p>This carefully crafted game supports Year 1 phonics education by providing:</p>
+                <ul>
+                    <li><strong>Active Application:</strong> Children must actively apply their phonics knowledge rather than passively recognize sight words.</li>
+                    <li><strong>Discrimination Practice:</strong> Contrasting real words with plausible nonsense words sharpens the ability to spot subtle spelling errors or unusual combinations.</li>
+                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their word judgment is correct, allowing for rapid reinforcement or correction.</li>
+                    <li><strong>Variety of Words:</strong> Our game includes a wide range of real CVC words and phonetically plausible alien words, ensuring comprehensive practice.</li>
+                    <li><strong>Progress Tracking:</strong> Score and attempt counters help children and teachers monitor progress and improvement over time.</li>
+                    <li><strong>Curriculum-Aligned:</strong> Activities are designed to meet the expectations of the Year 1 phonics curriculum, focusing on Phase 5 sounds and tricky words typically introduced during this year.</li>
+                </ul>
+
+                <h3>Key Phonics Concepts Practiced in This Game</h3>
+                <p>This game covers a broad spectrum of concepts crucial for Year 1 phonics success:</p>
+                <ul>
+                    <li><strong>CVC Words:</strong> Simple consonant-vowel-consonant structures (cat, dog, sun, hat, pig, red, box, fish).</li>
+                    <li><strong>Nonsense Words:</strong> Plausible but non-existent combinations (mip, zot, shog, fep, durn, glib, brakk, noom).</li>
+                    <li><strong>Letter-Sound Correspondence:</strong> Reinforces the sounds associated with individual letters and common digraphs.</li>
+                    <li><strong>Phoneme Segmentation and Blending:</strong> Encourages breaking down and blending sounds to assess word validity.</li>
+                </ul>
+
+                <h3>Effective Tips for Parents and Teachers Using This Phonics Game</h3>
+                <ol>
+                    <li><strong>Encourage Verbalization:</strong> Have children say the sounds of the word aloud before making a decision.</li>
+                    <li><strong>Discuss the Reasoning:</strong> Ask them to explain *why* they think a word is real or alien.</li>
+                    <li><strong>Celebrate Effort:</strong> Acknowledge correct answers and learning attempts to build confidence.</li>
+                    <li><strong>Practice Regularly:</strong> Consistent, short sessions are more beneficial than infrequent, long ones. Aim for 10-15 minutes daily.</li>
+                    <li><strong>Integrate with Reading:</strong> Apply the phonics discrimination skills learned in this game when reading decodable books or simple texts together.</li>
+                    <li><strong>Review Mistakes:</strong> If a child consistently struggles with a particular word type, provide extra practice or review the sounds using different methods (songs, flashcards).</li>
+                </ol>
+
+                <p>This phonics "Alien Words" game is part of our comprehensive Year 1 English resources, designed to make learning enjoyable and effective. Regular practice with these engaging tools will help children develop a strong phonics foundation, boosting their confidence and ability in reading and spelling. By mastering these discrimination skills, Year 1 students take a significant step towards becoming fluent readers.</p>
+            </section>
+        </div>
+    </div> <!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+
+    <!-- Audio elements for fixed sounds -->
+    <audio id="correct-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48398_zapsplat_multimedia_game_sound_positive_notification_001.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48397_zapsplat_multimedia_game_sound_negative_fail_001.mp3" preload="auto"></audio>
+    <audio id="completion-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48399_zapsplat_multimedia_game_sound_trophy_win_001.mp3" preload="auto"></audio>
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Game elements
+            const wordDisplay = document.getElementById('word-display');
+            const realWordBtn = document.getElementById('real-word-btn');
+            const alienWordBtn = document.getElementById('alien-word-btn');
+            const skipBtn = document.getElementById('skip-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+            const attemptsElement = document.getElementById('attempts');
+            const progressBar = document.getElementById('progress-bar');
+            const bgmToggle = document.getElementById('bgm-toggle');
+            const fxToggle = document.getElementById('fx-toggle');
+            const resultsScreen = document.getElementById('results-screen');
+            const finalScoreElement = document.getElementById('final-score');
+            const totalQuestionsElement = document.getElementById('total-questions');
+            const resultsMessage = document.getElementById('results-message');
+            const restartResultsBtn = document.getElementById('restart-results-btn');
+
+            // Audio elements
+            const correctSound = document.getElementById('correct-sound');
+            const incorrectSound = document.getElementById('incorrect-sound');
+            const completionSound = document.getElementById('completion-sound');
+            const bgMusic = document.getElementById('bg-music');
+
+            // Game state
+            let score = 0;
+            let attempts = 0;
+            let currentQuestionIndex = 0;
+            let questions = [];
+            let currentQuestion = null;
+            let answered = false;
+            let bgmEnabled = true;
+            let fxAffectsFeedback = true;
+
+            // Sample Words (Mix of real and alien words)
+            const sampleQuestions = [
+                { word: "cat", isReal: true },
+                { word: "mip", isReal: false },
+                { word: "dog", isReal: true },
+                { word: "zot", isReal: false },
+                { word: "sun", isReal: true },
+                { word: "shog", isReal: false },
+                { word: "hat", isReal: true },
+                { word: "fep", isReal: false },
+                { word: "pig", isReal: true },
+                { word: "durn", isReal: false },
+                { word: "red", isReal: true },
+                { word: "glib", isReal: false },
+                { word: "box", isReal: true },
+                { word: "wex", isReal: false },
+                { word: "fish", isReal: true },
+                { word: "brakk", isReal: false },
+                { word: "ship", isReal: true },
+                { word: "noom", isReal: false },
+                { word: "cake", isReal: true },
+                { word: "flim", isReal: false },
+                { word: "tree", isReal: true },
+                { word: "snurd", isReal: false },
+                { word: "feet", isReal: true },
+                { word: "yorp", isReal: false },
+                { word: "rain", isReal: true },
+                { word: "brakk", isReal: false }, // Intentional duplicate for testing
+                { word: "ball", isReal: true },
+                { word: "ziff", isReal: false },
+                { word: "moon", isReal: true },
+                { word: "quop", isReal: false }
+            ];
+
+            // --- Helper Functions ---
+
+            // Function to shuffle an array (Fisher-Yates Shuffle)
+            function shuffleArray(array) {
+                let shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            // Initialize game
+            function initGame() {
+                // Shuffle questions and remove duplicates
+                const uniqueWords = [...new Set(sampleQuestions.map(q => q.word))];
+                const uniqueQuestions = sampleQuestions.filter((q, index, self) =>
+                    index === self.findIndex(t => t.word === q.word)
+                );
+                questions = shuffleArray(uniqueQuestions);
+                score = 0;
+                attempts = 0;
+                currentQuestionIndex = 0;
+                answered = false;
+
+                // Hide results screen and show game elements
+                resultsScreen.style.display = 'none';
+                wordDisplay.textContent = 'Get Ready!';
+                feedback.textContent = 'Watch the word and make your choice!';
+                feedback.className = 'feedback';
+
+                updateStats();
+                loadQuestion();
+                updateProgress();
+
+                // Start background music if enabled
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Autoplay prevented: ", e));
+                }
+            }
+
+            // Load current question
+            function loadQuestion() {
+                if (currentQuestionIndex >= questions.length) {
+                    showResults();
+                    return;
+                }
+
+                currentQuestion = questions[currentQuestionIndex];
+                
+                wordDisplay.textContent = currentQuestion.word.toUpperCase();
+                feedback.textContent = `Is "${currentQuestion.word.toUpperCase()}" a REAL word or an ALIEN word?`;
+                feedback.className = 'feedback';
+                answered = false;
+
+                // Reset button states
+                realWordBtn.disabled = false;
+                alienWordBtn.disabled = false;
+                realWordBtn.classList.remove('correct', 'incorrect');
+                alienWordBtn.classList.remove('correct', 'incorrect');
+            }
+
+            // Check user's answer
+            function checkAnswer(userSelection) { // true for real, false for alien
+                if (answered) return;
+                
+                const isCorrect = userSelection === currentQuestion.isReal;
+                
+                attempts++;
+                answered = true;
+                
+                // Disable buttons
+                realWordBtn.disabled = true;
+                alienWordBtn.disabled = true;
+
+                if (isCorrect) {
+                    score++;
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback correct';
+                    
+                    // Highlight the correct button
+                    if (userSelection) {
+                        realWordBtn.classList.add('correct');
+                    } else {
+                        alienWordBtn.classList.add('correct');
+                    }
+                    
+                    if (fxAffectsFeedback) {
+                        correctSound.currentTime = 0;
+                        correctSound.play().catch(e => console.log("Success sound play prevented: ", e));
+                    }
+                } else {
+                    feedback.textContent = `Oops! "${currentQuestion.word.toUpperCase()}" is ${currentQuestion.isReal ? 'REAL' : 'ALIEN'}.`;
+                    feedback.className = 'feedback incorrect';
+                    
+                    // Highlight the user's choice as incorrect and the correct answer
+                    if (userSelection) {
+                        realWordBtn.classList.add('incorrect');
+                        // Show correct answer
+                        if (!currentQuestion.isReal) {
+                            alienWordBtn.classList.add('correct');
+                        }
+                    } else {
+                        alienWordBtn.classList.add('incorrect');
+                        // Show correct answer
+                        if (currentQuestion.isReal) {
+                            realWordBtn.classList.add('correct');
+                        }
+                    }
+                    
+                    if (fxAffectsFeedback) {
+                        incorrectSound.currentTime = 0;
+                        incorrectSound.play().catch(e => console.log("Incorrect sound play prevented: ", e));
+                    }
+                }
+
+                updateStats();
+
+                // Automatically move to the next question after a delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        // Quiz is finished
+                        completionSound.currentTime = 0;
+                        completionSound.play().catch(e => console.log("Completion sound play prevented: ", e));
+                        showResults();
+                    }
+                }, 1500); // 1.5 second delay
+            }
+
+            // Event Listeners
+            realWordBtn.addEventListener('click', function() {
+                checkAnswer(true); // User selected "Real"
+            });
+
+            alienWordBtn.addEventListener('click', function() {
+                checkAnswer(false); // User selected "Alien"
+            });
+
+            skipBtn.addEventListener('click', function() {
+                if (answered) return;
+                
+                feedback.textContent = `The word "${currentQuestion.word.toUpperCase()}" is ${currentQuestion.isReal ? 'REAL' : 'ALIEN'}.`;
+                feedback.className = 'feedback';
+                answered = true;
+                
+                // Disable buttons
+                realWordBtn.disabled = true;
+                alienWordBtn.disabled = true;
+                
+                // Move to next question after delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        showResults();
+                    }
+                }, 1500);
+            });
+
+            restartBtn.addEventListener('click', function() {
+                initGame();
+            });
+
+            // Show results screen
+            function showResults() {
+                // Hide game elements
+                document.querySelector('.word-display-container').style.display = 'none';
+                document.querySelector('.interactive-buttons').style.display = 'none';
+                feedback.style.display = 'none';
+                document.querySelector('.game-controls').style.display = 'none';
+
+                // Show results screen
+                resultsScreen.style.display = 'block';
+                finalScoreElement.textContent = score;
+                totalQuestionsElement.textContent = questions.length;
+
+                // Determine message based on score
+                let message = "";
+                const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+                if (percentage >= 80) {
+                    message = "Excellent! You're a word detective superstar!";
+                } else if (percentage >= 60) {
+                    message = "Great job! Keep practicing to get even better!";
+                } else if (percentage >= 40) {
+                    message = "Good effort! A bit more practice will help you master these words.";
+                } else {
+                    message = "Nice try! Review the words and try again. You've got this!";
+                }
+                resultsMessage.textContent = message;
+
+                // Update progress bar to 100%
+                progressBar.style.width = `100%`;
+            }
+
+            // Restart game from results screen
+            restartResultsBtn.addEventListener('click', function() {
+                // Show game elements again
+                document.querySelector('.word-display-container').style.display = 'block';
+                document.querySelector('.interactive-buttons').style.display = 'flex';
+                feedback.style.display = 'flex';
+                document.querySelector('.game-controls').style.display = 'flex';
+                
+                initGame();
+            });
+
+            // Toggle background music
+            bgmToggle.addEventListener('click', function () {
+                bgmEnabled = !bgmEnabled;
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Play prevented: ", e));
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: On';
+                    bgmToggle.classList.add('active');
+                } else {
+                    bgMusic.pause();
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-mute"></i> Background Music: Off';
+                    bgmToggle.classList.remove('active');
+                }
+            });
+
+            // Toggle sound effects
+            fxToggle.addEventListener('click', function () {
+                fxAffectsFeedback = !fxAffectsFeedback;
+                if (fxAffectsFeedback) {
+                    fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
+                    fxToggle.classList.add('active');
+                } else {
+                    fxToggle.innerHTML = '<i class="fas fa-bell-slash"></i> Sound Effects: Off';
+                    fxToggle.classList.remove('active');
+                }
+            });
+
+            // Update stats
+            function updateStats() {
+                scoreElement.textContent = score;
+                attemptsElement.textContent = attempts;
+            }
+
+            // Update progress bar
+            function updateProgress() {
+                if (questions.length > 0) {
+                     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+                     progressBar.style.width = `${progress}%`;
+                } else {
+                     progressBar.style.width = '0%';
+                }
+            }
+
+            // Initialize the game on page load
+            initGame();
+        });
+    </script>
+</body>
+</html>
