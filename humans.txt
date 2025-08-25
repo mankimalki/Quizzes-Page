@@ -1,0 +1,13 @@
+/* TEAM */
+  Site: EduResources
+  Twitter: @eduresources
+  Contact: info@eduresources.co.uk
+
+/* THANKS */
+  Icons: Font Awesome
+  Fonts: Google Fonts
+
+/* SITE */
+  Last update: 2025/01/15
+  Language: English
+  Doctype: HTML5
