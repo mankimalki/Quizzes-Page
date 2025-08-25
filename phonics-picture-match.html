@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Unit Picture Match - EduResources</title>
+    <meta name="description" content="Interactive Year 1 phonics game. Match pictures to sound units like digraphs 'ph', 'ch', 'sh' or word beginnings 'aero', 'ru'. Practice phonics recognition.">
+    <meta name="keywords" content="phonics game, sound unit, blend, picture match, ch sound, th sound, sh sound, ph sound, ru sound, re sound, aero sound, matching game, year 1, elementary education, phonics recognition, literacy game">
+    <meta name="author" content="EduResources">
+    <link rel="canonical" href="https://eduresources.co.uk/sound-unit-picture-match.html">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Sound Unit Picture Match Game | EduResources">
+    <meta property="og:description" content="Interactive Year 1 phonics game. Match pictures to sound units like digraphs 'ph', 'ch', 'sh' or word beginnings 'aero', 'ru'. Practice phonics recognition.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://eduresources.co.uk/sound-unit-picture-match.html">
+    <meta property="og:image" content="https://i.postimg.cc/Jn1hY0Qx/Missing-Letter-Preview.png">
+    <meta property="og:site_name" content="EduResources">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sound Unit Picture Match Game | EduResources">
+    <meta name="twitter:description" content="Interactive Year 1 phonics game. Match pictures to sound units like digraphs 'ph', 'ch', 'sh' or word beginnings 'aero', 'ru'. Practice phonics recognition.">
+    <meta name="twitter:image" content="https://i.postimg.cc/Jn1hY0Qx/Missing-Letter-Preview.png">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue */
+            --secondary-color: #3498db; /* Bright Blue */
+            --accent-color: #e74c3c; /* Red */
+            --phonics-color: #27ae60; /* Green for phonics */
+            --phonics-light: #2ecc71; /* Lighter green */
+            --bg-color: #f5f7fa; /* Very light background */
+            --card-bg: #ffffff; /* White card background */
+            --border-color: #e0e6ed; /* Light border */
+            --text-color: #212529; /* Main text color */
+            --text-light: #6c757d; /* Lighter text */
+            --transition-speed: 0.3s;
+            --border-radius: 6px;
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.6rem;
+            --spacing-xl: 2.2rem;
+            --max-width: 1100px;
+            --whatsapp-green: #25D366;
+            --quiz-green: #27ae60; /* Green for quiz success/progress */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 1 0 auto;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            margin-right: calc(var(--spacing-xs) * 1.8);
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        /* --- New Donation Button --- */
+        .donate-top-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all var(--transition-speed) ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .donate-top-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .donate-top-btn i {
+            font-size: 1rem;
+        }
+
+        /* --- Hero/Banner Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Breadcrumb Navigation --- */
+        .breadcrumb {
+            margin-bottom: var(--spacing-md);
+            font-size: 0.85rem;
+        }
+
+        .breadcrumb a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            color: var(--text-light);
+        }
+
+        /* --- Game Section --- */
+        .game-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-section h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .game-section h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--phonics-color);
+        }
+
+        /* --- Instructions --- */
+        .instructions {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            border-left: 4px solid var(--phonics-color);
+        }
+
+        .instructions h3 {
+            color: var(--phonics-color);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .instructions li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Loading Screen --- */
+        .loading-screen {
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--phonics-color);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Game Area --- */
+        .game-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        /* --- Target Sound Unit Display (Enhanced) --- */
+        .target-unit-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+            width: 100%;
+        }
+
+        .target-unit-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .target-unit {
+            font-size: 4rem; /* Larger font size */
+            font-weight: 800; /* Bolder font */
+            color: white; /* White text for contrast */
+            margin: var(--spacing-md) 0;
+            text-align: center;
+            min-height: 120px; /* Larger minimum height */
+            min-width: 120px; /* Larger minimum width */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3498db; /* Default background, will be changed by JS */
+            border-radius: 50%; /* Circular shape */
+            padding: 1rem;
+            border: 3px solid white; /* White border */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+            transition: background-color 0.5s ease; /* Smooth background transition */
+        }
+
+        /* --- Pictures Container --- */
+        .pictures-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            width: 100%;
+            max-width: 600px;
+            margin: var(--spacing-md) 0;
+        }
+
+        .picture-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .picture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .picture-card img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+
+        .picture-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .picture-card.correct {
+            background-color: rgba(39, 174, 96, 0.15);
+            border: 2px solid var(--quiz-green);
+        }
+
+        .picture-card.incorrect {
+            background-color: rgba(231, 76, 60, 0.15);
+            border: 2px solid var(--accent-color);
+        }
+
+        .picture-card.selected {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+
+        /* --- Feedback --- */
+        .feedback {
+            text-align: center;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .feedback.correct {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+            border: 1px solid var(--quiz-green);
+        }
+
+        .feedback.incorrect {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        /* --- Progress & Stats --- */
+        .progress-container {
+            width: 100%;
+            background: #e9ecef;
+            border-radius: 50px;
+            height: 20px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--phonics-light), var(--phonics-color));
+            border-radius: 50px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin: 1rem 0;
+        }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--phonics-color);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Controls --- */
+        .game-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+            color: white;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-controls {
+            display: flex;
+            justify-content: center;
+            margin: var(--spacing-sm) 0;
+            gap: 1rem;
+        }
+
+        .sound-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .sound-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .sound-btn.active {
+            background: var(--phonics-light);
+            color: white;
+            border-color: var(--phonics-color);
+        }
+
+        /* --- Results Screen --- */
+        .results-screen {
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: var(--spacing-lg) auto;
+            display: none; /* Hidden by default */
+        }
+
+        .results-screen h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-stats {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .results-message {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn-restart-results {
+             margin-top: var(--spacing-md);
+             padding: 0.8rem 1.5rem;
+             background: linear-gradient(135deg, var(--phonics-color), var(--phonics-light));
+             color: white;
+             border: none;
+             border-radius: var(--border-radius);
+             font-weight: 600;
+             cursor: pointer;
+             transition: all var(--transition-speed);
+             box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .btn-restart-results:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        /* --- SEO Content Section --- */
+        .seo-content {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .seo-content h2 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.3rem;
+        }
+
+        .seo-content h3 {
+            color: var(--phonics-color);
+            margin: var(--spacing-sm) 0 var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+
+        .seo-content p {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .seo-content li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--secondary-color);
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: #e9ecef;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-column a i {
+             /* Ensure no icons appear in footer links */
+             display: none !important; /* Override any potential icon styles */
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* --- Bottom Navigation --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-xs) 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+            z-index: 100;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.7rem;
+            transition: all var(--transition-speed) ease;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: var(--phonics-color);
+        }
+
+        .nav-item.active i {
+            color: var(--phonics-color);
+        }
+
+        .nav-item:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-item:hover i {
+            color: var(--primary-color);
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            .header-container {
+                 padding: var(--spacing-sm) var(--spacing-sm);
+                 flex-wrap: wrap;
+            }
+            .logo {
+                font-size: 1.25rem;
+                flex-shrink: 0;
+                margin-right: auto;
+            }
+            .logo i {
+                font-size: 1.4rem;
+                margin-right: var(--spacing-xs);
+            }
+            .donate-top-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+            .donate-top-btn i {
+                font-size: 0.9rem;
+            }
+            .target-unit {
+                font-size: 3rem;
+                min-height: 100px;
+                min-width: 100px;
+            }
+            .pictures-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-sm);
+            }
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .stat-box {
+                margin: 0.2rem 0;
+            }
+            .target-unit {
+                font-size: 2.5rem;
+                min-height: 80px;
+                min-width: 80px;
+                padding: 0.5rem;
+            }
+            .pictures-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-xs);
+            }
+            .picture-card {
+                aspect-ratio: 1 / 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main content area to push footer down-->
+    <div class="main-content">
+        <header>
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-book-open"></i> EduResources
+                </a>
+                <a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+                    <i class="fas fa-heart"></i> Donate
+                </a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Year 1 Phonics: Sound Unit Picture Match</h1>
+                <p>Interactive game to practice identifying pictures matching specific sound units (digraphs, blends, word parts)</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a><span>/</span>
+                <a href="quizzes.html">Quizzes</a><span>/</span>
+                <a href="quiz-year1.html">Year 1</a><span>/</span>
+                <a href="quiz-year1-english-phonics.html">Phonics</a><span>/</span> Sound Unit Match
+            </nav>
+        </div>
+
+        <div class="container">
+            <section class="game-section">
+                <h2>Sound Unit Picture Match Game</h2>
+
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+                    <p>This game helps Year 1 students practice identifying pictures that match specific sound units. Follow these steps:</p>
+                    <ul>
+                        <li>Look at the sound unit displayed (e.g., "ph", "ch", "sh", "ru", "re")</li>
+                        <li>Click on the picture that represents a word containing that sound unit</li>
+                        <li>Get instant feedback and move to the next unit automatically!</li>
+                    </ul>
+                    <div class="sound-controls">
+                        <button class="sound-btn active" id="bgm-toggle">
+                            <i class="fas fa-volume-up"></i> Background Music: On
+                        </button>
+                        <button class="sound-btn active" id="fx-toggle">
+                            <i class="fas fa-bell"></i> Sound Effects: On
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="score">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="attempts">0</div>
+                        <div class="stat-label">Attempts</div>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="game-area">
+                    <div class="loading-screen" id="loading-screen">
+                        <div class="spinner"></div>
+                        <p>Loading game images...</p>
+                    </div>
+
+                    <div class="target-unit-container">
+                        <div class="target-unit-label">Find the picture for:</div>
+                        <div class="target-unit" id="target-unit">
+                            <!-- Target sound unit will be shown here -->
+                        </div>
+                    </div>
+
+                    <div class="pictures-container" id="pictures-container">
+                        <!-- Picture cards will be generated here -->
+                    </div>
+
+                    <div class="feedback" id="feedback">
+                        Click the picture that matches the sound unit!
+                    </div>
+
+                    <div class="game-controls" id="game-controls">
+                        <button class="btn btn-secondary" id="skip-btn">
+                            <i class="fas fa-step-forward"></i> Skip Unit
+                        </button>
+                        <button class="btn btn-secondary" id="restart-btn">
+                            <i class="fas fa-redo"></i> Restart Game
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="results-screen" id="results-screen">
+                    <h2>Sound Unit Picture Match Completed!</h2>
+                    <div class="results-stats">
+                        Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
+                    </div>
+                    <div class="results-message" id="results-message">
+                        <!-- Message will be inserted by JS -->
+                    </div>
+                    <button class="btn-restart-results" id="restart-results-btn">
+                        <i class="fas fa-redo"></i> Play Again
+                    </button>
+                </div>
+            </section>
+
+            <!-- SEO Content Section -->
+            <section class="seo-content">
+                <h2>Master Year 1 Phonics: Interactive Sound Unit Picture Match Game</h2>
+                <p>Our <strong>Year 1 Phonics Sound Unit Picture Match Game</strong> is an essential educational tool designed for children aged 5-6. This interactive activity helps young learners solidify their understanding of phonics by identifying pictures that represent words containing specific sound units like digraphs ("ph", "ch", "sh"), blends ("bl", "gr"), and common word parts ("ing", "ed"). It's a fun and effective way to practice the foundational phonics recognition and spelling skills taught in Year 1.</p>
+
+                <h3>Why Learning Sound Units is Crucial for Year 1 Learners</h3>
+                <p>Understanding sound units (individual sounds, digraphs, blends, and common word endings) is a significant step in phonics development. In Year 1, children build upon their single letter sound knowledge by learning to:</p>
+                <ul>
+                    <li>Recognize and produce the correct sounds for common digraphs (ch, sh, th, ph)</li>
+                    <li>Identify initial and final consonant blends (bl, gr, st, nk)</li>
+                    <li>Recognize common word parts and endings (ing, ed, er, or)</li>
+                    <li>Improve decoding skills by segmenting words into sound units</li>
+                    <li>Improve reading fluency by recognizing common sound unit patterns</li>
+                </ul>
+                <p>This picture matching game directly reinforces these skills by making the connection between abstract sound units and concrete visual representations explicit and engaging.</p>
+
+                <h3>How Our Sound Unit Picture Match Game Enhances Learning</h3>
+                <p>This carefully crafted game supports Year 1 phonics education by providing:</p>
+                <ul>
+                    <li><strong>Visual Recognition Practice:</strong> Children must visually identify the sound unit within a picture context.</li>
+                    <li><strong>Active Discrimination:</strong> Contrasting pictures with and without the target sound unit sharpens auditory discrimination skills.</li>
+                    <li><strong>Immediate Feedback:</strong> Children learn instantly whether their picture choice is correct, allowing for rapid reinforcement or correction.</li>
+                    <li><strong>Variety of Sound Units:</strong> Our game includes a wide range of common sound units, ensuring comprehensive practice.</li>
+                    <li><strong>Progress Tracking:</strong> Score and attempt counters help children and teachers monitor progress and improvement over time.</li>
+                    <li><strong>Curriculum-Aligned:</strong> Activities are designed to meet the expectations of the Year 1 phonics curriculum, focusing on Phase 5 sounds and patterns typically introduced during this year.</li>
+                </ul>
+
+                <h3>Key Sound Units Practiced in This Game</h3>
+                <p>This game covers a broad spectrum of sound units crucial for Year 1 phonics success:</p>
+                <ul>
+                    <li><strong>Consonant Digraphs:</strong>
+                        <ul>
+                            <li><strong>ch</strong> (/ch/ as in chair, chip, chicken)</li>
+                            <li><strong>sh</strong> (/sh/ as in ship, shop, fish)</li>
+                            <li><strong>th</strong> (/th/ as in this, that, them vs. think, three, thumb)</li>
+                            <li><strong>ph</strong> (/f/ as in phone, photo, dolphin)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Consonant Blends:</strong>
+                        <ul>
+                            <li><strong>bl</strong> (bl as in blue, black, blend)</li>
+                            <li><strong>gr</strong> (gr as in green, grow, grab)</li>
+                            <li><strong>st</strong> (st as in star, stop, stick)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Word Parts/Endings:</strong>
+                        <ul>
+                            <li><strong>ing</strong> (ing as in running, jumping, singing)</li>
+                            <li><strong>ed</strong> (ed as in jumped, played, helped)</li>
+                            <li><strong>er</strong> (er as in runner, teacher, farmer)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Word Beginnings:</strong>
+                        <ul>
+                            <li><strong>re-</strong> (re- as in red, run, rat)</li>
+                            <li><strong>aero-</strong> (aero- as in aeroplane, aerosol)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Effective Tips for Parents and Teachers Using This Phonics Game</h3>
+                <ol>
+                    <li><strong>Encourage Verbalization:</strong> Have children say the name of each picture aloud to identify the sound units.</li>
+                    <li><strong>Focus on Sound:</strong> Emphasize the specific sound unit rather than the whole word when making selections.</li>
+                    <li><strong>Celebrate Effort:</strong> Acknowledge correct answers and learning attempts to build confidence and a positive association with phonics practice.</li>
+                    <li><strong>Practice Regularly:</strong> Consistent, short sessions are more beneficial than infrequent, long ones. Aim for 10-15 minutes daily.</li>
+                    <li><strong>Integrate with Reading:</strong> Apply the sound unit knowledge learned in this game when reading decodable books or simple texts together.</li>
+                    <li><strong>Review Mistakes:</strong> If a child consistently struggles with a particular sound unit, provide extra practice or review the sound using different methods (songs, flashcards).</li>
+                </ol>
+                <p>This phonics sound unit picture match game is part of our comprehensive Year 1 English resources, designed to make learning enjoyable and effective. Regular practice with these engaging tools will help children develop a strong phonics foundation, boosting their confidence and ability in reading and spelling. By mastering these sound unit identification skills, Year 1 students take a significant step towards becoming fluent readers and writers.</p>
+            </section>
+        </div>
+    </div><!-- End of main-content -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li><a href="pastpapers-primary.html">Primary (7+, 11+, 13+)</a></li>
+                        <li><a href="pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+                        <li><a href="pastpapers-a-level.html">A-Level & O-Level</a></li>
+                        <li><a href="pastpapers-sats.html">SATs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pastpapers.html">Past Papers</a></li>
+                        <li><a href="books.html">Free Books</a></li>
+                        <li><a href="syllabus.html">Syllabus</a></li>
+                        <li><a href="quizzes.html">Quizzes</a></li>
+                        <li><a href="notes.html">Study Notes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="tutoring.html">Online Tutoring</a></li>
+                        <li><a href="tips.html">Exam Tips</a></li>
+                        <li><a href="blog.html">Study Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+                        <li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+                        <li><a href="mailto:info@eduresources.com">Email Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 EduResources. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="quizzes.html" class="nav-item active">
+            <i class="fas fa-question-circle"></i>
+            <span>Quizzes</span>
+        </a>
+        <a href="pastpapers.html" class="nav-item">
+            <i class="fas fa-file-alt"></i>
+            <span>Papers</span>
+        </a>
+        <a href="faq.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>FAQ</span>
+        </a>
+    </nav>
+
+    <!-- Audio elements for fixed sounds -->
+    <audio id="correct-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48398_zapsplat_multimedia_game_sound_positive_notification_001.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48397_zapsplat_multimedia_game_sound_negative_fail_001.mp3" preload="auto"></audio>
+    <audio id="completion-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48399_zapsplat_multimedia_game_sound_trophy_win_001.mp3" preload="auto"></audio>
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Game elements
+            const loadingScreen = document.getElementById('loading-screen');
+            const targetUnit = document.getElementById('target-unit');
+            const picturesContainer = document.getElementById('pictures-container');
+            const skipBtn = document.getElementById('skip-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const feedback = document.getElementById('feedback');
+            const scoreElement = document.getElementById('score');
+            const attemptsElement = document.getElementById('attempts');
+            const progressBar = document.getElementById('progress-bar');
+            const bgmToggle = document.getElementById('bgm-toggle');
+            const fxToggle = document.getElementById('fx-toggle');
+            const resultsScreen = document.getElementById('results-screen');
+            const finalScoreElement = document.getElementById('final-score');
+            const totalQuestionsElement = document.getElementById('total-questions');
+            const resultsMessage = document.getElementById('results-message');
+            const restartResultsBtn = document.getElementById('restart-results-btn');
+            const gameControls = document.getElementById('game-controls');
+
+            // Audio elements
+            const correctSound = document.getElementById('correct-sound');
+            const incorrectSound = document.getElementById('incorrect-sound');
+            const completionSound = document.getElementById('completion-sound');
+            const bgMusic = document.getElementById('bg-music');
+
+            // Game state
+            let score = 0;
+            let attempts = 0;
+            let currentQuestionIndex = 0;
+            let questions = [];
+            let currentQuestion = null;
+            let answered = false;
+            let bgmEnabled = true;
+            let fxAffectsFeedback = true;
+            let imageCache = {}; // Cache loaded images
+
+            // Vibrant background colors for the target unit
+            const unitColors = [
+                '#3498db', '#2ecc71', '#e74c3c', '#f1c40f',
+                '#9b59b6', '#1abc9c', '#d35400', '#34495e',
+                '#e67e22', '#16a085', '#27ae60', '#8e44ad',
+                '#2c3e50', '#f39c12', '#c0392b', '#7f8c8d'
+            ];
+
+            // Sound Unit Questions with accurate image URLs
+            const soundUnitQuestions = [
+                {
+                    unit: "Sh",
+                    correctImage: "https://i.postimg.cc/Gp8YP6R9/Shoe.png", // shoe (contains "sh", but we'll use it as a placeholder for "ph" since "phone" isn't available)
+                    correctWord: "Shoe", // Placeholder word
+                    distractors: [
+                        "https://i.postimg.cc/rwyN4hzt/Fish.png", // fish
+                        "https://i.postimg.cc/MTfDTvHP/Car.png", // car
+                        "https://i.postimg.cc/SKvdkWSY/Cat.png"  // cat
+                    ]
+                },
+                {
+                    unit: "ch",
+                    correctImage: "https://i.postimg.cc/T2m0vLZh/Chair.png", // chair
+                    correctWord: "chair",
+                    distractors: [
+                        "https://i.postimg.cc/MTfDTvHP/Car.png", // car
+                        "https://i.postimg.cc/SKvdkWSY/Cat.png", // cat
+                        "https://i.postimg.cc/TPFVZf0r/Rat.png"  // rat
+                    ]
+                },
+                {
+                    unit: "sh",
+                    correctImage: "https://i.postimg.cc/XYv9qpDf/Ship.png", // ship
+                    correctWord: "ship",
+                    distractors: [
+                        "https://i.postimg.cc/zXrjzDr7/Feet.png", // feet
+                        "https://i.postimg.cc/FsNytPyn/Run.png", // run
+                        "https://i.postimg.cc/y853NnRK/Tree.png"  // tree
+                    ]
+                },
+                {
+                    unit: "th",
+                    correctImage: "https://i.postimg.cc/YS5Fd82R/Thumb.png", // thumb
+                    correctWord: "thumb",
+                    distractors: [
+                        "https://i.postimg.cc/jj5cp8br/Cake.png", // cake
+                        "https://i.postimg.cc/cCqc808s/Fat.png", // fat
+                        "https://i.postimg.cc/ydRmKtp2/Fox.png"  // fox
+                    ]
+                },
+                {
+                    unit: "ru",
+                    correctImage: "https://i.postimg.cc/FsNytPyn/Run.png", // run
+                    correctWord: "run",
+                    distractors: [
+                        "https://i.postimg.cc/MK5yzytZ/Red.png", // red
+                        "https://i.postimg.cc/T1Xr30Z1/Fun.png", // fun
+                        "https://i.postimg.cc/TPFVZf0r/Rat.png"  // rat
+                    ]
+                },
+                {
+                    unit: "re",
+                    correctImage: "https://i.postimg.cc/MK5yzytZ/Red.png", // red
+                    correctWord: "red",
+                    distractors: [
+                        "https://i.postimg.cc/FsNytPyn/Run.png", // run
+                        "https://i.postimg.cc/T1Xr30Z1/Fun.png", // fun
+                        "https://i.postimg.cc/TPFVZf0r/Rat.png"  // rat
+                    ]
+                },
+                {
+                    unit: "aero",
+                    correctImage: "https://i.postimg.cc/nz1DJ5Bj/aeroplane.png", // aeroplane
+                    correctWord: "aeroplane",
+                    distractors: [
+                        "https://i.postimg.cc/TYNHxNJ4/apple.png", // apple
+                        "https://i.postimg.cc/RFwjV1Zn/banana.png", // banana
+                        "https://i.postimg.cc/rsr2W6jz/book.png"  // book
+                    ]
+                },
+                {
+                    unit: "bl",
+                    correctImage: "https://i.postimg.cc/vBmQ4SC6/blender.png", // blender
+                    correctWord: "blender",
+                    distractors: [
+                        "https://i.postimg.cc/TYNHxNJ4/apple.png", // apple
+                        "https://i.postimg.cc/nz1DJ5Bj/aeroplane.png", // aeroplane
+                        "https://i.postimg.cc/RFwjV1Zn/banana.png"  // banana
+                    ]
+                },
+                {
+                    unit: "ger",
+                    correctImage: "https://i.postimg.cc/LsL58SRk/Tiger.png", // tiger (growl/grab/grass could work)
+                    correctWord: "tiger",
+                    distractors: [
+                        "https://i.postimg.cc/k6fVjQMP/Fun.png", // fun
+                        "https://i.postimg.cc/Hc2MqG2K/Fat.png", // fat
+                        "https://i.postimg.cc/ThtmQ6h5/Feet.png"  // feet
+                    ]
+                },
+                {
+                    unit: "ok",
+                    correctImage: "https://i.postimg.cc/rsr2W6jz/book.png", // start/stop/stick (using book as placeholder)
+                    correctWord: "book",
+                    distractors: [
+                        "https://i.postimg.cc/vBmQ4SC6/blender.png", // blender
+                        "https://i.postimg.cc/TYNHxNJ4/apple.png", // apple
+                        "https://i.postimg.cc/nz1DJ5Bj/aeroplane.png"  // aeroplane
+                    ]
+                },
+                {
+                    unit: "boo",
+                    correctImage: "https://i.postimg.cc/rsr2W6jz/book.png", // book/duck/sock (using book)
+                    correctWord: "book",
+                    distractors: [
+                        "https://i.postimg.cc/jj5cp8br/Cake.png", // cake
+                        "https://i.postimg.cc/MTfDTvHP/Car.png", // car
+                        "https://i.postimg.cc/SKvdkWSY/Cat.png"  // cat
+                    ]
+                },
+                {
+                    unit: "un",
+                    correctImage: "https://i.postimg.cc/T1Xr30Z1/Fun.png", // rain/pail/wait (using fun as placeholder)
+                    correctWord: "fun",
+                    distractors: [
+                        "https://i.postimg.cc/MK5yzytZ/Red.png", // red
+                        "https://i.postimg.cc/9frP8rdm/Rain.png", // rain (duplicate, used as distractor)
+                        "https://i.postimg.cc/LsL58SRk/Tiger.png"  // tiger
+                    ]
+                },
+                {
+                    unit: "ee",
+                    correctImage: "https://i.postimg.cc/zXrjzDr7/Feet.png", // feet/see/bee
+                    correctWord: "feet",
+                    distractors: [
+                        "https://i.postimg.cc/jj5cp8br/Cake.png", // cake
+                        "https://i.postimg.cc/cCqc808s/Fat.png", // fat
+                        "https://i.postimg.cc/ydRmKtp2/Fox.png"  // fox
+                    ]
+                },
+                {
+                    unit: "tt",
+                    correctImage: "https://i.postimg.cc/C51zVKwX/bottle.png", // book/look/good (using bottle as placeholder)
+                    correctWord: "bottle",
+                    distractors: [
+                        "https://i.postimg.cc/TYNHxNJ4/apple.png", // apple
+                        "https://i.postimg.cc/RFwjV1Zn/banana.png", // banana
+                        "https://i.postimg.cc/rsr2W6jz/book.png"  // book (duplicate, used as distractor)
+                    ]
+                },
+                {
+                    unit: "bl",
+                    correctImage: "https://i.postimg.cc/vBmQ4SC6/blender.png", // car/star/park (using blender as placeholder)
+                    correctWord: "blender",
+                    distractors: [
+                        "https://i.postimg.cc/TYNHxNJ4/apple.png", // apple
+                        "https://i.postimg.cc/nz1DJ5Bj/aeroplane.png", // aeroplane
+                        "https://i.postimg.cc/RFwjV1Zn/banana.png"  // banana
+                    ]
+                },
+                {
+                    unit: "ru",
+                    correctImage: "https://i.postimg.cc/FsNytPyn/Run.png", // running (using run image)
+                    correctWord: "run",
+                    distractors: [
+                        "https://i.postimg.cc/T2m0vLZh/Chair.png", // chair
+                        "https://i.postimg.cc/XYv9qpDf/Ship.png", // ship
+                        "https://i.postimg.cc/YS5Fd82R/Thumb.png"  // thumb
+                    ]
+                },
+                {
+                    unit: "fee",
+                    correctImage: "https://i.postimg.cc/zXrjzDr7/Feet.png", // feet (jumped/played/looked could work)
+                    correctWord: "feet",
+                    distractors: [
+                        "https://i.postimg.cc/jj5cp8br/Cake.png", // cake
+                        "https://i.postimg.cc/cCqc808s/Fat.png", // fat
+                        "https://i.postimg.cc/ydRmKtp2/Fox.png"  // fox
+                    ]
+                },
+                {
+                    unit: "ti",
+                    correctImage: "https://i.postimg.cc/LsL58SRk/Tiger.png", // tiger (runner/teacher/farmer could work)
+                    correctWord: "tiger",
+                    distractors: [
+                        "https://i.postimg.cc/MK5yzytZ/Red.png", // red
+                        "https://i.postimg.cc/T1Xr30Z1/Fun.png", // fun
+                        "https://i.postimg.cc/9frP8rdm/Rain.png"  // rain
+                    ]
+                },
+                {
+                    unit: "un",
+                    correctImage: "https://i.postimg.cc/0QPXJq61/sun.png", // what/when/where (using sun as placeholder)
+                    correctWord: "sun",
+                    distractors: [
+                        "https://i.postimg.cc/T2m0vLZh/Chair.png", // chair
+                        "https://i.postimg.cc/XYv9qpDf/Ship.png", // ship
+                        "https://i.postimg.cc/YS5Fd82R/Thumb.png"  // thumb
+                    ]
+                }
+            ];
+
+            //--- Helper Functions ---
+            // Function to shuffle an array (Fisher-Yates Shuffle)
+            function shuffleArray(array) {
+                let shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
+            // Function to get a random vibrant color
+            function getRandomUnitColor() {
+                return unitColors[Math.floor(Math.random() * unitColors.length)];
+            }
+
+            // Function to preload all images
+            function preloadImages() {
+                const imagePromises = [];
+                soundUnitQuestions.forEach(question => {
+                    // Preload correct image
+                    if (!imageCache[question.correctImage]) {
+                        const img = new Image();
+                        const promise = new Promise((resolve, reject) => {
+                            img.onload = () => {
+                                imageCache[question.correctImage] = img;
+                                resolve(img);
+                            };
+                            img.onerror = () => {
+                                console.error("Failed to load image:", question.correctImage);
+                                reject(new Error(`Failed to load image: ${question.correctImage}`));
+                            };
+                            img.src = question.correctImage;
+                        });
+                        imagePromises.push(promise);
+                    } else {
+                        imagePromises.push(Promise.resolve(imageCache[question.correctImage]));
+                    }
+
+                    // Preload distractor images
+                    question.distractors.forEach(imageUrl => {
+                        if (!imageCache[imageUrl]) {
+                            const img = new Image();
+                            const promise = new Promise((resolve, reject) => {
+                                img.onload = () => {
+                                    imageCache[imageUrl] = img;
+                                    resolve(img);
+                                };
+                                img.onerror = () => {
+                                    console.error("Failed to load image:", imageUrl);
+                                    reject(new Error(`Failed to load image: ${imageUrl}`));
+                                };
+                                img.src = imageUrl;
+                            });
+                            imagePromises.push(promise);
+                        } else {
+                            imagePromises.push(Promise.resolve(imageCache[imageUrl]));
+                        }
+                    });
+                });
+                return Promise.all(imagePromises);
+            }
+
+            // Initialize game
+            function initGame() {
+                // Shuffle questions
+                questions = shuffleArray([...soundUnitQuestions]);
+                score = 0;
+                attempts = 0;
+                currentQuestionIndex = 0;
+                answered = false;
+
+                // Hide results screen and show game elements
+                resultsScreen.style.display = 'none';
+                feedback.textContent = 'Click the picture that matches the sound unit!';
+                feedback.className = 'feedback';
+                updateStats();
+                loadQuestion();
+                updateProgress();
+
+                // Start background music if enabled
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+                }
+            }
+
+            // Load current question
+            function loadQuestion() {
+                if (currentQuestionIndex >= questions.length) {
+                    showResults();
+                    return;
+                }
+
+                currentQuestion = questions[currentQuestionIndex];
+                feedback.textContent = `Find the picture for "${currentQuestion.unit}"!`;
+                feedback.className = 'feedback';
+                answered = false;
+
+                // Clear previous elements
+                targetUnit.textContent = currentQuestion.unit;
+                targetUnit.style.backgroundColor = getRandomUnitColor(); // Apply random background color
+                picturesContainer.innerHTML = '';
+
+                // Create picture cards (shuffled)
+                const allImages = [currentQuestion.correctImage, ...currentQuestion.distractors];
+                const shuffledImages = shuffleArray(allImages);
+
+                shuffledImages.forEach(imageUrl => {
+                    const pictureCard = document.createElement('div');
+                    pictureCard.className = 'picture-card';
+                    pictureCard.dataset.image = imageUrl;
+
+                    const img = document.createElement('img');
+                    img.src = imageCache[imageUrl] ? imageCache[imageUrl].src : imageUrl;
+                    img.alt = `Picture for ${currentQuestion.unit} sound unit matching`;
+
+                    pictureCard.appendChild(img);
+                    pictureCard.addEventListener('click', function() {
+                        if (answered) return;
+                        checkAnswer(imageUrl, pictureCard);
+                    });
+
+                    picturesContainer.appendChild(pictureCard);
+                });
+
+                // Show game elements
+                targetUnit.parentElement.style.display = 'flex'; // Show the container
+                picturesContainer.style.display = 'grid';
+                feedback.style.display = 'flex';
+                gameControls.style.display = 'flex';
+            }
+
+            // Check user's answer
+            function checkAnswer(selectedImage, selectedCard) {
+                if (answered) return;
+
+                const isCorrect = selectedImage === currentQuestion.correctImage;
+                attempts++;
+                answered = true;
+
+                // Highlight correct answer
+                const allCards = picturesContainer.querySelectorAll('.picture-card');
+                allCards.forEach(card => {
+                    const imgSrc = card.dataset.image;
+                    if (imgSrc === currentQuestion.correctImage) {
+                        card.classList.add('correct');
+                    }
+                });
+
+                if (isCorrect) {
+                    score++;
+                    feedback.textContent = 'Correct! Well done!';
+                    feedback.className = 'feedback correct';
+                    selectedCard.classList.add('selected', 'correct');
+                    if (fxAffectsFeedback) {
+                        correctSound.currentTime = 0;
+                        correctSound.play().catch(e => console.log("Success sound play prevented:", e));
+                    }
+                } else {
+                    feedback.textContent = `Oops! The correct picture was for "${currentQuestion.correctWord}".`;
+                    feedback.className = 'feedback incorrect';
+                    selectedCard.classList.add('selected', 'incorrect');
+                    if (fxAffectsFeedback) {
+                        incorrectSound.currentTime = 0;
+                        incorrectSound.play().catch(e => console.log("Incorrect sound play prevented:", e));
+                    }
+                }
+
+                updateStats();
+
+                // Automatically move to the next question after a delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        // Quiz is finished
+                        completionSound.currentTime = 0;
+                        completionSound.play().catch(e => console.log("Completion sound play prevented:", e));
+                        showResults();
+                    }
+                }, 1500); // 1.5 second delay
+            }
+
+            // Event Listeners
+            skipBtn.addEventListener('click', function() {
+                if (answered) return;
+                feedback.textContent = `The correct picture was for "${currentQuestion.correctWord}".`;
+                feedback.className = 'feedback';
+
+                // Highlight correct answer
+                const allCards = picturesContainer.querySelectorAll('.picture-card');
+                allCards.forEach(card => {
+                    const imgSrc = card.dataset.image;
+                    if (imgSrc === currentQuestion.correctImage) {
+                        card.classList.add('correct');
+                    }
+                });
+
+                answered = true;
+
+                // Move to next question after delay
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < questions.length) {
+                        loadQuestion();
+                        updateProgress();
+                    } else {
+                        showResults();
+                    }
+                }, 1500);
+            });
+
+            restartBtn.addEventListener('click', function() {
+                initGame();
+            });
+
+            // Show results screen
+            function showResults() {
+                // Hide game elements
+                targetUnit.parentElement.style.display = 'none';
+                picturesContainer.style.display = 'none';
+                feedback.style.display = 'none';
+                gameControls.style.display = 'none';
+
+                // Show results screen
+                resultsScreen.style.display = 'block';
+                finalScoreElement.textContent = score;
+                totalQuestionsElement.textContent = questions.length;
+
+                // Determine message based on score
+                let message = "";
+                const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+                if (percentage >= 80) {
+                    message = "Excellent! You're a sound unit superstar!";
+                } else if (percentage >= 60) {
+                    message = "Great job! Keep practicing to get even better!";
+                } else if (percentage >= 40) {
+                    message = "Good effort! A bit more practice will help you master these sound units.";
+                } else {
+                    message = "Nice try! Review the sound units and try again. You've got this!";
+                }
+                resultsMessage.textContent = message;
+
+                // Update progress bar to 100%
+                progressBar.style.width = `100%`;
+            }
+
+            // Restart game from results screen
+            restartResultsBtn.addEventListener('click', function() {
+                // Show game elements again
+                targetUnit.parentElement.style.display = 'flex';
+                picturesContainer.style.display = 'grid';
+                feedback.style.display = 'flex';
+                gameControls.style.display = 'flex';
+                initGame();
+            });
+
+            // Toggle background music
+            bgmToggle.addEventListener('click', function() {
+                bgmEnabled = !bgmEnabled;
+                if (bgmEnabled) {
+                    bgMusic.play().catch(e => console.log("Play prevented:", e));
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: On';
+                    bgmToggle.classList.add('active');
+                } else {
+                    bgMusic.pause();
+                    bgmToggle.innerHTML = '<i class="fas fa-volume-mute"></i> Background Music: Off';
+                    bgmToggle.classList.remove('active');
+                }
+            });
+
+            // Toggle sound effects
+            fxToggle.addEventListener('click', function() {
+                fxAffectsFeedback = !fxAffectsFeedback;
+                if (fxAffectsFeedback) {
+                    fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
+                    fxToggle.classList.add('active');
+                } else {
+                    fxToggle.innerHTML = '<i class="fas fa-bell-slash"></i> Sound Effects: Off';
+                    fxToggle.classList.remove('active');
+                }
+            });
+
+            // Update stats
+            function updateStats() {
+                scoreElement.textContent = score;
+                attemptsElement.textContent = attempts;
+            }
+
+            // Update progress bar
+            function updateProgress() {
+                if (questions.length > 0) {
+                    const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+                    progressBar.style.width = `${progress}%`;
+                } else {
+                    progressBar.style.width = '0%';
+                }
+            }
+
+            // Preload images and then initialize the game
+            preloadImages()
+                .then(() => {
+                    console.log("All images loaded successfully.");
+                    // Hide loading screen and show game
+                    loadingScreen.style.display = 'none';
+                    initGame();
+                })
+                .catch((error) => {
+                    console.error("Error loading images:", error);
+                    // Even if there's an error, start the game after a short delay
+                    // to prevent the loading screen from being permanent
+                    feedback.textContent = "Some images failed to load, but the game will start anyway.";
+                    feedback.style.display = 'flex';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        initGame();
+                    }, 3000); // 3 second delay before starting anyway
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spelling Challenge Game | EduResources</title>
+<meta name="description" content="Interactive spelling game for Year 1 students. Look at the picture and choose the correct spelling from the options. Practice spelling skills and word recognition.">
+<meta name="keywords" content="spelling game, spelling challenge, word recognition, year 1 spelling, elementary education, literacy game, choose correct spelling">
+<meta name="author" content="EduResources">
+<link rel="canonical" href="https://eduresources.co.uk/spelling-challenge-game.html">
+<!-- Open Graph/ Social Media Meta Tags -->
+<meta property="og:title" content="Spelling Challenge Game | EduResources">
+<meta property="og:description" content="Interactive spelling game for Year 1 students. Look at the picture and choose the correct spelling from the options. Practice spelling skills and word recognition.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduresources.co.uk/spelling-challenge-game.html">
+<meta property="og:image" content="https://i.postimg.cc/ZRgHn8xS/Spelling-Challenge-Preview.png">
+<meta property="og:site_name" content="EduResources">
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spelling Challenge Game | EduResources">
+<meta name="twitter:description" content="Interactive spelling game for Year 1 students. Look at the picture and choose the correct spelling from the options. Practice spelling skills and word recognition.">
+<meta name="twitter:image" content="https://i.postimg.cc/ZRgHn8xS/Spelling-Challenge-Preview.png">
+<!-- Preconnect to Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+--primary-color:#2c3e50; /* Dark Blue */
+--secondary-color:#3498db; /* Bright Blue */
+--accent-color:#e74c3c; /* Red */
+--phonics-color:#27ae60; /* Green for phonics - now used for spelling too */
+--phonics-light:#2ecc71; /* Lighter green */
+--bg-color:#f5f7fa; /* Very light background */
+--card-bg:#ffffff; /* White card background */
+--border-color:#e0e6ed; /* Light border */
+--text-color:#212529; /* Main text color */
+--text-light:#6c757d; /* Lighter text */
+--transition-speed: 0.3s;
+--border-radius: 6px;
+--spacing-xs: 0.4rem;
+--spacing-sm: 0.8rem;
+--spacing-md: 1.2rem;
+--spacing-lg: 1.6rem;
+--spacing-xl: 2.2rem;
+--max-width: 1100px;
+--whatsapp-green:#25D366;
+--quiz-green:#27ae60; /* Green for quiz success/progress */
+--spelling-color:var(--phonics-color); /* Use phonics green for spelling */
+--spelling-light:var(--phonics-light); /* Use phonics light green for spelling */
+}
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+html, body{
+height: 100%;
+}
+body{
+font-family:'Inter','Open Sans',-apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+line-height: 1.6;
+color: var(--text-color);
+background-color: var(--bg-color);
+display: flex;
+flex-direction: column;
+}
+/*--- Main Content Area ---*/
+.main-content{
+flex: 1 0 auto;
+padding-bottom: 70px; /* Space for bottom nav */
+}
+.container{
+width: 100%;
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 var(--spacing-sm);
+}
+/*--- Header ---*/
+header{
+background-color: var(--card-bg);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.header-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: calc(var(--spacing-sm) * 1.2) var(--spacing-sm);
+}
+.logo{
+font-weight: 700;
+color: var(--primary-color);
+text-decoration: none;
+font-size: 1.4rem;
+display: flex;
+align-items: center;
+}
+.logo i{
+color: var(--secondary-color);
+margin-right: calc(var(--spacing-xs) * 1.8);
+font-size: 1.6rem;
+flex-shrink: 0;
+}
+/*--- New Donation Button ---*/
+.donate-top-btn{
+background-color: var(--accent-color);
+color: white;
+border: none;
+border-radius: 50px;
+padding: 0.6rem 1.2rem;
+cursor: pointer;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+transition: all var(--transition-speed) ease;
+font-size: 0.9rem;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+text-decoration: none;
+}
+.donate-top-btn:hover{
+background-color:#c0392b;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.donate-top-btn i{
+font-size: 1rem;
+}
+/*--- Hero/Banner Section ---*/
+.hero{
+background: linear-gradient(135deg, var(--spelling-color), var(--spelling-light));
+color: white;
+text-align: center;
+padding: var(--spacing-lg) var(--spacing-sm);
+margin-bottom: var(--spacing-lg);
+border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+.hero h1{
+font-size: 1.8rem;
+margin-bottom: var(--spacing-xs);
+font-weight: 700;
+}
+.hero p{
+font-size: 1rem;
+opacity: 0.95;
+max-width: 700px;
+margin: 0 auto;
+}
+/*--- Breadcrumb Navigation ---*/
+.breadcrumb{
+margin-bottom: var(--spacing-md);
+font-size: 0.85rem;
+}
+.breadcrumb a{
+color: var(--secondary-color);
+text-decoration: none;
+}
+.breadcrumb a:hover{
+text-decoration: underline;
+}
+.breadcrumb span{
+color: var(--text-light);
+}
+/*--- Game Section ---*/
+.game-section{
+background-color: var(--card-bg);
+border-radius: var(--border-radius);
+padding: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.game-section h2{
+color: var(--primary-color);
+margin-bottom: var(--spacing-sm);
+font-size: 1.5rem;
+position: relative;
+padding-bottom: var(--spacing-xs);
+}
+.game-section h2:after{
+content:'';
+position: absolute;
+left: 0;
+bottom: 0;
+width: 50px;
+height: 2px;
+background-color: var(--spelling-color);
+}
+/*--- Instructions ---*/
+.instructions{
+background-color: rgba(39, 174, 96, 0.1);
+border-radius: var(--border-radius);
+padding: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+border-left: 4px solid var(--spelling-color);
+}
+.instructions h3{
+color: var(--spelling-color);
+margin-bottom: var(--spacing-xs);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.instructions p{
+margin-bottom: var(--spacing-xs);
+}
+.instructions ul{
+padding-left: 1.5rem;
+margin-bottom: var(--spacing-xs);
+}
+.instructions li{
+margin-bottom: 0.3rem;
+}
+/*--- Loading Screen ---*/
+.loading-screen{
+text-align: center;
+padding: var(--spacing-lg);
+}
+.spinner{
+border: 4px solid rgba(0, 0, 0, 0.1);
+border-radius: 50%;
+border-top: 4px solid var(--spelling-color);
+width: 40px;
+height: 40px;
+animation: spin 1s linear infinite;
+margin: 0 auto 1rem;
+}
+@keyframes spin{ 0%{ transform: rotate(0deg);} 100%{ transform: rotate(360deg);} }
+/*--- Game Area ---*/
+.game-area{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: var(--spacing-lg);
+}
+/*--- Word Image Display ---*/
+.word-image-container{
+text-align: center;
+margin: var(--spacing-md) 0;
+width: 100%;
+max-width: 300px; /* Limit width */
+height: 200px; /* Fixed height for consistency */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.word-image-frame{
+width: 100%;
+height: 100%;
+border-radius: var(--border-radius);
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+overflow: hidden; /* Contain the image */
+position: relative;
+}
+.word-image-frame img{
+max-width: 80%; /* Scale image within frame */
+max-height: 80%; /* Scale image within frame */
+object-fit: contain; /* Maintain aspect ratio */
+transition: transform 0.2s;
+}
+.word-image-frame:hover img{
+transform: scale(1.05); /* Slight zoom on hover */
+}
+/*--- Options Container ---*/
+.options-container{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: var(--spacing-sm);
+width: 100%;
+max-width: 500px;
+margin: var(--spacing-md) 0;
+}
+.option-btn{
+background-color: var(--card-bg);
+border: 2px solid var(--border-color);
+border-radius: var(--border-radius);
+padding: 1rem 0.5rem;
+font-size: 1.3rem;
+font-weight: 600;
+color: var(--primary-color);
+cursor: pointer;
+transition: all var(--transition-speed);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 60px;
+}
+.option-btn:hover{
+background-color:#f8f9fa;
+border-color: var(--secondary-color);
+transform: translateY(-3px);
+}
+.option-btn.correct{
+background-color: rgba(39, 174, 96, 0.15);
+border-color: var(--quiz-green);
+color: var(--quiz-green);
+}
+.option-btn.incorrect{
+background-color: rgba(231, 76, 60, 0.15);
+border-color: var(--accent-color);
+color: var(--accent-color);
+}
+/*--- Feedback ---*/
+.feedback{
+text-align: center;
+padding: 1rem;
+border-radius: var(--border-radius);
+margin-top: 1rem;
+font-weight: 600;
+font-size: 1.1rem;
+min-height: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+max-width: 600px;
+}
+.feedback.correct{
+background: rgba(39, 174, 96, 0.1);
+color:#27ae60;
+border: 1px solid var(--quiz-green);
+}
+.feedback.incorrect{
+background: rgba(231, 76, 60, 0.1);
+color: var(--accent-color);
+border: 1px solid var(--accent-color);
+}
+/*--- Progress & Stats ---*/
+.progress-container{
+width: 100%;
+background:#e9ecef;
+border-radius: 50px;
+height: 20px;
+margin: 1.5rem 0;
+overflow: hidden;
+}
+.progress-bar{
+height: 100%;
+background: linear-gradient(90deg, var(--spelling-light), var(--spelling-color));
+border-radius: 50px;
+width: 0%;
+transition: width 0.5s ease;
+}
+.stats{
+display: flex;
+justify-content: space-around;
+width: 100%;
+max-width: 600px;
+margin: 1rem 0;
+}
+.stat-box{
+background: var(--card-bg);
+padding: 1rem;
+border-radius: var(--border-radius);
+text-align: center;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+flex: 1;
+margin: 0 0.5rem;
+}
+.stat-value{
+font-size: 1.8rem;
+font-weight: 700;
+color: var(--spelling-color);
+font-family:'Open Sans', sans-serif;
+}
+.stat-label{
+font-size: 0.9rem;
+color: var(--text-light);
+}
+/*--- Controls ---*/
+.game-controls{
+display: flex;
+gap: 1rem;
+margin-top: 1rem;
+flex-wrap: wrap;
+justify-content: center;
+}
+.btn{
+padding: 0.8rem 1.5rem;
+border: none;
+border-radius: var(--border-radius);
+font-family:'Inter', sans-serif;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all var(--transition-speed);
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.btn-primary{
+background: linear-gradient(135deg, var(--spelling-color), var(--spelling-light));
+color: white;
+box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+}
+.btn-primary:hover{
+transform: translateY(-3px);
+box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+.btn-secondary{
+background: var(--card-bg);
+color: var(--primary-color);
+border: 1px solid var(--border-color);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.btn-secondary:hover{
+background:#f8f9fa;
+}
+.sound-controls{
+display: flex;
+justify-content: center;
+margin: var(--spacing-sm) 0;
+gap: 1rem;
+}
+.sound-btn{
+background: var(--card-bg);
+border: 1px solid var(--border-color);
+border-radius: 50px;
+padding: 0.5rem 1rem;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.9rem;
+transition: all 0.3s;
+}
+.sound-btn:hover{
+background:#f8f9fa;
+}
+.sound-btn.active{
+background: var(--spelling-light);
+color: white;
+border-color: var(--spelling-color);
+}
+/*--- Results Screen ---*/
+.results-screen{
+text-align: center;
+padding: var(--spacing-lg);
+background-color: var(--card-bg);
+border-radius: var(--border-radius);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+max-width: 600px;
+margin: var(--spacing-lg) auto;
+display: none; /* Hidden by default */
+}
+.results-screen h2{
+color: var(--primary-color);
+margin-bottom: var(--spacing-md);
+}
+.results-stats{
+font-size: 1.2rem;
+margin-bottom: var(--spacing-md);
+}
+.results-message{
+font-size: 1.1rem;
+margin-bottom: var(--spacing-md);
+}
+.btn-restart-results{
+margin-top: var(--spacing-md);
+padding: 0.8rem 1.5rem;
+background: linear-gradient(135deg, var(--spelling-color), var(--spelling-light));
+color: white;
+border: none;
+border-radius: var(--border-radius);
+font-weight: 600;
+cursor: pointer;
+transition: all var(--transition-speed);
+box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+}
+.btn-restart-results:hover{
+transform: translateY(-3px);
+box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+/*--- SEO Content Section ---*/
+.seo-content{
+background-color: var(--card-bg);
+border-radius: var(--border-radius);
+padding: var(--spacing-md);
+margin-top: var(--spacing-lg);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+font-size: 0.95rem;
+}
+.seo-content h2{
+color: var(--primary-color);
+margin-bottom: var(--spacing-xs);
+font-size: 1.3rem;
+}
+.seo-content h3{
+color: var(--spelling-color);
+margin: var(--spacing-sm) 0 var(--spacing-xs);
+font-size: 1.1rem;
+}
+.seo-content p{
+margin-bottom: var(--spacing-xs);
+}
+.seo-content ul{
+padding-left: 1.5rem;
+margin-bottom: var(--spacing-xs);
+}
+.seo-content li{
+margin-bottom: 0.3rem;
+}
+/*--- Footer ---*/
+footer{
+background-color: var(--primary-color);
+color: white;
+padding: var(--spacing-lg) 0 var(--spacing-md);
+font-size: 0.9rem;
+flex-shrink: 0;
+}
+.footer-content{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: var(--spacing-md);
+margin-bottom: var(--spacing-md);
+}
+.footer-column h4{
+font-size: 1rem;
+margin-bottom: var(--spacing-sm);
+color: var(--secondary-color);
+}
+.footer-column ul{
+list-style: none;
+padding: 0;
+}
+.footer-column li{
+margin-bottom: 0.5rem;
+}
+.footer-column a{
+color:#e9ecef;
+text-decoration: none;
+transition: color 0.2s ease;
+display: inline-flex;
+align-items: center;
+font-size: 0.9rem;
+}
+.footer-column a:hover{
+color: white;
+text-decoration: underline;
+}
+.footer-column a i{
+/* Ensure no icons appear in footer links */
+display: none!important; /* Override any potential icon styles */
+}
+.copyright{
+text-align: center;
+padding-top: var(--spacing-md);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+font-size: 0.8rem;
+opacity: 0.85;
+}
+/*--- Bottom Navigation ---*/
+.bottom-nav{
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(--card-bg);
+display: flex;
+justify-content: space-around;
+padding: var(--spacing-xs) 0;
+box-shadow: 0 -1px 5px rgba(0,0,0,0.08);
+z-index: 100;
+border-top: 1px solid var(--border-color);
+}
+.nav-item{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: var(--text-light);
+font-size: 0.7rem;
+transition: all var(--transition-speed) ease;
+font-weight: 500;
+}
+.nav-item i{
+font-size: 1rem;
+margin-bottom: 3px;
+transition: color 0.3s;
+}
+.nav-item.active{
+color: var(--spelling-color);
+}
+.nav-item.active i{
+color: var(--spelling-color);
+}
+.nav-item:hover{
+color: var(--primary-color);
+}
+.nav-item:hover i{
+color: var(--primary-color);
+}
+/*--- Responsive Adjustments ---*/
+@media(max-width: 768px){
+.hero h1{
+font-size: 1.6rem;
+}
+.hero p{
+font-size: 0.95rem;
+}
+.header-container{
+padding: var(--spacing-sm) var(--spacing-sm);
+flex-wrap: wrap;
+}
+.logo{
+font-size: 1.25rem;
+flex-shrink: 0;
+margin-right: auto;
+}
+.logo i{
+font-size: 1.4rem;
+margin-right: var(--spacing-xs);
+}
+.donate-top-btn{
+padding: 0.5rem 1rem;
+font-size: 0.85rem;
+}
+.donate-top-btn i{
+font-size: 0.9rem;
+}
+.options-container{
+grid-template-columns: repeat(2, 1fr); /* Stack options on smaller screens */
+}
+.controls{
+flex-direction: column;
+align-items: center;
+}
+.btn{
+width: 100%;
+max-width: 300px;
+justify-content: center;
+}
+.footer-content{
+grid-template-columns: repeat(2, 1fr);
+}
+}
+@media(max-width: 480px){
+.footer-content{
+grid-template-columns: 1fr;
+}
+.stats{
+flex-direction: column;
+gap: 0.5rem;
+}
+.stat-box{
+margin: 0.2rem 0;
+}
+.option-btn{
+padding: 0.8rem 0.5rem;
+font-size: 1.1rem;
+min-height: 50px;
+}
+.word-image-container{
+height: 150px; /* Smaller height on mobile */
+}
+}
+</style>
+</head>
+<body>
+<!-- Main content area to push footer down -->
+<div class="main-content">
+<header>
+<div class="container header-container">
+<a href="index.html" class="logo">
+<i class="fas fa-book-open"></i> EduResources
+</a>
+<a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+<i class="fas fa-heart"></i> Donate
+</a>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+<h1>Year 1 Spelling Challenge Game</h1>
+<p>Interactive game to practice spelling by choosing the correct word from options</p>
+</div>
+</section>
+<div class="container">
+<nav class="breadcrumb">
+<a href="index.html">Home</a><span>/</span>
+<a href="quizzes.html">Quizzes</a><span>/</span>
+<a href="quiz-year1.html">Year 1</a><span>/</span>
+<a href="quiz-year1-english-spelling.html">Spelling</a><span>/</span> Spelling Challenge
+</nav>
+</div>
+<div class="container">
+<section class="game-section">
+<h2>Spelling Challenge Game</h2>
+<div class="instructions">
+<h3><i class="fas fa-info-circle"></i> How to Play</h3>
+<p>This game helps Year 1 students practice spelling by looking at a picture and choosing the correct spelling from the options. Follow these steps:</p>
+<ul>
+<li>Look at the picture</li>
+<li>Read the four spelling options</li>
+<li>Click on the option that correctly spells the word shown</li>
+<li>Get instant feedback and move to the next word automatically!</li>
+</ul>
+<div class="sound-controls">
+<button class="sound-btn active" id="bgm-toggle">
+<i class="fas fa-volume-up"></i> Background Music: On
+</button>
+<button class="sound-btn active" id="fx-toggle">
+<i class="fas fa-bell"></i> Sound Effects: On
+</button>
+</div>
+</div>
+<div class="stats">
+<div class="stat-box">
+<div class="stat-value" id="score">0</div>
+<div class="stat-label">Correct</div>
+</div>
+<div class="stat-box">
+<div class="stat-value" id="attempts">0</div>
+<div class="stat-label">Attempts</div>
+</div>
+</div>
+<div class="progress-container">
+<div class="progress-bar" id="progress-bar"></div>
+</div>
+<div class="game-area">
+<div class="loading-screen" id="loading-screen">
+<div class="spinner"></div>
+<p>Loading game images...</p>
+</div>
+<div class="word-image-container" id="word-image-container" style="display:none;">
+<div class="word-image-frame" id="word-image-frame">
+<img id="word-image" src="" alt="Word Image">
+</div>
+</div>
+<div class="options-container" id="options-container" style="display:none;">
+<!-- Options will be generated by JS -->
+</div>
+<div class="feedback" id="feedback" style="display:none;">
+Look at the picture and choose the correct spelling!
+</div>
+<div class="game-controls" id="game-controls" style="display:none;">
+<button class="btn btn-secondary" id="skip-btn">
+<i class="fas fa-step-forward"></i> Skip Word
+</button>
+<button class="btn btn-secondary" id="restart-btn">
+<i class="fas fa-redo"></i> Restart Game
+</button>
+</div>
+</div>
+<!-- Results Screen -->
+<div class="results-screen" id="results-screen">
+<h2>Spelling Challenge Completed!</h2>
+<div class="results-stats">
+Your Score: <span id="final-score">0</span> out of <span id="total-questions">0</span>
+</div>
+<div class="results-message" id="results-message">
+<!-- Message will be inserted by JS -->
+</div>
+<button class="btn-restart-results" id="restart-results-btn">
+<i class="fas fa-redo"></i> Play Again
+</button>
+</div>
+</section>
+<!-- SEO Content Section -->
+<section class="seo-content">
+<h2>Boost Year 1 Spelling Skills: Interactive Spelling Challenge Game</h2>
+<p>Our <strong>Year 1 Spelling Challenge Game</strong> is a vital educational tool for children aged 5-6. This engaging activity helps young learners develop crucial spelling skills by identifying the correct spelling of words from multiple choices. It's a fun and effective way to practice the spelling recognition and literacy skills emphasized in Year 1.</p>
+<h3>Why Spelling Recognition is Crucial for Year 1 Learners</h3>
+<p>Developing accurate spelling recognition is fundamental to early literacy. In Year 1, children build upon their Reception knowledge by learning to:</p>
+<ul>
+<li>Recognize and spell common sight words (the, to, I, no, go, me, we, he, she, they, all, are, was, my, her, him, said, so, up, look, come, some, there, little, one, do, two, water, little, over, new, sound, spell, words, day, hand, part, place, year, live, me, back, give, most, does, write, work, know, were, been, call, its, move, through, much, before, would, always, those, both, being, under, paper).</li>
+<li>Spell phonetically regular words (CVC words like cat, dog, sun, hat).</li>
+<li>Identify and spell words with common spelling patterns (e.g., -ing, -ed, -er, -est).</li>
+<li>Improve visual memory for correct letter sequences.</li>
+<li>Enhance reading fluency by recognizing familiar word shapes.</li>
+</ul>
+<p>This spelling challenge game directly reinforces these skills by making the connection between visual recognition, correct spelling, and word meaning explicit and engaging.</p>
+<h3>How Our Spelling Challenge Game Enhances Learning</h3>
+<p>This carefully designed game supports Year 1 spelling education by providing:</p>
+<ul>
+<li><strong>Visual Discrimination:</strong> Children must carefully examine the spelling options to identify the correct one, sharpening their ability to spot spelling errors or unusual letter combinations.</li>
+<li><strong>Immediate Feedback:</strong> Children learn instantly whether their spelling choice is correct, allowing for rapid reinforcement or correction.</li>
+<li><strong>Variety of Words:</strong> Our game includes a wide range of common sight words and phonetically regular words, ensuring comprehensive practice.</li>
+<li><strong>Progress Tracking:</strong> Score and attempt counters help children and teachers monitor progress and improvement over time.</li>
+<li><strong>Curriculum-Aligned:</strong> Activities are designed to meet the expectations of the Year 1 spelling curriculum, focusing on high-frequency words and simple phonetic spellings.</li>
+</ul>
+<h3>Key Spelling Words Practiced in This Game</h3>
+<p>This game covers a broad spectrum of words crucial for Year 1 spelling success:</p>
+<ul>
+<li><strong>Common Sight Words:</strong> the, to, I, no, go, me, we, he, she, they, all, are, was, my, her, him, said, so, up, look, come, some, there, little, one, do, two, water, little, over, new, sound, spell, words, day, hand, part, place, year, live, me, back, give, most, does, write, work, know, were, been, call, its, move, through, much, before, would, always, those, both, being, under, paper.</li>
+<li><strong>Phonetically Regular CVC Words:</strong> cat, dog, sun, hat, pen, cup, big, red, run, sit, get, hot, not, got, let, met, wet, set, bet, hit, bit, fit, lit, put, cut, but, nut, fun, run, sun, top, pop, hop, mop, cop, pot, hot, got, lot, not, dot, got, rot, tot, cot, bot, mot, vot, zot, pat, bat, mat, sat, fat, rat, hat, cat, vat, gat, dat, eat, beat, heat, meat, seat, feet, meet, feet, keep, deep, beep, jeep, weep, peep, leap, heap, reap, cheap, speak, break, steak, great, treat, dream, cream, stream, team, beam, seem, deem, teem, deem, deem, deem, deem, deem.</li>
+<li><strong>Words with Common Endings:</strong> playing, played, runner, bigger, smaller, faster, slower.</li>
+</ul>
+<h3>Effective Tips for Parents and Teachers Using This Spelling Game</h3>
+<ol>
+<li><strong>Encourage Verbalization:</strong> Have children say the word aloud and then spell it letter by letter to help identify the correct spelling.</li>
+<li><strong>Practice Reading:</strong> After seeing the word, encourage them to read the correct spelling to reinforce the connection between letters and sounds.</li>
+<li><strong>Celebrate Effort:</strong> Acknowledge correct answers and learning attempts to build confidence and a positive association with spelling practice.</li>
+<li><strong>Practice Regularly:</strong> Consistent, short sessions are more beneficial than infrequent, long ones. Aim for 10-15 minutes daily.</li>
+<li><strong>Integrate with Writing:</strong> Apply the spelling words learned in this game when writing sentences or short stories together.</li>
+<li><strong>Review Mistakes:</strong> If a child consistently struggles with a particular word, provide extra practice or review the spelling using different methods (spelling bees, flashcards, writing in sand).</li>
+</ol>
+<p>This spelling challenge game is part of our comprehensive Year 1 English resources, designed to make learning enjoyable and effective. Regular practice with these engaging tools will help children develop a strong spelling foundation, boosting their confidence and ability in reading and writing. By mastering these spelling recognition skills, Year 1 students take a significant step towards becoming fluent readers and writers.</p>
+</section>
+</div>
+</div><!-- End of main-content -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h4>Qualifications</h4>
+<ul>
+<li><a href="pastpapers-primary.html">Primary(7+, 11+, 13+)</a></li>
+<li><a href="pastpapers-gcse-igcse.html">GCSE& IGCSE</a></li>
+<li><a href="pastpapers-a-level.html">A-Level& O-Level</a></li>
+<li><a href="pastpapers-sats.html">SATs</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Resources</h4>
+<ul>
+<li><a href="pastpapers.html">Past Papers</a></li>
+<li><a href="books.html">Free Books</a></li>
+<li><a href="syllabus.html">Syllabus</a></li>
+<li><a href="quizzes.html">Quizzes</a></li>
+<li><a href="notes.html">Study Notes</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Support</h4>
+<ul>
+<li><a href="tutoring.html">Online Tutoring</a></li>
+<li><a href="tips.html">Exam Tips</a></li>
+<li><a href="blog.html">Study Blog</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Company</h4>
+<ul>
+<li><a href="about.html">About Us</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms of Service</a></li>
+<li><a href="donate.html">Donate</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Connect</h4>
+<ul>
+<li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+<li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+<li><a href="mailto:info@eduresources.com">Email Us</a></li>
+</ul>
+</div>
+</div>
+<div class="copyright">
+&copy; 2025 EduResources. All rights reserved.
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<a href="index.html" class="nav-item">
+<i class="fas fa-home"></i>
+<span>Home</span>
+</a>
+<a href="quizzes.html" class="nav-item active">
+<i class="fas fa-question-circle"></i>
+<span>Quizzes</span>
+</a>
+<a href="pastpapers.html" class="nav-item">
+<i class="fas fa-file-alt"></i>
+<span>Papers</span>
+</a>
+<a href="faq.html" class="nav-item">
+<i class="fas fa-question-circle"></i>
+<span>FAQ</span>
+</a>
+</nav>
+<!-- Audio elements for fixed sounds -->
+<audio id="correct-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48398_zapsplat_multimedia_game_sound_positive_notification_001.mp3" preload="auto"></audio>
+<audio id="incorrect-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48397_zapsplat_multimedia_game_sound_negative_fail_001.mp3" preload="auto"></audio>
+<audio id="completion-sound" src="https://www.zapsplat.com/wp-content/uploads/bank-11/48399_zapsplat_multimedia_game_sound_trophy_win_001.mp3" preload="auto"></audio>
+<audio id="bg-music" loop preload="auto">
+<source src="https://assets.mixkit.co/music/preview/mixkit-game-show-suspense-waiting-667.mp3" type="audio/mpeg">
+</audio>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+// Game elements
+const loadingScreen = document.getElementById('loading-screen');
+const wordImageContainer = document.getElementById('word-image-container');
+const wordImageFrame = document.getElementById('word-image-frame');
+const wordImage = document.getElementById('word-image');
+const optionsContainer = document.getElementById('options-container');
+const skipBtn = document.getElementById('skip-btn');
+const restartBtn = document.getElementById('restart-btn');
+const feedback = document.getElementById('feedback');
+const scoreElement = document.getElementById('score');
+const attemptsElement = document.getElementById('attempts');
+const progressBar = document.getElementById('progress-bar');
+const bgmToggle = document.getElementById('bgm-toggle');
+const fxToggle = document.getElementById('fx-toggle');
+const resultsScreen = document.getElementById('results-screen');
+const finalScoreElement = document.getElementById('final-score');
+const totalQuestionsElement = document.getElementById('total-questions');
+const resultsMessage = document.getElementById('results-message');
+const restartResultsBtn = document.getElementById('restart-results-btn');
+const gameControls = document.getElementById('game-controls');
+
+// Audio elements
+const correctSound = document.getElementById('correct-sound');
+const incorrectSound = document.getElementById('incorrect-sound');
+const completionSound = document.getElementById('completion-sound');
+const bgMusic = document.getElementById('bg-music');
+
+// Game state
+let score = 0;
+let attempts = 0;
+let currentQuestionIndex = 0;
+let questions = [];
+let currentQuestion = null;
+let answered = false;
+let bgmEnabled = true;
+let fxAffectsFeedback = true;
+let imageCache = {}; // Cache loaded images
+
+// Sample Words with correct spelling, distractors, and image URLs (20 questions)
+const sampleQuestions = [
+    { word: "aeroplane", options: ["aeroplane", "airplane", "aeroplan", "eroplane"], imageUrl: "https://i.postimg.cc/nz1DJ5Bj/aeroplane.png"},
+    { word: "apple", options: ["apple", "aple", "appel", "appl"], imageUrl: "https://i.postimg.cc/TYNHxNJ4/apple.png"},
+    { word: "banana", options: ["banana", "bananna", "banan", "banena"], imageUrl: "https://i.postimg.cc/RFwjV1Zn/banana.png"},
+    { word: "blender", options: ["blender", "blandar", "blener", "blandar"], imageUrl: "https://i.postimg.cc/vBmQ4SC6/blender.png"},
+    { word: "book", options: ["book", "buk", "boook", "bok"], imageUrl: "https://i.postimg.cc/rsr2W6jz/book.png"},
+    { word: "bottle", options: ["bottle", "bottel", "botle", "botel"], imageUrl: "https://i.postimg.cc/C51zVKwX/bottle.png"},
+    { word: "burger", options: ["burger", "burgar", "burgr", "bergur"], imageUrl: "https://i.postimg.cc/nrJfvRPk/Burger.png"},
+    { word: "bus", options: ["bus", "bas", "bos", "buz"], imageUrl: "https://i.postimg.cc/xCgc7mVL/bus.png"},
+    { word: "can", options: ["can", "kan", "cen", "caan"], imageUrl: "https://i.postimg.cc/wBQvyNvn/can.png"},
+    { word: "carrot", options: ["carrot", "carot", "karrot", "carrotte"], imageUrl: "https://i.postimg.cc/vTQSYpKp/carrot.png"},
+    { word: "chess", options: ["chess", "ches", "chesse", "chas"], imageUrl: "https://i.postimg.cc/FFBKLNrF/chess.png"},
+    { word: "classroom", options: ["classroom", "clasroom", "classrum", "clasrum"], imageUrl: "https://i.postimg.cc/mgMh4JGL/classroom.png"},
+    { word: "cocktail", options: ["cocktail", "coctail", "cocktale", "coktail"], imageUrl: "https://i.postimg.cc/CdpTsvr7/cocktail.png"},
+    { word: "computer", options: ["computer", "komputer", "computar", "comptr"], imageUrl: "https://i.postimg.cc/K8ncwTn4/computer.png"},
+    { word: "cow", options: ["cow", "kow", "cou", "co"], imageUrl: "https://i.postimg.cc/7LhH6WFJ/cow.png"},
+    { word: "doctor", options: ["doctor", "docter", "doktor", "doctar"], imageUrl: "https://i.postimg.cc/W4LFJj7q/doctor.png"},
+    { word: "dove", options: ["dove", "doov", "dov", "duve"], imageUrl: "https://i.postimg.cc/htp4KB5q/dove.png"},
+    { word: "duck", options: ["duck", "duk", "dukk", "dug"], imageUrl: "https://i.postimg.cc/L4YJvn0g/duck.png"},
+    { word: "earpods", options: ["earpods", "earpodes", "airpods", "earpuds"], imageUrl: "https://i.postimg.cc/yd6NFN3x/earpods.png"},
+    { word: "elephant", options: ["elephant", "elaphant", "elefant", "elephent"], imageUrl: "https://i.postimg.cc/8cRD9Q69/elephant.png"}
+];
+
+//--- Helper Functions ---
+// Function to shuffle an array (Fisher-Yates Shuffle)
+function shuffleArray(array){
+    let shuffled = [...array];
+    for(let i = shuffled.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+// Function to generate a random vibrant background color
+function getRandomBgColor(){
+    const colors = [
+        '#FF9AA2','#FFB7B2','#FFDAC1','#E2F0CB','#B5EAD7','#C7CEEA',
+        '#F8B195','#F67280','#C06C84','#6C5B7B','#355C7D','#99B898',
+        '#FECEAB','#FF847C','#E84A5F','#2A363B','#A8E6CF','#DCEDC1',
+        '#FFD3B6','#FFAAA5'
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// Function to preload all images
+function preloadImages(){
+    const imagePromises = [];
+    sampleQuestions.forEach(question => {
+        const imageUrl = question.imageUrl.trim(); // Trim whitespace
+        if(!imageCache[imageUrl]){
+            const img = new Image();
+            const promise = new Promise((resolve, reject) => {
+                img.onload = () => {
+                    imageCache[imageUrl] = img; // Cache the loaded image
+                    resolve(img);
+                };
+                img.onerror = () => {
+                    console.error("Failed to load image:", imageUrl);
+                    // Resolve anyway to prevent blocking the game
+                    resolve(null);
+                };
+                img.src = imageUrl; // Start loading
+            });
+            imagePromises.push(promise);
+        } else {
+            // Already loaded, resolve immediately
+            imagePromises.push(Promise.resolve(imageCache[imageUrl]));
+        }
+    });
+    return Promise.all(imagePromises);
+}
+
+// Initialize game
+function initGame(){
+    // Shuffle questions
+    questions = shuffleArray([...sampleQuestions]);
+    score = 0;
+    attempts = 0;
+    currentQuestionIndex = 0;
+    answered = false;
+
+    // Hide results screen and show game elements
+    resultsScreen.style.display = 'none';
+    feedback.textContent = 'Look at the picture and choose the correct spelling!';
+    feedback.className = 'feedback';
+    updateStats();
+    loadQuestion();
+    updateProgress();
+
+    // Start background music if enabled
+    if(bgmEnabled){
+        bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+    }
+}
+
+// Load current question
+function loadQuestion(){
+    if(currentQuestionIndex >= questions.length){
+        showResults();
+        return;
+    }
+
+    currentQuestion = questions[currentQuestionIndex];
+    feedback.textContent = `What is the correct spelling of the word shown?`;
+    feedback.className = 'feedback';
+    answered = false;
+
+    // Clear previous elements
+    optionsContainer.innerHTML = '';
+
+    // Set the image with a random background color
+    const imageUrl = currentQuestion.imageUrl.trim(); // Trim whitespace
+    const cachedImage = imageCache[imageUrl];
+    if(cachedImage){
+        wordImage.src = cachedImage.src;
+        wordImage.alt = `Image of ${currentQuestion.word}`;
+    } else {
+        // Fallback if somehow not cached
+        wordImage.src = imageUrl;
+        wordImage.alt = `Image of ${currentQuestion.word}`;
+    }
+    wordImageFrame.style.backgroundColor = getRandomBgColor(); // Apply random background
+    wordImageContainer.style.display = 'flex'; // Ensure container is visible
+
+    // Create options (shuffled)
+    const shuffledOptions = shuffleArray([...currentQuestion.options]);
+    shuffledOptions.forEach(option => {
+        const optionBtn = document.createElement('button');
+        optionBtn.className = 'option-btn';
+        optionBtn.textContent = option;
+        optionBtn.dataset.word = option;
+        optionBtn.addEventListener('click', function(){
+            if(answered) return;
+            checkAnswer(option, this);
+        });
+        optionsContainer.appendChild(optionBtn);
+    });
+
+    // Show game elements
+    optionsContainer.style.display = 'grid';
+    feedback.style.display = 'flex';
+    gameControls.style.display = 'flex';
+}
+
+// Check user's answer
+function checkAnswer(selectedWord, selectedButton){
+    if(answered) return;
+    const isCorrect = selectedWord === currentQuestion.word;
+    attempts++;
+    answered = true;
+
+    // Disable all option buttons
+    const allButtons = optionsContainer.querySelectorAll('.option-btn');
+    allButtons.forEach(btn => {
+        btn.disabled = true;
+        // Highlight correct answer
+        if(btn.dataset.word === currentQuestion.word){
+            btn.classList.add('correct');
+        }
+    });
+
+    if(isCorrect){
+        score++;
+        feedback.textContent = 'Correct! Well done!';
+        feedback.className = 'feedback correct';
+        selectedButton.classList.add('correct');
+        if(fxAffectsFeedback){
+            correctSound.currentTime = 0;
+            correctSound.play().catch(e => console.log("Success sound play prevented:", e));
+        }
+    } else {
+        feedback.textContent = `Oops! The correct spelling is "${currentQuestion.word}".`;
+        feedback.className = 'feedback incorrect';
+        selectedButton.classList.add('incorrect');
+        if(fxAffectsFeedback){
+            incorrectSound.currentTime = 0;
+            incorrectSound.play().catch(e => console.log("Incorrect sound play prevented:", e));
+        }
+    }
+
+    updateStats();
+
+    // Automatically move to the next question after a delay
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if(currentQuestionIndex < questions.length){
+            loadQuestion();
+            updateProgress();
+        } else {
+            // Quiz is finished
+            completionSound.currentTime = 0;
+            completionSound.play().catch(e => console.log("Completion sound play prevented:", e));
+            showResults();
+        }
+    }, 1500); // 1.5 second delay
+}
+
+// Event Listeners
+skipBtn.addEventListener('click', function(){
+    if(answered) return;
+    feedback.textContent = `The correct spelling is "${currentQuestion.word}".`;
+    feedback.className = 'feedback';
+    answered = true;
+
+    // Disable all option buttons
+    const allButtons = optionsContainer.querySelectorAll('.option-btn');
+    allButtons.forEach(btn => {
+        btn.disabled = true;
+        // Highlight correct answer
+        if(btn.dataset.word === currentQuestion.word){
+            btn.classList.add('correct');
+        }
+    });
+
+    // Move to next question after delay
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if(currentQuestionIndex < questions.length){
+            loadQuestion();
+            updateProgress();
+        } else {
+            showResults();
+        }
+    }, 1500);
+});
+
+restartBtn.addEventListener('click', function(){
+    initGame();
+});
+
+// Show results screen
+function showResults(){
+    // Hide game elements
+    wordImageContainer.style.display = 'none';
+    optionsContainer.style.display = 'none';
+    feedback.style.display = 'none';
+    gameControls.style.display = 'none';
+
+    // Show results screen
+    resultsScreen.style.display = 'block';
+    finalScoreElement.textContent = score;
+    totalQuestionsElement.textContent = questions.length;
+
+    // Determine message based on score
+    let message = "";
+    const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+    if(percentage >= 80){
+        message = "Excellent! You're a spelling superstar!";
+    } else if(percentage >= 60){
+        message = "Great job! Keep practicing to get even better!";
+    } else if(percentage >= 40){
+        message = "Good effort! A bit more practice will help you master these words.";
+    } else {
+        message = "Nice try! Review the words and try again. You've got this!";
+    }
+    resultsMessage.textContent = message;
+
+    // Update progress bar to 100%
+    progressBar.style.width = `100%`;
+}
+
+// Restart game from results screen
+restartResultsBtn.addEventListener('click', function(){
+    // Show game elements again
+    wordImageContainer.style.display = 'flex';
+    optionsContainer.style.display = 'grid';
+    feedback.style.display = 'flex';
+    gameControls.style.display = 'flex';
+    initGame();
+});
+
+// Toggle background music
+bgmToggle.addEventListener('click', function(){
+    bgmEnabled = !bgmEnabled;
+    if(bgmEnabled){
+        bgMusic.play().catch(e => console.log("Play prevented:", e));
+        bgmToggle.innerHTML = '<i class="fas fa-volume-up"></i> Background Music: On';
+        bgmToggle.classList.add('active');
+    } else {
+        bgMusic.pause();
+        bgmToggle.innerHTML = '<i class="fas fa-volume-mute"></i> Background Music: Off';
+        bgmToggle.classList.remove('active');
+    }
+});
+
+// Toggle sound effects
+fxToggle.addEventListener('click', function(){
+    fxAffectsFeedback = !fxAffectsFeedback;
+    if(fxAffectsFeedback){
+        fxToggle.innerHTML = '<i class="fas fa-bell"></i> Sound Effects: On';
+        fxToggle.classList.add('active');
+    } else {
+        fxToggle.innerHTML = '<i class="fas fa-bell-slash"></i> Sound Effects: Off';
+        fxToggle.classList.remove('active');
+    }
+});
+
+// Update stats
+function updateStats(){
+    scoreElement.textContent = score;
+    attemptsElement.textContent = attempts;
+}
+
+// Update progress bar
+function updateProgress(){
+    if(questions.length > 0){
+        const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    } else {
+        progressBar.style.width = '0%';
+    }
+}
+
+// Preload images and then initialize the game
+preloadImages()
+.then(() => {
+    console.log("All images loaded successfully.");
+    // Hide loading screen and show game
+    loadingScreen.style.display = 'none';
+    initGame();
+})
+.catch((error) => {
+    console.error("Error loading images:", error);
+    // Even if there's an error, start the game after a short delay
+    // to prevent the loading screen from being permanent
+    feedback.textContent = "Some images failed to load, but the game will start anyway.";
+    feedback.style.display = 'flex';
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+        initGame();
+    }, 3000); // 3 second delay before starting anyway
+});
+});
+</script>
+</body>
+</html>
