@@ -315,21 +315,64 @@
             background-color: #f8f9fa; /* Slightly different background for tab bar */
         }
 
-        .tab-btn {
-            padding: var(--spacing-sm) var(--spacing-md);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-light);
-            transition: all var(--transition-speed) ease;
-            position: relative;
-            flex: 1; /* Distribute space equally */
-            min-width: 120px; /* Minimum width for smaller tabs */
-            text-align: center;
-        }
+.tab-btn{
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  /* Change flex properties */
+  flex: 1 1 0; /* Distribute space equally but start from 0 base */
+  min-width: 120px; /* Minimum width for smaller tabs */
+  text-align: center;
+  z-index: 1; /* Ensure text is above the indicator */
+  /* --- ADD MARGIN FOR SPACING --- */
+  margin: 0; /* Reset any default margin */
+  /* Add horizontal margin between buttons */
+  margin-right: 5px; /* Space on the right of each button */
+  margin-left: 5px; /* Space on the left of each button */
+  /* Add small vertical margin to prevent top/bottom clipping if needed */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* Ensure buttons don't overflow container */
+  box-sizing: border-box; /* Include padding/border in width calculation */
+  overflow: hidden; /* Handle text overflow */
+  white-space: nowrap; /* Prevent text wrapping inside button */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Remove margin from the first and last buttons to align with container edge */
+.tab-buttons .tab-btn:first-child {
+  margin-left: 10px; /* Slightly larger start margin if desired, or match inner margin */
+}
+.tab-buttons .tab-btn:last-child {
+  margin-right: 10px; /* Slightly larger end margin if desired, or match inner margin */
+}
+
+/* Optional: Adjust margin on smaller screens if needed */
+@media (max-width: 768px) {
+  .tab-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.85rem;
+    min-width: 80px; /* Adjust for smaller screens */
+    /* Potentially reduce margin on smaller screens */
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  .tab-buttons .tab-btn:first-child {
+    margin-left: 5px;
+  }
+  .tab-buttons .tab-btn:last-child {
+    margin-right: 5px;
+  }
+}
 
         .tab-btn:hover {
             color: var(--primary-color);
