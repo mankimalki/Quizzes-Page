@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KS3 Maths Number: Powers and Roots (Indices) Quiz | EduResources</title>
+<meta name="description" content="Interactive KS3 Maths quiz on Powers and Roots (Indices). Calculate squares, cubes, square roots, and apply basic index laws. Test your knowledge!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+--primary-color:#2c3e50; /* Dark Blue */
+--secondary-color:#3498db; /* Bright Blue */
+--accent-color:#e74c3c; /* Red */
+--success-color:#27ae60; /* Green */
+--warning-color:#f39c12; /* Orange */
+--bg-color:#f5f7fa; /* Very light background */
+--card-bg:#ffffff; /* White card background */
+--border-color:#e0e6ed; /* Light border */
+--text-color:#212529; /* Main text color */
+--text-light:#6c757d; /* Lighter text */
+--transition-speed: 0.2s;
+--border-radius: 6px;
+--spacing-xs: 0.4rem;
+--spacing-sm: 0.8rem;
+--spacing-md: 1.2rem;
+--spacing-lg: 1.6rem;
+--spacing-xl: 2.2rem;
+--max-width: 1100px;
+}
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+html, body{
+height: 100%;
+}
+body{
+font-family:'Inter','Open Sans',-apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+line-height: 1.6;
+color: var(--text-color);
+background-color: var(--bg-color);
+display: flex;
+flex-direction: column;
+}
+/*--- Main Content Area---*/
+.main-content{
+flex: 1 0 auto;
+padding-bottom: 70px; /* Space for bottom nav */
+}
+.container{
+width: 100%;
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 var(--spacing-sm);
+}
+/*--- Header---*/
+header{
+background-color: var(--card-bg);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.header-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: calc(var(--spacing-sm)* 1.2) var(--spacing-sm);
+}
+.logo{
+font-weight: 700;
+color: var(--primary-color);
+text-decoration: none;
+font-size: 1.4rem;
+display: flex;
+align-items: center;
+}
+.logo i{
+color: var(--secondary-color);
+margin-right: calc(var(--spacing-xs)* 1.8);
+font-size: 1.6rem;
+flex-shrink: 0;
+}
+/*--- New Donation Button---*/
+.donate-top-btn{
+background-color: var(--accent-color);
+color: white;
+border: none;
+border-radius: 50px;
+padding: 0.6rem 1.2rem;
+cursor: pointer;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+transition: all var(--transition-speed) ease;
+font-size: 0.9rem;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+text-decoration: none;
+}
+.donate-top-btn:hover{
+background-color:#c0392b;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.donate-top-btn i{
+font-size: 1rem;
+}
+/*--- Hero/Banner Section---*/
+.hero{
+/*--- Use your main site's hero gradient---*/
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+color: white;
+text-align: center;
+padding: var(--spacing-lg) var(--spacing-sm);
+margin-bottom: var(--spacing-lg);
+border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+.hero h1{
+font-size: 1.8rem;
+margin-bottom: var(--spacing-xs);
+font-weight: 700;
+}
+.hero p{
+font-size: 1rem;
+opacity: 0.95;
+max-width: 700px;
+margin: 0 auto;
+}
+/*--- Breadcrumb Navigation---*/
+.breadcrumb{
+margin-bottom: var(--spacing-md);
+font-size: 0.85rem;
+}
+.breadcrumb a{
+color: var(--secondary-color);
+text-decoration: none;
+}
+.breadcrumb a:hover{
+text-decoration: underline;
+}
+.breadcrumb span{
+color: var(--text-light);
+}
+/*--- Quiz Container---*/
+.quiz-container{
+background-color: var(--card-bg);
+border-radius: var(--border-radius);
+padding: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+font-size: 0.95rem;
+}
+.quiz-header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: var(--spacing-md);
+padding-bottom: var(--spacing-sm);
+border-bottom: 1px solid var(--border-color);
+}
+.quiz-title{
+font-size: 1.3rem;
+color: var(--primary-color);
+}
+.progress-container{
+width: 100%;
+background-color:#e0e6ed;
+border-radius: 10px;
+margin: var(--spacing-sm) 0;
+height: 10px;
+overflow: hidden;
+}
+.progress-bar{
+height: 100%;
+background-color: var(--secondary-color); /* Changed to theme blue */
+width: 0%;
+transition: width 0.3s ease;
+}
+.question-count{
+font-size: 0.9rem;
+color: var(--text-light);
+text-align: right;
+margin-bottom: var(--spacing-sm);
+}
+.question-container{
+margin-bottom: var(--spacing-md);
+}
+.question-text{
+font-size: 1.1rem;
+font-weight: 600;
+margin-bottom: var(--spacing-sm);
+color: var(--primary-color);
+}
+.options-container{
+display: flex;
+flex-direction: column;
+gap: var(--spacing-xs);
+}
+.option{
+background-color:#f8f9fa;
+border: 1px solid var(--border-color);
+border-radius: var(--border-radius);
+padding: var(--spacing-sm);
+cursor: pointer;
+transition: all var(--transition-speed);
+display: flex;
+align-items: center;
+}
+.option:hover{
+background-color: rgba(52, 152, 219, 0.1);
+border-color: var(--secondary-color);
+}
+.option.selected{
+background-color: rgba(52, 152, 219, 0.2);
+border-color: var(--secondary-color);
+}
+.option.correct{
+background-color:#d4edda;
+border-color: var(--success-color);
+}
+.option.incorrect{
+background-color:#f8d7da;
+border-color: var(--accent-color);
+}
+.option input{
+margin-right: var(--spacing-sm);
+transform: scale(1.2);
+}
+.feedback{
+padding: var(--spacing-sm);
+border-radius: var(--border-radius);
+margin-top: var(--spacing-sm);
+display: none;
+}
+.feedback.correct{
+background-color:#d4edda;
+color:#155724;
+border: 1px solid#c3e6cb;
+display: block;
+}
+.feedback.incorrect{
+background-color:#f8d7da;
+color:#721c24;
+border: 1px solid#f5c6cb;
+display: block;
+}
+.explanation{
+margin-top: var(--spacing-xs);
+font-size: 0.9rem;
+font-style: italic;
+}
+/*--- Results Section---*/
+.results-container{
+text-align: center;
+padding: var(--spacing-lg);
+display: none;
+}
+.results-container h2{
+color: var(--primary-color);
+margin-bottom: var(--spacing-md);
+}
+.score{
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--secondary-color);
+margin: var(--spacing-md) 0;
+}
+.message{
+font-size: 1.1rem;
+margin-bottom: var(--spacing-md);
+}
+.retry-btn{
+background-color: var(--accent-color);
+color: white;
+border: none;
+border-radius: 50px;
+padding: 0.6rem 1.5rem;
+font-size: 0.95rem;
+font-weight: 600;
+cursor: pointer;
+transition: all var(--transition-speed);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.retry-btn:hover{
+background-color:#c0392b;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+/* Loading & Error States */
+.loading,.error{
+text-align: center;
+padding: var(--spacing-lg);
+font-size: 1.1rem;
+}
+.error{
+color: var(--accent-color);
+}
+/*--- Footer---*/
+footer{
+background-color: var(--primary-color);
+color: white;
+padding: var(--spacing-lg) 0 var(--spacing-md);
+font-size: 0.9rem;
+flex-shrink: 0;
+}
+.footer-content{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: var(--spacing-md);
+margin-bottom: var(--spacing-md);
+}
+.footer-column h4{
+font-size: 1rem;
+margin-bottom: var(--spacing-sm);
+color: var(--secondary-color);
+}
+.footer-column ul{
+list-style: none;
+padding: 0;
+}
+.footer-column li{
+margin-bottom: 0.5rem;
+}
+.footer-column a{
+color:#e9ecef;
+text-decoration: none;
+transition: color 0.2s ease;
+display: inline-flex;
+align-items: center;
+font-size: 0.9rem;
+}
+.footer-column a:hover{
+color: white;
+text-decoration: underline;
+}
+.footer-column a i{
+/* Ensure no icons appear in footer links */
+display: none!important; /* Override any potential icon styles */
+}
+.copyright{
+text-align: center;
+padding-top: var(--spacing-md);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+font-size: 0.8rem;
+opacity: 0.85;
+}
+/*--- Bottom Navigation---*/
+.bottom-nav{
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(--card-bg);
+display: flex;
+justify-content: space-around;
+padding: var(--spacing-xs) 0;
+box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.08);
+z-index: 100;
+border-top: 1px solid var(--border-color);
+}
+.nav-item{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: var(--text-light);
+font-size: 0.7rem;
+transition: all var(--transition-speed) ease;
+font-weight: 500;
+}
+.nav-item i{
+font-size: 1rem;
+margin-bottom: 3px;
+}
+.nav-item.active{
+color: var(--secondary-color);
+}
+.nav-item:hover{
+color: var(--primary-color);
+}
+/*--- Responsive Adjustments---*/
+@media(max-width: 768px){
+.hero h1{
+font-size: 1.6rem;
+}
+.hero p{
+font-size: 0.95rem;
+}
+.quiz-title{
+font-size: 1.2rem;
+}
+.question-text{
+font-size: 1rem;
+}
+.header-container{
+padding: var(--spacing-sm);
+flex-wrap: wrap;
+}
+.logo{
+font-size: 1.25rem;
+flex-shrink: 0;
+margin-right: auto;
+}
+.logo i{
+font-size: 1.4rem;
+margin-right: var(--spacing-xs);
+}
+.donate-top-btn{
+padding: 0.5rem 1rem;
+font-size: 0.85rem;
+}
+.donate-top-btn i{
+font-size: 0.9rem;
+}
+.footer-content{
+grid-template-columns: repeat(2, 1fr);
+}
+}
+@media(max-width: 480px){
+.footer-content{
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<!-- Main content area to push footer down-->
+<div class="main-content">
+<header>
+<div class="container header-container">
+<a href="../index.html" class="logo">
+<i class="fas fa-book-open" aria-hidden="true"></i> EduResources
+</a>
+<a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+<i class="fas fa-heart" aria-hidden="true"></i> Donate
+</a>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+<h1>KS3 Maths: Number</h1>
+<p>Powers and Roots (Indices) Quiz</p>
+</div>
+</section>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">Home</a><span>/</span>
+<a href="../quizzes.html">Quizzes</a><span>/</span>
+<a href="quiz-ks3-maths.html">KS3 Maths</a><span>/</span>
+<span>Number: Powers and Roots</span>
+</nav>
+<div class="quiz-container">
+<div class="quiz-header">
+<h2 class="quiz-title">Powers & Roots Challenge</h2>
+<div class="timer">⏱<span id="time">0</span>s</div>
+</div>
+<div class="progress-container">
+<div class="progress-bar" id="progress-bar"></div>
+</div>
+<div class="question-count">Question <span id="current-question">0</span> of <span id="total-questions">0</span></div>
+<div class="question-container" id="question-container">
+<div class="loading" id="loading">Loading quiz questions...</div>
+<div class="error" id="error" style="display: none;"></div>
+<div class="question-text" id="question-text" style="display: none;"></div>
+<div class="options-container" id="options-container" style="display: none;"></div>
+<div class="feedback" id="feedback"></div>
+</div>
+<div class="results-container" id="results-container">
+<h2>Quiz Completed! 🎉</h2>
+<div class="score" id="score">0/0</div>
+<p class="message" id="message"></p>
+<button class="retry-btn" id="retry-btn">Play Again</button>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h4>Qualifications</h4>
+<ul>
+<li><a href="../pastpapers-primary.html">Primary(7+, 11+, 13+)</a></li>
+<li><a href="../pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+<li><a href="../pastpapers-a-level.html">A-Level & O-Level</a></li>
+<li><a href="../pastpapers-sats.html">SATs</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Resources</h4>
+<ul>
+<li><a href="../pastpapers.html">Past Papers</a></li>
+<li><a href="../books.html">Free Books</a></li>
+<li><a href="../syllabus.html">Syllabus</a></li>
+<li><a href="../quizzes.html">Quizzes</a></li>
+<li><a href="../notes.html">Study Notes</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Support</h4>
+<ul>
+<li><a href="../tutoring.html">Online Tutoring</a></li>
+<li><a href="../tips.html">Exam Tips</a></li>
+<li><a href="../blog.html">Study Blog</a></li>
+<li><a href="../faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Company</h4>
+<ul>
+<li><a href="../about.html">About Us</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../privacy.html">Privacy Policy</a></li>
+<li><a href="../terms.html">Terms of Service</a></li>
+<li><a href="../donate.html">Donate</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Connect</h4>
+<ul>
+<li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+<li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+<li><a href="mailto:info@eduresources.com">Email Us</a></li>
+</ul>
+</div>
+</div>
+<div class="copyright">
+&copy; 2025 EduResources. All rights reserved.
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation-->
+<nav class="bottom-nav" aria-label="Main navigation">
+<a href="../index.html" class="nav-item">
+<i class="fas fa-home" aria-hidden="true"></i>
+<span>Home</span>
+</a>
+<a href="../quizzes.html" class="nav-item active"><!-- Active item-->
+<i class="fas fa-question-circle" aria-hidden="true"></i>
+<span>Quizzes</span>
+</a>
+<a href="../pastpapers.html" class="nav-item">
+<i class="fas fa-file-alt" aria-hidden="true"></i>
+<span>Papers</span>
+</a>
+<a href="../faq.html" class="nav-item">
+<i class="fas fa-question-circle" aria-hidden="true"></i>
+<span>FAQ</span>
+</a>
+</nav>
+<script>
+// Configuration for this specific quiz
+const QUIZ_TOPIC = "Number";
+const QUIZ_SUBTOPIC = "Powers and Roots";
+// const QUESTIONS_JSON_FILE = "quiz-maths-ks3.json"; // Not used as questions are embedded
+
+// DOM elements
+const loadingElement = document.getElementById('loading');
+const errorElement = document.getElementById('error');
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const feedback = document.getElementById('feedback');
+const resultsContainer = document.getElementById('results-container');
+const scoreElement = document.getElementById('score');
+const messageElement = document.getElementById('message');
+const retryBtn = document.getElementById('retry-btn');
+const progressBar = document.getElementById('progress-bar');
+const currentQuestionElement = document.getElementById('current-question');
+const totalQuestionsElement = document.getElementById('total-questions');
+const timeElement = document.getElementById('time');
+
+// Quiz state
+let allQuestions = [];
+let filteredQuestions = [];
+let shuffledQuestions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let startTime = Date.now();
+let timerInterval;
+let isAnswerSubmitted = false; // Flag to prevent multiple submissions
+
+// Function to shuffle array
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+// Fetch questions from embedded JSON
+async function fetchQuestions() {
+    try {
+        // Simulate fetching from a local embedded source
+        const data = getEmbeddedQuestions();
+        return data;
+    } catch (error) {
+        console.error("Error fetching questions:", error);
+        showError(`Failed to load quiz questions. Please try again later. (${error.message})`);
+        return [];
+    }
+}
+
+// Filter questions for this specific quiz
+function filterQuestions(questions) {
+    return questions.filter(q => q.topic === QUIZ_TOPIC && q.subtopic === QUIZ_SUBTOPIC && q.type === "mcq");
+}
+
+// Initialize quiz
+async function initQuiz() {
+    // Reset state
+    currentQuestionIndex = 0;
+    score = 0;
+    startTime = Date.now();
+    isAnswerSubmitted = false;
+
+    // Show loading
+    showLoading();
+
+    // Fetch and filter questions
+    allQuestions = await fetchQuestions();
+    if (allQuestions.length === 0) {
+        // Error already shown by fetchQuestions
+        return;
+    }
+    filteredQuestions = filterQuestions(allQuestions);
+    if (filteredQuestions.length === 0) {
+        showError(`No questions found for topic "${QUIZ_TOPIC}" and subtopic "${QUIZ_SUBTOPIC}".`);
+        return;
+    }
+
+    // Shuffle questions for this session
+    shuffledQuestions = shuffleArray(filteredQuestions);
+
+    // Update total questions display
+    totalQuestionsElement.textContent = shuffledQuestions.length;
+
+    // Start timer
+    startTimer();
+
+    // Show first question
+    showQuestion();
+
+    // Hide results, show quiz
+    resultsContainer.style.display = 'none';
+    document.querySelector('.quiz-container').style.display = 'block';
+    document.querySelector('.question-container').style.display = 'block';
+    document.querySelector('.question-count').style.display = 'block';
+}
+
+// Show loading message
+function showLoading() {
+    loadingElement.style.display = 'block';
+    errorElement.style.display = 'none';
+    questionText.style.display = 'none';
+    optionsContainer.style.display = 'none';
+}
+
+// Show error message
+function showError(message) {
+    loadingElement.style.display = 'none';
+    errorElement.style.display = 'block';
+    errorElement.textContent = message;
+    questionText.style.display = 'none';
+    optionsContainer.style.display = 'none';
+}
+
+// Start timer
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timeElement.textContent = elapsed;
+    }, 1000);
+}
+
+// Show current question
+function showQuestion() {
+    if (currentQuestionIndex >= shuffledQuestions.length) {
+        showResults();
+        return;
+    }
+
+    // Reset submission flag for new question
+    isAnswerSubmitted = false;
+
+    const question = shuffledQuestions[currentQuestionIndex];
+
+    // Update progress bar
+    const progressPercent = ((currentQuestionIndex) / shuffledQuestions.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+
+    // Update question counter
+    currentQuestionElement.textContent = currentQuestionIndex + 1;
+
+    // Display question
+    questionText.textContent = question.question;
+    questionText.style.display = 'block';
+
+    // Clear options container
+    optionsContainer.innerHTML = '';
+    optionsContainer.style.display = 'flex';
+
+    // Shuffle options
+    const shuffledOptions = shuffleArray(question.options);
+
+    // Create options
+    shuffledOptions.forEach((option, index) => {
+        const optionElement = document.createElement('label');
+        optionElement.className = 'option';
+        optionElement.innerHTML = ` <input type="radio" name="option" value="${option}"> <span>${option}</span> `;
+        optionsContainer.appendChild(optionElement);
+
+        // Add event listener for instant feedback
+        optionElement.addEventListener('click', () => {
+            // Only process if answer hasn't been submitted yet
+            if (!isAnswerSubmitted) {
+                selectOption(optionElement, option);
+            }
+        });
+    });
+
+    // Reset feedback
+    feedback.className = 'feedback';
+    feedback.style.display = 'none';
+
+    // Hide loading/error
+    loadingElement.style.display = 'none';
+    errorElement.style.display = 'none';
+}
+
+// Handle option selection
+function selectOption(optionElement, optionValue) {
+    // Prevent multiple submissions for the same question
+    if (isAnswerSubmitted) return;
+    isAnswerSubmitted = true;
+
+    // Remove selected class from all options
+    document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+
+    // Add selected class to chosen option
+    optionElement.classList.add('selected');
+
+    // Check answer and show feedback
+    checkAnswer(optionValue);
+
+    // Move to next question automatically after a short delay
+    setTimeout(() => {
+        currentQuestionIndex++;
+        showQuestion();
+    }, 1500); // 1.5 second delay
+}
+
+// Check answer and provide feedback
+function checkAnswer(userAnswer) {
+    const question = shuffledQuestions[currentQuestionIndex];
+    // For MCQ, compare with the actual answer value (index)
+    const isCorrect = (userAnswer === question.options[question.answer]);
+
+    // Update score if correct
+    if (isCorrect) {
+        score++;
+    }
+
+    // Show feedback
+    feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+    feedback.innerHTML = `
+        <strong>${isCorrect ? 'Correct! 🎉' : 'Incorrect 😕'}</strong>
+        <div class="explanation">${question.explanation}</div>
+    `;
+    feedback.style.display = 'block';
+}
+
+// Show final results
+function showResults() {
+    // Stop timer
+    clearInterval(timerInterval);
+
+    // Calculate final score
+    const finalScore = score;
+    const totalQuestions = shuffledQuestions.length;
+    const percentage = totalQuestions > 0 ? Math.round((finalScore / totalQuestions) * 100) : 0;
+
+    // Display results
+    scoreElement.textContent = `${finalScore}/${totalQuestions}`;
+    messageElement.textContent = getResultMessage(percentage);
+
+    // Show results container
+    resultsContainer.style.display = 'block';
+
+    // Hide quiz content
+    document.querySelector('.question-container').style.display = 'none';
+    document.querySelector('.question-count').style.display = 'none';
+}
+
+// Get result message based on score
+function getResultMessage(percentage) {
+    if (percentage >= 90) return "Maths Master! 🧠 You're amazing at powers and roots!";
+    if (percentage >= 80) return "Excellent work! You've got a strong grasp of indices!";
+    if (percentage >= 70) return "Good job! With a bit more practice, you'll be perfect!";
+    if (percentage >= 60) return "Not bad! Review the explanations to improve further.";
+    return "Keep practicing! These concepts will become easier with time.";
+}
+
+// Event listeners
+retryBtn.addEventListener('click', initQuiz);
+
+// Start the quiz when page loads
+window.addEventListener('DOMContentLoaded', initQuiz);
+
+// Embedded Questions Data (30 questions)
+function getEmbeddedQuestions() {
+    return [
+        {
+            "question": "What is 5²?",
+            "options": ["10", "25", "15", "20"],
+            "answer": 1,
+            "explanation": "5 squared means 5 × 5 = 25.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: 3³",
+            "options": ["9", "12", "27", "81"],
+            "answer": 2,
+            "explanation": "3 cubed means 3 × 3 × 3 = 27.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is √16?",
+            "options": ["2", "4", "8", "32"],
+            "answer": 1,
+            "explanation": "The square root of 16 is the number that multiplied by itself gives 16. 4 × 4 = 16, so √16 = 4.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of √81",
+            "options": ["7", "8", "9", "10"],
+            "answer": 2,
+            "explanation": "The square root of 81 is the number that multiplied by itself gives 81. 9 × 9 = 81, so √81 = 9.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 2⁴?",
+            "options": ["6", "8", "12", "16"],
+            "answer": 3,
+            "explanation": "2 to the power of 4 means 2 × 2 × 2 × 2 = 16.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: 10²",
+            "options": ["10", "20", "100", "1000"],
+            "answer": 2,
+            "explanation": "10 squared means 10 × 10 = 100.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is √49?",
+            "options": ["6", "7", "8", "9"],
+            "answer": 1,
+            "explanation": "The square root of 49 is the number that multiplied by itself gives 49. 7 × 7 = 49, so √49 = 7.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of 4³",
+            "options": ["12", "16", "64", "128"],
+            "answer": 2,
+            "explanation": "4 cubed means 4 × 4 × 4 = 64.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 1⁵?",
+            "options": ["1", "5", "10", "0"],
+            "answer": 0,
+            "explanation": "Any number to the power of 5 (or any positive integer) is itself multiplied that many times. 1 × 1 × 1 × 1 × 1 = 1.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: √100",
+            "options": ["10", "20", "50", "100"],
+            "answer": 0,
+            "explanation": "The square root of 100 is the number that multiplied by itself gives 100. 10 × 10 = 100, so √100 = 10.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 6²?",
+            "options": ["12", "18", "36", "66"],
+            "answer": 2,
+            "explanation": "6 squared means 6 × 6 = 36.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of 2⁵",
+            "options": ["10", "25", "32", "64"],
+            "answer": 2,
+            "explanation": "2 to the power of 5 means 2 × 2 × 2 × 2 × 2 = 32.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is √64?",
+            "options": ["6", "7", "8", "9"],
+            "answer": 2,
+            "explanation": "The square root of 64 is the number that multiplied by itself gives 64. 8 × 8 = 64, so √64 = 8.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: 0³",
+            "options": ["0", "1", "3", "Undefined"],
+            "answer": 0,
+            "explanation": "Zero to any positive power is zero. 0 × 0 × 0 = 0.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 7²?",
+            "options": ["14", "21", "49", "56"],
+            "answer": 2,
+            "explanation": "7 squared means 7 × 7 = 49.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of √144",
+            "options": ["11", "12", "13", "14"],
+            "answer": 1,
+            "explanation": "The square root of 144 is the number that multiplied by itself gives 144. 12 × 12 = 144, so √144 = 12.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 3⁴?",
+            "options": ["12", "27", "81", "121"],
+            "answer": 2,
+            "explanation": "3 to the power of 4 means 3 × 3 × 3 × 3 = 81.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: √121",
+            "options": ["10", "11", "12", "13"],
+            "answer": 1,
+            "explanation": "The square root of 121 is the number that multiplied by itself gives 121. 11 × 11 = 121, so √121 = 11.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 8²?",
+            "options": ["16", "32", "64", "128"],
+            "answer": 2,
+            "explanation": "8 squared means 8 × 8 = 64.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of 5³",
+            "options": ["15", "25", "125", "150"],
+            "answer": 2,
+            "explanation": "5 cubed means 5 × 5 × 5 = 125.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is √25?",
+            "options": ["4", "5", "6", "7"],
+            "answer": 1,
+            "explanation": "The square root of 25 is the number that multiplied by itself gives 25. 5 × 5 = 25, so √25 = 5.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: 9²",
+            "options": ["18", "72", "81", "99"],
+            "answer": 2,
+            "explanation": "9 squared means 9 × 9 = 81.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 2⁶?",
+            "options": ["12", "32", "64", "128"],
+            "answer": 2,
+            "explanation": "2 to the power of 6 means 2 × 2 × 2 × 2 × 2 × 2 = 64.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of √169",
+            "options": ["12", "13", "14", "15"],
+            "answer": 1,
+            "explanation": "The square root of 169 is the number that multiplied by itself gives 169. 13 × 13 = 169, so √169 = 13.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 10³?",
+            "options": ["100", "1000", "10000", "30"],
+            "answer": 1,
+            "explanation": "10 cubed means 10 × 10 × 10 = 1000.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: √0",
+            "options": ["0", "1", "Undefined", "Does not exist"],
+            "answer": 0,
+            "explanation": "The square root of 0 is 0 because 0 × 0 = 0.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is 11²?",
+            "options": ["21", "111", "121", "221"],
+            "answer": 2,
+            "explanation": "11 squared means 11 × 11 = 121.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Find the result of 3⁵",
+            "options": ["15", "81", "125", "243"],
+            "answer": 3,
+            "explanation": "3 to the power of 5 means 3 × 3 × 3 × 3 × 3 = 243.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "What is √196?",
+            "options": ["13", "14", "15", "16"],
+            "answer": 1,
+            "explanation": "The square root of 196 is the number that multiplied by itself gives 196. 14 × 14 = 196, so √196 = 14.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        },
+        {
+            "question": "Calculate: 2⁷",
+            "options": ["14", "64", "128", "256"],
+            "answer": 2,
+            "explanation": "2 to the power of 7 means 2 × 2 × 2 × 2 × 2 × 2 × 2 = 128.",
+            "topic": "Number",
+            "subtopic": "Powers and Roots",
+            "type": "mcq"
+        }
+    ];
+}
+</script>
+</body>
+</html>

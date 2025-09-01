@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KS3 Maths Number: Place Value Quiz | EduResources</title>
+<meta name="description" content="Interactive KS3 Maths quiz on Place Value, Ordering Numbers, and Significant Figures. Test your knowledge with instant feedback and fun questions!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+--primary-color:#2c3e50; /* Dark Blue */
+--secondary-color:#3498db; /* Bright Blue */
+--accent-color:#e74c3c; /* Red */
+--success-color:#27ae60; /* Green */
+--warning-color:#f39c12; /* Orange */
+--bg-color:#f5f7fa; /* Very light background */
+--card-bg:#ffffff; /* White card background */
+--border-color:#e0e6ed; /* Light border */
+--text-color:#212529; /* Main text color */
+--text-light:#6c757d; /* Lighter text */
+--transition-speed: 0.2s;
+--border-radius: 6px;
+--spacing-xs: 0.4rem;
+--spacing-sm: 0.8rem;
+--spacing-md: 1.2rem;
+--spacing-lg: 1.6rem;
+--spacing-xl: 2.2rem;
+--max-width: 1100px;
+}
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+html, body{
+height: 100%;
+}
+body{
+font-family:'Inter','Open Sans',-apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+line-height: 1.6;
+color: var(--text-color);
+background-color: var(--bg-color);
+display: flex;
+flex-direction: column;
+}
+/*--- Main Content Area---*/
+.main-content{
+flex: 1 0 auto;
+padding-bottom: 70px; /* Space for bottom nav */
+}
+.container{
+width: 100%;
+max-width: var(--max-width);
+margin: 0 auto;
+padding: 0 var(--spacing-sm);
+}
+/*--- Header---*/
+header{
+background-color: var(--card-bg);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.header-container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: calc(var(--spacing-sm)* 1.2) var(--spacing-sm);
+}
+.logo{
+font-weight: 700;
+color: var(--primary-color);
+text-decoration: none;
+font-size: 1.4rem;
+display: flex;
+align-items: center;
+}
+.logo i{
+color: var(--secondary-color);
+margin-right: calc(var(--spacing-xs)* 1.8);
+font-size: 1.6rem;
+flex-shrink: 0;
+}
+/*--- New Donation Button---*/
+.donate-top-btn{
+background-color: var(--accent-color);
+color: white;
+border: none;
+border-radius: 50px;
+padding: 0.6rem 1.2rem;
+cursor: pointer;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+transition: all var(--transition-speed) ease;
+font-size: 0.9rem;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+text-decoration: none;
+}
+.donate-top-btn:hover{
+background-color:#c0392b;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.donate-top-btn i{
+font-size: 1rem;
+}
+/*--- Hero/Banner Section---*/
+.hero{
+/*--- Use your main site's hero gradient---*/
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+color: white;
+text-align: center;
+padding: var(--spacing-lg) var(--spacing-sm);
+margin-bottom: var(--spacing-lg);
+border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+.hero h1{
+font-size: 1.8rem;
+margin-bottom: var(--spacing-xs);
+font-weight: 700;
+}
+.hero p{
+font-size: 1rem;
+opacity: 0.95;
+max-width: 700px;
+margin: 0 auto;
+}
+/*--- Breadcrumb Navigation---*/
+.breadcrumb{
+margin-bottom: var(--spacing-md);
+font-size: 0.85rem;
+}
+.breadcrumb a{
+color: var(--secondary-color);
+text-decoration: none;
+}
+.breadcrumb a:hover{
+text-decoration: underline;
+}
+.breadcrumb span{
+color: var(--text-light);
+}
+/*--- Quiz Container---*/
+.quiz-container{
+background-color: var(--card-bg);
+border-radius: var(--border-radius);
+padding: var(--spacing-md);
+margin-bottom: var(--spacing-lg);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+font-size: 0.95rem;
+}
+.quiz-header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: var(--spacing-md);
+padding-bottom: var(--spacing-sm);
+border-bottom: 1px solid var(--border-color);
+}
+.quiz-title{
+font-size: 1.3rem;
+color: var(--primary-color);
+}
+.progress-container{
+width: 100%;
+background-color:#e0e6ed;
+border-radius: 10px;
+margin: var(--spacing-sm) 0;
+height: 10px;
+overflow: hidden;
+}
+.progress-bar{
+height: 100%;
+background-color: var(--secondary-color); /* Changed to theme blue */
+width: 0%;
+transition: width 0.3s ease;
+}
+.question-count{
+font-size: 0.9rem;
+color: var(--text-light);
+text-align: right;
+margin-bottom: var(--spacing-sm);
+}
+.question-container{
+margin-bottom: var(--spacing-md);
+}
+.question-text{
+font-size: 1.1rem;
+font-weight: 600;
+margin-bottom: var(--spacing-sm);
+color: var(--primary-color);
+}
+.options-container{
+display: flex;
+flex-direction: column;
+gap: var(--spacing-xs);
+}
+.option{
+background-color:#f8f9fa;
+border: 1px solid var(--border-color);
+border-radius: var(--border-radius);
+padding: var(--spacing-sm);
+cursor: pointer;
+transition: all var(--transition-speed);
+display: flex;
+align-items: center;
+}
+.option:hover{
+background-color: rgba(52, 152, 219, 0.1);
+border-color: var(--secondary-color);
+}
+.option.selected{
+background-color: rgba(52, 152, 219, 0.2);
+border-color: var(--secondary-color);
+}
+.option.correct{
+background-color:#d4edda;
+border-color: var(--success-color);
+}
+.option.incorrect{
+background-color:#f8d7da;
+border-color: var(--accent-color);
+}
+.option input{
+margin-right: var(--spacing-sm);
+transform: scale(1.2);
+}
+.feedback{
+padding: var(--spacing-sm);
+border-radius: var(--border-radius);
+margin-top: var(--spacing-sm);
+display: none;
+}
+.feedback.correct{
+background-color:#d4edda;
+color:#155724;
+border: 1px solid#c3e6cb;
+display: block;
+}
+.feedback.incorrect{
+background-color:#f8d7da;
+color:#721c24;
+border: 1px solid#f5c6cb;
+display: block;
+}
+.explanation{
+margin-top: var(--spacing-xs);
+font-size: 0.9rem;
+font-style: italic;
+}
+/*--- Results Section---*/
+.results-container{
+text-align: center;
+padding: var(--spacing-lg);
+display: none;
+}
+.results-container h2{
+color: var(--primary-color);
+margin-bottom: var(--spacing-md);
+}
+.score{
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--secondary-color);
+margin: var(--spacing-md) 0;
+}
+.message{
+font-size: 1.1rem;
+margin-bottom: var(--spacing-md);
+}
+.retry-btn{
+background-color: var(--accent-color);
+color: white;
+border: none;
+border-radius: 50px;
+padding: 0.6rem 1.5rem;
+font-size: 0.95rem;
+font-weight: 600;
+cursor: pointer;
+transition: all var(--transition-speed);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.retry-btn:hover{
+background-color:#c0392b;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+/* Loading & Error States */
+.loading,.error{
+text-align: center;
+padding: var(--spacing-lg);
+font-size: 1.1rem;
+}
+.error{
+color: var(--accent-color);
+}
+/*--- Footer---*/
+footer{
+background-color: var(--primary-color);
+color: white;
+padding: var(--spacing-lg) 0 var(--spacing-md);
+font-size: 0.9rem;
+flex-shrink: 0;
+}
+.footer-content{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: var(--spacing-md);
+margin-bottom: var(--spacing-md);
+}
+.footer-column h4{
+font-size: 1rem;
+margin-bottom: var(--spacing-sm);
+color: var(--secondary-color);
+}
+.footer-column ul{
+list-style: none;
+padding: 0;
+}
+.footer-column li{
+margin-bottom: 0.5rem;
+}
+.footer-column a{
+color:#e9ecef;
+text-decoration: none;
+transition: color 0.2s ease;
+display: inline-flex;
+align-items: center;
+font-size: 0.9rem;
+}
+.footer-column a:hover{
+color: white;
+text-decoration: underline;
+}
+.footer-column a i{
+/* Ensure no icons appear in footer links */
+display: none!important; /* Override any potential icon styles */
+}
+.copyright{
+text-align: center;
+padding-top: var(--spacing-md);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+font-size: 0.8rem;
+opacity: 0.85;
+}
+/*--- Bottom Navigation---*/
+.bottom-nav{
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+background: var(--card-bg);
+display: flex;
+justify-content: space-around;
+padding: var(--spacing-xs) 0;
+box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.08);
+z-index: 100;
+border-top: 1px solid var(--border-color);
+}
+.nav-item{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: var(--text-light);
+font-size: 0.7rem;
+transition: all var(--transition-speed) ease;
+font-weight: 500;
+}
+.nav-item i{
+font-size: 1rem;
+margin-bottom: 3px;
+}
+.nav-item.active{
+color: var(--secondary-color);
+}
+.nav-item:hover{
+color: var(--primary-color);
+}
+/*--- Responsive Adjustments---*/
+@media(max-width: 768px){
+.hero h1{
+font-size: 1.6rem;
+}
+.hero p{
+font-size: 0.95rem;
+}
+.quiz-title{
+font-size: 1.2rem;
+}
+.question-text{
+font-size: 1rem;
+}
+.header-container{
+padding: var(--spacing-sm);
+flex-wrap: wrap;
+}
+.logo{
+font-size: 1.25rem;
+flex-shrink: 0;
+margin-right: auto;
+}
+.logo i{
+font-size: 1.4rem;
+margin-right: var(--spacing-xs);
+}
+.donate-top-btn{
+padding: 0.5rem 1rem;
+font-size: 0.85rem;
+}
+.donate-top-btn i{
+font-size: 0.9rem;
+}
+.footer-content{
+grid-template-columns: repeat(2, 1fr);
+}
+}
+@media(max-width: 480px){
+.footer-content{
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<!-- Main content area to push footer down-->
+<div class="main-content">
+<header>
+<div class="container header-container">
+<a href="../index.html" class="logo">
+<i class="fas fa-book-open" aria-hidden="true"></i> EduResources
+</a>
+<a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" class="donate-top-btn">
+<i class="fas fa-heart" aria-hidden="true"></i> Donate
+</a>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+<h1>KS3 Maths: Number</h1>
+<p>Place Value, Ordering Numbers, and Significant Figures Quiz</p>
+</div>
+</section>
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">Home</a><span>/</span>
+<a href="../quizzes.html">Quizzes</a><span>/</span>
+<a href="quiz-ks3-maths.html">KS3 Maths</a><span>/</span>
+<span>Number: Place Value</span>
+</nav>
+<div class="quiz-container">
+<div class="quiz-header">
+<h2 class="quiz-title">Place Value Challenge</h2>
+<div class="timer">⏱<span id="time">0</span>s</div>
+</div>
+<div class="progress-container">
+<div class="progress-bar" id="progress-bar"></div>
+</div>
+<div class="question-count">Question <span id="current-question">0</span> of <span id="total-questions">0</span></div>
+<div class="question-container" id="question-container">
+<div class="loading" id="loading">Loading quiz questions...</div>
+<div class="error" id="error" style="display: none;"></div>
+<div class="question-text" id="question-text" style="display: none;"></div>
+<div class="options-container" id="options-container" style="display: none;"></div>
+<div class="feedback" id="feedback"></div>
+</div>
+<div class="results-container" id="results-container">
+<h2>Quiz Completed! 🎉</h2>
+<div class="score" id="score">0/0</div>
+<p class="message" id="message"></p>
+<button class="retry-btn" id="retry-btn">Play Again</button>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-column">
+<h4>Qualifications</h4>
+<ul>
+<li><a href="../pastpapers-primary.html">Primary(7+, 11+, 13+)</a></li>
+<li><a href="../pastpapers-gcse-igcse.html">GCSE & IGCSE</a></li>
+<li><a href="../pastpapers-a-level.html">A-Level & O-Level</a></li>
+<li><a href="../pastpapers-sats.html">SATs</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Resources</h4>
+<ul>
+<li><a href="../pastpapers.html">Past Papers</a></li>
+<li><a href="../books.html">Free Books</a></li>
+<li><a href="../syllabus.html">Syllabus</a></li>
+<li><a href="../quizzes.html">Quizzes</a></li>
+<li><a href="../notes.html">Study Notes</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Support</h4>
+<ul>
+<li><a href="../tutoring.html">Online Tutoring</a></li>
+<li><a href="../tips.html">Exam Tips</a></li>
+<li><a href="../blog.html">Study Blog</a></li>
+<li><a href="../faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Company</h4>
+<ul>
+<li><a href="../about.html">About Us</a></li>
+<li><a href="../contact.html">Contact</a></li>
+<li><a href="../privacy.html">Privacy Policy</a></li>
+<li><a href="../terms.html">Terms of Service</a></li>
+<li><a href="../donate.html">Donate</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h4>Connect</h4>
+<ul>
+<li><a href="https://wa.me/923379244731" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WhatsApp</a></li>
+<li><a href="https://facebook.com/eduresources" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook">Facebook</a></li>
+<li><a href="mailto:info@eduresources.com">Email Us</a></li>
+</ul>
+</div>
+</div>
+<div class="copyright">
+&copy; 2025 EduResources. All rights reserved.
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation-->
+<nav class="bottom-nav" aria-label="Main navigation">
+<a href="../index.html" class="nav-item">
+<i class="fas fa-home" aria-hidden="true"></i>
+<span>Home</span>
+</a>
+<a href="../quizzes.html" class="nav-item active"><!-- Active item-->
+<i class="fas fa-question-circle" aria-hidden="true"></i>
+<span>Quizzes</span>
+</a>
+<a href="../pastpapers.html" class="nav-item">
+<i class="fas fa-file-alt" aria-hidden="true"></i>
+<span>Papers</span>
+</a>
+<a href="../faq.html" class="nav-item">
+<i class="fas fa-question-circle" aria-hidden="true"></i>
+<span>FAQ</span>
+</a>
+</nav>
+<script>
+// Configuration for this specific quiz
+const QUIZ_TOPIC = "Number";
+const QUIZ_SUBTOPIC = "Place Value";
+// const QUESTIONS_JSON_FILE = "quiz-maths-ks3.json"; // Not used as questions are embedded
+
+// DOM elements
+const loadingElement = document.getElementById('loading');
+const errorElement = document.getElementById('error');
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const feedback = document.getElementById('feedback');
+const resultsContainer = document.getElementById('results-container');
+const scoreElement = document.getElementById('score');
+const messageElement = document.getElementById('message');
+const retryBtn = document.getElementById('retry-btn');
+const progressBar = document.getElementById('progress-bar');
+const currentQuestionElement = document.getElementById('current-question');
+const totalQuestionsElement = document.getElementById('total-questions');
+const timeElement = document.getElementById('time');
+
+// Quiz state
+let allQuestions = [];
+let filteredQuestions = [];
+let shuffledQuestions = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let startTime = Date.now();
+let timerInterval;
+let isAnswerSubmitted = false; // Flag to prevent multiple submissions
+
+// Function to shuffle array
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+// Fetch questions from embedded JSON
+async function fetchQuestions() {
+    try {
+        // Simulate fetching from a local embedded source
+        const data = getEmbeddedQuestions();
+        return data;
+    } catch (error) {
+        console.error("Error fetching questions:", error);
+        showError(`Failed to load quiz questions. Please try again later. (${error.message})`);
+        return [];
+    }
+}
+
+// Filter questions for this specific quiz
+function filterQuestions(questions) {
+    return questions.filter(q => q.topic === QUIZ_TOPIC && q.subtopic === QUIZ_SUBTOPIC && q.type === "mcq");
+}
+
+// Initialize quiz
+async function initQuiz() {
+    // Reset state
+    currentQuestionIndex = 0;
+    score = 0;
+    startTime = Date.now();
+    isAnswerSubmitted = false;
+
+    // Show loading
+    showLoading();
+
+    // Fetch and filter questions
+    allQuestions = await fetchQuestions();
+    if (allQuestions.length === 0) {
+        // Error already shown by fetchQuestions
+        return;
+    }
+    filteredQuestions = filterQuestions(allQuestions);
+    if (filteredQuestions.length === 0) {
+        showError(`No questions found for topic "${QUIZ_TOPIC}" and subtopic "${QUIZ_SUBTOPIC}".`);
+        return;
+    }
+
+    // Shuffle questions for this session
+    shuffledQuestions = shuffleArray(filteredQuestions);
+
+    // Update total questions display
+    totalQuestionsElement.textContent = shuffledQuestions.length;
+
+    // Start timer
+    startTimer();
+
+    // Show first question
+    showQuestion();
+
+    // Hide results, show quiz
+    resultsContainer.style.display = 'none';
+    document.querySelector('.quiz-container').style.display = 'block';
+    document.querySelector('.question-container').style.display = 'block';
+    document.querySelector('.question-count').style.display = 'block';
+}
+
+// Show loading message
+function showLoading() {
+    loadingElement.style.display = 'block';
+    errorElement.style.display = 'none';
+    questionText.style.display = 'none';
+    optionsContainer.style.display = 'none';
+}
+
+// Show error message
+function showError(message) {
+    loadingElement.style.display = 'none';
+    errorElement.style.display = 'block';
+    errorElement.textContent = message;
+    questionText.style.display = 'none';
+    optionsContainer.style.display = 'none';
+}
+
+// Start timer
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        timeElement.textContent = elapsed;
+    }, 1000);
+}
+
+// Show current question
+function showQuestion() {
+    if (currentQuestionIndex >= shuffledQuestions.length) {
+        showResults();
+        return;
+    }
+
+    // Reset submission flag for new question
+    isAnswerSubmitted = false;
+
+    const question = shuffledQuestions[currentQuestionIndex];
+
+    // Update progress bar
+    const progressPercent = ((currentQuestionIndex) / shuffledQuestions.length) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+
+    // Update question counter
+    currentQuestionElement.textContent = currentQuestionIndex + 1;
+
+    // Display question
+    questionText.textContent = question.question;
+    questionText.style.display = 'block';
+
+    // Clear options container
+    optionsContainer.innerHTML = '';
+    optionsContainer.style.display = 'flex';
+
+    // Shuffle options
+    const shuffledOptions = shuffleArray(question.options);
+
+    // Create options
+    shuffledOptions.forEach((option, index) => {
+        const optionElement = document.createElement('label');
+        optionElement.className = 'option';
+        optionElement.innerHTML = ` <input type="radio" name="option" value="${option}"> <span>${option}</span> `;
+        optionsContainer.appendChild(optionElement);
+
+        // Add event listener for instant feedback
+        optionElement.addEventListener('click', () => {
+            // Only process if answer hasn't been submitted yet
+            if (!isAnswerSubmitted) {
+                selectOption(optionElement, option);
+            }
+        });
+    });
+
+    // Reset feedback
+    feedback.className = 'feedback';
+    feedback.style.display = 'none';
+
+    // Hide loading/error
+    loadingElement.style.display = 'none';
+    errorElement.style.display = 'none';
+}
+
+// Handle option selection
+function selectOption(optionElement, optionValue) {
+    // Prevent multiple submissions for the same question
+    if (isAnswerSubmitted) return;
+    isAnswerSubmitted = true;
+
+    // Remove selected class from all options
+    document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+
+    // Add selected class to chosen option
+    optionElement.classList.add('selected');
+
+    // Check answer and show feedback
+    checkAnswer(optionValue);
+
+    // Move to next question automatically after a short delay
+    setTimeout(() => {
+        currentQuestionIndex++;
+        showQuestion();
+    }, 1500); // 1.5 second delay
+}
+
+// Check answer and provide feedback
+function checkAnswer(userAnswer) {
+    const question = shuffledQuestions[currentQuestionIndex];
+    // For MCQ, compare with the actual answer value (index)
+    const isCorrect = (userAnswer === question.options[question.answer]);
+
+    // Update score if correct
+    if (isCorrect) {
+        score++;
+    }
+
+    // Show feedback
+    feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+    feedback.innerHTML = `
+        <strong>${isCorrect ? 'Correct! 🎉' : 'Incorrect 😕'}</strong>
+        <div class="explanation">${question.explanation}</div>
+    `;
+    feedback.style.display = 'block';
+}
+
+// Show final results
+function showResults() {
+    // Stop timer
+    clearInterval(timerInterval);
+
+    // Calculate final score
+    const finalScore = score;
+    const totalQuestions = shuffledQuestions.length;
+    const percentage = totalQuestions > 0 ? Math.round((finalScore / totalQuestions) * 100) : 0;
+
+    // Display results
+    scoreElement.textContent = `${finalScore}/${totalQuestions}`;
+    messageElement.textContent = getResultMessage(percentage);
+
+    // Show results container
+    resultsContainer.style.display = 'block';
+
+    // Hide quiz content
+    document.querySelector('.question-container').style.display = 'none';
+    document.querySelector('.question-count').style.display = 'none';
+}
+
+// Get result message based on score
+function getResultMessage(percentage) {
+    if (percentage >= 90) return "Maths Master! 🧠 You're amazing at place values!";
+    if (percentage >= 80) return "Excellent work! You've got a strong grasp of place value!";
+    if (percentage >= 70) return "Good job! With a bit more practice, you'll be perfect!";
+    if (percentage >= 60) return "Not bad! Review the explanations to improve further.";
+    return "Keep practicing! These concepts will become easier with time.";
+}
+
+// Event listeners
+retryBtn.addEventListener('click', initQuiz);
+
+// Start the quiz when page loads
+window.addEventListener('DOMContentLoaded', initQuiz);
+
+// Embedded Questions Data (30 questions)
+function getEmbeddedQuestions() {
+    return [
+        {
+            "question": "What is the value of the digit 4 in the number 7,482?",
+            "options": ["4", "40", "400", "4,000"],
+            "answer": 2,
+            "explanation": "The digit 4 is in the hundreds place, so its value is 4 × 100 = 400.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Which digit is in the tens place in the number 5,678?",
+            "options": ["5", "6", "7", "8"],
+            "answer": 2,
+            "explanation": "In the number 5,678, the digits from right to left are: 8 (units), 7 (tens), 6 (hundreds), 5 (thousands). The digit in the tens place is 7.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "What is the value of the digit 9 in the number 90,005?",
+            "options": ["9", "90", "900", "90,000"],
+            "answer": 3,
+            "explanation": "The digit 9 is in the ten thousands place, so its value is 9 × 10,000 = 90,000.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "In the number 3,204,017, which place does the digit 2 hold?",
+            "options": ["Millions", "Hundred Thousands", "Ten Thousands", "Thousands"],
+            "answer": 1,
+            "explanation": "Counting from the right: 7 (units), 1 (tens), 0 (hundreds), 4 (thousands), 0 (ten thousands), 2 (hundred thousands), 3 (millions). The digit 2 is in the hundred thousands place.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "How is the number 'three million, forty-five thousand, six hundred and seven' written in figures?",
+            "options": ["3,045,607", "3,450,607", "3,450,670", "3,045,670"],
+            "answer": 0,
+            "explanation": "Three million (3,000,000) + forty-five thousand (45,000) + six hundred and seven (607) = 3,045,607.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "What is the value of the digit 3 in the decimal number 0.375?",
+            "options": ["3", "0.3", "0.03", "0.003"],
+            "answer": 1,
+            "explanation": "The digit 3 is in the tenths place, so its value is 3 × 0.1 = 0.3.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Which digit is in the hundredths place in the number 4.567?",
+            "options": ["4", "5", "6", "7"],
+            "answer": 2,
+            "explanation": "In the decimal number 4.567, the digits after the decimal point are: 5 (tenths), 6 (hundredths), 7 (thousandths). The digit in the hundredths place is 6.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "What is the value of the digit 8 in the number 12.084?",
+            "options": ["8", "0.8", "0.08", "0.008"],
+            "answer": 2,
+            "explanation": "The digit 8 is in the hundredths place, so its value is 8 × 0.01 = 0.08.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "In the number 0.0092, which place does the digit 9 hold?",
+            "options": ["Tenths", "Hundredths", "Thousandths", "Ten Thousandths"],
+            "answer": 2,
+            "explanation": "In the decimal 0.0092, the places are: 0 (tenths), 0 (hundredths), 9 (thousandths), 2 (ten thousandths). The digit 9 is in the thousandths place.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "How is the number 'five and twenty-three thousandths' written in figures?",
+            "options": ["5.23", "5.023", "5.230", "5.0023"],
+            "answer": 1,
+            "explanation": "Five and twenty-three thousandths is 5 + 23/1000 = 5 + 0.023 = 5.023.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Arrange the numbers 3.04, 3.4, 3.004, 3.404 in ascending order.",
+            "options": ["3.004, 3.04, 3.4, 3.404", "3.404, 3.4, 3.04, 3.004", "3.04, 3.004, 3.4, 3.404", "3.4, 3.404, 3.004, 3.04"],
+            "answer": 0,
+            "explanation": "Compare the numbers: 3.004 < 3.04 < 3.4 < 3.404.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Which of the following numbers is the largest: 0.56, 0.65, 0.506, 0.605?",
+            "options": ["0.56", "0.65", "0.506", "0.605"],
+            "answer": 1,
+            "explanation": "Comparing the numbers: 0.506 < 0.56 < 0.605 < 0.65. The largest is 0.65.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Arrange the numbers 123, 132, 103, 120 in descending order.",
+            "options": ["103, 120, 123, 132", "132, 123, 120, 103", "123, 132, 103, 120", "120, 103, 132, 123"],
+            "answer": 1,
+            "explanation": "Compare the numbers: 132 > 123 > 120 > 103.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Which of the following is the smallest: 7.89, 7.98, 7.809, 7.908?",
+            "options": ["7.89", "7.98", "7.809", "7.908"],
+            "answer": 2,
+            "explanation": "Comparing the numbers: 7.809 < 7.89 < 7.908 < 7.98. The smallest is 7.809.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Put the numbers 0.111, 0.101, 0.110, 0.011 in ascending order.",
+            "options": ["0.011, 0.101, 0.110, 0.111", "0.111, 0.110, 0.101, 0.011", "0.101, 0.011, 0.110, 0.111", "0.110, 0.111, 0.011, 0.101"],
+            "answer": 0,
+            "explanation": "Compare the numbers: 0.011 < 0.101 < 0.110 < 0.111.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Round 0.004567 to 2 significant figures.",
+            "options": ["0.0045", "0.0046", "0.005", "0.00457"],
+            "answer": 1,
+            "explanation": "The first significant figure is 4, the second is 5. The third significant figure is 6, which is ≥ 5, so we round up the second figure. 0.004567 rounded to 2 s.f. is 0.0046.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "How many significant figures are in the number 0.02030?",
+            "options": ["3", "4", "5", "6"],
+            "answer": 1,
+            "explanation": "Significant figures start from the first non-zero digit. In 0.02030, the significant figures are 2, 0, 3, 0. There are 4 significant figures.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Round 123,456 to 3 significant figures.",
+            "options": ["123", "123,000", "124,000", "123.5"],
+            "answer": 1,
+            "explanation": "The first three significant figures are 1, 2, 3. The fourth significant figure is 4, which is < 5, so we round down. 123,456 rounded to 3 s.f. is 123,000.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "How many significant figures are in the number 100.0?",
+            "options": ["1", "2", "3", "4"],
+            "answer": 3,
+            "explanation": "In 100.0, the zeros between non-zero digits and after the decimal point are significant. The significant figures are 1, 0, 0, 0. There are 4 significant figures.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Round 0.00987 to 1 significant figure.",
+            "options": ["0.009", "0.01", "0.0099", "0.010"],
+            "answer": 1,
+            "explanation": "The first significant figure is 9. The second significant figure is 8, which is ≥ 5, so we round up the first figure. 0.00987 rounded to 1 s.f. is 0.01.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "What is the value of the underlined digit in 5,6<u>7</u>8?",
+            "options": ["7", "70", "700", "7,000"],
+            "answer": 1,
+            "explanation": "The underlined digit 7 is in the tens place, so its value is 7 × 10 = 70.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Write the number represented by: 3 thousands, 2 hundreds, 0 tens, 5 units.",
+            "options": ["3,205", "3,025", "3,250", "3,520"],
+            "answer": 0,
+            "explanation": "3 thousands (3,000) + 2 hundreds (200) + 0 tens (0) + 5 units (5) = 3,205.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Which number has a 4 in the hundredths place?",
+            "options": ["0.4", "0.04", "0.004", "4.0"],
+            "answer": 1,
+            "explanation": "In 0.04, the 4 is in the hundredths place.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Arrange the following numbers in order from smallest to largest: 0.5, 0.05, 0.005, 0.505.",
+            "options": ["0.005, 0.05, 0.5, 0.505", "0.505, 0.5, 0.05, 0.005", "0.05, 0.005, 0.5, 0.505", "0.5, 0.505, 0.005, 0.05"],
+            "answer": 0,
+            "explanation": "Compare the numbers: 0.005 < 0.05 < 0.5 < 0.505.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Which of the following numbers is equal to 4.560?",
+            "options": ["4.56", "4.056", "4.506", "4.65"],
+            "answer": 0,
+            "explanation": "Adding a zero at the end of a decimal number does not change its value. 4.560 is the same as 4.56.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Identify the number with the greatest value: 1.009, 1.09, 1.9, 1.0009.",
+            "options": ["1.009", "1.09", "1.9", "1.0009"],
+            "answer": 2,
+            "explanation": "Comparing the numbers: 1.0009 < 1.009 < 1.09 < 1.9. The greatest value is 1.9.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Round 0.06784 to 3 significant figures.",
+            "options": ["0.0678", "0.0679", "0.068", "0.06780"],
+            "answer": 0,
+            "explanation": "The first three significant figures are 6, 7, 8. The fourth significant figure is 4, which is < 5, so we round down. 0.06784 rounded to 3 s.f. is 0.0678.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "How many significant figures are in 20,300?",
+            "options": ["3", "4", "5", "Ambiguous"],
+            "answer": 3,
+            "explanation": "Without a decimal point, trailing zeros in a whole number are ambiguous. The number 20,300 could have 3 (2, 0, 3), 4 (2, 0, 3, 0), or 5 (2, 0, 3, 0, 0) significant figures. It is generally considered ambiguous.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "Round 9,876,543 to 2 significant figures.",
+            "options": ["9,800,000", "9,900,000", "9,870,000", "9,880,000"],
+            "answer": 0,
+            "explanation": "The first two significant figures are 9 and 8. The third significant figure is 7, which is ≥ 5, so we round up the second figure (8 becomes 9) and replace the rest with zeros. 9,876,543 rounded to 2 s.f. is 9,900,000.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        },
+        {
+            "question": "What is the value of the digit 2 in the number 0.00205?",
+            "options": ["2", "0.2", "0.02", "0.002"],
+            "answer": 3,
+            "explanation": "The digit 2 is in the thousandths place, so its value is 2 × 0.001 = 0.002.",
+            "topic": "Number",
+            "subtopic": "Place Value",
+            "type": "mcq"
+        }
+    ];
+}
+</script>
+</body>
+</html>
